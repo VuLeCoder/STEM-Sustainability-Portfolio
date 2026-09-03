@@ -1,0 +1,57 @@
+@import "tailwindcss";
+
+:root {
+  color-scheme: light;
+  --background: #f7f8f2;
+  --surface: #edf3ea;
+  --foreground: #17211d;
+  --muted: #5c6a63;
+  --primary: #1f6b4f;
+  --accent: #d9a441;
+  --border: #cbd8ce;
+  --focus: #125239;
+  --shadow: 0 16px 40px rgb(23 33 29 / 8%);
+}
+
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --background: #0d1714;
+  --surface: #14221d;
+  --foreground: #edf5f1;
+  --muted: #aabdb4;
+  --primary: #5bc493;
+  --accent: #e8bb61;
+  --border: #2c4339;
+  --focus: #7be0ad;
+  --shadow: 0 16px 40px rgb(0 0 0 / 22%);
+}
+
+* { box-sizing: border-box; }
+
+html { min-width: 320px; }
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: var(--background);
+  color: var(--foreground);
+  font-family: "Be Vietnam Pro", "Segoe UI", sans-serif;
+  transition: background-color 180ms ease, color 180ms ease;
+}
+
+a { color: inherit; }
+
+button, a { -webkit-tap-highlight-color: transparent; }
+
+:focus-visible {
+  outline: 3px solid var(--focus);
+  outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+  }
+}
