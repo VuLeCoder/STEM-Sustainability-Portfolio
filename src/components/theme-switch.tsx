@@ -1,10 +1,12 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import type { Locale } from "@/constants/content";
+import { siteContent } from "@/constants/content";
 
 type Theme = "light" | "dark";
 
-export function ThemeSwitch() {
+export function ThemeSwitch({ locale }: { locale: Locale }) {
   const [theme, setTheme] = useState<Theme>("light");
 
   useEffect(() => {
@@ -19,8 +21,14 @@ export function ThemeSwitch() {
   }
 
   return (
-    <button type="button" onClick={toggleTheme} aria-label="Đổi giao diện sáng tối">
-      {theme === "light" ? "Chế độ tối" : "Chế độ sáng"}
+    <button
+      type="button"
+      onClick={toggleTheme}
+      aria-label={siteContent.ui[theme === "light" ? "switchToDark" : "switchToLight"][locale]}
+      className="inline-flex h-10 items-center gap-2 rounded-full border border-[var(--border)] px-3 text-sm font-medium text-[var(--muted)] transition-colors hover:border-[var(--primary)] hover:text-[var(--foreground)]"
+    >
+      <span aria-hidden="true" className="text-base leading-none">{theme === "light" ? "◐" : "☼"}</span>
+      <span className="hidden sm:inline">{siteContent.ui[theme === "light" ? "darkTheme" : "lightTheme"][locale]}</span>
     </button>
   );
 }
