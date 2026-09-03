@@ -69,6 +69,46 @@ export const siteContent = {
     },
   },
 
+  home: {
+    eyebrow: {
+      vi: "STEM · Công nghệ · Phát triển bền vững",
+      en: "STEM · Technology · Sustainability",
+    },
+    visualLabel: "STEM × Impact",
+    projectRoleLabel: { vi: "Vai trò", en: "Role" },
+    projectHighlightLabel: { vi: "Điểm nhấn", en: "Highlight" },
+    primaryCta: {
+      vi: "Khám phá các dự án",
+      en: "Explore projects",
+    },
+    secondaryCta: {
+      vi: "Cách Phúc tiếp cận vấn đề",
+      en: "How Phuc approaches problems",
+    },
+    approach: {
+      eyebrow: { vi: "Cách tiếp cận", en: "Approach" },
+      title: {
+        vi: "Đi từ câu hỏi khoa học đến giá trị cho cộng đồng.",
+        en: "From scientific questions to value for communities.",
+      },
+      description: {
+        vi: "Mỗi trải nghiệm là một bước để học cách quan sát kỹ hơn, thử nghiệm có trách nhiệm và cùng tạo ra giải pháp thiết thực.",
+        en: "Each experience is a step toward observing more closely, experimenting responsibly, and building practical solutions together.",
+      },
+    },
+    featuredProjects: {
+      eyebrow: { vi: "Dự án nổi bật", en: "Selected projects" },
+      title: {
+        vi: "Công nghệ cần bắt đầu từ một vấn đề thật.",
+        en: "Technology should begin with a real problem.",
+      },
+      description: {
+        vi: "Hai dự án thể hiện các hướng Phúc đang theo đuổi: hành động môi trường tại cộng đồng và chuyển dữ liệu khoa học thành trải nghiệm học tập dễ tiếp cận.",
+        en: "These projects reflect two directions Phuc is pursuing: environmental action in communities and turning scientific data into accessible learning experiences.",
+      },
+    },
+  },
+
   about: {
     // Bản giới thiệu nháp từ CV — cần người dùng duyệt trước khi xuất bản.
     story: {
