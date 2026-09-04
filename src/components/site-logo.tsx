@@ -4,7 +4,7 @@ import { siteContent } from "@/constants/content";
 
 export function SiteLogo({ locale }: { locale: Locale }) {
   return (
-    <Link href={`/${locale}`} className="group inline-flex items-center gap-3 rounded-md" aria-label={siteContent.profile.name}>
+    <Link href={`/${locale}/home`} className="group inline-flex items-center gap-3 rounded-md" aria-label={siteContent.profile.name}>
       <span className="grid size-10 place-items-center rounded-xl bg-[var(--primary)] font-mono text-sm font-bold tracking-[0.12em] text-white shadow-[var(--shadow)] transition-transform group-hover:-translate-y-0.5">
         {siteContent.profile.initials}
       </span>

@@ -28,7 +28,7 @@ export function ThemeSwitch({ locale }: { locale: Locale }) {
       className="inline-flex h-10 items-center gap-2 rounded-full border border-[var(--border)] px-3 text-sm font-medium text-[var(--muted)] transition-colors hover:border-[var(--primary)] hover:text-[var(--foreground)]"
     >
       <span aria-hidden="true" className="text-base leading-none">{theme === "light" ? "◐" : "☼"}</span>
-      <span className="hidden sm:inline">{siteContent.ui[theme === "light" ? "darkTheme" : "lightTheme"][locale]}</span>
+      <span className="hidden sm:inline">{siteContent.ui[theme === "light" ? "lightTheme" : "darkTheme"][locale]}</span>
     </button>
   );
 }

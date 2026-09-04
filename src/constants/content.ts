@@ -15,30 +15,34 @@ export const siteContent = {
     initials: "NCP",
     location: { vi: "Hà Nội, Việt Nam", en: "Hanoi, Vietnam" },
     positioning: {
-      vi: "Học sinh nghiên cứu về công nghệ, đổi mới và tác động xã hội.",
-      en: "Student researcher interested in technology, innovation, and social impact.",
+      vi: "Tôi là học sinh nghiên cứu quan tâm đến công nghệ, đổi mới và tác động xã hội.",
+      en: "I am a student researcher interested in technology, innovation, and social impact.",
     },
     introduction: {
-      vi: "Nguyen Cao Xuan Phuc là học sinh chuyên Vật lý tại Trường THPT Chuyên Nguyễn Huệ, quan tâm đến nghiên cứu, đổi mới công nghệ và phát triển bền vững. Qua các dự án về AI, bảo vệ môi trường, công nghệ hỗ trợ và nghiên cứu số, Phúc phát triển cách tiếp cận kết hợp tư duy khoa học, thiết kế lấy con người làm trung tâm và hành động cộng đồng. Phúc mong muốn dùng công nghệ cùng tinh thần trách nhiệm xã hội để tạo ra những giải pháp thiết thực cho cộng đồng và sự phát triển bền vững dài hạn.",
-      en: "Nguyen Cao Xuan Phuc is a Physics-specialized student at Nguyen Hue High School for the Gifted, with interests in research, technological innovation, and sustainable development. Through projects in AI, environmental protection, assistive technology, and digital research, Phuc has developed an approach that combines scientific thinking, human-centered design, and community action. He hopes to use technology and social responsibility to create practical solutions for communities and long-term sustainable development.",
+      vi: "Tôi là học sinh chuyên Vật lý tại Trường THPT Chuyên Nguyễn Huệ, quan tâm đến nghiên cứu, đổi mới công nghệ và phát triển bền vững. Qua các dự án về AI, bảo vệ môi trường, công nghệ hỗ trợ và nghiên cứu số, tôi phát triển cách tiếp cận kết hợp tư duy khoa học, thiết kế lấy con người làm trung tâm và hành động cộng đồng. Tôi mong muốn dùng công nghệ cùng tinh thần trách nhiệm xã hội để tạo ra những giải pháp thiết thực cho cộng đồng và sự phát triển bền vững dài hạn.",
+      en: "I am a Physics-specialized student at Nguyen Hue High School for the Gifted, with interests in research, technological innovation, and sustainable development. Through projects in AI, environmental protection, assistive technology, and digital research, I have developed an approach that combines scientific thinking, human-centered design, and community action. I hope to use technology and social responsibility to create practical solutions for communities and long-term sustainable development.",
     },
     portrait: "/images/placeholders/portrait.svg",
   },
 
   navigation: {
     home: { vi: "Trang chủ", en: "Home" },
-    about: { vi: "Giới thiệu", en: "About" },
     projects: { vi: "Dự án", en: "Projects" },
-    journey: { vi: "Hành trình", en: "Journey" },
-    contact: { vi: "Liên hệ", en: "Contact" },
+    activities: { vi: "Hoạt động", en: "Activities" },
   },
 
   ui: {
     menu: { vi: "Menu điều hướng", en: "Navigation menu" },
     openMenu: { vi: "Mở menu", en: "Open menu" },
     closeMenu: { vi: "Đóng menu", en: "Close menu" },
-    switchToLight: { vi: "Chuyển sang giao diện sáng", en: "Switch to light theme" },
-    switchToDark: { vi: "Chuyển sang giao diện tối", en: "Switch to dark theme" },
+    switchToLight: {
+      vi: "Chuyển sang giao diện sáng",
+      en: "Switch to light theme",
+    },
+    switchToDark: {
+      vi: "Chuyển sang giao diện tối",
+      en: "Switch to dark theme",
+    },
     lightTheme: { vi: "Sáng", en: "Light" },
     darkTheme: { vi: "Tối", en: "Dark" },
     portfolioLabel: { vi: "Hồ sơ học thuật", en: "Academic portfolio" },
@@ -108,7 +112,6 @@ export const siteContent = {
       },
     },
   },
-
   about: {
     // Bản giới thiệu nháp từ CV — cần người dùng duyệt trước khi xuất bản.
     story: {
@@ -116,14 +119,32 @@ export const siteContent = {
       en: "With a foundation in Physics, Phuc is interested in how research and technology can address problems close to communities. Experiences in AI, environmental education, assistive technology, and digital-content research have helped him develop scientific thinking, teamwork, and the ability to turn an idea into purposeful action.",
     },
     academicInterests: [
-      { vi: "Nghiên cứu và đổi mới công nghệ", en: "Research and technological innovation" },
-      { vi: "AI ứng dụng và thiết kế lấy con người làm trung tâm", en: "Applied AI and human-centered design" },
-      { vi: "Phát triển bền vững và tác động xã hội", en: "Sustainable development and social impact" },
+      {
+        vi: "Nghiên cứu và đổi mới công nghệ",
+        en: "Research and technological innovation",
+      },
+      {
+        vi: "AI ứng dụng và thiết kế lấy con người làm trung tâm",
+        en: "Applied AI and human-centered design",
+      },
+      {
+        vi: "Phát triển bền vững và tác động xã hội",
+        en: "Sustainable development and social impact",
+      },
     ],
     strengths: [
-      { vi: "Viết và trình bày nghiên cứu khoa học", en: "Scientific writing and presentation" },
-      { vi: "Quản lý dự án và phối hợp nhóm", en: "Project management and team collaboration" },
-      { vi: "Truyền thông cộng đồng và tổ chức hoạt động", en: "Community outreach and event organization" },
+      {
+        vi: "Viết và trình bày nghiên cứu khoa học",
+        en: "Scientific writing and presentation",
+      },
+      {
+        vi: "Quản lý dự án và phối hợp nhóm",
+        en: "Project management and team collaboration",
+      },
+      {
+        vi: "Truyền thông cộng đồng và tổ chức hoạt động",
+        en: "Community outreach and event organization",
+      },
     ],
     values: {
       vi: "Tò mò khoa học, trách nhiệm xã hội và sự kiên trì trong quá trình thử nghiệm.",
@@ -180,26 +201,48 @@ export const siteContent = {
         vi: "Nhà sáng lập & Trưởng dự án",
         en: "Founder & Project Chair",
       },
-      fields: ["Environmental education", "Community action", "Project management"],
+      fields: [
+        "Environmental education",
+        "Community action",
+        "Project management",
+      ],
       result: {
         vi: "CV ghi nhận các chiến dịch nâng cao nhận thức đã tiếp cận khoảng 1.800 người.",
         en: "The CV records awareness campaigns that reached approximately 1,800 people.",
       },
       coverImage: "/images/placeholders/ecome-cover.svg",
       details: {
-        objective: { vi: "[Mục tiêu sẽ cập nhật]", en: "[Objective to be updated]" },
-        solution: { vi: "[Giải pháp sẽ cập nhật]", en: "[Solution to be updated]" },
-        process: { vi: "[Quy trình sẽ cập nhật]", en: "[Process to be updated]" },
-        evidence: { vi: "[Link/bằng chứng sẽ cập nhật]", en: "[Links/evidence to be updated]" },
+        objective: {
+          vi: "[Mục tiêu sẽ cập nhật]",
+          en: "[Objective to be updated]",
+        },
+        solution: {
+          vi: "[Giải pháp sẽ cập nhật]",
+          en: "[Solution to be updated]",
+        },
+        process: {
+          vi: "[Quy trình sẽ cập nhật]",
+          en: "[Process to be updated]",
+        },
+        evidence: {
+          vi: "[Link/bằng chứng sẽ cập nhật]",
+          en: "[Links/evidence to be updated]",
+        },
         lessons: { vi: "[Bài học sẽ cập nhật]", en: "[Lessons to be updated]" },
-        futureWork: { vi: "[Cải tiến tiếp theo sẽ cập nhật]", en: "[Future improvements to be updated]" },
+        futureWork: {
+          vi: "[Cải tiến tiếp theo sẽ cập nhật]",
+          en: "[Future improvements to be updated]",
+        },
       },
     },
     {
       slug: "bloomwatch",
       featured: true,
       title: "BloomWatch",
-      category: { vi: "Dữ liệu Trái Đất & giáo dục", en: "Earth data & education" },
+      category: {
+        vi: "Dữ liệu Trái Đất & giáo dục",
+        en: "Earth data & education",
+      },
       summary: {
         vi: "Nền tảng học tập biến dữ liệu vệ tinh NASA về hiện tượng ra hoa toàn cầu thành trải nghiệm đa phương tiện dễ tiếp cận.",
         en: "An educational platform that turns NASA satellite data on global flowering phenomena into an accessible multimedia experience.",
@@ -216,12 +259,27 @@ export const siteContent = {
       },
       coverImage: "/images/placeholders/bloomwatch-cover.svg",
       details: {
-        objective: { vi: "[Mục tiêu sẽ cập nhật]", en: "[Objective to be updated]" },
-        solution: { vi: "[Giải pháp sẽ cập nhật]", en: "[Solution to be updated]" },
-        process: { vi: "[Quy trình sẽ cập nhật]", en: "[Process to be updated]" },
-        evidence: { vi: "[Link/bằng chứng sẽ cập nhật]", en: "[Links/evidence to be updated]" },
+        objective: {
+          vi: "[Mục tiêu sẽ cập nhật]",
+          en: "[Objective to be updated]",
+        },
+        solution: {
+          vi: "[Giải pháp sẽ cập nhật]",
+          en: "[Solution to be updated]",
+        },
+        process: {
+          vi: "[Quy trình sẽ cập nhật]",
+          en: "[Process to be updated]",
+        },
+        evidence: {
+          vi: "[Link/bằng chứng sẽ cập nhật]",
+          en: "[Links/evidence to be updated]",
+        },
         lessons: { vi: "[Bài học sẽ cập nhật]", en: "[Lessons to be updated]" },
-        futureWork: { vi: "[Cải tiến tiếp theo sẽ cập nhật]", en: "[Future improvements to be updated]" },
+        futureWork: {
+          vi: "[Cải tiến tiếp theo sẽ cập nhật]",
+          en: "[Future improvements to be updated]",
+        },
       },
     },
   ],
@@ -229,7 +287,10 @@ export const siteContent = {
   timeline: [
     {
       date: "2025–present",
-      title: { vi: "Nhà sáng lập & Trưởng dự án — ECOMe", en: "Founder & Project Chair — ECOMe" },
+      title: {
+        vi: "Nhà sáng lập & Trưởng dự án — ECOMe",
+        en: "Founder & Project Chair — ECOMe",
+      },
       description: {
         vi: "Sáng kiến do học sinh dẫn dắt về giáo dục môi trường và hành động cộng đồng.",
         en: "A student-led environmental education and community-action initiative.",
@@ -237,7 +298,10 @@ export const siteContent = {
     },
     {
       date: "2025",
-      title: { vi: "Tác giả và người trình bày học sinh — VNICT 2025", en: "Student Author and Presenter — VNICT 2025" },
+      title: {
+        vi: "Tác giả và người trình bày học sinh — VNICT 2025",
+        en: "Student Author and Presenter — VNICT 2025",
+      },
       description: {
         vi: "Đồng tác giả và trình bày bài báo về phương pháp reversible data hiding hai ảnh được cải tiến.",
         en: "Co-authored and presented a paper on an improved dual-image reversible data-hiding method.",
@@ -245,7 +309,10 @@ export const siteContent = {
     },
     {
       date: "2026",
-      title: { vi: "Thực tập sinh nghiên cứu — Viện Công nghệ Thông tin, VAST", en: "Research Intern — Institute of Information Technology, VAST" },
+      title: {
+        vi: "Thực tập sinh nghiên cứu — Viện Công nghệ Thông tin, VAST",
+        en: "Research Intern — Institute of Information Technology, VAST",
+      },
       description: {
         vi: "Tham gia thực tập có cấu trúc về các hệ thống AI ứng dụng.",
         en: "Participating in a structured internship focused on applied AI systems.",
@@ -256,7 +323,10 @@ export const siteContent = {
   achievements: [
     {
       date: "2026",
-      title: { vi: "Giải Vàng — World Invention Creativity Olympic", en: "Gold Award — World Invention Creativity Olympic" },
+      title: {
+        vi: "Giải Vàng — World Invention Creativity Olympic",
+        en: "Gold Award — World Invention Creativity Olympic",
+      },
       description: {
         vi: "SafeStride — dự án về nhận thức không gian và cảnh báo ưu tiên trên điện thoại cho người khiếm thị.",
         en: "SafeStride — a smartphone concept for spatial awareness and priority alerts for blind users.",
@@ -264,7 +334,10 @@ export const siteContent = {
     },
     {
       date: "2026",
-      title: { vi: "Giải Ba — Cuộc thi Ý tưởng Bảo vệ Môi trường trong lĩnh vực Giao thông", en: "Third Prize — Environmental Protection Ideas in the Transport Sector Competition" },
+      title: {
+        vi: "Giải Ba — Cuộc thi Ý tưởng Bảo vệ Môi trường trong lĩnh vực Giao thông",
+        en: "Third Prize — Environmental Protection Ideas in the Transport Sector Competition",
+      },
       description: {
         vi: "ECOMeSort — ý tưởng ứng dụng AI hỗ trợ phân loại rác và kết nối hệ sinh thái tái chế.",
         en: "ECOMeSort — an AI-enabled concept for waste sorting and recycling-ecosystem connections.",
@@ -272,13 +345,68 @@ export const siteContent = {
     },
     {
       date: "2025",
-      title: { vi: "VNICT 2025 — Đồng tác giả và người trình bày học sinh", en: "VNICT 2025 — Student Author and Presenter" },
+      title: {
+        vi: "VNICT 2025 — Đồng tác giả và người trình bày học sinh",
+        en: "VNICT 2025 — Student Author and Presenter",
+      },
       description: {
         vi: "Bài báo về phương pháp reversible data hiding hai ảnh được cải tiến cho xác thực nội dung số.",
         en: "A paper on an improved dual-image reversible data-hiding method for digital-content authentication.",
       },
     },
   ],
+} as const;
+
+export const aboutPageContent = {
+  eyebrow: { vi: "Giới thiệu", en: "About" },
+  title: {
+    vi: "Khoa học, công nghệ và trách nhiệm với cộng đồng.",
+    en: "Science, technology, and responsibility to communities.",
+  },
+  storyLabel: { vi: "Câu chuyện", en: "Story" },
+  academicInterestsLabel: {
+    vi: "Mối quan tâm học thuật",
+    en: "Academic interests",
+  },
+  strengthsLabel: { vi: "Điểm mạnh", en: "Strengths" },
+  valuesLabel: { vi: "Giá trị dẫn đường", en: "Guiding values" },
+  futureGoalLabel: { vi: "Hướng tới", en: "Looking ahead" },
+} as const;
+
+export const projectsPageContent = {
+  eyebrow: { vi: "Dự án", en: "Projects" },
+  title: {
+    vi: "Từ vấn đề thực tế đến giải pháp có trách nhiệm.",
+    en: "From real-world problems to responsible solutions.",
+  },
+  description: {
+    vi: "Mỗi dự án là một hành trình quan sát, thử nghiệm, hợp tác và rút ra bài học.",
+    en: "Each project is a journey of observation, experimentation, collaboration, and learning.",
+  },
+  viewProject: { vi: "Xem dự án", en: "View project" },
+  sections: {
+    problem: { vi: "Vấn đề", en: "Problem" },
+    idea: { vi: "Ý tưởng", en: "Idea" },
+    process: { vi: "Quy trình", en: "Process" },
+    result: { vi: "Kết quả", en: "Result" },
+    lessons: { vi: "Bài học", en: "Lessons" },
+  },
+} as const;
+
+export const activitiesPageContent = {
+  eyebrow: { vi: "Hoạt động", en: "Activities" },
+  title: {
+    vi: "Những trải nghiệm nuôi dưỡng tư duy và hành động.",
+    en: "Experiences that shape thinking and action.",
+  },
+  description: {
+    vi: "Các cuộc thi, hoạt động cộng đồng và dấu mốc học thuật được sắp xếp theo từng năm.",
+    en: "Competitions, community work, and academic milestones, organized by year.",
+  },
+  comingSoon: {
+    vi: "Nội dung dòng thời gian đang được cập nhật.",
+    en: "The timeline content is being updated.",
+  },
 } as const;
 
 export function getLocalized<T>(value: Localized<T>, locale: Locale): T {

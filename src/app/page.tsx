@@ -1,5 +1,5 @@
-import Link from "next/link";
+import { redirect } from "next/navigation";
 
 export default function IndexPage() {
-  return <Link href="/vi">Mở portfolio tiếng Việt</Link>;
+  redirect("/en/home");
 }
