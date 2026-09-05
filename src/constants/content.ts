@@ -111,6 +111,39 @@ export const siteContent = {
         en: "These projects reflect two directions Phuc is pursuing: environmental action in communities and turning scientific data into accessible learning experiences.",
       },
     },
+    contactHero: {
+      contactLabel: { vi: "Kết nối", en: "Connect" },
+      profileLabel: { vi: "Hồ sơ STEM", en: "STEM profile" },
+      emailLabel: { vi: "Email", en: "Email" },
+      phoneLabel: { vi: "Điện thoại", en: "Phone" },
+      locationLabel: { vi: "Địa điểm", en: "Location" },
+      cvLabel: { vi: "Xem CV", en: "View CV" },
+      storyCta: { vi: "Khám phá hành trình", en: "Explore my story" },
+    },
+    story: {
+      eyebrow: { vi: "Hành trình", en: "My Story" },
+      title: { vi: "Từ Vật lý đến những giải pháp có ý nghĩa.", en: "From Physics to purposeful solutions." },
+      milestones: [
+        { title: { vi: "Nền tảng Vật lý", en: "Physics foundation" }, description: { vi: "Tôi là học sinh chuyên Vật lý, nuôi dưỡng cách đặt câu hỏi, quan sát và kiểm chứng bằng tư duy khoa học.", en: "As a Physics-specialized student, I am developing a scientific way to question, observe, and test ideas." } },
+        { title: { vi: "Nghiên cứu", en: "Research" }, description: { vi: "Tôi tìm hiểu các vấn đề thực tế qua nghiên cứu, dữ liệu và trải nghiệm cộng đồng.", en: "I investigate real-world problems through research, data, and community experience." } },
+        { title: { vi: "Đổi mới công nghệ", en: "Technology innovation" }, description: { vi: "Tôi kết hợp công nghệ, tư duy khoa học và thiết kế lấy con người làm trung tâm.", en: "I combine technology, scientific thinking, and human-centered design." } },
+        { title: { vi: "Trách nhiệm cộng đồng", en: "Community impact" }, description: { vi: "Tôi hướng tới các giải pháp thiết thực cho cộng đồng và phát triển bền vững dài hạn.", en: "I work toward practical solutions for communities and long-term sustainable development." } },
+      ],
+    },
+    interests: {
+      eyebrow: { vi: "Mối quan tâm", en: "STEM Interests" },
+      title: { vi: "Những năng lực tôi đang phát triển.", en: "Areas I am developing." },
+      cards: [
+        { title: { vi: "Nghiên cứu & Đổi mới", en: "Research & Innovation" }, description: { vi: "Nghiên cứu và đổi mới công nghệ, với sự quan tâm đến phát triển bền vững và tác động xã hội.", en: "Research and technological innovation, with an interest in sustainable development and social impact." } },
+        { title: { vi: "Công nghệ & Tư duy sản phẩm", en: "Technology & Product Thinking" }, description: { vi: "AI ứng dụng và thiết kế lấy con người làm trung tâm để tiếp cận vấn đề một cách thực tế.", en: "Applied AI and human-centered design for approaching problems in practical ways." } },
+        { title: { vi: "Lãnh đạo & Giao tiếp", en: "Leadership & Communication" }, description: { vi: "Quản lý dự án, phối hợp nhóm, viết và trình bày nghiên cứu khoa học.", en: "Project management, team collaboration, and scientific writing and presentation." } },
+      ],
+    },
+    valuesFuture: {
+      eyebrow: { vi: "Giá trị & Định hướng", en: "Values & Future Direction" },
+      valuesLabel: { vi: "Giá trị", en: "Values" },
+      futureLabel: { vi: "Định hướng dài hạn", en: "Long-term direction" },
+    },
   },
   about: {
     // Bản giới thiệu nháp từ CV — cần người dùng duyệt trước khi xuất bản.

@@ -9,7 +9,7 @@ type HomeProject = {
   result: Localized<string>;
 };
 
-export function HomeProjectCard({ locale, project }: { locale: Locale; project: HomeProject }) {
+export function HomeProjectCard({ locale, project, actionLabel }: { locale: Locale; project: HomeProject; actionLabel?: string }) {
   const isBloomWatch = project.slug === "bloomwatch";
 
   return (
@@ -35,6 +35,7 @@ export function HomeProjectCard({ locale, project }: { locale: Locale; project: 
             <dd className="mt-2 text-sm leading-6 text-[var(--muted)]">{project.result[locale]}</dd>
           </div>
         </dl>
+        {actionLabel ? <a href="#" className="mt-7 inline-flex rounded-full border border-[var(--border)] px-4 py-2 text-sm font-semibold transition-colors hover:border-[var(--primary)] hover:bg-[var(--surface)] hover:text-[var(--primary)]">{actionLabel}</a> : null}
       </div>
     </article>
   );

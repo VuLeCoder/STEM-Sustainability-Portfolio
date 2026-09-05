@@ -16,7 +16,7 @@ export function SiteHeader({ locale }: { locale: Locale }) {
   const localizedPath = pathname.replace(/^\/(vi|en)(?=\/|$)/, `/${otherLocale}`) || `/${otherLocale}/home`;
 
   return (
-    <header className="border-b border-[var(--border)] bg-[color:var(--background)]/90 backdrop-blur">
+    <header className="sticky top-0 z-50 border-b border-[var(--border)] bg-[color:var(--background)]/88 shadow-[0_1px_0_rgb(255_255_255_/_4%)] backdrop-blur-xl">
       <div className="mx-auto flex min-h-20 max-w-7xl items-center justify-between gap-4 px-5 sm:px-8">
         <SiteLogo locale={locale} />
         <nav className="hidden items-center gap-1 lg:flex" aria-label={siteContent.ui.menu[locale]}>
