@@ -123,6 +123,7 @@ export const siteContent = {
     story: {
       eyebrow: { vi: "Hành trình", en: "My Story" },
       title: { vi: "Từ Vật lý đến những giải pháp có ý nghĩa.", en: "From Physics to purposeful solutions." },
+      pathLabel: { vi: "Vật lý → Nghiên cứu → Công nghệ → Tác động", en: "Physics → Research → Technology → Impact" },
       milestones: [
         { title: { vi: "Nền tảng Vật lý", en: "Physics foundation" }, description: { vi: "Tôi là học sinh chuyên Vật lý, nuôi dưỡng cách đặt câu hỏi, quan sát và kiểm chứng bằng tư duy khoa học.", en: "As a Physics-specialized student, I am developing a scientific way to question, observe, and test ideas." } },
         { title: { vi: "Nghiên cứu", en: "Research" }, description: { vi: "Tôi tìm hiểu các vấn đề thực tế qua nghiên cứu, dữ liệu và trải nghiệm cộng đồng.", en: "I investigate real-world problems through research, data, and community experience." } },
@@ -148,8 +149,8 @@ export const siteContent = {
   about: {
     // Bản giới thiệu nháp từ CV — cần người dùng duyệt trước khi xuất bản.
     story: {
-      vi: "Từ nền tảng Vật lý, Phúc quan tâm đến cách nghiên cứu và công nghệ có thể giải quyết những vấn đề gần gũi với cộng đồng. Các trải nghiệm về AI, giáo dục môi trường, công nghệ hỗ trợ và nghiên cứu nội dung số đã giúp Phúc rèn luyện tư duy khoa học, làm việc nhóm và cách biến một ý tưởng thành hoạt động có định hướng rõ ràng.",
-      en: "With a foundation in Physics, Phuc is interested in how research and technology can address problems close to communities. Experiences in AI, environmental education, assistive technology, and digital-content research have helped him develop scientific thinking, teamwork, and the ability to turn an idea into purposeful action.",
+      vi: "Từ nền tảng Vật lý, tôi quan tâm đến cách nghiên cứu và công nghệ có thể giải quyết những vấn đề gần gũi với cộng đồng. Các trải nghiệm về AI, giáo dục môi trường, công nghệ hỗ trợ và nghiên cứu nội dung số giúp tôi rèn luyện tư duy khoa học, làm việc nhóm và cách biến một ý tưởng thành hoạt động có định hướng rõ ràng.",
+      en: "With a foundation in Physics, I am interested in how research and technology can address problems close to communities. Experiences in AI, environmental education, assistive technology, and digital-content research help me develop scientific thinking, teamwork, and the ability to turn an idea into purposeful action.",
     },
     academicInterests: [
       {
@@ -317,75 +318,46 @@ export const siteContent = {
     },
   ],
 
-  timeline: [
+  activities: [
     {
-      date: "2025–present",
-      title: {
-        vi: "Nhà sáng lập & Trưởng dự án — ECOMe",
-        en: "Founder & Project Chair — ECOMe",
-      },
-      description: {
-        vi: "Sáng kiến do học sinh dẫn dắt về giáo dục môi trường và hành động cộng đồng.",
-        en: "A student-led environmental education and community-action initiative.",
-      },
+      year: "2026",
+      entries: [
+        {
+          type: "research",
+          title: { vi: "Thực tập sinh nghiên cứu — Viện Công nghệ Thông tin, VAST", en: "Research Intern — Institute of Information Technology, VAST" },
+          description: { vi: "Tham gia thực tập có cấu trúc về các hệ thống AI ứng dụng.", en: "Participating in a structured internship focused on applied AI systems." },
+        },
+        {
+          type: "competition",
+          title: { vi: "Giải Vàng — World Invention Creativity Olympic", en: "Gold Award — World Invention Creativity Olympic" },
+          description: { vi: "SafeStride — dự án về nhận thức không gian và cảnh báo ưu tiên trên điện thoại cho người khiếm thị.", en: "SafeStride — a smartphone concept for spatial awareness and priority alerts for blind users." },
+        },
+        {
+          type: "competition",
+          title: { vi: "Giải Ba — Cuộc thi Ý tưởng Bảo vệ Môi trường trong lĩnh vực Giao thông", en: "Third Prize — Environmental Protection Ideas in the Transport Sector Competition" },
+          description: { vi: "ECOMeSort — ý tưởng ứng dụng AI hỗ trợ phân loại rác và kết nối hệ sinh thái tái chế.", en: "ECOMeSort — an AI-enabled concept for waste sorting and recycling-ecosystem connections." },
+        },
+      ],
     },
     {
-      date: "2025",
-      title: {
-        vi: "Tác giả và người trình bày học sinh — VNICT 2025",
-        en: "Student Author and Presenter — VNICT 2025",
-      },
-      description: {
-        vi: "Đồng tác giả và trình bày bài báo về phương pháp reversible data hiding hai ảnh được cải tiến.",
-        en: "Co-authored and presented a paper on an improved dual-image reversible data-hiding method.",
-      },
-    },
-    {
-      date: "2026",
-      title: {
-        vi: "Thực tập sinh nghiên cứu — Viện Công nghệ Thông tin, VAST",
-        en: "Research Intern — Institute of Information Technology, VAST",
-      },
-      description: {
-        vi: "Tham gia thực tập có cấu trúc về các hệ thống AI ứng dụng.",
-        en: "Participating in a structured internship focused on applied AI systems.",
-      },
-    },
-  ],
-
-  achievements: [
-    {
-      date: "2026",
-      title: {
-        vi: "Giải Vàng — World Invention Creativity Olympic",
-        en: "Gold Award — World Invention Creativity Olympic",
-      },
-      description: {
-        vi: "SafeStride — dự án về nhận thức không gian và cảnh báo ưu tiên trên điện thoại cho người khiếm thị.",
-        en: "SafeStride — a smartphone concept for spatial awareness and priority alerts for blind users.",
-      },
-    },
-    {
-      date: "2026",
-      title: {
-        vi: "Giải Ba — Cuộc thi Ý tưởng Bảo vệ Môi trường trong lĩnh vực Giao thông",
-        en: "Third Prize — Environmental Protection Ideas in the Transport Sector Competition",
-      },
-      description: {
-        vi: "ECOMeSort — ý tưởng ứng dụng AI hỗ trợ phân loại rác và kết nối hệ sinh thái tái chế.",
-        en: "ECOMeSort — an AI-enabled concept for waste sorting and recycling-ecosystem connections.",
-      },
-    },
-    {
-      date: "2025",
-      title: {
-        vi: "VNICT 2025 — Đồng tác giả và người trình bày học sinh",
-        en: "VNICT 2025 — Student Author and Presenter",
-      },
-      description: {
-        vi: "Bài báo về phương pháp reversible data hiding hai ảnh được cải tiến cho xác thực nội dung số.",
-        en: "A paper on an improved dual-image reversible data-hiding method for digital-content authentication.",
-      },
+      year: "2025",
+      entries: [
+        {
+          type: "community",
+          title: { vi: "Nhà sáng lập & Trưởng dự án — ECOMe", en: "Founder & Project Chair — ECOMe" },
+          description: { vi: "Sáng kiến do học sinh dẫn dắt về giáo dục môi trường và hành động cộng đồng.", en: "A student-led environmental education and community-action initiative." },
+        },
+        {
+          type: "research",
+          title: { vi: "Tác giả và người trình bày học sinh — VNICT 2025", en: "Student Author and Presenter — VNICT 2025" },
+          description: { vi: "Đồng tác giả và trình bày bài báo về phương pháp reversible data hiding hai ảnh được cải tiến.", en: "Co-authored and presented a paper on an improved dual-image reversible data-hiding method." },
+        },
+        {
+          type: "competition",
+          title: { vi: "BloomWatch — NASA International Space Apps Challenge 2025", en: "BloomWatch — 2025 NASA International Space Apps Challenge" },
+          description: { vi: "Giải Nhất, Arts & Technology Award và Global Nominee.", en: "First Prize, Arts & Technology Award, and Global Nominee." },
+        },
+      ],
     },
   ],
 } as const;
@@ -436,9 +408,10 @@ export const activitiesPageContent = {
     vi: "Các cuộc thi, hoạt động cộng đồng và dấu mốc học thuật được sắp xếp theo từng năm.",
     en: "Competitions, community work, and academic milestones, organized by year.",
   },
-  comingSoon: {
-    vi: "Nội dung dòng thời gian đang được cập nhật.",
-    en: "The timeline content is being updated.",
+  types: {
+    research: { vi: "Nghiên cứu", en: "Research" },
+    competition: { vi: "Cuộc thi & giải thưởng", en: "Competition & award" },
+    community: { vi: "Cộng đồng", en: "Community" },
   },
 } as const;
 

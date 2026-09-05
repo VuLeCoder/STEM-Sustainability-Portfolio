@@ -18,7 +18,7 @@ export function AboutSection({ locale: selectedLocale }: { locale: Locale }) {
               <p className="font-mono text-xs font-semibold tracking-[0.14em] text-[var(--primary)] uppercase">{home.story.eyebrow[selectedLocale]}</p>
               <p className="mt-5 leading-8 text-[var(--muted)]">{about.story[selectedLocale]}</p>
               <div className="mt-8 h-px w-full bg-[var(--border)]" />
-              <p className="mt-5 font-mono text-xs font-semibold tracking-[0.13em] text-[var(--accent)] uppercase">Physics → Research → Technology → Impact</p>
+              <p className="mt-5 font-mono text-xs font-semibold tracking-[0.13em] text-[var(--accent)] uppercase">{home.story.pathLabel[selectedLocale]}</p>
             </div>
             <ol className="grid gap-3 sm:grid-cols-2">
               {home.story.milestones.map((milestone, index) => (
