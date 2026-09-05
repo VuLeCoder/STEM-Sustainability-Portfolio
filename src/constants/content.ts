@@ -244,6 +244,7 @@ export const siteContent = {
         vi: "CV ghi nhận các chiến dịch nâng cao nhận thức đã tiếp cận khoảng 1.800 người.",
         en: "The CV records awareness campaigns that reached approximately 1,800 people.",
       },
+      link: "#",
       coverImage: "/images/placeholders/ecome-cover.svg",
       details: {
         objective: {
@@ -291,6 +292,7 @@ export const siteContent = {
         vi: "Giải Nhất, Arts & Technology Award và Global Nominee tại NASA International Space Apps Challenge 2025.",
         en: "First Prize, Arts & Technology Award, and Global Nominee at the 2025 NASA International Space Apps Challenge.",
       },
+      link: "#",
       coverImage: "/images/placeholders/bloomwatch-cover.svg",
       details: {
         objective: {

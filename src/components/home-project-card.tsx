@@ -7,6 +7,7 @@ type HomeProject = {
   summary: Localized<string>;
   role: Localized<string>;
   result: Localized<string>;
+  link: string;
 };
 
 export function HomeProjectCard({ locale, project, actionLabel }: { locale: Locale; project: HomeProject; actionLabel?: string }) {
@@ -35,7 +36,7 @@ export function HomeProjectCard({ locale, project, actionLabel }: { locale: Loca
             <dd className="mt-2 text-sm leading-6 text-[var(--muted)]">{project.result[locale]}</dd>
           </div>
         </dl>
-        {actionLabel ? <a href="#" className="mt-7 inline-flex rounded-full border border-[var(--border)] px-4 py-2 text-sm font-semibold transition-colors hover:border-[var(--primary)] hover:bg-[var(--surface)] hover:text-[var(--primary)]">{actionLabel}</a> : null}
+        {actionLabel ? <a href={project.link} className="mt-7 inline-flex rounded-full border border-[var(--border)] px-4 py-2 text-sm font-semibold transition-colors hover:border-[var(--primary)] hover:bg-[var(--surface)] hover:text-[var(--primary)]">{actionLabel}</a> : null}
       </div>
     </article>
   );
