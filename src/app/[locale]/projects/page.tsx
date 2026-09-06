@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import { notFound } from "next/navigation";
 import {
   locales,
@@ -33,89 +34,54 @@ export default async function ProjectsPage({
         aria-label={projectsPageContent.eyebrow[selectedLocale]}
       >
         {siteContent.projects.map((project, index) => {
-          const externalLink = project.externalLinks[0];
-          const hasExternalLink = Boolean(externalLink);
+          const projectHref = `/${selectedLocale}/projects/${project.slug}`;
+          const projectNumber = String(index + 1).padStart(2, "0");
 
           return (
             <article className="project-showcase" key={project.slug}>
-              <div className="project-showcase-visual">
+              <Link
+                className="project-showcase-visual"
+                href={projectHref}
+                aria-label={`${projectsPageContent.viewProject[selectedLocale]}: ${project.title}`}
+              >
                 <Image
                   src={project.coverImage}
-                  alt={`${project.title} — ${project.category[selectedLocale]}`}
+                  alt=""
                   fill
-                  sizes="(min-width: 768px) 55vw, 100vw"
+                  sizes="(min-width: 768px) 50vw, 100vw"
                 />
-                <span aria-hidden="true">
-                  {String(index + 1).padStart(2, "0")}
-                </span>
-                {hasExternalLink ? (
-                  <a
-                    className="project-showcase-visual-link"
-                    href={externalLink.href}
-                    target="_blank"
-                    rel="noreferrer"
-                    aria-label={`${projectsPageContent.externalLinkLabel[selectedLocale]}: ${project.title}`}
-                  />
-                ) : null}
-              </div>
+                <span aria-hidden="true">{projectNumber}</span>
+              </Link>
 
               <div className="project-showcase-copy">
-                <div className="project-showcase-kicker">
-                  <span>
-                    {projectsPageContent.indexLabel[selectedLocale]} /{" "}
-                    {String(index + 1).padStart(2, "0")}
-                  </span>
+                <p className="project-showcase-kicker">
+                  <span>{projectNumber}</span>
+                  <span aria-hidden="true">/</span>
                   <span>{project.category[selectedLocale]}</span>
-                </div>
+                </p>
+
                 <h2>
-                  {hasExternalLink ? (
-                    <a href={externalLink.href} target="_blank" rel="noreferrer">
-                      {project.title}
-                    </a>
-                  ) : (
-                    project.title
-                  )}
+                  <Link href={projectHref}>{project.title}</Link>
                 </h2>
+
                 <p className="project-showcase-summary">
                   {project.summary[selectedLocale]}
                 </p>
 
-                <dl className="project-showcase-details">
-                  {project.problem ? (
-                    <div>
-                      <dt>
-                        {projectsPageContent.sections.problem[selectedLocale]}
-                      </dt>
-                      <dd>{project.problem[selectedLocale]}</dd>
-                    </div>
-                  ) : null}
-                  <div>
-                    <dt>{projectsPageContent.roleLabel[selectedLocale]}</dt>
-                    <dd>{project.role[selectedLocale]}</dd>
-                  </div>
-                  <div>
-                    <dt>{projectsPageContent.fieldsLabel[selectedLocale]}</dt>
-                    <dd className="project-fields">
-                      {project.fields[selectedLocale].join(" · ")}
-                    </dd>
-                  </div>
-                  <div className="project-result">
-                    <dt>{projectsPageContent.resultLabel[selectedLocale]}</dt>
-                    <dd>{project.result[selectedLocale]}</dd>
-                  </div>
-                </dl>
+                <p className="project-showcase-fields">
+                  {project.fields[selectedLocale].join(" · ")}
+                </p>
 
-                {hasExternalLink ? (
-                  <a
-                    className="project-external-link"
-                    href={externalLink.href}
-                    target="_blank"
-                    rel="noreferrer"
-                  >
-                    {projectsPageContent.externalLinkLabel[selectedLocale]}{" "}
-                    <span aria-hidden="true">↗</span>
-                  </a>
+                {project.achievementShort ? (
+                  <p className="project-showcase-achievement">
+                    {project.achievementShort[selectedLocale]}
+                  </p>
                 ) : null}
+
+                <Link className="project-showcase-cta" href={projectHref}>
+                  <span>{projectsPageContent.viewProject[selectedLocale]}</span>
+                  <span aria-hidden="true">→</span>
+                </Link>
               </div>
             </article>
           );
