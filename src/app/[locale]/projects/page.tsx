@@ -33,7 +33,8 @@ export default async function ProjectsPage({
         aria-label={projectsPageContent.eyebrow[selectedLocale]}
       >
         {siteContent.projects.map((project, index) => {
-          const hasExternalLink = Boolean(project.link);
+          const externalLink = project.externalLinks[0];
+          const hasExternalLink = Boolean(externalLink);
 
           return (
             <article className="project-showcase" key={project.slug}>
@@ -50,7 +51,7 @@ export default async function ProjectsPage({
                 {hasExternalLink ? (
                   <a
                     className="project-showcase-visual-link"
-                    href={project.link}
+                    href={externalLink.href}
                     target="_blank"
                     rel="noreferrer"
                     aria-label={`${projectsPageContent.externalLinkLabel[selectedLocale]}: ${project.title}`}
@@ -68,7 +69,7 @@ export default async function ProjectsPage({
                 </div>
                 <h2>
                   {hasExternalLink ? (
-                    <a href={project.link} target="_blank" rel="noreferrer">
+                    <a href={externalLink.href} target="_blank" rel="noreferrer">
                       {project.title}
                     </a>
                   ) : (
@@ -80,12 +81,14 @@ export default async function ProjectsPage({
                 </p>
 
                 <dl className="project-showcase-details">
-                  <div>
-                    <dt>
-                      {projectsPageContent.sections.problem[selectedLocale]}
-                    </dt>
-                    <dd>{project.problem[selectedLocale]}</dd>
-                  </div>
+                  {project.problem ? (
+                    <div>
+                      <dt>
+                        {projectsPageContent.sections.problem[selectedLocale]}
+                      </dt>
+                      <dd>{project.problem[selectedLocale]}</dd>
+                    </div>
+                  ) : null}
                   <div>
                     <dt>{projectsPageContent.roleLabel[selectedLocale]}</dt>
                     <dd>{project.role[selectedLocale]}</dd>
@@ -93,7 +96,7 @@ export default async function ProjectsPage({
                   <div>
                     <dt>{projectsPageContent.fieldsLabel[selectedLocale]}</dt>
                     <dd className="project-fields">
-                      {project.fields.join(" · ")}
+                      {project.fields[selectedLocale].join(" · ")}
                     </dd>
                   </div>
                   <div className="project-result">
@@ -105,7 +108,7 @@ export default async function ProjectsPage({
                 {hasExternalLink ? (
                   <a
                     className="project-external-link"
-                    href={project.link}
+                    href={externalLink.href}
                     target="_blank"
                     rel="noreferrer"
                   >

@@ -9,6 +9,35 @@ export type Locale = (typeof locales)[number];
 
 export type Localized<T> = Record<Locale, T>;
 
+export type ProjectExternalLink = {
+  label: Localized<string>;
+  href: string;
+};
+
+export type ProjectDetails = Partial<
+  Record<
+    "objective" | "solution" | "process" | "evidence" | "lessons" | "futureWork",
+    Localized<string>
+  >
+>;
+
+export type Project = {
+  slug: string;
+  featured: boolean;
+  title: string;
+  year?: string;
+  category: Localized<string>;
+  summary: Localized<string>;
+  problem?: Localized<string>;
+  role: Localized<string>;
+  fields: Localized<readonly string[]>;
+  result: Localized<string>;
+  achievementShort?: Localized<string>;
+  externalLinks: readonly ProjectExternalLink[];
+  coverImage: string;
+  details?: ProjectDetails;
+};
+
 export const siteContent = {
   profile: {
     name: "Nguyen Cao Xuan Phuc",
@@ -295,6 +324,7 @@ export const siteContent = {
       slug: "safestride",
       featured: false,
       title: "SafeStride",
+      year: "2026",
       category: {
         vi: "Công nghệ hỗ trợ & AI",
         en: "Assistive technology & AI",
@@ -311,16 +341,19 @@ export const siteContent = {
         vi: "Thành viên phát triển dự án",
         en: "Project development team member",
       },
-      fields: [
-        "Assistive technology",
-        "Spatial awareness",
-        "Human-centered design",
-      ],
+      fields: {
+        vi: ["Công nghệ hỗ trợ", "Nhận biết không gian", "Thiết kế lấy con người làm trung tâm"],
+        en: ["Assistive technology", "Spatial awareness", "Human-centered design"],
+      },
       result: {
         vi: "Giải Vàng tại World Invention Creativity Olympic (WICO) 2026 ở Seoul, Hàn Quốc.",
         en: "Gold Award at the 2026 World Invention Creativity Olympic (WICO) in Seoul, Korea.",
       },
-      link: "",
+      achievementShort: {
+        vi: "WICO 2026 · Giải Vàng",
+        en: "WICO 2026 · Gold Award",
+      },
+      externalLinks: [],
       coverImage: "/images/placeholders/safestride-cover.svg",
     },
     {
@@ -332,53 +365,35 @@ export const siteContent = {
         vi: "Sáng kiến do học sinh dẫn dắt về giáo dục môi trường và hành động cộng đồng.",
         en: "A student-led initiative for environmental education and community action.",
       },
-      problem: {
-        vi: "[Vấn đề cụ thể sẽ cập nhật]",
-        en: "[Specific problem to be updated]",
-      },
       role: {
         vi: "Nhà sáng lập & Trưởng dự án",
         en: "Founder & Project Chair",
       },
-      fields: [
-        "Environmental education",
-        "Community action",
-        "Project management",
-      ],
+      fields: {
+        vi: ["Giáo dục môi trường", "Hành động cộng đồng", "Quản lý dự án"],
+        en: ["Environmental education", "Community action", "Project management"],
+      },
       result: {
         vi: "CV ghi nhận các chiến dịch nâng cao nhận thức đã tiếp cận khoảng 1.800 người.",
         en: "The CV records awareness campaigns that reached approximately 1,800 people.",
       },
-      link: "https://www.facebook.com/61582875703926/posts/122134261443095856/",
-      coverImage: "/images/placeholders/ecome-cover.svg",
-      details: {
-        objective: {
-          vi: "[Mục tiêu sẽ cập nhật]",
-          en: "[Objective to be updated]",
-        },
-        solution: {
-          vi: "[Giải pháp sẽ cập nhật]",
-          en: "[Solution to be updated]",
-        },
-        process: {
-          vi: "[Quy trình sẽ cập nhật]",
-          en: "[Process to be updated]",
-        },
-        evidence: {
-          vi: "[Link/bằng chứng sẽ cập nhật]",
-          en: "[Links/evidence to be updated]",
-        },
-        lessons: { vi: "[Bài học sẽ cập nhật]", en: "[Lessons to be updated]" },
-        futureWork: {
-          vi: "[Cải tiến tiếp theo sẽ cập nhật]",
-          en: "[Future improvements to be updated]",
-        },
+      achievementShort: {
+        vi: "Khoảng 1.800 người được tiếp cận",
+        en: "Approximately 1,800 people reached",
       },
+      externalLinks: [
+        {
+          label: { vi: "Bài viết dự án", en: "Project post" },
+          href: "https://www.facebook.com/61582875703926/posts/122134261443095856/",
+        },
+      ],
+      coverImage: "/images/placeholders/ecome-cover.svg",
     },
     {
       slug: "ecomesort",
       featured: false,
       title: "ECOMeSort",
+      year: "2026",
       category: { vi: "AI & môi trường", en: "AI & environment" },
       summary: {
         vi: "Ứng dụng di động tích hợp AI, hướng dẫn phân loại rác và kết nối người dùng trong hệ sinh thái tái chế.",
@@ -389,18 +404,26 @@ export const siteContent = {
         en: "Waste sorting and participation in the recycling ecosystem remain difficult to access in everyday life.",
       },
       role: { vi: "Thành viên Team ECOMeSort", en: "Team ECOMeSort member" },
-      fields: ["Applied AI", "Waste sorting", "Green community"],
+      fields: {
+        vi: ["AI ứng dụng", "Phân loại rác", "Cộng đồng xanh"],
+        en: ["Applied AI", "Waste sorting", "Green community"],
+      },
       result: {
         vi: "Giải Ba cuộc thi Ý tưởng bảo vệ môi trường trong ngành Giao thông vận tải năm 2026; tham gia AI for Good Vietnam 2026.",
         en: "Third Prize in the 2026 Environmental Protection Ideas in the Transport Sector Competition; participant in AI for Good Vietnam 2026.",
       },
-      link: "",
+      achievementShort: {
+        vi: "Giải Ba · 2026",
+        en: "Third Prize · 2026",
+      },
+      externalLinks: [],
       coverImage: "/images/placeholders/ecomesort-cover.svg",
     },
     {
       slug: "bloomwatch",
       featured: true,
       title: "BloomWatch",
+      year: "2025",
       category: {
         vi: "Dữ liệu Trái Đất & giáo dục",
         en: "Earth data & education",
@@ -409,46 +432,27 @@ export const siteContent = {
         vi: "Nền tảng học tập biến dữ liệu vệ tinh NASA về hiện tượng ra hoa toàn cầu thành trải nghiệm đa phương tiện dễ tiếp cận.",
         en: "An educational platform that turns NASA satellite data on global flowering phenomena into an accessible multimedia experience.",
       },
-      problem: {
-        vi: "[Vấn đề cụ thể sẽ cập nhật]",
-        en: "[Specific problem to be updated]",
-      },
       role: { vi: "Thành viên nhóm", en: "Team member" },
-      fields: ["Earth observation", "Data storytelling", "Product development"],
+      fields: {
+        vi: ["Quan sát Trái Đất", "Kể chuyện bằng dữ liệu", "Phát triển sản phẩm"],
+        en: ["Earth observation", "Data storytelling", "Product development"],
+      },
       result: {
         vi: "Giải Nhất, Arts & Technology Award và Global Nominee tại NASA International Space Apps Challenge 2025.",
         en: "First Prize, Arts & Technology Award, and Global Nominee at the 2025 NASA International Space Apps Challenge.",
       },
-      link: "",
-      coverImage: "/images/placeholders/bloomwatch-cover.svg",
-      details: {
-        objective: {
-          vi: "[Mục tiêu sẽ cập nhật]",
-          en: "[Objective to be updated]",
-        },
-        solution: {
-          vi: "[Giải pháp sẽ cập nhật]",
-          en: "[Solution to be updated]",
-        },
-        process: {
-          vi: "[Quy trình sẽ cập nhật]",
-          en: "[Process to be updated]",
-        },
-        evidence: {
-          vi: "[Link/bằng chứng sẽ cập nhật]",
-          en: "[Links/evidence to be updated]",
-        },
-        lessons: { vi: "[Bài học sẽ cập nhật]", en: "[Lessons to be updated]" },
-        futureWork: {
-          vi: "[Cải tiến tiếp theo sẽ cập nhật]",
-          en: "[Future improvements to be updated]",
-        },
+      achievementShort: {
+        vi: "NASA Space Apps 2025 · Global Nominee",
+        en: "NASA Space Apps 2025 · Global Nominee",
       },
+      externalLinks: [],
+      coverImage: "/images/placeholders/bloomwatch-cover.svg",
     },
     {
       slug: "dual-image-reversible-data-hiding",
       featured: false,
       title: "Dual-image Reversible Data Hiding",
+      year: "2025",
       category: {
         vi: "Nghiên cứu bảo mật nội dung số",
         en: "Digital-content security research",
@@ -465,19 +469,22 @@ export const siteContent = {
         vi: "Đồng tác giả & người trình bày",
         en: "Student co-author & presenter",
       },
-      fields: [
-        "Reversible data hiding",
-        "Digital authentication",
-        "Scientific writing",
-      ],
+      fields: {
+        vi: ["Giấu tin thuận nghịch", "Xác thực số", "Viết khoa học"],
+        en: ["Reversible data hiding", "Digital authentication", "Scientific writing"],
+      },
       result: {
         vi: "Bài báo được đồng tác giả và trình bày tại VNICT 2025 — Hội nghị Quốc gia lần thứ 28 về các vấn đề chọn lọc của Công nghệ thông tin và Truyền thông.",
         en: "Co-authored and presented at VNICT 2025, the 28th National Conference on Selected Issues in Information and Communication Technology.",
       },
-      link: "",
+      achievementShort: {
+        vi: "VNICT 2025 · Đồng tác giả & trình bày",
+        en: "VNICT 2025 · Co-author & presenter",
+      },
+      externalLinks: [],
       coverImage: "/images/placeholders/data-hiding-cover.svg",
     },
-  ],
+  ] satisfies readonly Project[],
 
   activities: [
     {

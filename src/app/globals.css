@@ -407,7 +407,7 @@ a {
   }
 }
 
-/* Projects editorial showcase */
+/* Projects editorial cards */
 .projects-page {
   overflow: hidden;
 }
@@ -440,19 +440,31 @@ a {
   line-height: 1.7;
 }
 .projects-showcases {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(1.25rem, 2.5vw, 2rem);
+  padding-top: clamp(2.5rem, 5vw, 5rem);
   padding-bottom: clamp(5rem, 10vw, 10rem);
 }
 .project-showcase {
-  display: grid;
-  gap: 2.5rem;
-  padding-block: clamp(4rem, 9vw, 9rem);
-  border-bottom: 1px solid var(--border);
+  display: flex;
+  min-width: 0;
+  overflow: hidden;
+  flex-direction: column;
+  border: 1px solid var(--border);
+  background: var(--surface-raised);
+  box-shadow: 0 14px 40px rgb(20 60 63 / 7%);
+  transition:
+    border-color 180ms ease,
+    box-shadow 180ms ease,
+    transform 180ms ease;
 }
 .project-showcase-visual {
   position: relative;
-  aspect-ratio: 4/3;
+  aspect-ratio: 16/10;
   overflow: hidden;
   background: var(--surface);
+  border-bottom: 1px solid var(--border);
 }
 .project-showcase-visual img {
   object-fit: cover;
@@ -475,14 +487,18 @@ a {
   place-items: center;
   width: 3rem;
   height: 3rem;
-  background: var(--background);
+  z-index: 2;
+  background: var(--surface-raised);
   font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
   font-size: 0.72rem;
   font-weight: 700;
   letter-spacing: 0.08em;
 }
 .project-showcase-copy {
-  align-self: center;
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  padding: clamp(1.5rem, 3vw, 2.25rem);
 }
 .project-showcase-kicker {
   display: flex;
@@ -502,10 +518,10 @@ a {
 .project-showcase-copy h2 {
   margin-top: 1.5rem;
   font-family: Georgia, "Times New Roman", serif;
-  font-size: clamp(3.5rem, 7vw, 7rem);
+  font-size: clamp(2.5rem, 4vw, 4.25rem);
   font-weight: 400;
   letter-spacing: -0.055em;
-  line-height: 0.9;
+  line-height: 0.95;
 }
 .project-showcase-summary {
   margin-top: 1.75rem;
@@ -518,9 +534,7 @@ a {
   border-top: 1px solid var(--foreground);
 }
 .project-showcase-details > div {
-  display: grid;
-  grid-template-columns: minmax(7rem, 0.35fr) 1fr;
-  gap: 1rem;
+  display: block;
   padding-block: 1.1rem;
   border-bottom: 1px solid var(--border);
 }
@@ -534,6 +548,7 @@ a {
   color: var(--primary);
 }
 .project-showcase-details dd {
+  margin-top: 0.45rem;
   color: var(--muted);
   line-height: 1.65;
 }
@@ -550,7 +565,9 @@ a {
 .project-external-link {
   display: inline-flex;
   gap: 0.6rem;
-  margin-top: 2rem;
+  align-self: flex-start;
+  margin-top: auto;
+  padding-top: 2rem;
   padding-bottom: 0.3rem;
   border-bottom: 1px solid currentColor;
   color: var(--primary);
@@ -567,12 +584,10 @@ a {
   .projects-intro-grid {
     grid-template-columns: minmax(0, 1.3fr) minmax(18rem, 0.7fr);
   }
-  .project-showcase {
-    grid-template-columns: minmax(0, 1.08fr) minmax(20rem, 0.92fr);
-    gap: clamp(3rem, 7vw, 7rem);
-  }
-  .project-showcase:nth-child(even) .project-showcase-visual {
-    order: 2;
+  .project-showcase:hover {
+    border-color: var(--primary);
+    box-shadow: 0 22px 55px rgb(20 60 63 / 13%);
+    transform: translateY(-0.3rem);
   }
   .project-showcase:hover .project-showcase-visual img {
     transform: scale(1.02);
@@ -582,17 +597,16 @@ a {
   }
 }
 @media (max-width: 767px) {
-  .project-showcase-details > div {
+  .projects-showcases {
     grid-template-columns: 1fr;
-    gap: 0.45rem;
   }
   .project-showcase-visual {
-    aspect-ratio: 4/3;
+    aspect-ratio: 16/10;
   }
   .project-showcase-kicker {
     display: grid;
   }
   .project-showcase-copy h2 {
-    font-size: clamp(3.3rem, 18vw, 5rem);
+    font-size: clamp(2.65rem, 13vw, 4.25rem);
   }
 }
