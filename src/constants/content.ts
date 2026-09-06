@@ -607,6 +607,19 @@ export const projectsPageContent = {
   },
 } as const;
 
+
+
+export const projectDetailContent = {
+  backToProjects: { vi: "Tất cả dự án", en: "All projects" },
+  projectLabel: { vi: "Dự án", en: "Project" },
+  roleLabel: { vi: "Vai trò", en: "Role" },
+  yearLabel: { vi: "Năm", en: "Year" },
+  fieldsLabel: { vi: "Lĩnh vực", en: "Fields" },
+  problemLabel: { vi: "Vấn đề", en: "The problem" },
+  resultLabel: { vi: "Kết quả & tác động", en: "Result & impact" },
+  externalLinksLabel: { vi: "Liên kết dự án", en: "Project links" },
+  nextProjectLabel: { vi: "Dự án tiếp theo", en: "Next project" },
+} as const;
 export const activitiesPageContent = {
   eyebrow: { vi: "Hoạt động", en: "Activities" },
   title: {
