@@ -89,6 +89,16 @@ export const siteContent = {
       vi: "Cách Phúc tiếp cận vấn đề",
       en: "How Phuc approaches problems",
     },
+    allProjectsCta: { vi: "Xem tất cả dự án", en: "View all projects" },
+    evidence: {
+      eyebrow: { vi: "Tác động & bằng chứng", en: "Impact & evidence" },
+      title: { vi: "Những dấu mốc được ghi nhận.", en: "Milestones on record." },
+    },
+    activities: {
+      eyebrow: { vi: "Hoạt động chọn lọc", en: "Selected activities" },
+      title: { vi: "Nghiên cứu, thử nghiệm và hành động.", en: "Research, experimentation, and action." },
+      cta: { vi: "Xem hành trình", en: "View the journey" },
+    },
     approach: {
       eyebrow: { vi: "Cách tiếp cận", en: "Approach" },
       title: {

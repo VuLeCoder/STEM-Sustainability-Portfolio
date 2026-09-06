@@ -1,73 +1,27 @@
+import Image from "next/image";
 import { notFound } from "next/navigation";
 import { ButtonLink } from "@/components/button-link";
-import { AboutSection } from "@/components/about-section";
+import { SectionHeading } from "@/components/section-heading";
 import { locales, siteContent, type Locale } from "@/constants/content";
-
-const contactIcons = ["@", "◌", "⌖"] as const;
 
 export default async function HomePage({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
   if (!locales.includes(locale as Locale)) notFound();
-  const selectedLocale = locale as Locale;
-  const { profile, contact, home } = siteContent;
+  const lang = locale as Locale;
+  const { profile, contact, home, about, projects, activities } = siteContent;
+  const featured = projects.filter((project) => project.featured).slice(0, 2);
+  const activityPreview = activities.flatMap((group) => group.entries.map((entry) => ({ ...entry, year: group.year }))).slice(0, 3);
   const phoneNumber = contact.phone.replace(/[^+\d]/g, "");
-  const heroContact = [
-    { label: home.contactHero.emailLabel[selectedLocale], value: contact.email, href: "mailto:" + contact.email },
-    { label: home.contactHero.phoneLabel[selectedLocale], value: contact.phone, href: phoneNumber ? "tel:" + phoneNumber : undefined },
-    { label: home.contactHero.locationLabel[selectedLocale], value: contact.location[selectedLocale] },
-  ];
 
-  return (
-    <>
-      <section className="relative isolate overflow-hidden border-b border-[var(--border)]">
-        <div aria-hidden="true" className="pointer-events-none absolute inset-0 -z-10 opacity-70 [background-image:linear-gradient(var(--border)_1px,transparent_1px),linear-gradient(90deg,var(--border)_1px,transparent_1px)] [background-size:42px_42px] [mask-image:linear-gradient(to_bottom,black,transparent_85%)]" />
-        <div aria-hidden="true" className="pointer-events-none absolute -right-32 top-8 -z-10 size-[28rem] rounded-full bg-[var(--primary)]/15 blur-3xl" />
-        <div aria-hidden="true" className="pointer-events-none absolute -left-24 bottom-0 -z-10 size-80 rounded-full bg-[var(--accent)]/10 blur-3xl" />
-        <div className="mx-auto grid max-w-7xl gap-12 px-5 py-16 sm:px-8 sm:py-24 lg:grid-cols-[1.08fr_0.92fr] lg:items-center lg:gap-16 lg:py-28">
-          <div>
-            <p className="font-mono text-xs font-semibold tracking-[0.18em] text-[var(--primary)] uppercase">{home.eyebrow[selectedLocale]}</p>
-            <h1 className="mt-5 max-w-4xl text-4xl font-semibold tracking-[-0.045em] text-balance sm:text-6xl lg:text-7xl">{profile.name}</h1>
-            <p className="mt-6 max-w-2xl text-xl font-medium leading-8 tracking-tight sm:text-2xl">{profile.positioning[selectedLocale]}</p>
-            <p className="mt-5 max-w-2xl leading-7 text-[var(--muted)]">{profile.introduction[selectedLocale]}</p>
-            <div className="mt-8 flex flex-wrap gap-3">
-              <ButtonLink href={"/" + selectedLocale + "/projects"}>{home.primaryCta[selectedLocale]}</ButtonLink>
-              <ButtonLink href="#my-story" variant="secondary">{home.contactHero.storyCta[selectedLocale]}</ButtonLink>
-            </div>
-          </div>
-
-          <aside className="relative overflow-hidden rounded-[1.75rem] border border-[var(--border)] bg-[var(--surface-raised)] p-6 shadow-[var(--shadow)] sm:p-8">
-            <div aria-hidden="true" className="absolute right-0 top-0 size-36 translate-x-8 -translate-y-8 rounded-full border-[20px] border-[var(--primary)]/20" />
-            <div className="relative">
-              <div className="flex items-start justify-between gap-4 border-b border-[var(--border)] pb-6">
-                <div className="flex items-center gap-4">
-                  <span className="grid size-14 place-items-center rounded-2xl bg-[var(--primary)] text-lg font-bold text-[#06221d] shadow-lg">{profile.initials}</span>
-                  <div>
-                    <p className="font-mono text-[0.68rem] font-semibold tracking-[0.15em] text-[var(--primary)] uppercase">{home.contactHero.profileLabel[selectedLocale]}</p>
-                    <p className="mt-1 text-sm font-medium text-[var(--muted)]">{profile.location[selectedLocale]}</p>
-                  </div>
-                </div>
-                <span className="rounded-full border border-[var(--border)] bg-[var(--surface)] px-3 py-1 font-mono text-[0.65rem] font-semibold tracking-[0.12em] text-[var(--muted)] uppercase">{home.contactHero.contactLabel[selectedLocale]}</span>
-              </div>
-              <dl className="mt-5 space-y-1">
-                {heroContact.map((item, index) => (
-                  <div key={item.label} className="grid grid-cols-[2rem_minmax(0,1fr)] items-start gap-3 rounded-xl px-2 py-3 transition-colors hover:bg-[var(--surface)]">
-                    <span aria-hidden="true" className="grid size-8 place-items-center rounded-lg bg-[var(--surface)] font-mono text-sm text-[var(--primary)]">{contactIcons[index]}</span>
-                    <div className="min-w-0">
-                      <dt className="font-mono text-[0.65rem] font-semibold tracking-[0.13em] text-[var(--muted)] uppercase">{item.label}</dt>
-                      {item.href ? <dd className="mt-0.5 truncate text-sm font-medium text-[var(--foreground)]"><a href={item.href} className="hover:text-[var(--primary)] hover:underline">{item.value}</a></dd> : <dd className="mt-0.5 text-sm font-medium text-[var(--foreground)]">{item.value}</dd>}
-                    </div>
-                  </div>
-                ))}
-              </dl>
-              <div className="mt-5 flex flex-wrap gap-2 border-t border-[var(--border)] pt-5">
-                <a href={contact.cvFile} className="inline-flex items-center rounded-full bg-[var(--primary)] px-4 py-2 text-sm font-semibold text-[#06221d] transition hover:brightness-110">{home.contactHero.cvLabel[selectedLocale]} <span aria-hidden="true" className="ml-2">↗</span></a>
-                {contact.socialLinks.map((link) => <a key={link.label} href={link.href} className="inline-flex items-center rounded-full border border-[var(--border)] px-4 py-2 text-sm font-semibold transition hover:border-[var(--primary)] hover:text-[var(--primary)]">{link.label} <span aria-hidden="true" className="ml-2">↗</span></a>)}
-              </div>
-            </div>
-          </aside>
-        </div>
-      </section>
-      <AboutSection locale={selectedLocale} />
-    </>
-  );
+  return <main>
+    <section className="home-hero"><div className="home-shell home-hero-grid">
+      <div className="home-hero-copy"><p className="editorial-label">{home.eyebrow[lang]}</p><h1>{profile.name}</h1><p className="home-positioning">{profile.positioning[lang]}</p><p className="home-intro">{profile.introduction[lang]}</p><div className="home-actions"><ButtonLink href={`/${lang}/projects`}>{home.primaryCta[lang]} <span aria-hidden="true">↗</span></ButtonLink><ButtonLink href="#story" variant="text">{home.secondaryCta[lang]} <span aria-hidden="true">↓</span></ButtonLink></div></div>
+      <div className="home-portrait-wrap"><div className="home-portrait-index" aria-hidden="true">01 — 06</div><div className="home-portrait-frame"><Image src={profile.portrait} alt={profile.name} fill priority sizes="(max-width: 768px) 100vw, 42vw" /></div><div className="home-portrait-caption"><span>{home.visualLabel}</span><span>{profile.location[lang]}</span></div></div>
+    </div></section>
+    <section className="home-section"><div className="home-shell"><SectionHeading eyebrow={home.featuredProjects.eyebrow[lang]} title={home.featuredProjects.title[lang]} description={home.featuredProjects.description[lang]} action={<ButtonLink href={`/${lang}/projects`} variant="text">{home.allProjectsCta[lang]} <span aria-hidden="true">↗</span></ButtonLink>} /><div className="home-project-list">{featured.map((project, index) => <article className="home-project" key={project.slug}><div className="home-project-visual"><Image src={project.coverImage} alt={`${project.title} — ${project.category[lang]}`} fill sizes="(max-width: 768px) 100vw, 58vw" /><span>{String(index + 1).padStart(2, "0")}</span></div><div className="home-project-copy"><p className="editorial-label">{project.category[lang]}</p><h3>{project.title}</h3><p>{project.summary[lang]}</p><dl><div><dt>{home.projectRoleLabel[lang]}</dt><dd>{project.role[lang]}</dd></div><div><dt>{home.projectHighlightLabel[lang]}</dt><dd>{project.result[lang]}</dd></div></dl></div></article>)}</div></div></section>
+    <section className="home-evidence" aria-labelledby="evidence-title"><div className="home-shell"><p className="editorial-label">{home.evidence.eyebrow[lang]}</p><div className="home-evidence-grid"><h2 id="evidence-title">{home.evidence.title[lang]}</h2><div className="home-evidence-item"><strong>≈1,800</strong><p>{projects[0].result[lang]}</p></div><div className="home-evidence-item"><strong>2025</strong><p>{projects[1].result[lang]}</p></div></div></div></section>
+    <section id="story" className="home-section home-story" aria-labelledby="story-title"><div className="home-shell home-story-grid"><div><p className="editorial-label">{home.story.eyebrow[lang]}</p><h2 id="story-title">{home.story.title[lang]}</h2><p className="home-story-lead">{about.story[lang]}</p><p className="home-path">{home.story.pathLabel[lang]}</p></div><ol className="home-milestones">{home.story.milestones.map((milestone, index) => <li key={milestone.title.en}><span>{String(index + 1).padStart(2, "0")}</span><div><h3>{milestone.title[lang]}</h3><p>{milestone.description[lang]}</p></div></li>)}</ol></div></section>
+    <section className="home-section home-activities"><div className="home-shell"><SectionHeading eyebrow={home.activities.eyebrow[lang]} title={home.activities.title[lang]} action={<ButtonLink href={`/${lang}/activities`} variant="text">{home.activities.cta[lang]} <span aria-hidden="true">↗</span></ButtonLink>} /><div className="home-activity-list">{activityPreview.map((activity) => <article key={activity.title.en}><time>{activity.year}</time><div><h3>{activity.title[lang]}</h3><p>{activity.description[lang]}</p></div><span aria-hidden="true">↗</span></article>)}</div></div></section>
+    <section className="home-contact" aria-labelledby="contact-title"><div className="home-shell home-contact-grid"><div><p className="editorial-label">{home.valuesFuture.eyebrow[lang]}</p><h2 id="contact-title">{about.values[lang]}</h2></div><div className="home-contact-copy"><p className="editorial-label">{home.valuesFuture.futureLabel[lang]}</p><p>{about.futureGoal[lang]}</p><div className="home-contact-links"><a href={`mailto:${contact.email}`}>{contact.email} <span aria-hidden="true">↗</span></a>{phoneNumber ? <a href={`tel:${phoneNumber}`}>{contact.phone}</a> : <span>{contact.phone}</span>}<span>{contact.location[lang]}</span></div><div className="home-social-links"><a href={contact.cvFile}>{home.contactHero.cvLabel[lang]} <span aria-hidden="true">↗</span></a>{contact.socialLinks.filter((link) => link.href !== "#").map((link) => <a key={link.label} href={link.href}>{link.label} <span aria-hidden="true">↗</span></a>)}</div></div></div></section>
+  </main>;
 }
