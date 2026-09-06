@@ -48,7 +48,7 @@ export default async function ProjectsPage({
                   src={project.coverImage}
                   alt=""
                   fill
-                  sizes="(min-width: 768px) 50vw, 100vw"
+                  sizes="(min-width: 960px) 50vw, 100vw"
                 />
                 <span aria-hidden="true">{projectNumber}</span>
               </Link>
