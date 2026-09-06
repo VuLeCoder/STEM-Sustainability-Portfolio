@@ -7,7 +7,9 @@ import {
   projectDetailContent,
   siteContent,
   type Locale,
+  type Project,
 } from "@/constants/content";
+import { ProjectCaseStudySection } from "@/components/project-case-study-section";
 
 type ProjectDetailPageProps = {
   params: Promise<{ locale: string; slug: string }>;
@@ -47,15 +49,72 @@ export default async function ProjectDetailPage({
   );
   if (projectIndex === -1) notFound();
 
-  const project = siteContent.projects[projectIndex];
+  const project: Project = siteContent.projects[projectIndex];
+  const previousProject =
+    siteContent.projects[
+      (projectIndex - 1 + siteContent.projects.length) %
+        siteContent.projects.length
+    ];
   const nextProject =
     siteContent.projects[(projectIndex + 1) % siteContent.projects.length];
   const index = String(projectIndex + 1).padStart(2, "0");
+  const sectionCandidates: Array<{ title: string; content: string } | null> = [
+    project.problem
+      ? {
+          title: projectDetailContent.problemLabel[selectedLocale],
+          content: project.problem[selectedLocale],
+        }
+      : null,
+    project.details?.objective
+      ? {
+          title: projectDetailContent.objectiveLabel[selectedLocale],
+          content: project.details.objective[selectedLocale],
+        }
+      : null,
+    project.details?.evidence
+      ? {
+          title: projectDetailContent.evidenceLabel[selectedLocale],
+          content: project.details.evidence[selectedLocale],
+        }
+      : null,
+    project.details?.solution
+      ? {
+          title: projectDetailContent.solutionLabel[selectedLocale],
+          content: project.details.solution[selectedLocale],
+        }
+      : null,
+    project.details?.process
+      ? {
+          title: projectDetailContent.processLabel[selectedLocale],
+          content: project.details.process[selectedLocale],
+        }
+      : null,
+    {
+      title: projectDetailContent.resultLabel[selectedLocale],
+      content: project.result[selectedLocale],
+    },
+    project.details?.lessons
+      ? {
+          title: projectDetailContent.lessonsLabel[selectedLocale],
+          content: project.details.lessons[selectedLocale],
+        }
+      : null,
+    project.details?.futureWork
+      ? {
+          title: projectDetailContent.futureWorkLabel[selectedLocale],
+          content: project.details.futureWork[selectedLocale],
+        }
+      : null,
+  ];
+  const sections = sectionCandidates.filter((section) => section !== null);
 
   return (
     <main className="project-detail-page">
       <header className="project-detail-hero project-detail-shell">
-        <Link className="project-detail-back" href={`/${selectedLocale}/projects`}>
+        <Link
+          className="project-detail-back"
+          href={`/${selectedLocale}/projects`}
+        >
           <span aria-hidden="true">←</span>{" "}
           {projectDetailContent.backToProjects[selectedLocale]}
         </Link>
@@ -97,26 +156,14 @@ export default async function ProjectDetailPage({
       </div>
 
       <div className="project-detail-body project-detail-shell">
-        {project.problem ? (
-          <section className="project-detail-section">
-            <p className="project-detail-section-index">01</p>
-            <div>
-              <h2>{projectDetailContent.problemLabel[selectedLocale]}</h2>
-              <p>{project.problem[selectedLocale]}</p>
-            </div>
-          </section>
-        ) : null}
-
-        <section className="project-detail-section">
-          <p className="project-detail-section-index">
-            {project.problem ? "02" : "01"}
-          </p>
-          <div>
-            <h2>{projectDetailContent.resultLabel[selectedLocale]}</h2>
-            <p>{project.result[selectedLocale]}</p>
-          </div>
-        </section>
-
+        {sections.map((section, sectionIndex) => (
+          <ProjectCaseStudySection
+            content={section.content}
+            index={sectionIndex + 1}
+            key={section.title}
+            title={section.title}
+          />
+        ))}
         {project.externalLinks.length > 0 ? (
           <section className="project-detail-links">
             <h2>{projectDetailContent.externalLinksLabel[selectedLocale]}</h2>
@@ -137,13 +184,32 @@ export default async function ProjectDetailPage({
       </div>
 
       <nav
-        aria-label={projectDetailContent.nextProjectLabel[selectedLocale]}
-        className="project-detail-next project-detail-shell"
+        aria-label={projectDetailContent.projectNavigationLabel[selectedLocale]}
+        className="project-detail-navigation project-detail-shell"
       >
-        <p>{projectDetailContent.nextProjectLabel[selectedLocale]}</p>
-        <Link href={`/${selectedLocale}/projects/${nextProject.slug}`}>
-          <span>{nextProject.title}</span>
-          <span aria-hidden="true">→</span>
+        <Link
+          className="project-detail-navigation-link project-detail-navigation-link--previous"
+          href={`/${selectedLocale}/projects/${previousProject.slug}`}
+        >
+          <span className="project-detail-navigation-label">
+            <span aria-hidden="true">←</span>{" "}
+            {projectDetailContent.previousProjectLabel[selectedLocale]}
+          </span>
+          <span className="project-detail-navigation-title">
+            {previousProject.title}
+          </span>
+        </Link>
+        <Link
+          className="project-detail-navigation-link project-detail-navigation-link--next"
+          href={`/${selectedLocale}/projects/${nextProject.slug}`}
+        >
+          <span className="project-detail-navigation-label">
+            {projectDetailContent.nextProjectLabel[selectedLocale]}{" "}
+            <span aria-hidden="true">→</span>
+          </span>
+          <span className="project-detail-navigation-title">
+            {nextProject.title}
+          </span>
         </Link>
       </nav>
     </main>

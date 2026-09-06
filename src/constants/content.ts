@@ -616,8 +616,16 @@ export const projectDetailContent = {
   yearLabel: { vi: "Năm", en: "Year" },
   fieldsLabel: { vi: "Lĩnh vực", en: "Fields" },
   problemLabel: { vi: "Vấn đề", en: "The problem" },
+  objectiveLabel: { vi: "Mục tiêu", en: "Objective" },
+  solutionLabel: { vi: "Giải pháp", en: "Solution" },
+  processLabel: { vi: "Quy trình", en: "Process" },
+  evidenceLabel: { vi: "Nghiên cứu & bằng chứng", en: "Research & evidence" },
   resultLabel: { vi: "Kết quả & tác động", en: "Result & impact" },
+  lessonsLabel: { vi: "Bài học", en: "Reflection" },
+  futureWorkLabel: { vi: "Hướng phát triển", en: "Future work" },
   externalLinksLabel: { vi: "Liên kết dự án", en: "Project links" },
+  projectNavigationLabel: { vi: "Điều hướng dự án", en: "Project navigation" },
+  previousProjectLabel: { vi: "Dự án trước", en: "Previous project" },
   nextProjectLabel: { vi: "Dự án tiếp theo", en: "Next project" },
 } as const;
 export const activitiesPageContent = {
