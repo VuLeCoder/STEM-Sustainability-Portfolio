@@ -92,11 +92,17 @@ export const siteContent = {
     allProjectsCta: { vi: "Xem tất cả dự án", en: "View all projects" },
     evidence: {
       eyebrow: { vi: "Tác động & bằng chứng", en: "Impact & evidence" },
-      title: { vi: "Những dấu mốc được ghi nhận.", en: "Milestones on record." },
+      title: {
+        vi: "Những dấu mốc được ghi nhận.",
+        en: "Milestones on record.",
+      },
     },
     activities: {
       eyebrow: { vi: "Hoạt động chọn lọc", en: "Selected activities" },
-      title: { vi: "Nghiên cứu, thử nghiệm và hành động.", en: "Research, experimentation, and action." },
+      title: {
+        vi: "Nghiên cứu, thử nghiệm và hành động.",
+        en: "Research, experimentation, and action.",
+      },
       cta: { vi: "Xem hành trình", en: "View the journey" },
     },
     approach: {
@@ -132,22 +138,79 @@ export const siteContent = {
     },
     story: {
       eyebrow: { vi: "Hành trình", en: "My Story" },
-      title: { vi: "Từ Vật lý đến những giải pháp có ý nghĩa.", en: "From Physics to purposeful solutions." },
-      pathLabel: { vi: "Vật lý → Nghiên cứu → Công nghệ → Tác động", en: "Physics → Research → Technology → Impact" },
+      title: {
+        vi: "Từ Vật lý đến những giải pháp có ý nghĩa.",
+        en: "From Physics to purposeful solutions.",
+      },
+      pathLabel: {
+        vi: "Vật lý → Nghiên cứu → Công nghệ → Tác động",
+        en: "Physics → Research → Technology → Impact",
+      },
       milestones: [
-        { title: { vi: "Nền tảng Vật lý", en: "Physics foundation" }, description: { vi: "Tôi là học sinh chuyên Vật lý, nuôi dưỡng cách đặt câu hỏi, quan sát và kiểm chứng bằng tư duy khoa học.", en: "As a Physics-specialized student, I am developing a scientific way to question, observe, and test ideas." } },
-        { title: { vi: "Nghiên cứu", en: "Research" }, description: { vi: "Tôi tìm hiểu các vấn đề thực tế qua nghiên cứu, dữ liệu và trải nghiệm cộng đồng.", en: "I investigate real-world problems through research, data, and community experience." } },
-        { title: { vi: "Đổi mới công nghệ", en: "Technology innovation" }, description: { vi: "Tôi kết hợp công nghệ, tư duy khoa học và thiết kế lấy con người làm trung tâm.", en: "I combine technology, scientific thinking, and human-centered design." } },
-        { title: { vi: "Trách nhiệm cộng đồng", en: "Community impact" }, description: { vi: "Tôi hướng tới các giải pháp thiết thực cho cộng đồng và phát triển bền vững dài hạn.", en: "I work toward practical solutions for communities and long-term sustainable development." } },
+        {
+          title: { vi: "Nền tảng Vật lý", en: "Physics foundation" },
+          description: {
+            vi: "Tôi là học sinh chuyên Vật lý, nuôi dưỡng cách đặt câu hỏi, quan sát và kiểm chứng bằng tư duy khoa học.",
+            en: "As a Physics-specialized student, I am developing a scientific way to question, observe, and test ideas.",
+          },
+        },
+        {
+          title: { vi: "Nghiên cứu", en: "Research" },
+          description: {
+            vi: "Tôi tìm hiểu các vấn đề thực tế qua nghiên cứu, dữ liệu và trải nghiệm cộng đồng.",
+            en: "I investigate real-world problems through research, data, and community experience.",
+          },
+        },
+        {
+          title: { vi: "Đổi mới công nghệ", en: "Technology innovation" },
+          description: {
+            vi: "Tôi kết hợp công nghệ, tư duy khoa học và thiết kế lấy con người làm trung tâm.",
+            en: "I combine technology, scientific thinking, and human-centered design.",
+          },
+        },
+        {
+          title: { vi: "Trách nhiệm cộng đồng", en: "Community impact" },
+          description: {
+            vi: "Tôi hướng tới các giải pháp thiết thực cho cộng đồng và phát triển bền vững dài hạn.",
+            en: "I work toward practical solutions for communities and long-term sustainable development.",
+          },
+        },
       ],
     },
     interests: {
       eyebrow: { vi: "Mối quan tâm", en: "STEM Interests" },
-      title: { vi: "Những năng lực tôi đang phát triển.", en: "Areas I am developing." },
+      title: {
+        vi: "Những năng lực tôi đang phát triển.",
+        en: "Areas I am developing.",
+      },
       cards: [
-        { title: { vi: "Nghiên cứu & Đổi mới", en: "Research & Innovation" }, description: { vi: "Nghiên cứu và đổi mới công nghệ, với sự quan tâm đến phát triển bền vững và tác động xã hội.", en: "Research and technological innovation, with an interest in sustainable development and social impact." } },
-        { title: { vi: "Công nghệ & Tư duy sản phẩm", en: "Technology & Product Thinking" }, description: { vi: "AI ứng dụng và thiết kế lấy con người làm trung tâm để tiếp cận vấn đề một cách thực tế.", en: "Applied AI and human-centered design for approaching problems in practical ways." } },
-        { title: { vi: "Lãnh đạo & Giao tiếp", en: "Leadership & Communication" }, description: { vi: "Quản lý dự án, phối hợp nhóm, viết và trình bày nghiên cứu khoa học.", en: "Project management, team collaboration, and scientific writing and presentation." } },
+        {
+          title: { vi: "Nghiên cứu & Đổi mới", en: "Research & Innovation" },
+          description: {
+            vi: "Nghiên cứu và đổi mới công nghệ, với sự quan tâm đến phát triển bền vững và tác động xã hội.",
+            en: "Research and technological innovation, with an interest in sustainable development and social impact.",
+          },
+        },
+        {
+          title: {
+            vi: "Công nghệ & Tư duy sản phẩm",
+            en: "Technology & Product Thinking",
+          },
+          description: {
+            vi: "AI ứng dụng và thiết kế lấy con người làm trung tâm để tiếp cận vấn đề một cách thực tế.",
+            en: "Applied AI and human-centered design for approaching problems in practical ways.",
+          },
+        },
+        {
+          title: {
+            vi: "Lãnh đạo & Giao tiếp",
+            en: "Leadership & Communication",
+          },
+          description: {
+            vi: "Quản lý dự án, phối hợp nhóm, viết và trình bày nghiên cứu khoa học.",
+            en: "Project management, team collaboration, and scientific writing and presentation.",
+          },
+        },
       ],
     },
     valuesFuture: {
@@ -229,6 +292,38 @@ export const siteContent = {
 
   projects: [
     {
+      slug: "safestride",
+      featured: false,
+      title: "SafeStride",
+      category: {
+        vi: "Công nghệ hỗ trợ & AI",
+        en: "Assistive technology & AI",
+      },
+      summary: {
+        vi: "Khái niệm ứng dụng điện thoại hỗ trợ người khiếm thị nhận biết không gian với độ chính xác cao và nhận cảnh báo ưu tiên.",
+        en: "A smartphone concept that helps blind users improve spatial awareness and receive priority alerts with high precision.",
+      },
+      problem: {
+        vi: "Người khiếm thị cần nhận biết chướng ngại và các tình huống ưu tiên xung quanh một cách kịp thời khi di chuyển.",
+        en: "Blind users need timely awareness of nearby obstacles and priority situations while navigating.",
+      },
+      role: {
+        vi: "Thành viên phát triển dự án",
+        en: "Project development team member",
+      },
+      fields: [
+        "Assistive technology",
+        "Spatial awareness",
+        "Human-centered design",
+      ],
+      result: {
+        vi: "Giải Vàng tại World Invention Creativity Olympic (WICO) 2026 ở Seoul, Hàn Quốc.",
+        en: "Gold Award at the 2026 World Invention Creativity Olympic (WICO) in Seoul, Korea.",
+      },
+      link: "",
+      coverImage: "/images/placeholders/safestride-cover.svg",
+    },
+    {
       slug: "ecome",
       featured: true,
       title: "ECOMe",
@@ -254,7 +349,7 @@ export const siteContent = {
         vi: "CV ghi nhận các chiến dịch nâng cao nhận thức đã tiếp cận khoảng 1.800 người.",
         en: "The CV records awareness campaigns that reached approximately 1,800 people.",
       },
-      link: "#",
+      link: "https://www.facebook.com/61582875703926/posts/122134261443095856/",
       coverImage: "/images/placeholders/ecome-cover.svg",
       details: {
         objective: {
@@ -281,6 +376,28 @@ export const siteContent = {
       },
     },
     {
+      slug: "ecomesort",
+      featured: false,
+      title: "ECOMeSort",
+      category: { vi: "AI & môi trường", en: "AI & environment" },
+      summary: {
+        vi: "Ứng dụng di động tích hợp AI, hướng dẫn phân loại rác và kết nối người dùng trong hệ sinh thái tái chế.",
+        en: "An AI-enabled mobile application that guides waste sorting and connects users within the recycling ecosystem.",
+      },
+      problem: {
+        vi: "Việc phân loại rác và tham gia hệ sinh thái tái chế còn khó tiếp cận trong đời sống hằng ngày.",
+        en: "Waste sorting and participation in the recycling ecosystem remain difficult to access in everyday life.",
+      },
+      role: { vi: "Thành viên Team ECOMeSort", en: "Team ECOMeSort member" },
+      fields: ["Applied AI", "Waste sorting", "Green community"],
+      result: {
+        vi: "Giải Ba cuộc thi Ý tưởng bảo vệ môi trường trong ngành Giao thông vận tải năm 2026; tham gia AI for Good Vietnam 2026.",
+        en: "Third Prize in the 2026 Environmental Protection Ideas in the Transport Sector Competition; participant in AI for Good Vietnam 2026.",
+      },
+      link: "",
+      coverImage: "/images/placeholders/ecomesort-cover.svg",
+    },
+    {
       slug: "bloomwatch",
       featured: true,
       title: "BloomWatch",
@@ -302,7 +419,7 @@ export const siteContent = {
         vi: "Giải Nhất, Arts & Technology Award và Global Nominee tại NASA International Space Apps Challenge 2025.",
         en: "First Prize, Arts & Technology Award, and Global Nominee at the 2025 NASA International Space Apps Challenge.",
       },
-      link: "#",
+      link: "",
       coverImage: "/images/placeholders/bloomwatch-cover.svg",
       details: {
         objective: {
@@ -328,6 +445,38 @@ export const siteContent = {
         },
       },
     },
+    {
+      slug: "dual-image-reversible-data-hiding",
+      featured: false,
+      title: "Dual-image Reversible Data Hiding",
+      category: {
+        vi: "Nghiên cứu bảo mật nội dung số",
+        en: "Digital-content security research",
+      },
+      summary: {
+        vi: "Nghiên cứu phương pháp giấu tin thuận nghịch hai ảnh cải tiến nhằm tăng dung lượng nhúng cho xác thực nội dung số.",
+        en: "Research on an improved dual-image reversible data-hiding method designed to increase embedding capacity for digital-content authentication.",
+      },
+      problem: {
+        vi: "Xác thực nội dung số cần cân bằng khả năng nhúng dữ liệu với việc khôi phục chính xác ảnh gốc.",
+        en: "Digital-content authentication must balance data embedding capacity with exact recovery of the original images.",
+      },
+      role: {
+        vi: "Đồng tác giả & người trình bày",
+        en: "Student co-author & presenter",
+      },
+      fields: [
+        "Reversible data hiding",
+        "Digital authentication",
+        "Scientific writing",
+      ],
+      result: {
+        vi: "Bài báo được đồng tác giả và trình bày tại VNICT 2025 — Hội nghị Quốc gia lần thứ 28 về các vấn đề chọn lọc của Công nghệ thông tin và Truyền thông.",
+        en: "Co-authored and presented at VNICT 2025, the 28th National Conference on Selected Issues in Information and Communication Technology.",
+      },
+      link: "",
+      coverImage: "/images/placeholders/data-hiding-cover.svg",
+    },
   ],
 
   activities: [
@@ -336,18 +485,36 @@ export const siteContent = {
       entries: [
         {
           type: "research",
-          title: { vi: "Thực tập sinh nghiên cứu — Viện Công nghệ Thông tin, VAST", en: "Research Intern — Institute of Information Technology, VAST" },
-          description: { vi: "Tham gia thực tập có cấu trúc về các hệ thống AI ứng dụng.", en: "Participating in a structured internship focused on applied AI systems." },
+          title: {
+            vi: "Thực tập sinh nghiên cứu — Viện Công nghệ Thông tin, VAST",
+            en: "Research Intern — Institute of Information Technology, VAST",
+          },
+          description: {
+            vi: "Tham gia thực tập có cấu trúc về các hệ thống AI ứng dụng.",
+            en: "Participating in a structured internship focused on applied AI systems.",
+          },
         },
         {
           type: "competition",
-          title: { vi: "Giải Vàng — World Invention Creativity Olympic", en: "Gold Award — World Invention Creativity Olympic" },
-          description: { vi: "SafeStride — dự án về nhận thức không gian và cảnh báo ưu tiên trên điện thoại cho người khiếm thị.", en: "SafeStride — a smartphone concept for spatial awareness and priority alerts for blind users." },
+          title: {
+            vi: "Giải Vàng — World Invention Creativity Olympic",
+            en: "Gold Award — World Invention Creativity Olympic",
+          },
+          description: {
+            vi: "SafeStride — dự án về nhận thức không gian và cảnh báo ưu tiên trên điện thoại cho người khiếm thị.",
+            en: "SafeStride — a smartphone concept for spatial awareness and priority alerts for blind users.",
+          },
         },
         {
           type: "competition",
-          title: { vi: "Giải Ba — Cuộc thi Ý tưởng Bảo vệ Môi trường trong lĩnh vực Giao thông", en: "Third Prize — Environmental Protection Ideas in the Transport Sector Competition" },
-          description: { vi: "ECOMeSort — ý tưởng ứng dụng AI hỗ trợ phân loại rác và kết nối hệ sinh thái tái chế.", en: "ECOMeSort — an AI-enabled concept for waste sorting and recycling-ecosystem connections." },
+          title: {
+            vi: "Giải Ba — Cuộc thi Ý tưởng Bảo vệ Môi trường trong lĩnh vực Giao thông",
+            en: "Third Prize — Environmental Protection Ideas in the Transport Sector Competition",
+          },
+          description: {
+            vi: "ECOMeSort — ý tưởng ứng dụng AI hỗ trợ phân loại rác và kết nối hệ sinh thái tái chế.",
+            en: "ECOMeSort — an AI-enabled concept for waste sorting and recycling-ecosystem connections.",
+          },
         },
       ],
     },
@@ -356,18 +523,36 @@ export const siteContent = {
       entries: [
         {
           type: "community",
-          title: { vi: "Nhà sáng lập & Trưởng dự án — ECOMe", en: "Founder & Project Chair — ECOMe" },
-          description: { vi: "Sáng kiến do học sinh dẫn dắt về giáo dục môi trường và hành động cộng đồng.", en: "A student-led environmental education and community-action initiative." },
+          title: {
+            vi: "Nhà sáng lập & Trưởng dự án — ECOMe",
+            en: "Founder & Project Chair — ECOMe",
+          },
+          description: {
+            vi: "Sáng kiến do học sinh dẫn dắt về giáo dục môi trường và hành động cộng đồng.",
+            en: "A student-led environmental education and community-action initiative.",
+          },
         },
         {
           type: "research",
-          title: { vi: "Tác giả và người trình bày học sinh — VNICT 2025", en: "Student Author and Presenter — VNICT 2025" },
-          description: { vi: "Đồng tác giả và trình bày bài báo về phương pháp reversible data hiding hai ảnh được cải tiến.", en: "Co-authored and presented a paper on an improved dual-image reversible data-hiding method." },
+          title: {
+            vi: "Tác giả và người trình bày học sinh — VNICT 2025",
+            en: "Student Author and Presenter — VNICT 2025",
+          },
+          description: {
+            vi: "Đồng tác giả và trình bày bài báo về phương pháp reversible data hiding hai ảnh được cải tiến.",
+            en: "Co-authored and presented a paper on an improved dual-image reversible data-hiding method.",
+          },
         },
         {
           type: "competition",
-          title: { vi: "BloomWatch — NASA International Space Apps Challenge 2025", en: "BloomWatch — 2025 NASA International Space Apps Challenge" },
-          description: { vi: "Giải Nhất, Arts & Technology Award và Global Nominee.", en: "First Prize, Arts & Technology Award, and Global Nominee." },
+          title: {
+            vi: "BloomWatch — NASA International Space Apps Challenge 2025",
+            en: "BloomWatch — 2025 NASA International Space Apps Challenge",
+          },
+          description: {
+            vi: "Giải Nhất, Arts & Technology Award và Global Nominee.",
+            en: "First Prize, Arts & Technology Award, and Global Nominee.",
+          },
         },
       ],
     },
@@ -401,6 +586,11 @@ export const projectsPageContent = {
     en: "Each project is a journey of observation, experimentation, collaboration, and learning.",
   },
   viewProject: { vi: "Xem dự án", en: "View project" },
+  indexLabel: { vi: "Hồ sơ dự án", en: "Project dossier" },
+  roleLabel: { vi: "Vai trò", en: "Role" },
+  fieldsLabel: { vi: "Lĩnh vực", en: "Fields" },
+  resultLabel: { vi: "Kết quả & tác động", en: "Result & impact" },
+  externalLinkLabel: { vi: "Mở nguồn ngoài", en: "Open external source" },
   sections: {
     problem: { vi: "Vấn đề", en: "Problem" },
     idea: { vi: "Ý tưởng", en: "Idea" },
