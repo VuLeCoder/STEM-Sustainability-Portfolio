@@ -8,7 +8,7 @@ import { siteContent, type Locale } from "@/constants/content";
 import { getLocalizedPath } from "@/lib/i18n";
 
 const navigationItems = [
-  { key: "about", path: "/home#story" },
+  { key: "about", path: "/about" },
   { key: "journey", path: "/activities" },
   { key: "projects", path: "/projects" },
   { key: "contact", path: "/home#contact" },

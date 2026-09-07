@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { ActivityTimeline } from "@/components/activity-timeline";
-import { SectionHeading } from "@/components/section-heading";
 import { createLocalizedMetadata } from "@/lib/site-metadata";
 import { activitiesPageContent, siteContent } from "@/constants/content";
 import { isLocale } from "@/lib/i18n";
@@ -35,16 +34,28 @@ export default async function ActivitiesPage({
   const selectedLocale = locale;
 
   return (
-    <section className="mx-auto max-w-7xl px-5 py-16 sm:px-8 sm:py-24">
-      <SectionHeading
-        eyebrow={activitiesPageContent.eyebrow[selectedLocale]}
-        title={activitiesPageContent.title[selectedLocale]}
-        description={activitiesPageContent.description[selectedLocale]}
-      />
-      <ActivityTimeline
-        locale={selectedLocale}
-        activities={siteContent.activities}
-      />
-    </section>
+    <main className="journey-page">
+      <header className="journey-hero journey-shell">
+        <div className="journey-hero-meta">
+          <p className="editorial-label">
+            {activitiesPageContent.eyebrow[selectedLocale]}
+          </p>
+          <span aria-hidden="true">03</span>
+        </div>
+        <div className="journey-hero-grid">
+          <h1>{activitiesPageContent.title[selectedLocale]}</h1>
+          <p>{activitiesPageContent.description[selectedLocale]}</p>
+        </div>
+      </header>
+      <section
+        className="journey-content journey-shell"
+        aria-label={activitiesPageContent.eyebrow[selectedLocale]}
+      >
+        <ActivityTimeline
+          locale={selectedLocale}
+          activities={siteContent.activities}
+        />
+      </section>
+    </main>
   );
 }
