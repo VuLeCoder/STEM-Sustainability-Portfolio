@@ -157,6 +157,27 @@ export const siteContent = {
       },
       cta: { vi: "Xem hành trình", en: "View the journey" },
     },
+    selectedAwards: {
+      eyebrow: { vi: "Thành tích chọn lọc", en: "Selected awards" },
+      title: {
+        vi: "Những dấu mốc ghi nhận quá trình học hỏi và thử nghiệm.",
+        en: "Milestones recognizing a process of learning and experimentation.",
+      },
+      cta: { vi: "Xem trong hành trình", en: "Explore the journey" },
+    },
+    contactCta: {
+      eyebrow: { vi: "Kết nối", en: "Let's connect" },
+      title: {
+        vi: "Cùng trao đổi về STEM, công nghệ và phát triển bền vững.",
+        en: "Let’s talk about STEM, technology, and sustainability.",
+      },
+      description: {
+        vi: "Khám phá thêm hành trình, các dự án và cách tôi đang biến sự tò mò khoa học thành những thử nghiệm thực tế.",
+        en: "Explore my journey, projects, and how I am turning scientific curiosity into practical experiments.",
+      },
+      projectsCta: { vi: "Khám phá dự án", en: "Explore projects" },
+      aboutCta: { vi: "Tìm hiểu về tôi", en: "More about me" },
+    },
     approach: {
       eyebrow: { vi: "Cách tiếp cận", en: "Approach" },
       title: {

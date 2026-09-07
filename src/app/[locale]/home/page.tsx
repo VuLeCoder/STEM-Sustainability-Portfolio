@@ -6,6 +6,7 @@ import { createLocalizedMetadata } from "@/lib/site-metadata";
 import { SectionHeading } from "@/components/section-heading";
 import { SelectedProjects } from "@/components/selected-projects";
 import {
+  activitiesPageContent,
   projectsPageContent,
   siteContent,
   type Locale,
@@ -40,21 +41,24 @@ export default async function HomePage({
   const { locale } = await params;
   if (!isLocale(locale)) notFound();
   const lang = locale;
-  const { profile, contact, home, about, projects, activities } = siteContent;
+  const { profile, home, about, projects, activities } = siteContent;
   const selectedProjects = [
     ...projects.filter((project) => project.featured),
     ...projects.filter((project) => !project.featured),
   ].slice(0, 5);
-  const evidenceItems = home.evidence.items.map((item) => ({
-    ...item,
-    project: projects.find((project) => project.slug === item.projectSlug),
-  }));
   const activityPreview = activities
+    .flatMap((group) =>
+      group.entries
+        .slice(0, 2)
+        .map((entry) => ({ ...entry, year: group.year })),
+    )
+    .slice(0, 4);
+  const selectedAwards = activities
     .flatMap((group) =>
       group.entries.map((entry) => ({ ...entry, year: group.year })),
     )
+    .filter((entry) => entry.type === "competition")
     .slice(0, 3);
-  const phoneNumber = contact.phone.replace(/[^+\d]/g, "");
 
   return (
     <main>
@@ -144,22 +148,6 @@ export default async function HomePage({
           />
         </div>
       </section>
-      <section className="home-evidence" aria-labelledby="evidence-title">
-        <div className="home-shell">
-          <p className="editorial-label">{home.evidence.eyebrow[lang]}</p>
-          <div className="home-evidence-grid">
-            <h2 id="evidence-title">{home.evidence.title[lang]}</h2>
-            {evidenceItems.map(({ value, project }) =>
-              project ? (
-                <div className="home-evidence-item" key={project.slug}>
-                  <strong>{value}</strong>
-                  <p>{project.result[lang]}</p>
-                </div>
-              ) : null,
-            )}
-          </div>
-        </div>
-      </section>
       <section className="home-section home-activities">
         <div className="home-shell">
           <SectionHeading
@@ -171,18 +159,51 @@ export default async function HomePage({
               </ButtonLink>
             }
           />
-          <div className="home-activity-list">
-            {activityPreview.map((activity) => (
-              <article key={activity.title.en}>
+          <ol className="home-activity-list">
+            {activityPreview.map((activity, index) => (
+              <li key={activity.title.en}>
                 <time>{activity.year}</time>
                 <div>
+                  <span className="home-activity-type">
+                    {activitiesPageContent.types[activity.type][lang]}
+                  </span>
                   <h3>{activity.title[lang]}</h3>
                   <p>{activity.description[lang]}</p>
                 </div>
-                <span aria-hidden="true">↗</span>
-              </article>
+                <span aria-hidden="true">
+                  {String(index + 1).padStart(2, "0")}
+                </span>
+              </li>
             ))}
+          </ol>
+        </div>
+      </section>
+      <section
+        className="home-section home-awards"
+        aria-labelledby="selected-awards-title"
+      >
+        <div className="home-shell">
+          <div className="home-awards-heading">
+            <p className="editorial-label">{home.selectedAwards.eyebrow[lang]}</p>
+            <h2 id="selected-awards-title">
+              {home.selectedAwards.title[lang]}
+            </h2>
           </div>
+          <ol className="home-awards-list">
+            {selectedAwards.map((award, index) => (
+              <li key={award.title.en}>
+                <span>{String(index + 1).padStart(2, "0")}</span>
+                <time>{award.year}</time>
+                <div>
+                  <h3>{award.title[lang]}</h3>
+                  <p>{award.description[lang]}</p>
+                </div>
+              </li>
+            ))}
+          </ol>
+          <ButtonLink href={`/${lang}/activities`} variant="text">
+            {home.selectedAwards.cta[lang]} <span aria-hidden="true">↗</span>
+          </ButtonLink>
         </div>
       </section>
       <section
@@ -191,38 +212,22 @@ export default async function HomePage({
         aria-labelledby="contact-title"
       >
         <div className="home-shell home-contact-grid">
-          <div>
-            <p className="editorial-label">{home.valuesFuture.eyebrow[lang]}</p>
-            <h2 id="contact-title">{about.values[lang]}</h2>
+          <div className="home-contact-index" aria-hidden="true">
+            06
           </div>
           <div className="home-contact-copy">
-            <p className="editorial-label">
-              {home.valuesFuture.futureLabel[lang]}
-            </p>
-            <p>{about.futureGoal[lang]}</p>
-            <div className="home-contact-links">
-              <a href={`mailto:${contact.email}`}>
-                {contact.email} <span aria-hidden="true">↗</span>
-              </a>
-              {phoneNumber ? (
-                <a href={`tel:${phoneNumber}`}>{contact.phone}</a>
-              ) : (
-                <span>{contact.phone}</span>
-              )}
-              <span>{contact.location[lang]}</span>
-            </div>
-            <div className="home-social-links">
-              <a href={contact.cvFile}>
-                {home.contactHero.cvLabel[lang]}{" "}
+            <p className="editorial-label">{home.contactCta.eyebrow[lang]}</p>
+            <h2 id="contact-title">{home.contactCta.title[lang]}</h2>
+            <p>{home.contactCta.description[lang]}</p>
+            <div className="home-contact-actions">
+              <ButtonLink href={`/${lang}/projects`}>
+                {home.contactCta.projectsCta[lang]}{" "}
                 <span aria-hidden="true">↗</span>
-              </a>
-              {contact.socialLinks
-                .filter((link) => link.href !== "#")
-                .map((link) => (
-                  <a key={link.label} href={link.href}>
-                    {link.label} <span aria-hidden="true">↗</span>
-                  </a>
-                ))}
+              </ButtonLink>
+              <ButtonLink href={`/${lang}/about`} variant="text">
+                {home.contactCta.aboutCta[lang]}{" "}
+                <span aria-hidden="true">→</span>
+              </ButtonLink>
             </div>
           </div>
         </div>
