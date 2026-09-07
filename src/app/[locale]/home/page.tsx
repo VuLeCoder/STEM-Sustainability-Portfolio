@@ -4,6 +4,7 @@ import { notFound } from "next/navigation";
 import { ButtonLink } from "@/components/button-link";
 import { createLocalizedMetadata } from "@/lib/site-metadata";
 import { SectionHeading } from "@/components/section-heading";
+import { SelectedProjects } from "@/components/selected-projects";
 import {
   projectsPageContent,
   siteContent,
@@ -40,7 +41,10 @@ export default async function HomePage({
   if (!isLocale(locale)) notFound();
   const lang = locale;
   const { profile, contact, home, about, projects, activities } = siteContent;
-  const featured = projects.filter((project) => project.featured).slice(0, 2);
+  const selectedProjects = [
+    ...projects.filter((project) => project.featured),
+    ...projects.filter((project) => !project.featured),
+  ].slice(0, 5);
   const evidenceItems = home.evidence.items.map((item) => ({
     ...item,
     project: projects.find((project) => project.slug === item.projectSlug),
@@ -56,21 +60,21 @@ export default async function HomePage({
     <main>
       <section className="home-hero">
         <div className="home-shell home-hero-grid">
-          <div className="home-hero-copy">
-            <p className="editorial-label">{home.eyebrow[lang]}</p>
-            <h1>{profile.name}</h1>
-            <p className="home-positioning">{profile.positioning[lang]}</p>
-            <p className="home-intro">{profile.introduction[lang]}</p>
-            <div className="home-actions">
+          <div className="home-hero-copy motion-stagger">
+            <p className="editorial-label motion-fade-up">
+              {home.eyebrow[lang]}
+            </p>
+            <h1 className="motion-fade-up">{profile.name}</h1>
+            <p className="home-positioning motion-fade-up">
+              {profile.positioning[lang]}
+            </p>
+            <div className="home-actions motion-fade-up">
               <ButtonLink href={`/${lang}/projects`}>
                 {home.primaryCta[lang]} <span aria-hidden="true">↗</span>
               </ButtonLink>
-              <ButtonLink href="#story" variant="text">
-                {home.secondaryCta[lang]} <span aria-hidden="true">↓</span>
-              </ButtonLink>
             </div>
           </div>
-          <div className="home-portrait-wrap">
+          <div className="home-portrait-wrap motion-fade-in">
             <div className="home-portrait-index" aria-hidden="true">
               01 — 06
             </div>
@@ -90,6 +94,35 @@ export default async function HomePage({
           </div>
         </div>
       </section>
+      <section
+        id="about"
+        className="home-section home-about-preview"
+        aria-labelledby="about-preview-title"
+      >
+        <div className="home-shell home-about-preview-grid">
+          <div className="home-about-preview-visual">
+            <Image
+              src={profile.portrait}
+              alt={profile.name}
+              fill
+              sizes="(max-width: 768px) 100vw, 36vw"
+            />
+          </div>
+          <div className="home-about-preview-copy">
+            <div className="home-about-preview-meta">
+              <p className="editorial-label">
+                {home.aboutPreview.eyebrow[lang]}
+              </p>
+              <span aria-hidden="true">01</span>
+            </div>
+            <h2 id="about-preview-title">{home.aboutPreview.title[lang]}</h2>
+            <p>{about.story[lang]}</p>
+            <ButtonLink href={`/${lang}/about`} variant="text">
+              {home.aboutPreview.cta[lang]} <span aria-hidden="true">→</span>
+            </ButtonLink>
+          </div>
+        </div>
+      </section>
       <section className="home-section">
         <div className="home-shell">
           <SectionHeading
@@ -102,42 +135,13 @@ export default async function HomePage({
               </ButtonLink>
             }
           />
-          <div className="home-project-list">
-            {featured.map((project, index) => (
-              <article className="home-project" key={project.slug}>
-                <div className="home-project-visual">
-                  <Image
-                    src={project.coverImage}
-                    alt={`${project.title} — ${project.category[lang]}`}
-                    fill
-                    sizes="(max-width: 768px) 100vw, 58vw"
-                  />
-                  <span>{String(index + 1).padStart(2, "0")}</span>
-                </div>
-                <div className="home-project-copy">
-                  <p className="editorial-label">{project.category[lang]}</p>
-                  <h3>{project.title}</h3>
-                  <p>{project.summary[lang]}</p>
-                  <dl>
-                    <div>
-                      <dt>{home.projectRoleLabel[lang]}</dt>
-                      <dd>{project.role[lang]}</dd>
-                    </div>
-                    <div>
-                      <dt>{home.projectHighlightLabel[lang]}</dt>
-                      <dd>{project.result[lang]}</dd>
-                    </div>
-                  </dl>
-                  <ButtonLink
-                    href={"/" + lang + "/projects/" + project.slug}
-                    variant="text"
-                  >
-                    {projectsPageCta(lang)} <span aria-hidden="true">→</span>
-                  </ButtonLink>
-                </div>
-              </article>
-            ))}
-          </div>
+          <SelectedProjects
+            locale={lang}
+            projects={selectedProjects}
+            otherProjectsLabel={home.otherProjectsLabel[lang]}
+            viewProjectLabel={projectsPageCta(lang)}
+            viewAllLabel={home.allProjectsCta[lang]}
+          />
         </div>
       </section>
       <section className="home-evidence" aria-labelledby="evidence-title">
@@ -154,31 +158,6 @@ export default async function HomePage({
               ) : null,
             )}
           </div>
-        </div>
-      </section>
-      <section
-        id="story"
-        className="home-section home-story"
-        aria-labelledby="story-title"
-      >
-        <div className="home-shell home-story-grid">
-          <div>
-            <p className="editorial-label">{home.story.eyebrow[lang]}</p>
-            <h2 id="story-title">{home.story.title[lang]}</h2>
-            <p className="home-story-lead">{about.story[lang]}</p>
-            <p className="home-path">{home.story.pathLabel[lang]}</p>
-          </div>
-          <ol className="home-milestones">
-            {home.story.milestones.map((milestone, index) => (
-              <li key={milestone.title.en}>
-                <span>{String(index + 1).padStart(2, "0")}</span>
-                <div>
-                  <h3>{milestone.title[lang]}</h3>
-                  <p>{milestone.description[lang]}</p>
-                </div>
-              </li>
-            ))}
-          </ol>
         </div>
       </section>
       <section className="home-section home-activities">
