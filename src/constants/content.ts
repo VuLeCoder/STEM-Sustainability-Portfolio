@@ -61,12 +61,17 @@ export const siteContent = {
 
   navigation: {
     home: { vi: "Trang chủ", en: "Home" },
+    about: { vi: "Về tôi", en: "About" },
+    journey: { vi: "Hành trình", en: "Journey" },
     projects: { vi: "Dự án", en: "Projects" },
+    contact: { vi: "Liên hệ", en: "Contact" },
     activities: { vi: "Hoạt động", en: "Activities" },
   },
 
   ui: {
     menu: { vi: "Menu điều hướng", en: "Navigation menu" },
+    footerNavigation: { vi: "Điều hướng cuối trang", en: "Footer navigation" },
+    language: { vi: "Chọn ngôn ngữ", en: "Choose language" },
     openMenu: { vi: "Mở menu", en: "Open menu" },
     closeMenu: { vi: "Đóng menu", en: "Close menu" },
     switchToLight: {

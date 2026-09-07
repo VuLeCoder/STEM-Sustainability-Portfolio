@@ -5,11 +5,11 @@ import { ButtonLink } from "@/components/button-link";
 import { createLocalizedMetadata } from "@/lib/site-metadata";
 import { SectionHeading } from "@/components/section-heading";
 import {
-  locales,
   projectsPageContent,
   siteContent,
   type Locale,
 } from "@/constants/content";
+import { isLocale } from "@/lib/i18n";
 
 export async function generateMetadata({
   params,
@@ -17,8 +17,8 @@ export async function generateMetadata({
   params: Promise<{ locale: string }>;
 }): Promise<Metadata> {
   const { locale } = await params;
-  if (!locales.includes(locale as Locale)) return {};
-  const selectedLocale = locale as Locale;
+  if (!isLocale(locale)) return {};
+  const selectedLocale = locale;
   return createLocalizedMetadata({
     locale: selectedLocale,
     path: "/home",
@@ -37,8 +37,8 @@ export default async function HomePage({
   params: Promise<{ locale: string }>;
 }) {
   const { locale } = await params;
-  if (!locales.includes(locale as Locale)) notFound();
-  const lang = locale as Locale;
+  if (!isLocale(locale)) notFound();
+  const lang = locale;
   const { profile, contact, home, about, projects, activities } = siteContent;
   const featured = projects.filter((project) => project.featured).slice(0, 2);
   const evidenceItems = home.evidence.items.map((item) => ({
@@ -206,7 +206,11 @@ export default async function HomePage({
           </div>
         </div>
       </section>
-      <section className="home-contact" aria-labelledby="contact-title">
+      <section
+        id="contact"
+        className="home-contact"
+        aria-labelledby="contact-title"
+      >
         <div className="home-shell home-contact-grid">
           <div>
             <p className="editorial-label">{home.valuesFuture.eyebrow[lang]}</p>

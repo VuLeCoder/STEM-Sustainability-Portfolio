@@ -6,9 +6,9 @@ import {
   locales,
   projectDetailContent,
   siteContent,
-  type Locale,
   type Project,
 } from "@/constants/content";
+import { isLocale } from "@/lib/i18n";
 import { ProjectCaseStudySection } from "@/components/project-case-study-section";
 import { createLocalizedMetadata } from "@/lib/site-metadata";
 
@@ -26,12 +26,12 @@ export async function generateMetadata({
   params,
 }: ProjectDetailPageProps): Promise<Metadata> {
   const { locale, slug } = await params;
-  if (!locales.includes(locale as Locale)) return {};
+  if (!isLocale(locale)) return {};
 
   const project = siteContent.projects.find((item) => item.slug === slug);
   if (!project) return {};
 
-  const selectedLocale = locale as Locale;
+  const selectedLocale = locale;
   return createLocalizedMetadata({
     locale: selectedLocale,
     path: "/projects/" + project.slug,
@@ -45,9 +45,9 @@ export default async function ProjectDetailPage({
   params,
 }: ProjectDetailPageProps) {
   const { locale, slug } = await params;
-  if (!locales.includes(locale as Locale)) notFound();
+  if (!isLocale(locale)) notFound();
 
-  const selectedLocale = locale as Locale;
+  const selectedLocale = locale;
   const projectIndex = siteContent.projects.findIndex(
     (item) => item.slug === slug,
   );

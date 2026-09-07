@@ -1,12 +1,54 @@
+import Link from "next/link";
 import type { Locale } from "@/constants/content";
 import { siteContent } from "@/constants/content";
 
+const footerNavigation = [
+  { key: "about", path: "/home#story" },
+  { key: "journey", path: "/activities" },
+  { key: "projects", path: "/projects" },
+] as const;
+
 export function SiteFooter({ locale }: { locale: Locale }) {
   return (
-    <footer className="border-t border-[var(--border)]">
-      <div className="mx-auto flex max-w-7xl flex-col gap-2 px-5 py-7 text-sm text-[var(--muted)] sm:flex-row sm:items-center sm:justify-between sm:px-8">
-        <p>© {new Date().getFullYear()} {siteContent.profile.name}</p>
-        <p>{siteContent.ui.allRightsReserved[locale]}</p>
+    <footer className="site-footer">
+      <div className="editorial-container site-footer__inner">
+        <div className="site-footer__intro">
+          <Link
+            className="site-footer__mark"
+            href={`/${locale}/home`}
+            aria-label={siteContent.navigation.home[locale]}
+          >
+            {siteContent.profile.initials}
+            <span aria-hidden="true">.</span>
+          </Link>
+          <p>{siteContent.profile.positioning[locale]}</p>
+        </div>
+
+        <nav
+          className="site-footer__nav"
+          aria-label={siteContent.ui.footerNavigation[locale]}
+        >
+          {footerNavigation.map(({ key, path }, index) => (
+            <Link key={key} href={`/${locale}${path}`}>
+              <span aria-hidden="true">
+                {String(index + 1).padStart(2, "0")}
+              </span>
+              {siteContent.navigation[key][locale]}
+            </Link>
+          ))}
+        </nav>
+
+        <Link className="site-footer__contact" href={`/${locale}/home#contact`}>
+          {siteContent.navigation.contact[locale]}
+          <span aria-hidden="true">↗</span>
+        </Link>
+
+        <div className="site-footer__meta">
+          <p>{siteContent.profile.location[locale]}</p>
+          <p>
+            © {new Date().getFullYear()} {siteContent.profile.name}
+          </p>
+        </div>
       </div>
     </footer>
   );

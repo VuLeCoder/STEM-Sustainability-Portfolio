@@ -2,63 +2,86 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { SiteLogo } from "@/components/site-logo";
-import { ThemeSwitch } from "@/components/theme-switch";
 import { siteContent, type Locale } from "@/constants/content";
+import { getLocalizedPath } from "@/lib/i18n";
 
-const navigationKeys = ["home", "projects", "activities"] as const;
+const navigationItems = [
+  { key: "about", path: "/home#story" },
+  { key: "journey", path: "/activities" },
+  { key: "projects", path: "/projects" },
+  { key: "contact", path: "/home#contact" },
+] as const;
 
 export function SiteHeader({ locale }: { locale: Locale }) {
   const [isOpen, setIsOpen] = useState(false);
-  const otherLocale: Locale = locale === "vi" ? "en" : "vi";
+  const [isScrolled, setIsScrolled] = useState(false);
   const pathname = usePathname();
-  const localizedPath =
-    pathname.replace(/^\/(vi|en)(?=\/|(?!.))/, "/" + otherLocale) ||
-    "/" + otherLocale + "/home";
-  const getNavigationHref = (key: (typeof navigationKeys)[number]) =>
-    key === "home" ? "/" + locale + "/home" : "/" + locale + "/" + key;
-  const isNavigationActive = (key: (typeof navigationKeys)[number]) => {
-    const href = getNavigationHref(key);
-    return (
-      pathname === href || (key !== "home" && pathname.startsWith(href + "/"))
-    );
+  const otherLocale: Locale = locale === "vi" ? "en" : "vi";
+  const localizedPath = getLocalizedPath(pathname, otherLocale);
+
+  useEffect(() => {
+    const updateHeader = () => setIsScrolled(window.scrollY > 16);
+    updateHeader();
+    window.addEventListener("scroll", updateHeader, { passive: true });
+    return () => window.removeEventListener("scroll", updateHeader);
+  }, []);
+
+  useEffect(() => {
+    if (!isOpen) return;
+    const previousOverflow = document.body.style.overflow;
+    const closeOnEscape = (event: KeyboardEvent) => {
+      if (event.key === "Escape") setIsOpen(false);
+    };
+    document.body.style.overflow = "hidden";
+    window.addEventListener("keydown", closeOnEscape);
+    return () => {
+      document.body.style.overflow = previousOverflow;
+      window.removeEventListener("keydown", closeOnEscape);
+    };
+  }, [isOpen]);
+
+  const getHref = (path: string) => `/${locale}${path}`;
+  const isActive = (path: string) => {
+    const route = path.split("#")[0];
+    return route !== "/home" && pathname.startsWith(`/${locale}${route}`);
   };
 
   return (
-    <header className="sticky top-0 z-50 border-b border-[var(--border)] bg-[color:var(--background)]/88 shadow-[0_1px_0_rgb(255_255_255_/_4%)] backdrop-blur-xl">
-      <div className="mx-auto flex min-h-20 max-w-7xl items-center justify-between gap-4 px-5 sm:px-8">
+    <header
+      className={`site-header${isScrolled || isOpen ? " site-header--solid" : ""}`}
+    >
+      <div className="site-header__inner">
         <SiteLogo locale={locale} />
         <nav
-          className="hidden items-center gap-1 lg:flex"
+          className="site-header__nav"
           aria-label={siteContent.ui.menu[locale]}
         >
-          {navigationKeys.map((key) => (
+          {navigationItems.map(({ key, path }) => (
             <Link
               key={key}
-              href={getNavigationHref(key)}
-              aria-current={isNavigationActive(key) ? "page" : undefined}
-              className={
-                isNavigationActive(key)
-                  ? "rounded-full bg-[var(--surface)] px-3 py-2 text-sm font-semibold text-[var(--foreground)]"
-                  : "rounded-full px-3 py-2 text-sm text-[var(--muted)] transition-colors hover:bg-[var(--surface)] hover:text-[var(--foreground)]"
-              }
+              href={getHref(path)}
+              aria-current={isActive(path) ? "page" : undefined}
             >
               {siteContent.navigation[key][locale]}
             </Link>
           ))}
         </nav>
-        <div className="flex items-center gap-2">
-          <Link
-            href={localizedPath}
-            className="rounded-full px-3 py-2 text-sm font-semibold text-[var(--muted)] transition-colors hover:bg-[var(--surface)] hover:text-[var(--foreground)]"
-            lang={otherLocale}
+        <div className="site-header__actions">
+          <div
+            className="locale-switch"
+            aria-label={siteContent.ui.language[locale]}
           >
-            {locale.toUpperCase()}
-          </Link>
-          <ThemeSwitch locale={locale} />
+            <span aria-current="true">{locale.toUpperCase()}</span>
+            <span aria-hidden="true">/</span>
+            <Link href={localizedPath} lang={otherLocale}>
+              {otherLocale.toUpperCase()}
+            </Link>
+          </div>
           <button
             type="button"
+            className="menu-toggle"
             onClick={() => setIsOpen((open) => !open)}
             aria-label={
               isOpen
@@ -66,38 +89,42 @@ export function SiteHeader({ locale }: { locale: Locale }) {
                 : siteContent.ui.openMenu[locale]
             }
             aria-expanded={isOpen}
-            className="inline-grid size-10 place-items-center rounded-full border border-[var(--border)] text-[var(--foreground)] lg:hidden"
+            aria-controls="mobile-navigation"
           >
-            <span aria-hidden="true" className="text-xl leading-none">
-              {isOpen ? "×" : "☰"}
-            </span>
+            <span aria-hidden="true" />
+            <span aria-hidden="true" />
           </button>
         </div>
       </div>
-      {isOpen ? (
-        <nav
-          className="border-t border-[var(--border)] px-5 py-3 lg:hidden"
-          aria-label={siteContent.ui.menu[locale]}
-        >
-          <div className="mx-auto grid max-w-7xl gap-1">
-            {navigationKeys.map((key) => (
-              <Link
-                key={key}
-                href={getNavigationHref(key)}
-                aria-current={isNavigationActive(key) ? "page" : undefined}
-                onClick={() => setIsOpen(false)}
-                className={
-                  isNavigationActive(key)
-                    ? "rounded-lg bg-[var(--surface)] px-3 py-3 text-sm font-semibold text-[var(--foreground)]"
-                    : "rounded-lg px-3 py-3 text-sm font-medium text-[var(--muted)] hover:bg-[var(--surface)] hover:text-[var(--foreground)]"
-                }
-              >
-                {siteContent.navigation[key][locale]}
-              </Link>
-            ))}
-          </div>
+      <div
+        id="mobile-navigation"
+        className={`mobile-menu${isOpen ? " mobile-menu--open" : ""}`}
+        aria-hidden={!isOpen}
+      >
+        <nav aria-label={siteContent.ui.menu[locale]}>
+          {navigationItems.map(({ key, path }, index) => (
+            <Link
+              key={key}
+              href={getHref(path)}
+              tabIndex={isOpen ? undefined : -1}
+              aria-current={isActive(path) ? "page" : undefined}
+              onClick={() => setIsOpen(false)}
+            >
+              <span>{String(index + 1).padStart(2, "0")}</span>
+              {siteContent.navigation[key][locale]}
+            </Link>
+          ))}
         </nav>
-      ) : null}
+        <Link
+          className="mobile-menu__locale"
+          href={localizedPath}
+          lang={otherLocale}
+          tabIndex={isOpen ? undefined : -1}
+          onClick={() => setIsOpen(false)}
+        >
+          {locale.toUpperCase()} / {otherLocale.toUpperCase()}
+        </Link>
+      </div>
     </header>
   );
 }
