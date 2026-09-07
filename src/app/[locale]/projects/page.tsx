@@ -1,12 +1,34 @@
+import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import { createLocalizedMetadata } from "@/lib/site-metadata";
 import {
   locales,
   projectsPageContent,
   siteContent,
   type Locale,
 } from "@/constants/content";
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+  const { locale } = await params;
+  if (!locales.includes(locale as Locale)) return {};
+  const selectedLocale = locale as Locale;
+  return createLocalizedMetadata({
+    locale: selectedLocale,
+    path: "/projects",
+    title:
+      projectsPageContent.title[selectedLocale] +
+      " | " +
+      siteContent.seo.siteName,
+    description: projectsPageContent.description[selectedLocale],
+    image: siteContent.projects[0].coverImage,
+  });
+}
 
 export default async function ProjectsPage({
   params,

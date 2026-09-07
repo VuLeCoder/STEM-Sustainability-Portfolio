@@ -16,7 +16,12 @@ export type ProjectExternalLink = {
 
 export type ProjectDetails = Partial<
   Record<
-    "objective" | "solution" | "process" | "evidence" | "lessons" | "futureWork",
+    | "objective"
+    | "solution"
+    | "process"
+    | "evidence"
+    | "lessons"
+    | "futureWork",
     Localized<string>
   >
 >;
@@ -125,6 +130,10 @@ export const siteContent = {
         vi: "Những dấu mốc được ghi nhận.",
         en: "Milestones on record.",
       },
+      items: [
+        { value: "≈1,800", projectSlug: "ecome" },
+        { value: "2025", projectSlug: "bloomwatch" },
+      ],
     },
     activities: {
       eyebrow: { vi: "Hoạt động chọn lọc", en: "Selected activities" },
@@ -342,8 +351,16 @@ export const siteContent = {
         en: "Project development team member",
       },
       fields: {
-        vi: ["Công nghệ hỗ trợ", "Nhận biết không gian", "Thiết kế lấy con người làm trung tâm"],
-        en: ["Assistive technology", "Spatial awareness", "Human-centered design"],
+        vi: [
+          "Công nghệ hỗ trợ",
+          "Nhận biết không gian",
+          "Thiết kế lấy con người làm trung tâm",
+        ],
+        en: [
+          "Assistive technology",
+          "Spatial awareness",
+          "Human-centered design",
+        ],
       },
       result: {
         vi: "Giải Vàng tại World Invention Creativity Olympic (WICO) 2026 ở Seoul, Hàn Quốc.",
@@ -371,7 +388,11 @@ export const siteContent = {
       },
       fields: {
         vi: ["Giáo dục môi trường", "Hành động cộng đồng", "Quản lý dự án"],
-        en: ["Environmental education", "Community action", "Project management"],
+        en: [
+          "Environmental education",
+          "Community action",
+          "Project management",
+        ],
       },
       result: {
         vi: "CV ghi nhận các chiến dịch nâng cao nhận thức đã tiếp cận khoảng 1.800 người.",
@@ -434,7 +455,11 @@ export const siteContent = {
       },
       role: { vi: "Thành viên nhóm", en: "Team member" },
       fields: {
-        vi: ["Quan sát Trái Đất", "Kể chuyện bằng dữ liệu", "Phát triển sản phẩm"],
+        vi: [
+          "Quan sát Trái Đất",
+          "Kể chuyện bằng dữ liệu",
+          "Phát triển sản phẩm",
+        ],
         en: ["Earth observation", "Data storytelling", "Product development"],
       },
       result: {
@@ -471,7 +496,11 @@ export const siteContent = {
       },
       fields: {
         vi: ["Giấu tin thuận nghịch", "Xác thực số", "Viết khoa học"],
-        en: ["Reversible data hiding", "Digital authentication", "Scientific writing"],
+        en: [
+          "Reversible data hiding",
+          "Digital authentication",
+          "Scientific writing",
+        ],
       },
       result: {
         vi: "Bài báo được đồng tác giả và trình bày tại VNICT 2025 — Hội nghị Quốc gia lần thứ 28 về các vấn đề chọn lọc của Công nghệ thông tin và Truyền thông.",
@@ -606,8 +635,6 @@ export const projectsPageContent = {
     lessons: { vi: "Bài học", en: "Lessons" },
   },
 } as const;
-
-
 
 export const projectDetailContent = {
   backToProjects: { vi: "Tất cả dự án", en: "All projects" },

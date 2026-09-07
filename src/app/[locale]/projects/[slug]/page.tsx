@@ -10,6 +10,7 @@ import {
   type Project,
 } from "@/constants/content";
 import { ProjectCaseStudySection } from "@/components/project-case-study-section";
+import { createLocalizedMetadata } from "@/lib/site-metadata";
 
 type ProjectDetailPageProps = {
   params: Promise<{ locale: string; slug: string }>;
@@ -31,10 +32,13 @@ export async function generateMetadata({
   if (!project) return {};
 
   const selectedLocale = locale as Locale;
-  return {
-    title: `${project.title} | ${siteContent.seo.siteName}`,
+  return createLocalizedMetadata({
+    locale: selectedLocale,
+    path: "/projects/" + project.slug,
+    title: project.title + " | " + siteContent.seo.siteName,
     description: project.summary[selectedLocale],
-  };
+    image: project.coverImage,
+  });
 }
 
 export default async function ProjectDetailPage({

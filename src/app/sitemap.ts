@@ -1,0 +1,24 @@
+import type { MetadataRoute } from "next";
+import { locales, siteContent } from "@/constants/content";
+import { siteUrl } from "@/lib/site-metadata";
+
+export default function sitemap(): MetadataRoute.Sitemap {
+  const paths = [
+    "/home",
+    "/projects",
+    "/activities",
+    ...siteContent.projects.map((project) => "/projects/" + project.slug),
+  ];
+
+  return paths.flatMap((path) =>
+    locales.map((locale) => ({
+      url: new URL("/" + locale + path, siteUrl).toString(),
+      alternates: {
+        languages: {
+          vi: new URL("/vi" + path, siteUrl).toString(),
+          en: new URL("/en" + path, siteUrl).toString(),
+        },
+      },
+    })),
+  );
+}
