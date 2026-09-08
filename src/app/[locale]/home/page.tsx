@@ -6,6 +6,7 @@ import { createLocalizedMetadata } from "@/lib/site-metadata";
 import { SectionHeading } from "@/components/section-heading";
 import { SelectedProjects } from "@/components/selected-projects";
 import { HomeSidebar } from "@/components/home-sidebar";
+import { HomeAbout } from "@/components/home-about";
 import {
   activitiesPageContent,
   projectsPageContent,
@@ -42,7 +43,7 @@ export default async function HomePage({
   const { locale } = await params;
   if (!isLocale(locale)) notFound();
   const lang = locale;
-  const { profile, home, about, projects, activities } = siteContent;
+  const { profile, home, projects, activities } = siteContent;
   const selectedProjects = [
     ...projects.filter((project) => project.featured),
     ...projects.filter((project) => !project.featured),
@@ -64,72 +65,31 @@ export default async function HomePage({
   return (
     <main className="home-page">
       <HomeSidebar locale={lang} />
-      <section className="home-hero">
+      <section className="home-hero" aria-labelledby="home-hero-title">
         <div className="home-shell home-hero-grid">
-          <div className="home-hero-copy motion-stagger">
-            <p className="editorial-label motion-fade-up">
+          <div className="home-hero-copy motion-fade-up">
+            <p className="home-hero-slogan">
               {home.eyebrow[lang]}
             </p>
-            <h1 className="motion-fade-up">{profile.name}</h1>
-            <p className="home-positioning motion-fade-up">
+            <h1 id="home-hero-title">{profile.name}</h1>
+            <p className="home-positioning">
               {profile.positioning[lang]}
             </p>
-            <div className="home-actions motion-fade-up">
-              <ButtonLink href={`/${lang}/projects`}>
-                {home.primaryCta[lang]} <span aria-hidden="true">↗</span>
-              </ButtonLink>
-            </div>
           </div>
           <div className="home-portrait-wrap motion-fade-in">
-            <div className="home-portrait-index" aria-hidden="true">
-              01 — 06
-            </div>
             <div className="home-portrait-frame">
               <Image
                 src={profile.portrait}
                 alt={profile.name}
                 fill
                 priority
-                sizes="(max-width: 768px) 100vw, 42vw"
+                sizes="(max-width: 519px) calc(100vw - 40px), (max-width: 767px) 480px, (max-width: 1199px) 38vw, 480px"
               />
             </div>
-            <div className="home-portrait-caption">
-              <span>{home.visualLabel}</span>
-              <span>{profile.location[lang]}</span>
-            </div>
           </div>
         </div>
       </section>
-      <section
-        data-reveal
-        id="about"
-        className="home-section home-about-preview"
-        aria-labelledby="about-preview-title"
-      >
-        <div className="home-shell home-about-preview-grid">
-          <div className="home-about-preview-visual">
-            <Image
-              src={profile.portrait}
-              alt={profile.name}
-              fill
-              sizes="(max-width: 768px) 100vw, 36vw"
-            />
-          </div>
-          <div className="home-about-preview-copy">
-            <div className="home-about-preview-meta">
-              <p className="editorial-label">
-                {home.aboutPreview.eyebrow[lang]}
-              </p>
-              <span aria-hidden="true">01</span>
-            </div>
-            <h2 id="about-preview-title">{home.aboutPreview.title[lang]}</h2>
-            <p>{about.story[lang]}</p>
-            <ButtonLink href={`/${lang}/about`} variant="text">
-              {home.aboutPreview.cta[lang]} <span aria-hidden="true">→</span>
-            </ButtonLink>
-          </div>
-        </div>
-      </section>
+      <HomeAbout locale={lang} />
       <section id="projects" data-reveal className="home-section">
         <div className="home-shell">
           <SectionHeading

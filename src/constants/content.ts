@@ -142,6 +142,59 @@ export const siteContent = {
       },
       cta: { vi: "Tìm hiểu thêm về tôi", en: "More about me" },
     },
+    // Selected and paraphrased from CV.pdf: Profile, Education, Research,
+    // Leadership, STEM Programs and Core Competencies. Scores are as listed.
+    aboutMe: {
+      label: { vi: "Về tôi", en: "About me" },
+      title: {
+        vi: "Khám phá khoa học. Hướng tới giá trị cộng đồng.",
+        en: "Exploring science. Working toward community impact.",
+      },
+      introduction: {
+        vi: "Tôi là học sinh chuyên Vật lý tại Trường THPT Chuyên Nguyễn Huệ, Hà Nội. Qua nghiên cứu và các dự án liên ngành, tôi mong muốn kết hợp công nghệ, tư duy kinh doanh và trách nhiệm xã hội để tạo ra những giải pháp thiết thực cho sự phát triển bền vững.",
+        en: "I am a Physics-specialized student at Nguyen Hue High School for the Gifted in Hanoi. Through research and interdisciplinary projects, I hope to combine technology, business thinking, and social responsibility to create practical solutions for sustainable development.",
+      },
+      pillars: [
+        {
+          id: "research",
+          title: { vi: "Nghiên cứu khoa học", en: "Scientific research" },
+          description: {
+            vi: "Đồng tác giả và trình bày báo cáo về giấu tin thuận nghịch tại VNICT 2025; tìm hiểu quy trình nghiên cứu và hệ thống AI ứng dụng qua kỳ thực tập tại Viện Công nghệ thông tin, VAST.",
+            en: "Co-authored and presented a paper on reversible data hiding at VNICT 2025; exploring research workflows and applied AI systems through an internship at the Institute of Information Technology, VAST.",
+          },
+        },
+        {
+          id: "technology",
+          title: { vi: "Công nghệ vì con người", en: "Human-centered technology" },
+          description: {
+            vi: "Khám phá AI, công nghệ hỗ trợ và dữ liệu qua SafeStride, ECOMeSort và BloomWatch — từ hỗ trợ người khiếm thị đến phân loại rác và học tập với dữ liệu NASA.",
+            en: "Exploring AI, assistive technology, and data through SafeStride, ECOMeSort, and BloomWatch — from supporting blind users to waste sorting and learning with NASA data.",
+          },
+        },
+        {
+          id: "community",
+          title: { vi: "Hành động cộng đồng", en: "Community action" },
+          description: {
+            vi: "Sáng lập và chủ nhiệm ECOMe, triển khai giáo dục môi trường và hoạt động cộng đồng. Các chiến dịch truyền thông thực địa đã tiếp cận khoảng 1.800 người tại nhiều tỉnh thành.",
+            en: "Founded and lead ECOMe, an environmental education and community-action initiative. Its field awareness campaigns have reached approximately 1,800 people across multiple Vietnamese provinces.",
+          },
+        },
+        {
+          id: "collaboration",
+          title: { vi: "Hợp tác & chia sẻ", en: "Collaboration & learning" },
+          description: {
+            vi: "Tham gia tổ chức Open Data Exploration và hỗ trợ Robotics Summer Camp 2026 tại American Center, Hà Nội; kết hợp truyền thông, thiết kế, nghiên cứu dữ liệu và làm việc nhóm kỹ thuật.",
+            en: "Helped organize Open Data Exploration and supported Robotics Summer Camp 2026 at the American Center in Hanoi, combining communication, design, data research, and technical teamwork.",
+          },
+        },
+      ],
+      credentialsLabel: { vi: "Nền tảng học thuật", en: "Academic foundation" },
+      credentials: [
+        { label: { vi: "SAT", en: "SAT" }, value: "1440" },
+        { label: { vi: "IELTS Academic", en: "IELTS Academic" }, value: "7.0" },
+        { label: { vi: "AP Physics C", en: "AP Physics C" }, value: "5/5" },
+      ],
+    },
     evidence: {
       eyebrow: { vi: "Tác động & bằng chứng", en: "Impact & evidence" },
       title: {
