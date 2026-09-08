@@ -640,7 +640,7 @@ a {
   max-width: 20ch;
   margin-top: 24px;
   font-family: var(--font-sans);
-  font-size: clamp(32px, 4vw, 56px);
+  font-size: clamp(28px, 3.2vw, 44px);
   font-weight: 600;
   letter-spacing: -0.04em;
   line-height: 1.2;
@@ -778,7 +778,7 @@ a {
   max-width: none;
   margin-top: 24px;
   font-family: var(--font-sans);
-  font-size: clamp(32px, 4vw, 56px);
+  font-size: clamp(28px, 3.2vw, 44px);
   font-weight: 600;
   letter-spacing: -0.04em;
   line-height: 1.2;
