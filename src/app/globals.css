@@ -761,6 +761,9 @@ a {
 .home-page .home-about {
   padding-top: var(--section-nav-clearance);
 }
+#main-content:has(.home-page) ~ .portfolio-footer {
+  margin-top: 24px;
+}
 #main-content:has(.home-page) ~ .portfolio-footer .portfolio-footer__grid {
   padding-top: var(--section-nav-clearance);
 }

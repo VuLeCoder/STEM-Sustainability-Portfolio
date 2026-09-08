@@ -1,15 +1,12 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import { notFound } from "next/navigation";
-import { ButtonLink } from "@/components/button-link";
 import { createLocalizedMetadata } from "@/lib/site-metadata";
 import { HomeProjects } from "@/components/home-projects";
 import { HomeSidebar } from "@/components/home-sidebar";
 import { HomeAbout } from "@/components/home-about";
 import { HomeJourney } from "@/components/home-journey";
-import {
-  siteContent,
-} from "@/constants/content";
+import { siteContent } from "@/constants/content";
 import { isLocale } from "@/lib/i18n";
 
 export async function generateMetadata({
@@ -36,13 +33,7 @@ export default async function HomePage({
   const { locale } = await params;
   if (!isLocale(locale)) notFound();
   const lang = locale;
-  const { profile, home, activities } = siteContent;
-  const selectedAwards = activities
-    .flatMap((group) =>
-      group.entries.map((entry) => ({ ...entry, year: group.year })),
-    )
-    .filter((entry) => entry.type === "competition")
-    .slice(0, 3);
+  const { profile, home } = siteContent;
 
   return (
     <main className="home-page">
@@ -74,64 +65,6 @@ export default async function HomePage({
       <HomeAbout locale={lang} />
       <HomeJourney locale={lang} />
       <HomeProjects locale={lang} />
-      <section
-        data-reveal
-        className="home-section home-awards"
-        aria-labelledby="selected-awards-title"
-      >
-        <div className="home-shell">
-          <div className="home-awards-heading">
-            <p className="editorial-label">
-              {home.selectedAwards.eyebrow[lang]}
-            </p>
-            <h2 id="selected-awards-title">
-              {home.selectedAwards.title[lang]}
-            </h2>
-          </div>
-          <ol className="home-awards-list">
-            {selectedAwards.map((award, index) => (
-              <li key={award.title.en}>
-                <span>{String(index + 1).padStart(2, "0")}</span>
-                <time>{award.year}</time>
-                <div>
-                  <h3>{award.title[lang]}</h3>
-                  <p>{award.description[lang]}</p>
-                </div>
-              </li>
-            ))}
-          </ol>
-          <ButtonLink href={`/${lang}/journey`} variant="text">
-            {home.selectedAwards.cta[lang]} <span aria-hidden="true">↗</span>
-          </ButtonLink>
-        </div>
-      </section>
-      <section
-        data-reveal
-        id="contact"
-        className="home-contact"
-        aria-labelledby="contact-title"
-      >
-        <div className="home-shell home-contact-grid">
-          <div className="home-contact-index" aria-hidden="true">
-            06
-          </div>
-          <div className="home-contact-copy">
-            <p className="editorial-label">{home.contactCta.eyebrow[lang]}</p>
-            <h2 id="contact-title">{home.contactCta.title[lang]}</h2>
-            <p>{home.contactCta.description[lang]}</p>
-            <div className="home-contact-actions">
-              <ButtonLink href={`/${lang}/projects`}>
-                {home.contactCta.projectsCta[lang]}{" "}
-                <span aria-hidden="true">↗</span>
-              </ButtonLink>
-              <ButtonLink href={`/${lang}/about`} variant="text">
-                {home.contactCta.aboutCta[lang]}{" "}
-                <span aria-hidden="true">→</span>
-              </ButtonLink>
-            </div>
-          </div>
-        </div>
-      </section>
     </main>
   );
 }
