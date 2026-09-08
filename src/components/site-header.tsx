@@ -8,16 +8,16 @@ import { siteContent, type Locale } from "@/constants/content";
 import { getLocalizedPath } from "@/lib/i18n";
 
 const navigationItems = [
-  { key: "about", path: "/about" },
+  { key: "home", path: "" },
   { key: "journey", path: "/journey" },
   { key: "projects", path: "/projects" },
-  { key: "contact", path: "/contact" },
 ] as const;
 
 export function SiteHeader({ locale }: { locale: Locale }) {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const menuToggleRef = useRef<HTMLButtonElement>(null);
+  const localeSwitchRef = useRef<HTMLAnchorElement>(null);
   const mobileMenuRef = useRef<HTMLDivElement>(null);
   const pathname = usePathname();
   const otherLocale: Locale = locale === "vi" ? "en" : "vi";
@@ -32,13 +32,17 @@ export function SiteHeader({ locale }: { locale: Locale }) {
 
   useEffect(() => {
     if (!isOpen) return;
+    const breakpoint = window.matchMedia("(min-width: 768px)");
+    const closeOnDesktop = () => { if (breakpoint.matches) setIsOpen(false); };
+    breakpoint.addEventListener("change", closeOnDesktop);
     const previousOverflow = document.body.style.overflow;
     const menu = mobileMenuRef.current;
     const focusableElements = [
+      localeSwitchRef.current,
       menuToggleRef.current,
       ...(menu
         ? Array.from(
-            menu.querySelectorAll<HTMLElement>('a[href], button:not([disabled])'),
+            menu.querySelectorAll<HTMLElement>('nav a[href], button:not([disabled])'),
           )
         : []),
     ].filter((element): element is HTMLElement => element !== null);
@@ -65,9 +69,10 @@ export function SiteHeader({ locale }: { locale: Locale }) {
 
     document.body.style.overflow = "hidden";
     window.addEventListener("keydown", handleKeyDown);
-    window.requestAnimationFrame(() => focusableElements[1]?.focus());
+    window.requestAnimationFrame(() => focusableElements[2]?.focus());
     return () => {
       document.body.style.overflow = previousOverflow;
+      breakpoint.removeEventListener("change", closeOnDesktop);
       window.removeEventListener("keydown", handleKeyDown);
     };
   }, [isOpen]);
@@ -75,7 +80,9 @@ export function SiteHeader({ locale }: { locale: Locale }) {
   const getHref = (path: string) => `/${locale}${path}`;
   const isActive = (path: string) => {
     const route = path.split("#")[0];
-    return route !== "/home" && pathname.startsWith(`/${locale}${route}`);
+    return route === ""
+      ? pathname === `/${locale}` || pathname === `/${locale}/home`
+      : pathname === `/${locale}${route}` || pathname.startsWith(`/${locale}${route}/`);
   };
 
   return (
@@ -99,16 +106,17 @@ export function SiteHeader({ locale }: { locale: Locale }) {
           ))}
         </nav>
         <div className="site-header__actions">
-          <div
+          <Link
+            ref={localeSwitchRef}
             className="locale-switch"
-            aria-label={siteContent.ui.language[locale]}
+            href={localizedPath}
+            hrefLang={otherLocale}
+            aria-label={locale === "en" ? "EN — Switch to Vietnamese" : "VI — Chuyển sang tiếng Anh"}
+            title={locale === "en" ? "Switch to Vietnamese" : "Chuyển sang tiếng Anh"}
+            onClick={() => setIsOpen(false)}
           >
-            <span aria-current="true">{locale.toUpperCase()}</span>
-            <span aria-hidden="true">/</span>
-            <Link href={localizedPath} lang={otherLocale}>
-              {otherLocale.toUpperCase()}
-            </Link>
-          </div>
+            {locale.toUpperCase()}
+          </Link>
           <button
             ref={menuToggleRef}
             type="button"
@@ -148,15 +156,6 @@ export function SiteHeader({ locale }: { locale: Locale }) {
             </Link>
           ))}
         </nav>
-        <Link
-          className="mobile-menu__locale"
-          href={localizedPath}
-          lang={otherLocale}
-          tabIndex={isOpen ? undefined : -1}
-          onClick={() => setIsOpen(false)}
-        >
-          {locale.toUpperCase()} / {otherLocale.toUpperCase()}
-        </Link>
       </div>
     </header>
   );

@@ -44,6 +44,24 @@ export type Project = {
 };
 
 export const siteContent = {
+  chrome: {
+    logoImage: "/images/brand/ncp-logo.png",
+    footerBackground: "/images/placeholders/footer-background.svg",
+    footerBackgroundLabel: { vi: "[Ảnh nền footer]", en: "[Footer Background]" },
+    explore: { vi: "Khám phá", en: "Explore" },
+    contact: { vi: "Liên hệ", en: "Contact" },
+    pending: { vi: "Chưa cập nhật", en: "Coming soon" },
+    rights: { vi: "Mọi quyền được bảo lưu.", en: "All rights reserved." },
+    socials: [
+      { icon: "facebook", label: "Facebook", href: "#" },
+      { icon: "github", label: "GitHub", href: "#" },
+      { icon: "linkedin", label: "LinkedIn", href: "#" },
+    ],
+    contacts: [
+      { icon: "gmail", label: { vi: "Gmail", en: "Gmail" }, href: null as string | null },
+      { icon: "phone", label: { vi: "Điện thoại", en: "Phone" }, href: null as string | null },
+    ],
+  },
   profile: {
     name: "Nguyen Cao Xuan Phuc",
     initials: "NCP",
