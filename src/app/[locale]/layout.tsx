@@ -36,9 +36,14 @@ export default async function LocaleLayout({
   const selectedLocale = locale;
   return (
     <div className="flex min-h-screen flex-col" lang={selectedLocale}>
+      <a className="skip-link" href="#main-content">
+        {selectedLocale === "vi" ? "Bỏ qua đến nội dung" : "Skip to content"}
+      </a>
       <SiteHeader locale={selectedLocale} />
       <ScrollReveal />
-      <div className="flex-1">{children}</div>
+      <div id="main-content" className="flex-1" tabIndex={-1}>
+        {children}
+      </div>
       <SiteFooter locale={selectedLocale} />
     </div>
   );

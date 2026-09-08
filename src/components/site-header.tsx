@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { SiteLogo } from "@/components/site-logo";
 import { siteContent, type Locale } from "@/constants/content";
 import { getLocalizedPath } from "@/lib/i18n";
@@ -17,6 +17,8 @@ const navigationItems = [
 export function SiteHeader({ locale }: { locale: Locale }) {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const menuToggleRef = useRef<HTMLButtonElement>(null);
+  const mobileMenuRef = useRef<HTMLDivElement>(null);
   const pathname = usePathname();
   const otherLocale: Locale = locale === "vi" ? "en" : "vi";
   const localizedPath = getLocalizedPath(pathname, otherLocale);
@@ -31,14 +33,42 @@ export function SiteHeader({ locale }: { locale: Locale }) {
   useEffect(() => {
     if (!isOpen) return;
     const previousOverflow = document.body.style.overflow;
-    const closeOnEscape = (event: KeyboardEvent) => {
-      if (event.key === "Escape") setIsOpen(false);
+    const menu = mobileMenuRef.current;
+    const focusableElements = [
+      menuToggleRef.current,
+      ...(menu
+        ? Array.from(
+            menu.querySelectorAll<HTMLElement>('a[href], button:not([disabled])'),
+          )
+        : []),
+    ].filter((element): element is HTMLElement => element !== null);
+
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key === "Escape") {
+        setIsOpen(false);
+        menuToggleRef.current?.focus();
+        return;
+      }
+
+      if (event.key !== "Tab" || focusableElements.length === 0) return;
+      const firstElement = focusableElements[0];
+      const lastElement = focusableElements[focusableElements.length - 1];
+
+      if (event.shiftKey && document.activeElement === firstElement) {
+        event.preventDefault();
+        lastElement.focus();
+      } else if (!event.shiftKey && document.activeElement === lastElement) {
+        event.preventDefault();
+        firstElement.focus();
+      }
     };
+
     document.body.style.overflow = "hidden";
-    window.addEventListener("keydown", closeOnEscape);
+    window.addEventListener("keydown", handleKeyDown);
+    window.requestAnimationFrame(() => focusableElements[1]?.focus());
     return () => {
       document.body.style.overflow = previousOverflow;
-      window.removeEventListener("keydown", closeOnEscape);
+      window.removeEventListener("keydown", handleKeyDown);
     };
   }, [isOpen]);
 
@@ -80,6 +110,7 @@ export function SiteHeader({ locale }: { locale: Locale }) {
             </Link>
           </div>
           <button
+            ref={menuToggleRef}
             type="button"
             className="menu-toggle"
             onClick={() => setIsOpen((open) => !open)}
@@ -90,6 +121,7 @@ export function SiteHeader({ locale }: { locale: Locale }) {
             }
             aria-expanded={isOpen}
             aria-controls="mobile-navigation"
+            aria-haspopup="true"
           >
             <span aria-hidden="true" />
             <span aria-hidden="true" />
@@ -97,6 +129,7 @@ export function SiteHeader({ locale }: { locale: Locale }) {
         </div>
       </div>
       <div
+        ref={mobileMenuRef}
         id="mobile-navigation"
         className={`mobile-menu${isOpen ? " mobile-menu--open" : ""}`}
         aria-hidden={!isOpen}
