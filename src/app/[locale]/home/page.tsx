@@ -58,7 +58,7 @@ export default async function HomePage({
   return (
     <main className="home-page">
       <HomeSidebar locale={lang} />
-      <section className="home-hero" aria-labelledby="home-hero-title">
+      <section id="hero" className="home-hero" aria-labelledby="home-hero-title">
         <div className="home-shell home-hero-grid">
           <div className="home-hero-copy motion-fade-up">
             <p className="home-hero-slogan">
