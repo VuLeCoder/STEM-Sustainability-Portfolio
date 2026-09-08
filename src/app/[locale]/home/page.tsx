@@ -180,6 +180,7 @@ export default async function HomePage({
         </div>
       </section>
       <section
+        data-reveal
         className="home-section home-awards"
         aria-labelledby="selected-awards-title"
       >

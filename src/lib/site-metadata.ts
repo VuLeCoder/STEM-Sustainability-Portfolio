@@ -47,5 +47,15 @@ export function createLocalizedMetadata({
       alternateLocale: locale === "vi" ? ["en_US"] : ["vi_VN"],
       images: [{ url: new URL(image, siteUrl).toString() }],
     },
+    twitter: {
+      card: "summary_large_image",
+      title,
+      description,
+      images: [new URL(image, siteUrl).toString()],
+    },
+    robots: {
+      index: true,
+      follow: true,
+    },
   };
 }
