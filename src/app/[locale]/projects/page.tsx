@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
-import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import { SelectedProjects } from "@/components/selected-projects";
 import { createLocalizedMetadata } from "@/lib/site-metadata";
 import { projectsPageContent, siteContent } from "@/constants/content";
 import { isLocale } from "@/lib/i18n";
@@ -34,6 +34,10 @@ export default async function ProjectsPage({
   const { locale } = await params;
   if (!isLocale(locale)) notFound();
   const selectedLocale = locale;
+  const featuredProjects = [
+    ...siteContent.projects.filter((project) => project.featured),
+    ...siteContent.projects.filter((project) => !project.featured),
+  ].slice(0, 5);
 
   return (
     <main className="projects-page">
@@ -47,63 +51,55 @@ export default async function ProjectsPage({
         </div>
       </header>
 
-      <section
-        className="projects-showcases projects-shell"
-        aria-label={projectsPageContent.eyebrow[selectedLocale]}
-      >
+      <section className="projects-featured projects-shell">
+        <div className="projects-section-heading">
+          <p className="editorial-label">
+            {projectsPageContent.featuredLabel[selectedLocale]}
+          </p>
+          <h2>{projectsPageContent.featuredTitle[selectedLocale]}</h2>
+        </div>
+        <SelectedProjects
+          locale={selectedLocale}
+          projects={featuredProjects}
+          otherProjectsLabel={projectsPageContent.otherProjectsLabel[selectedLocale]}
+          viewProjectLabel={projectsPageContent.viewProject[selectedLocale]}
+          viewAllLabel={projectsPageContent.viewAllLabel[selectedLocale]}
+        />
+      </section>
+
+      <section className="projects-index projects-shell">
+        <div className="projects-section-heading">
+          <p className="editorial-label">
+            {projectsPageContent.allProjectsLabel[selectedLocale]}
+          </p>
+          <h2>{projectsPageContent.allProjectsTitle[selectedLocale]}</h2>
+        </div>
+        <ol className="projects-index-list">
         {siteContent.projects.map((project, index) => {
           const projectHref = `/${selectedLocale}/projects/${project.slug}`;
           const projectNumber = String(index + 1).padStart(2, "0");
 
           return (
-            <article className="project-showcase" key={project.slug}>
-              <Link
-                className="project-showcase-visual"
-                href={projectHref}
-                aria-label={`${projectsPageContent.viewProject[selectedLocale]}: ${project.title}`}
-              >
-                <Image
-                  src={project.coverImage}
-                  alt=""
-                  fill
-                  sizes="(min-width: 960px) 50vw, 100vw"
-                />
-                <span aria-hidden="true">{projectNumber}</span>
-              </Link>
-
-              <div className="project-showcase-copy">
-                <p className="project-showcase-kicker">
-                  <span>{projectNumber}</span>
-                  <span aria-hidden="true">/</span>
-                  <span>{project.category[selectedLocale]}</span>
-                </p>
-
-                <h2>
-                  <Link href={projectHref}>{project.title}</Link>
-                </h2>
-
-                <p className="project-showcase-summary">
-                  {project.summary[selectedLocale]}
-                </p>
-
-                <p className="project-showcase-fields">
+            <li key={project.slug}>
+              <Link href={projectHref}>
+                <span className="projects-index-number">{projectNumber}</span>
+                <span className="projects-index-main">
+                  <small>
+                    {[project.year, project.category[selectedLocale]]
+                      .filter(Boolean)
+                      .join(" · ")}
+                  </small>
+                  <strong>{project.title}</strong>
+                </span>
+                <span className="projects-index-fields">
                   {project.fields[selectedLocale].join(" · ")}
-                </p>
-
-                {project.achievementShort ? (
-                  <p className="project-showcase-achievement">
-                    {project.achievementShort[selectedLocale]}
-                  </p>
-                ) : null}
-
-                <Link className="project-showcase-cta" href={projectHref}>
-                  <span>{projectsPageContent.viewProject[selectedLocale]}</span>
-                  <span aria-hidden="true">→</span>
-                </Link>
-              </div>
-            </article>
+                </span>
+                <span className="projects-index-arrow" aria-hidden="true">↗</span>
+              </Link>
+            </li>
           );
         })}
+        </ol>
       </section>
     </main>
   );

@@ -656,6 +656,18 @@ export const projectsPageContent = {
     vi: "Mỗi dự án là một hành trình quan sát, thử nghiệm, hợp tác và rút ra bài học.",
     en: "Each project is a journey of observation, experimentation, collaboration, and learning.",
   },
+  featuredLabel: { vi: "Dự án nổi bật", en: "Featured projects" },
+  featuredTitle: {
+    vi: "Những dự án tiêu biểu, được kể từ vấn đề đến tác động.",
+    en: "Selected work, told from the problem through its impact.",
+  },
+  otherProjectsLabel: { vi: "Dự án khác", en: "Other projects" },
+  allProjectsLabel: { vi: "Tất cả dự án", en: "All projects" },
+  allProjectsTitle: {
+    vi: "Khám phá toàn bộ hồ sơ dự án.",
+    en: "Explore the complete project archive.",
+  },
+  viewAllLabel: { vi: "Xem danh mục dự án", en: "View project archive" },
   viewProject: { vi: "Xem dự án", en: "View project" },
   indexLabel: { vi: "Hồ sơ dự án", en: "Project dossier" },
   roleLabel: { vi: "Vai trò", en: "Role" },
