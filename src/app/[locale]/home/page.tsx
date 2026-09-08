@@ -3,15 +3,12 @@ import Image from "next/image";
 import { notFound } from "next/navigation";
 import { ButtonLink } from "@/components/button-link";
 import { createLocalizedMetadata } from "@/lib/site-metadata";
-import { SectionHeading } from "@/components/section-heading";
-import { SelectedProjects } from "@/components/selected-projects";
+import { HomeProjects } from "@/components/home-projects";
 import { HomeSidebar } from "@/components/home-sidebar";
 import { HomeAbout } from "@/components/home-about";
 import { HomeJourney } from "@/components/home-journey";
 import {
-  projectsPageContent,
   siteContent,
-  type Locale,
 } from "@/constants/content";
 import { isLocale } from "@/lib/i18n";
 
@@ -31,10 +28,6 @@ export async function generateMetadata({
   });
 }
 
-function projectsPageCta(locale: Locale) {
-  return projectsPageContent.viewProject[locale];
-}
-
 export default async function HomePage({
   params,
 }: {
@@ -43,11 +36,7 @@ export default async function HomePage({
   const { locale } = await params;
   if (!isLocale(locale)) notFound();
   const lang = locale;
-  const { profile, home, projects, activities } = siteContent;
-  const selectedProjects = [
-    ...projects.filter((project) => project.featured),
-    ...projects.filter((project) => !project.featured),
-  ].slice(0, 5);
+  const { profile, home, activities } = siteContent;
   const selectedAwards = activities
     .flatMap((group) =>
       group.entries.map((entry) => ({ ...entry, year: group.year })),
@@ -84,27 +73,7 @@ export default async function HomePage({
       </section>
       <HomeAbout locale={lang} />
       <HomeJourney locale={lang} />
-      <section id="projects" data-reveal className="home-section">
-        <div className="home-shell">
-          <SectionHeading
-            eyebrow={home.featuredProjects.eyebrow[lang]}
-            title={home.featuredProjects.title[lang]}
-            description={home.featuredProjects.description[lang]}
-            action={
-              <ButtonLink href={`/${lang}/projects`} variant="text">
-                {home.allProjectsCta[lang]} <span aria-hidden="true">↗</span>
-              </ButtonLink>
-            }
-          />
-          <SelectedProjects
-            locale={lang}
-            projects={selectedProjects}
-            otherProjectsLabel={home.otherProjectsLabel[lang]}
-            viewProjectLabel={projectsPageCta(lang)}
-            viewAllLabel={home.allProjectsCta[lang]}
-          />
-        </div>
-      </section>
+      <HomeProjects locale={lang} />
       <section
         data-reveal
         className="home-section home-awards"

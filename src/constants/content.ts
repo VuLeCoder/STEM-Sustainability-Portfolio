@@ -297,14 +297,18 @@ export const siteContent = {
       },
     },
     featuredProjects: {
+      openProject: { vi: "Mở dự án", en: "Open project" },
+      pendingLink: { vi: "Chưa cập nhật liên kết", en: "Link coming soon" },
+      imagePlaceholder: { vi: "[Ảnh dự án — sẽ cập nhật]", en: "[Project image — coming soon]" },
+      preview: { vi: "Xem trước", en: "Preview" },
       eyebrow: { vi: "Dự án nổi bật", en: "Selected projects" },
       title: {
         vi: "Công nghệ cần bắt đầu từ một vấn đề thật.",
         en: "Technology should begin with a real problem.",
       },
       description: {
-        vi: "Hai dự án thể hiện các hướng Phúc đang theo đuổi: hành động môi trường tại cộng đồng và chuyển dữ liệu khoa học thành trải nghiệm học tập dễ tiếp cận.",
-        en: "These projects reflect two directions Phuc is pursuing: environmental action in communities and turning scientific data into accessible learning experiences.",
+        vi: "Từ công nghệ hỗ trợ đến môi trường, giáo dục và bảo mật số — những dự án tôi tham gia để đưa kiến thức đến gần hơn với đời sống.",
+        en: "From assistive technology to the environment, education and digital security — projects I have worked on to bring knowledge closer to everyday life.",
       },
     },
     contactHero: {
