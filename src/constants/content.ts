@@ -105,15 +105,9 @@ export const siteContent = {
       en: "STEM · Technology · Sustainability",
     },
     visualLabel: "STEM × Impact",
-    projectRoleLabel: { vi: "Vai trò", en: "Role" },
-    projectHighlightLabel: { vi: "Điểm nhấn", en: "Highlight" },
     primaryCta: {
       vi: "Khám phá các dự án",
       en: "Explore projects",
-    },
-    secondaryCta: {
-      vi: "Cách Phúc tiếp cận vấn đề",
-      en: "How Phuc approaches problems",
     },
     allProjectsCta: { vi: "Xem tất cả dự án", en: "View all projects" },
     otherProjectsLabel: { vi: "Dự án khác", en: "Other projects" },
