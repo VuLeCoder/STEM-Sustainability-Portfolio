@@ -4,6 +4,7 @@ import { locales, siteContent } from "@/constants/content";
 import { isLocale } from "@/lib/i18n";
 import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
+import { ScrollReveal } from "@/components/scroll-reveal";
 
 export function generateStaticParams() {
   return locales.map((locale) => ({ locale }));
@@ -36,6 +37,7 @@ export default async function LocaleLayout({
   return (
     <div className="flex min-h-screen flex-col" lang={selectedLocale}>
       <SiteHeader locale={selectedLocale} />
+      <ScrollReveal />
       <div className="flex-1">{children}</div>
       <SiteFooter locale={selectedLocale} />
     </div>

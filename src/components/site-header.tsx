@@ -9,9 +9,9 @@ import { getLocalizedPath } from "@/lib/i18n";
 
 const navigationItems = [
   { key: "about", path: "/about" },
-  { key: "journey", path: "/activities" },
+  { key: "journey", path: "/journey" },
   { key: "projects", path: "/projects" },
-  { key: "contact", path: "/home#contact" },
+  { key: "contact", path: "/contact" },
 ] as const;
 
 export function SiteHeader({ locale }: { locale: Locale }) {

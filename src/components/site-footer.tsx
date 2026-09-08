@@ -3,8 +3,8 @@ import type { Locale } from "@/constants/content";
 import { siteContent } from "@/constants/content";
 
 const footerNavigation = [
-  { key: "about", path: "/home#story" },
-  { key: "journey", path: "/activities" },
+  { key: "about", path: "/about" },
+  { key: "journey", path: "/journey" },
   { key: "projects", path: "/projects" },
 ] as const;
 
@@ -38,7 +38,7 @@ export function SiteFooter({ locale }: { locale: Locale }) {
           ))}
         </nav>
 
-        <Link className="site-footer__contact" href={`/${locale}/home#contact`}>
+        <Link className="site-footer__contact" href={`/${locale}/contact`}>
           {siteContent.navigation.contact[locale]}
           <span aria-hidden="true">↗</span>
         </Link>

@@ -149,7 +149,7 @@ export default async function ProjectDetailPage({
         </dl>
       </header>
 
-      <div className="project-detail-cover project-detail-shell">
+      <div data-reveal className="project-detail-cover project-detail-shell">
         <Image
           src={project.coverImage}
           alt={`${project.title} — ${project.category[selectedLocale]}`}
@@ -159,7 +159,7 @@ export default async function ProjectDetailPage({
         />
       </div>
 
-      <div className="project-detail-body project-detail-shell">
+      <div data-reveal className="project-detail-body project-detail-shell">
         {sections.map((section, sectionIndex) => (
           <ProjectCaseStudySection
             content={section.content}

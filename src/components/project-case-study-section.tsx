@@ -10,7 +10,7 @@ export function ProjectCaseStudySection({
   content,
 }: ProjectCaseStudySectionProps) {
   return (
-    <section className="project-detail-section">
+    <section data-reveal className="project-detail-section">
       <p className="project-detail-section-index">
         {String(index).padStart(2, "0")}
       </p>

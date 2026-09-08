@@ -2,10 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import { notFound } from "next/navigation";
 import { ButtonLink } from "@/components/button-link";
-import {
-  aboutPageContent,
-  siteContent,
-} from "@/constants/content";
+import { aboutPageContent, siteContent } from "@/constants/content";
 import { isLocale } from "@/lib/i18n";
 import { createLocalizedMetadata } from "@/lib/site-metadata";
 
@@ -39,9 +36,7 @@ export default async function AboutPage({
     <main className="about-page">
       <header className="about-hero about-shell">
         <div className="about-hero-meta">
-          <p className="editorial-label">
-            {aboutPageContent.eyebrow[locale]}
-          </p>
+          <p className="editorial-label">{aboutPageContent.eyebrow[locale]}</p>
           <span aria-hidden="true">02</span>
         </div>
         <h1>{aboutPageContent.title[locale]}</h1>
@@ -60,6 +55,7 @@ export default async function AboutPage({
       </header>
 
       <section
+        data-reveal
         className="about-story about-shell"
         aria-labelledby="about-story-title"
       >
@@ -71,7 +67,11 @@ export default async function AboutPage({
         </div>
       </section>
 
-      <section className="about-details" aria-label={home.interests.title[locale]}>
+      <section
+        data-reveal
+        className="about-details"
+        aria-label={home.interests.title[locale]}
+      >
         <div className="about-shell about-details-grid">
           <div className="about-detail-block">
             <p className="editorial-label">
@@ -103,6 +103,7 @@ export default async function AboutPage({
       </section>
 
       <section
+        data-reveal
         className="about-values about-shell"
         aria-labelledby="about-values-title"
       >
@@ -111,7 +112,7 @@ export default async function AboutPage({
         </p>
         <div>
           <h2 id="about-values-title">{about.values[locale]}</h2>
-          <ButtonLink href={`/${locale}/activities`} variant="text">
+          <ButtonLink href={`/${locale}/journey`} variant="text">
             {home.activities.cta[locale]} <span aria-hidden="true">↗</span>
           </ButtonLink>
         </div>

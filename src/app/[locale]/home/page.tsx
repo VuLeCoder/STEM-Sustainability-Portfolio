@@ -99,6 +99,7 @@ export default async function HomePage({
         </div>
       </section>
       <section
+        data-reveal
         id="about"
         className="home-section home-about-preview"
         aria-labelledby="about-preview-title"
@@ -127,7 +128,7 @@ export default async function HomePage({
           </div>
         </div>
       </section>
-      <section className="home-section">
+      <section data-reveal className="home-section">
         <div className="home-shell">
           <SectionHeading
             eyebrow={home.featuredProjects.eyebrow[lang]}
@@ -148,13 +149,13 @@ export default async function HomePage({
           />
         </div>
       </section>
-      <section className="home-section home-activities">
+      <section data-reveal className="home-section home-activities">
         <div className="home-shell">
           <SectionHeading
             eyebrow={home.activities.eyebrow[lang]}
             title={home.activities.title[lang]}
             action={
-              <ButtonLink href={`/${lang}/activities`} variant="text">
+              <ButtonLink href={`/${lang}/journey`} variant="text">
                 {home.activities.cta[lang]} <span aria-hidden="true">↗</span>
               </ButtonLink>
             }
@@ -184,7 +185,9 @@ export default async function HomePage({
       >
         <div className="home-shell">
           <div className="home-awards-heading">
-            <p className="editorial-label">{home.selectedAwards.eyebrow[lang]}</p>
+            <p className="editorial-label">
+              {home.selectedAwards.eyebrow[lang]}
+            </p>
             <h2 id="selected-awards-title">
               {home.selectedAwards.title[lang]}
             </h2>
@@ -201,12 +204,13 @@ export default async function HomePage({
               </li>
             ))}
           </ol>
-          <ButtonLink href={`/${lang}/activities`} variant="text">
+          <ButtonLink href={`/${lang}/journey`} variant="text">
             {home.selectedAwards.cta[lang]} <span aria-hidden="true">↗</span>
           </ButtonLink>
         </div>
       </section>
       <section
+        data-reveal
         id="contact"
         className="home-contact"
         aria-labelledby="contact-title"

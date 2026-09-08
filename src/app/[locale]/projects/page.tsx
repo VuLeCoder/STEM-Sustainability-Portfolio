@@ -51,7 +51,7 @@ export default async function ProjectsPage({
         </div>
       </header>
 
-      <section className="projects-featured projects-shell">
+      <section data-reveal className="projects-featured projects-shell">
         <div className="projects-section-heading">
           <p className="editorial-label">
             {projectsPageContent.featuredLabel[selectedLocale]}
@@ -61,13 +61,15 @@ export default async function ProjectsPage({
         <SelectedProjects
           locale={selectedLocale}
           projects={featuredProjects}
-          otherProjectsLabel={projectsPageContent.otherProjectsLabel[selectedLocale]}
+          otherProjectsLabel={
+            projectsPageContent.otherProjectsLabel[selectedLocale]
+          }
           viewProjectLabel={projectsPageContent.viewProject[selectedLocale]}
           viewAllLabel={projectsPageContent.viewAllLabel[selectedLocale]}
         />
       </section>
 
-      <section className="projects-index projects-shell">
+      <section data-reveal className="projects-index projects-shell">
         <div className="projects-section-heading">
           <p className="editorial-label">
             {projectsPageContent.allProjectsLabel[selectedLocale]}
@@ -75,30 +77,32 @@ export default async function ProjectsPage({
           <h2>{projectsPageContent.allProjectsTitle[selectedLocale]}</h2>
         </div>
         <ol className="projects-index-list">
-        {siteContent.projects.map((project, index) => {
-          const projectHref = `/${selectedLocale}/projects/${project.slug}`;
-          const projectNumber = String(index + 1).padStart(2, "0");
+          {siteContent.projects.map((project, index) => {
+            const projectHref = `/${selectedLocale}/projects/${project.slug}`;
+            const projectNumber = String(index + 1).padStart(2, "0");
 
-          return (
-            <li key={project.slug}>
-              <Link href={projectHref}>
-                <span className="projects-index-number">{projectNumber}</span>
-                <span className="projects-index-main">
-                  <small>
-                    {[project.year, project.category[selectedLocale]]
-                      .filter(Boolean)
-                      .join(" · ")}
-                  </small>
-                  <strong>{project.title}</strong>
-                </span>
-                <span className="projects-index-fields">
-                  {project.fields[selectedLocale].join(" · ")}
-                </span>
-                <span className="projects-index-arrow" aria-hidden="true">↗</span>
-              </Link>
-            </li>
-          );
-        })}
+            return (
+              <li key={project.slug}>
+                <Link href={projectHref}>
+                  <span className="projects-index-number">{projectNumber}</span>
+                  <span className="projects-index-main">
+                    <small>
+                      {[project.year, project.category[selectedLocale]]
+                        .filter(Boolean)
+                        .join(" · ")}
+                    </small>
+                    <strong>{project.title}</strong>
+                  </span>
+                  <span className="projects-index-fields">
+                    {project.fields[selectedLocale].join(" · ")}
+                  </span>
+                  <span className="projects-index-arrow" aria-hidden="true">
+                    ↗
+                  </span>
+                </Link>
+              </li>
+            );
+          })}
         </ol>
       </section>
     </main>

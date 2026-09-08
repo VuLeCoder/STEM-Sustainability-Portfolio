@@ -89,15 +89,12 @@ export const siteContent = {
   },
 
   contact: {
-    // Thay toàn bộ placeholder bằng thông tin đã được duyệt trước khi công bố.
-    email: "email@example.com",
-    phone: "[Số điện thoại sẽ cập nhật]",
-    location: { vi: "[Địa điểm sẽ cập nhật]", en: "[Location to be updated]" },
-    cvFile: "/files/cv-placeholder.pdf",
-    socialLinks: [
-      { label: "GitHub", href: "#" },
-      { label: "LinkedIn", href: "#" },
-    ],
+    // Chỉ thêm thông tin liên hệ sau khi chủ sở hữu duyệt việc công khai.
+    email: null,
+    phone: null,
+    location: { vi: "Hà Nội, Việt Nam", en: "Hanoi, Vietnam" },
+    cvFile: null,
+    socialLinks: [],
   },
 
   seo: {
@@ -717,6 +714,24 @@ export const activitiesPageContent = {
     competition: { vi: "Cuộc thi & giải thưởng", en: "Competition & award" },
     community: { vi: "Cộng đồng", en: "Community" },
   },
+} as const;
+
+export const contactPageContent = {
+  eyebrow: { vi: "Liên hệ", en: "Contact" },
+  title: { vi: "Hãy cùng kết nối.", en: "Let’s connect." },
+  description: {
+    vi: "Bạn muốn trao đổi về STEM, công nghệ hoặc phát triển bền vững? Thông tin liên hệ công khai sẽ được cập nhật tại đây sau khi được xác nhận.",
+    en: "Want to talk about STEM, technology, or sustainability? Public contact details will appear here once they have been confirmed.",
+  },
+  availabilityLabel: { vi: "Trạng thái", en: "Availability" },
+  availability: {
+    vi: "Thông tin liên hệ đang được xác nhận",
+    en: "Contact details are being confirmed",
+  },
+  locationLabel: { vi: "Địa điểm", en: "Location" },
+  exploreLabel: { vi: "Trong lúc chờ đợi", en: "In the meantime" },
+  projectsCta: { vi: "Khám phá dự án", en: "Explore projects" },
+  journeyCta: { vi: "Xem hành trình", en: "View the journey" },
 } as const;
 
 export function getLocalized<T>(value: Localized<T>, locale: Locale): T {
