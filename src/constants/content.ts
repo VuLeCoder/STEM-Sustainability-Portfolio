@@ -74,16 +74,6 @@ export const siteContent = {
     language: { vi: "Chọn ngôn ngữ", en: "Choose language" },
     openMenu: { vi: "Mở menu", en: "Open menu" },
     closeMenu: { vi: "Đóng menu", en: "Close menu" },
-    switchToLight: {
-      vi: "Chuyển sang giao diện sáng",
-      en: "Switch to light theme",
-    },
-    switchToDark: {
-      vi: "Chuyển sang giao diện tối",
-      en: "Switch to dark theme",
-    },
-    lightTheme: { vi: "Sáng", en: "Light" },
-    darkTheme: { vi: "Tối", en: "Dark" },
     portfolioLabel: { vi: "Hồ sơ học thuật", en: "Academic portfolio" },
     allRightsReserved: { vi: "Bản quyền thuộc về", en: "All rights reserved" },
   },

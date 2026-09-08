@@ -47,20 +47,6 @@
   --motion-stagger: 80ms;
 }
 
-:root[data-theme="dark"] {
-  color-scheme: dark;
-  --background: #0d1825;
-  --surface: #142538;
-  --surface-raised: #193047;
-  --foreground: #eff8ff;
-  --muted: #b3c6d4;
-  --primary: #64d6bd;
-  --accent: #ffbf66;
-  --border: #2a4961;
-  --focus: #94f0d8;
-  --shadow: 0 22px 56px rgb(1 10 22 / 34%);
-}
-
 * {
   box-sizing: border-box;
 }
@@ -1141,118 +1127,6 @@ a {
   font-size: clamp(1.05rem, 1.7vw, 1.3rem);
   line-height: 1.7;
 }
-.projects-showcases {
-  display: grid;
-  grid-template-columns: 1fr;
-  row-gap: clamp(4.5rem, 8vw, 7.5rem);
-  padding-block: clamp(3.5rem, 7vw, 7rem) clamp(6rem, 11vw, 10rem);
-}
-.project-showcase {
-  min-width: 0;
-}
-.project-showcase-visual {
-  position: relative;
-  display: block;
-  aspect-ratio: 16/10;
-  overflow: hidden;
-  background: var(--surface);
-  color: var(--foreground);
-  text-decoration: none;
-}
-.project-showcase-visual img {
-  object-fit: cover;
-  transition: transform 400ms ease;
-}
-.project-showcase-visual > span {
-  position: absolute;
-  top: 1rem;
-  left: 1rem;
-  z-index: 1;
-  display: grid;
-  place-items: center;
-  width: 3rem;
-  height: 3rem;
-  background: var(--surface-raised);
-  font-family: var(--font-mono);
-  font-size: 0.72rem;
-  font-weight: 700;
-  letter-spacing: 0.08em;
-}
-.project-showcase-copy {
-  padding-top: clamp(1.5rem, 2.5vw, 2rem);
-}
-.project-showcase-kicker {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.4rem;
-  font-family: var(--font-mono);
-  font-size: 0.68rem;
-  font-weight: 700;
-  letter-spacing: 0.12em;
-  line-height: 1.5;
-  text-transform: uppercase;
-  color: var(--primary);
-}
-.project-showcase-copy h2 {
-  margin-top: 1rem;
-  font-family: var(--font-display);
-  font-size: clamp(2.5rem, 4vw, 4.25rem);
-  font-weight: 400;
-  letter-spacing: -0.055em;
-  line-height: 0.95;
-  overflow-wrap: anywhere;
-}
-.project-showcase-copy h2 a {
-  color: inherit;
-  text-decoration: none;
-}
-.project-showcase-summary {
-  display: -webkit-box;
-  max-width: 38rem;
-  margin-top: 1.3rem;
-  overflow: hidden;
-  color: var(--foreground);
-  font-size: clamp(1rem, 1.35vw, 1.15rem);
-  line-height: 1.65;
-  -webkit-box-orient: vertical;
-  -webkit-line-clamp: 3;
-}
-.project-showcase-fields {
-  margin-top: 1.3rem;
-  color: var(--muted);
-  font-size: 0.88rem;
-  line-height: 1.7;
-}
-.project-showcase-achievement {
-  display: inline-block;
-  margin-top: 1.25rem;
-  padding-top: 0.85rem;
-  border-top: 1px solid var(--border);
-  color: var(--foreground);
-  font-family: var(--font-mono);
-  font-size: 0.7rem;
-  font-weight: 700;
-  letter-spacing: 0.08em;
-  line-height: 1.5;
-  text-transform: uppercase;
-}
-.project-showcase-cta {
-  display: flex;
-  min-height: 3rem;
-  align-items: center;
-  justify-content: space-between;
-  gap: 1rem;
-  margin-top: 1.75rem;
-  padding-block: 1rem;
-  border-top: 1px solid var(--foreground);
-  border-bottom: 1px solid var(--border);
-  color: var(--foreground);
-  font-weight: 700;
-  text-decoration: none;
-}
-.project-showcase-cta span:last-child {
-  transition: transform 180ms ease;
-}
 .projects-featured {
   padding-block: clamp(4rem, 8vw, 7.5rem);
 }
@@ -1342,42 +1216,9 @@ a {
     grid-template-columns: minmax(0, 1.3fr) minmax(18rem, 0.7fr);
   }
 }
-@media (min-width: 960px) {
-  .projects-showcases {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    column-gap: clamp(1.5rem, 3vw, 2.5rem);
-  }
-}
-@media (hover: hover) and (pointer: fine) {
-  .project-showcase:hover .project-showcase-visual img {
-    transform: scale(1.02);
-  }
-  .project-showcase:hover .project-showcase-cta {
-    color: var(--primary);
-  }
-  .project-showcase:hover .project-showcase-cta span:last-child {
-    transform: translateX(0.25rem);
-  }
-}
 @media (max-width: 767px) {
   .projects-intro {
     padding-block: clamp(3.5rem, 16vw, 5rem);
-  }
-  .projects-showcases {
-    row-gap: 4.5rem;
-    padding-top: 3rem;
-  }
-  .project-showcase-visual {
-    aspect-ratio: 4/3;
-  }
-  .project-showcase-copy h2 {
-    font-size: clamp(2.5rem, 12vw, 4.25rem);
-  }
-  .project-showcase-summary {
-    -webkit-line-clamp: 3;
-  }
-  .project-showcase-cta {
-    margin-top: 1.5rem;
   }
   .projects-index-list a {
     grid-template-columns: 2rem minmax(0, 1fr) 1.5rem;
@@ -1391,15 +1232,6 @@ a {
 @media (max-width: 359px) {
   .projects-intro h1 {
     font-size: 3rem;
-  }
-  .project-showcase-visual > span {
-    top: 0.75rem;
-    left: 0.75rem;
-    width: 2.6rem;
-    height: 2.6rem;
-  }
-  .project-showcase-copy h2 {
-    font-size: 2.35rem;
   }
   .projects-index-main strong {
     font-size: 1.6rem;

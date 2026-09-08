@@ -9,14 +9,11 @@ export const metadata: Metadata = {
     "An academic portfolio on research, technology, and social impact.",
 };
 
-const themeScript = `
+const localeScript = `
   try {
-    const savedTheme = localStorage.getItem('theme');
     const locale = window.location.pathname.match(/^\/(vi|en)(?=\/|(?!.))/)?.[1];
     if (locale) document.documentElement.lang = locale;
-    const systemTheme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
-    document.documentElement.dataset.theme = savedTheme === 'dark' || savedTheme === 'light' ? savedTheme : systemTheme;
-  } catch { document.documentElement.dataset.theme = 'light'; }
+  } catch {}
 `;
 
 export default function RootLayout({
@@ -25,7 +22,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
-        <script dangerouslySetInnerHTML={{ __html: themeScript }} />
+        <script dangerouslySetInnerHTML={{ __html: localeScript }} />
       </head>
       <body>{children}</body>
     </html>
