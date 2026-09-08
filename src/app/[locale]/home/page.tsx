@@ -7,8 +7,8 @@ import { SectionHeading } from "@/components/section-heading";
 import { SelectedProjects } from "@/components/selected-projects";
 import { HomeSidebar } from "@/components/home-sidebar";
 import { HomeAbout } from "@/components/home-about";
+import { HomeJourney } from "@/components/home-journey";
 import {
-  activitiesPageContent,
   projectsPageContent,
   siteContent,
   type Locale,
@@ -48,13 +48,6 @@ export default async function HomePage({
     ...projects.filter((project) => project.featured),
     ...projects.filter((project) => !project.featured),
   ].slice(0, 5);
-  const activityPreview = activities
-    .flatMap((group) =>
-      group.entries
-        .slice(0, 2)
-        .map((entry) => ({ ...entry, year: group.year })),
-    )
-    .slice(0, 4);
   const selectedAwards = activities
     .flatMap((group) =>
       group.entries.map((entry) => ({ ...entry, year: group.year })),
@@ -90,6 +83,7 @@ export default async function HomePage({
         </div>
       </section>
       <HomeAbout locale={lang} />
+      <HomeJourney locale={lang} />
       <section id="projects" data-reveal className="home-section">
         <div className="home-shell">
           <SectionHeading
@@ -109,36 +103,6 @@ export default async function HomePage({
             viewProjectLabel={projectsPageCta(lang)}
             viewAllLabel={home.allProjectsCta[lang]}
           />
-        </div>
-      </section>
-      <section id="journey" data-reveal className="home-section home-activities">
-        <div className="home-shell">
-          <SectionHeading
-            eyebrow={home.activities.eyebrow[lang]}
-            title={home.activities.title[lang]}
-            action={
-              <ButtonLink href={`/${lang}/journey`} variant="text">
-                {home.activities.cta[lang]} <span aria-hidden="true">↗</span>
-              </ButtonLink>
-            }
-          />
-          <ol className="home-activity-list">
-            {activityPreview.map((activity, index) => (
-              <li key={activity.title.en}>
-                <time>{activity.year}</time>
-                <div>
-                  <span className="home-activity-type">
-                    {activitiesPageContent.types[activity.type][lang]}
-                  </span>
-                  <h3>{activity.title[lang]}</h3>
-                  <p>{activity.description[lang]}</p>
-                </div>
-                <span aria-hidden="true">
-                  {String(index + 1).padStart(2, "0")}
-                </span>
-              </li>
-            ))}
-          </ol>
         </div>
       </section>
       <section

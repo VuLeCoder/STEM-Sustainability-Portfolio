@@ -206,6 +206,56 @@ export const siteContent = {
         { value: "2025", projectSlug: "bloomwatch" },
       ],
     },
+    journeyPreview: {
+      label: { vi: "Hành trình", en: "Journey" },
+      title: { vi: "Từng bước học hỏi. Từng dấu mốc trưởng thành.", en: "Learning at every step. Growing with every milestone." },
+      description: {
+        vi: "Từ những cuộc thi học thuật đến hoạt động tập thể và các dự án công nghệ — mỗi năm là một trải nghiệm đáng nhớ.",
+        en: "From academic competitions to community activities and technology projects — a memorable experience from each selected year.",
+      },
+      selectYear: { vi: "Chọn năm để xem dấu mốc", en: "Choose a year to explore a milestone" },
+      cta: { vi: "Xem hành trình", en: "View the journey" },
+      types: {
+        award: { vi: "Giải thưởng", en: "Award" },
+        activity: { vi: "Hoạt động", en: "Activity" },
+      },
+      // One selected milestone per year, sourced from CV.pdf (Honors and Media roles).
+      // Omit years without a clearly dated milestone; imagery is optional.
+      milestones: [
+        {
+          year: "2022", type: "award", featured: true,
+          title: { vi: "Giải Đồng — PIMSO", en: "Bronze Award — PIMSO" },
+          description: {
+            vi: "Đạt giải Đồng vòng loại Philippine International Mathematical Olympiad (PIMSO) năm 2022.",
+            en: "Received a Bronze Award in the 2022 Philippine International Mathematical Olympiad (PIMSO) Heat Round.",
+          },
+        },
+        {
+          year: "2024", type: "activity", featured: true,
+          title: { vi: "Tham gia truyền thông CNH Panthers", en: "Joining CNH Panthers media" },
+          description: {
+            vi: "Thành viên truyền thông CLB bóng rổ CNH Basketball Club — Panthers trong năm học 2024–2025, tiếp tục tham gia năm học 2025–2026.",
+            en: "Media member of CNH Basketball Club — Panthers in the 2024–2025 school year, continuing in 2025–2026.",
+          },
+        },
+        {
+          year: "2025", type: "award", featured: true,
+          title: { vi: "BloomWatch — NASA Space Apps", en: "BloomWatch — NASA Space Apps" },
+          description: {
+            vi: "Cùng đội BlueMarble xây dựng nền tảng học tập từ dữ liệu vệ tinh NASA. Dự án đạt giải Nhất, Arts & Technology Award và được chọn là Global Nominee tại NASA International Space Apps Challenge 2025.",
+            en: "Worked with Team BlueMarble on a learning platform using NASA satellite data. The project earned First Prize, the Arts & Technology Award, and Global Nominee recognition at the 2025 NASA International Space Apps Challenge.",
+          },
+        },
+        {
+          year: "2026", type: "award", featured: true,
+          title: { vi: "SafeStride — Giải Vàng WICO", en: "SafeStride — WICO Gold Award" },
+          description: {
+            vi: "Tham gia phát triển ý tưởng ứng dụng điện thoại giúp người khiếm thị nhận biết không gian và nhận cảnh báo ưu tiên. SafeStride đạt giải Vàng tại World Invention Creativity Olympic 2026 ở Seoul, Hàn Quốc.",
+            en: "Contributed to a smartphone concept supporting spatial awareness and priority alerts for blind users. SafeStride received a Gold Award at the 2026 World Invention Creativity Olympic in Seoul, Korea.",
+          },
+        },
+      ],
+    },
     activities: {
       eyebrow: { vi: "Hoạt động chọn lọc", en: "Selected activities" },
       title: {
