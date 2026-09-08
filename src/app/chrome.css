@@ -1,4 +1,45 @@
 /* Shared navigation and footer: final portfolio direction. */
+.home-sidebar { display: none; }
+.home-page section[id], #footer-contact { scroll-margin-top: 104px; }
+@media (min-width: 768px) and (min-height: 480px) {
+  .home-sidebar {
+    display: flex; flex-direction: column; gap: 12px;
+    position: fixed; z-index: 60; left: 16px; top: 50%; transform: translateY(-50%) scale(.85);
+    transform-origin: left center;
+    width: 64px; padding: 16px 9px; border: 1px solid #e2e6e1; border-radius: 40px;
+    background: #fff; box-shadow: 0 8px 28px rgb(23 26 23 / 8%);
+    font-family: var(--font-sans); opacity: .45;
+    transition: transform 220ms ease, opacity 220ms ease, box-shadow 220ms ease;
+  }
+  .home-sidebar:hover, .home-sidebar:focus-within { transform: translateY(-50%) scale(1); opacity: 1; box-shadow: 0 12px 32px rgb(23 26 23 / 12%); }
+  .home-sidebar nav:not([hidden]) { display: flex; flex-direction: column; gap: 16px; padding-bottom: 16px; border-bottom: 1px solid #e2e6e1; }
+  .home-sidebar__toggle { background: #e7efe8 !important; color: #2f6b3e !important; }
+  .home-sidebar__control {
+    position: relative; display: flex; align-items: center; justify-content: center;
+    width: 44px; height: 44px; flex-shrink: 0; border: 0; border-radius: 50%;
+    background: transparent; color: #586457; cursor: pointer; text-decoration: none;
+    transition: background-color 200ms ease, color 200ms ease;
+  }
+  .home-sidebar__control:hover { background: #e7efe8; color: #2f6b3e; }
+  .home-sidebar__control[aria-current="location"] { background: #2f6b3e; color: #fff; box-shadow: 0 4px 10px rgb(47 107 62 / 20%); }
+  .home-sidebar__control:focus-visible { outline: 2px solid #2f6b3e; outline-offset: 3px; }
+  .home-sidebar__tooltip {
+    position: absolute; left: 100%; top: 50%; padding: 10px 14px; margin-left: 16px;
+    border: 1px solid #e2e6e1; border-radius: 12px; background: #fff; color: #171a17;
+    box-shadow: 0 4px 16px rgb(23 26 23 / 8%); white-space: nowrap; font-size: 13px; line-height: 1.5;
+    opacity: 0; visibility: hidden; transform: translate(-4px, -50%);
+    transition: opacity 200ms ease, transform 200ms ease, visibility 200ms ease;
+  }
+  .home-sidebar__tooltip::before { content: ""; position: absolute; right: 100%; top: 0; width: 17px; height: 100%; }
+  .home-sidebar__control:hover .home-sidebar__tooltip,
+  .home-sidebar__control:focus-visible .home-sidebar__tooltip { opacity: 1; visibility: visible; transform: translate(0, -50%); }
+}
+@media (hover: none) {
+  .home-sidebar { transform: translateY(-50%) scale(1); opacity: 1; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .home-sidebar, .home-sidebar * { transition: none !important; }
+}
 .site-header {
   position: sticky;
   z-index: 50;

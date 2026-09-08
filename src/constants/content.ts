@@ -44,6 +44,11 @@ export type Project = {
 };
 
 export const siteContent = {
+  sidebar: {
+    label: { vi: "Điều hướng nhanh", en: "Quick navigation" },
+    collapse: { vi: "Thu gọn thanh điều hướng", en: "Collapse sidebar" },
+    expand: { vi: "Mở thanh điều hướng", en: "Expand sidebar" },
+  },
   chrome: {
     logoImage: "/images/brand/ncp-logo.png",
     footerBackground: "/images/placeholders/footer-background.svg",

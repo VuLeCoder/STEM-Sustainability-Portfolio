@@ -5,6 +5,7 @@ import { ButtonLink } from "@/components/button-link";
 import { createLocalizedMetadata } from "@/lib/site-metadata";
 import { SectionHeading } from "@/components/section-heading";
 import { SelectedProjects } from "@/components/selected-projects";
+import { HomeSidebar } from "@/components/home-sidebar";
 import {
   activitiesPageContent,
   projectsPageContent,
@@ -61,7 +62,8 @@ export default async function HomePage({
     .slice(0, 3);
 
   return (
-    <main>
+    <main className="home-page">
+      <HomeSidebar locale={lang} />
       <section className="home-hero">
         <div className="home-shell home-hero-grid">
           <div className="home-hero-copy motion-stagger">
@@ -128,7 +130,7 @@ export default async function HomePage({
           </div>
         </div>
       </section>
-      <section data-reveal className="home-section">
+      <section id="projects" data-reveal className="home-section">
         <div className="home-shell">
           <SectionHeading
             eyebrow={home.featuredProjects.eyebrow[lang]}
@@ -149,7 +151,7 @@ export default async function HomePage({
           />
         </div>
       </section>
-      <section data-reveal className="home-section home-activities">
+      <section id="journey" data-reveal className="home-section home-activities">
         <div className="home-shell">
           <SectionHeading
             eyebrow={home.activities.eyebrow[lang]}

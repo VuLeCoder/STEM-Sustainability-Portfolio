@@ -6,7 +6,7 @@ import { siteContent, type Locale } from "@/constants/content";
 export function SiteFooter({ locale }: { locale: Locale }) {
   const { chrome, profile, navigation } = siteContent;
   return (
-    <footer className="portfolio-footer">
+    <footer id="footer-contact" className="portfolio-footer">
       <div className="portfolio-footer__background" style={{ backgroundImage: `url("${chrome.footerBackground}")` }} aria-hidden="true" />
       <div className="portfolio-footer__shell">
         <div className="portfolio-footer__grid">
