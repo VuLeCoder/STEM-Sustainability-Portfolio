@@ -3,11 +3,13 @@
 import { useState } from "react";
 import Link from "next/link";
 import { siteContent, type Locale } from "@/constants/content";
+import { journeyFeatured, journeyPageContent } from "@/constants/journey";
 
 export function HomeJourney({ locale }: { locale: Locale }) {
   const content = siteContent.home.journeyPreview;
-  const [activeIndex, setActiveIndex] = useState(content.milestones.length - 1);
-  const milestone = content.milestones[activeIndex];
+  const [activeIndex, setActiveIndex] = useState(journeyFeatured.length - 1);
+  const milestone = journeyFeatured[activeIndex];
+  if (!milestone) return null;
 
   return (
     <section id="journey" className="home-journey" aria-labelledby="home-journey-title">
@@ -20,7 +22,7 @@ export function HomeJourney({ locale }: { locale: Locale }) {
           <p>{content.description[locale]}</p>
         </div>
         <div className="home-journey-selector" role="group" aria-label={content.selectYear[locale]}>
-          {content.milestones.map((item, index) => (
+          {journeyFeatured.map((item, index) => (
             <button
               key={item.year}
               type="button"
@@ -41,11 +43,11 @@ export function HomeJourney({ locale }: { locale: Locale }) {
             </div>
             <div className="home-journey-copy">
               <p className="home-journey-meta">
-                <span>{content.types[milestone.type][locale]}</span>
-                <time dateTime={milestone.year}>{milestone.year}</time>
+                <span>{journeyPageContent.types[milestone.type][locale]}</span>
+                <time dateTime={String(milestone.year)}>{milestone.year}</time>
               </p>
               <h3>{milestone.title[locale]}</h3>
-              <p className="home-journey-description">{milestone.description[locale]}</p>
+              <p className="home-journey-description">{milestone.shortDescription[locale]}</p>
             </div>
           </article>
         </div>

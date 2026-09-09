@@ -1,62 +1,41 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import { ActivityTimeline } from "@/components/activity-timeline";
+import { JourneyAccordion } from "@/components/journey-accordion";
 import { createLocalizedMetadata } from "@/lib/site-metadata";
-import { activitiesPageContent, siteContent } from "@/constants/content";
+import { siteContent } from "@/constants/content";
+import { journeyItems, journeyPageContent as content } from "@/constants/journey";
 import { isLocale } from "@/lib/i18n";
+import "./journey.css";
 
-export async function generateMetadata({
-  params,
-}: {
-  params: Promise<{ locale: string }>;
-}): Promise<Metadata> {
+type Props = { params: Promise<{ locale: string }> };
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale } = await params;
   if (!isLocale(locale)) return {};
-  const selectedLocale = locale;
-  return createLocalizedMetadata({
-    locale: selectedLocale,
-    path: "/journey",
-    title:
-      activitiesPageContent.title[selectedLocale] +
-      " | " +
-      siteContent.seo.siteName,
-    description: activitiesPageContent.description[selectedLocale],
+  return createLocalizedMetadata({ locale, path: "/journey",
+    title: content.title[locale] + " | " + siteContent.seo.siteName,
+    description: content.description[locale],
   });
 }
 
-export default async function JourneyPage({
-  params,
-}: {
-  params: Promise<{ locale: string }>;
-}) {
+export default async function JourneyPage({ params }: Props) {
   const { locale } = await params;
   if (!isLocale(locale)) notFound();
-  const selectedLocale = locale;
-
   return (
-    <main className="journey-page">
-      <header className="journey-hero journey-shell">
-        <div className="journey-hero-meta">
-          <p className="editorial-label">
-            {activitiesPageContent.eyebrow[selectedLocale]}
-          </p>
-          <span aria-hidden="true">03</span>
-        </div>
-        <div className="journey-hero-grid">
-          <h1>{activitiesPageContent.title[selectedLocale]}</h1>
-          <p>{activitiesPageContent.description[selectedLocale]}</p>
-        </div>
-      </header>
-      <section
-        data-reveal
-        className="journey-content journey-shell"
-        aria-label={activitiesPageContent.eyebrow[selectedLocale]}
-      >
-        <ActivityTimeline
-          locale={selectedLocale}
-          activities={siteContent.activities}
-        />
-      </section>
+    <main className="journey-chapters">
+      <div className="journey-chapters__shell">
+        <header className="journey-chapters__header">
+          <div>
+            <span className="journey-chapters__label">{content.label[locale]}</span>
+            <h1>{content.title[locale]}</h1>
+          </div>
+          <div className="journey-chapters__intro-copy">
+            <p>{content.description[locale]}</p>
+            <p className="journey-chapters__hint">{content.timelineHint[locale]}</p>
+          </div>
+        </header>
+        <JourneyAccordion items={journeyItems} locale={locale} />
+      </div>
     </main>
   );
 }

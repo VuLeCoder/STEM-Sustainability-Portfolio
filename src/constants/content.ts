@@ -215,46 +215,6 @@ export const siteContent = {
       },
       selectYear: { vi: "Chọn năm để xem dấu mốc", en: "Choose a year to explore a milestone" },
       cta: { vi: "Xem hành trình", en: "View the journey" },
-      types: {
-        award: { vi: "Giải thưởng", en: "Award" },
-        activity: { vi: "Hoạt động", en: "Activity" },
-      },
-      // One selected milestone per year, sourced from CV.pdf (Honors and Media roles).
-      // Omit years without a clearly dated milestone; imagery is optional.
-      milestones: [
-        {
-          year: "2022", type: "award", featured: true,
-          title: { vi: "Giải Đồng — PIMSO", en: "Bronze Award — PIMSO" },
-          description: {
-            vi: "Đạt giải Đồng vòng loại Philippine International Mathematical Olympiad (PIMSO) năm 2022.",
-            en: "Received a Bronze Award in the 2022 Philippine International Mathematical Olympiad (PIMSO) Heat Round.",
-          },
-        },
-        {
-          year: "2024", type: "activity", featured: true,
-          title: { vi: "Tham gia truyền thông CNH Panthers", en: "Joining CNH Panthers media" },
-          description: {
-            vi: "Thành viên truyền thông CLB bóng rổ CNH Basketball Club — Panthers trong năm học 2024–2025, tiếp tục tham gia năm học 2025–2026.",
-            en: "Media member of CNH Basketball Club — Panthers in the 2024–2025 school year, continuing in 2025–2026.",
-          },
-        },
-        {
-          year: "2025", type: "award", featured: true,
-          title: { vi: "BloomWatch — NASA Space Apps", en: "BloomWatch — NASA Space Apps" },
-          description: {
-            vi: "Cùng đội BlueMarble xây dựng nền tảng học tập từ dữ liệu vệ tinh NASA. Dự án đạt giải Nhất, Arts & Technology Award và được chọn là Global Nominee tại NASA International Space Apps Challenge 2025.",
-            en: "Worked with Team BlueMarble on a learning platform using NASA satellite data. The project earned First Prize, the Arts & Technology Award, and Global Nominee recognition at the 2025 NASA International Space Apps Challenge.",
-          },
-        },
-        {
-          year: "2026", type: "award", featured: true,
-          title: { vi: "SafeStride — Giải Vàng WICO", en: "SafeStride — WICO Gold Award" },
-          description: {
-            vi: "Tham gia phát triển ý tưởng ứng dụng điện thoại giúp người khiếm thị nhận biết không gian và nhận cảnh báo ưu tiên. SafeStride đạt giải Vàng tại World Invention Creativity Olympic 2026 ở Seoul, Hàn Quốc.",
-            en: "Contributed to a smartphone concept supporting spatial awareness and priority alerts for blind users. SafeStride received a Gold Award at the 2026 World Invention Creativity Olympic in Seoul, Korea.",
-          },
-        },
-      ],
     },
     activities: {
       eyebrow: { vi: "Hoạt động chọn lọc", en: "Selected activities" },
@@ -661,84 +621,6 @@ export const siteContent = {
     },
   ] satisfies readonly Project[],
 
-  activities: [
-    {
-      year: "2026",
-      entries: [
-        {
-          type: "research",
-          title: {
-            vi: "Thực tập sinh nghiên cứu — Viện Công nghệ Thông tin, VAST",
-            en: "Research Intern — Institute of Information Technology, VAST",
-          },
-          description: {
-            vi: "Tham gia thực tập có cấu trúc về các hệ thống AI ứng dụng.",
-            en: "Participating in a structured internship focused on applied AI systems.",
-          },
-        },
-        {
-          type: "competition",
-          title: {
-            vi: "Giải Vàng — World Invention Creativity Olympic",
-            en: "Gold Award — World Invention Creativity Olympic",
-          },
-          description: {
-            vi: "SafeStride — dự án về nhận thức không gian và cảnh báo ưu tiên trên điện thoại cho người khiếm thị.",
-            en: "SafeStride — a smartphone concept for spatial awareness and priority alerts for blind users.",
-          },
-        },
-        {
-          type: "competition",
-          title: {
-            vi: "Giải Ba — Cuộc thi Ý tưởng Bảo vệ Môi trường trong lĩnh vực Giao thông",
-            en: "Third Prize — Environmental Protection Ideas in the Transport Sector Competition",
-          },
-          description: {
-            vi: "ECOMeSort — ý tưởng ứng dụng AI hỗ trợ phân loại rác và kết nối hệ sinh thái tái chế.",
-            en: "ECOMeSort — an AI-enabled concept for waste sorting and recycling-ecosystem connections.",
-          },
-        },
-      ],
-    },
-    {
-      year: "2025",
-      entries: [
-        {
-          type: "community",
-          title: {
-            vi: "Nhà sáng lập & Trưởng dự án — ECOMe",
-            en: "Founder & Project Chair — ECOMe",
-          },
-          description: {
-            vi: "Sáng kiến do học sinh dẫn dắt về giáo dục môi trường và hành động cộng đồng.",
-            en: "A student-led environmental education and community-action initiative.",
-          },
-        },
-        {
-          type: "research",
-          title: {
-            vi: "Tác giả và người trình bày học sinh — VNICT 2025",
-            en: "Student Author and Presenter — VNICT 2025",
-          },
-          description: {
-            vi: "Đồng tác giả và trình bày bài báo về phương pháp reversible data hiding hai ảnh được cải tiến.",
-            en: "Co-authored and presented a paper on an improved dual-image reversible data-hiding method.",
-          },
-        },
-        {
-          type: "competition",
-          title: {
-            vi: "BloomWatch — NASA International Space Apps Challenge 2025",
-            en: "BloomWatch — 2025 NASA International Space Apps Challenge",
-          },
-          description: {
-            vi: "Giải Nhất, Arts & Technology Award và Global Nominee.",
-            en: "First Prize, Arts & Technology Award, and Global Nominee.",
-          },
-        },
-      ],
-    },
-  ],
 } as const;
 
 export const aboutPageContent = {
