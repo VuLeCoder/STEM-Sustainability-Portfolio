@@ -758,6 +758,8 @@ export const aboutPageContent = {
 } as const;
 
 export const projectsPageContent = {
+  showMore: { vi: "Xem thêm", en: "Show more" },
+  showLess: { vi: "Ẩn bớt", en: "Show less" },
   eyebrow: { vi: "Dự án", en: "Projects" },
   title: {
     vi: "Từ vấn đề thực tế đến giải pháp có trách nhiệm.",
