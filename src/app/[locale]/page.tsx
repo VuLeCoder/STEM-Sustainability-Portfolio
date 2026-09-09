@@ -1,5 +1,5 @@
 import { redirect } from "next/navigation";
-import { locales } from "@/constants/content";
+import { locales } from "@/constants/common";
 import { defaultLocale, isLocale } from "@/lib/i18n";
 
 export function generateStaticParams() {

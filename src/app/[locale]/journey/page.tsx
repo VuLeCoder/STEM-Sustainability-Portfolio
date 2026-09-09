@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { JourneyAccordion } from "@/components/journey-accordion";
 import { createLocalizedMetadata } from "@/lib/site-metadata";
-import { siteContent } from "@/constants/content";
+import { siteContent } from "@/constants/common";
 import { journeyItems, journeyPageContent as content } from "@/constants/journey";
 import { isLocale } from "@/lib/i18n";
 import "./journey.css";

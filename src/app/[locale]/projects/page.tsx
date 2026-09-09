@@ -3,7 +3,8 @@ import Image from "next/image";
 import { ProjectGalleryList } from "@/components/project-gallery-list";
 import { notFound } from "next/navigation";
 import { createLocalizedMetadata } from "@/lib/site-metadata";
-import { projectsPageContent, siteContent } from "@/constants/content";
+import { projectsPageContent } from "@/constants/project";
+import { siteContent } from "@/constants/common";
 import { isLocale } from "@/lib/i18n";
 import "./projects.css";
 

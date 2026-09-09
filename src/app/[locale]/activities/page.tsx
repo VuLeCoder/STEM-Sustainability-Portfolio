@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { activitiesPageContent, siteContent } from "@/constants/content";
+import { activitiesPageContent } from "@/constants/journey";
+import { siteContent } from "@/constants/common";
 import { isLocale } from "@/lib/i18n";
 import { siteUrl } from "@/lib/site-metadata";
 

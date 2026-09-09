@@ -4,7 +4,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
 import { SiteLogo } from "@/components/site-logo";
-import { siteContent, type Locale } from "@/constants/content";
+import { siteContent, type Locale } from "@/constants/common";
 import { getLocalizedPath } from "@/lib/i18n";
 
 const navigationItems = [

@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { siteContent, type Locale } from "@/constants/content";
+import { siteContent, type Locale } from "@/constants/common";
 
 const configuredUrl =
   process.env.NEXT_PUBLIC_SITE_URL ??

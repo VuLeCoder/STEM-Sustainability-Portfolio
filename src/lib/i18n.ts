@@ -1,4 +1,4 @@
-import { locales, type Locale } from "@/constants/content";
+import { locales, type Locale } from "@/constants/common";
 
 export const defaultLocale: Locale = "en";
 

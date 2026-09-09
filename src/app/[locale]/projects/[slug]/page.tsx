@@ -2,12 +2,8 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import {
-  locales,
-  projectDetailContent,
-  siteContent,
-  type Project,
-} from "@/constants/content";
+import { locales, siteContent } from "@/constants/common";
+import { projectDetailContent, type Project } from "@/constants/project";
 import { isLocale } from "@/lib/i18n";
 import { ProjectCaseStudySection } from "@/components/project-case-study-section";
 import { createLocalizedMetadata } from "@/lib/site-metadata";

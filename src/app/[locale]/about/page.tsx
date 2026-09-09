@@ -2,7 +2,8 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import { notFound } from "next/navigation";
 import { ButtonLink } from "@/components/button-link";
-import { aboutPageContent, siteContent } from "@/constants/content";
+import { aboutPageContent } from "@/constants/profile";
+import { siteContent } from "@/constants/common";
 import { isLocale } from "@/lib/i18n";
 import { createLocalizedMetadata } from "@/lib/site-metadata";
 
@@ -44,7 +45,7 @@ export default async function AboutPage({
           <div className="about-portrait">
             <Image
               src={profile.portrait}
-              alt={profile.name}
+              alt={profile.name[locale]}
               fill
               priority
               sizes="(max-width: 767px) 100vw, 42vw"

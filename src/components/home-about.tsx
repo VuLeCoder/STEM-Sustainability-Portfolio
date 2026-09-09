@@ -1,4 +1,4 @@
-import { siteContent, type Locale } from "@/constants/content";
+import { siteContent, type Locale } from "@/constants/common";
 
 export function HomeAbout({ locale }: { locale: Locale }) {
   const content = siteContent.home.aboutMe;

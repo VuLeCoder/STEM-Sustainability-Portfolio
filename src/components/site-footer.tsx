@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { ContactIcon } from "@/components/contact-icon";
 import { SiteLogo } from "@/components/site-logo";
-import { siteContent, type Locale } from "@/constants/content";
+import { siteContent, type Locale } from "@/constants/common";
 
 export function SiteFooter({ locale }: { locale: Locale }) {
   const { chrome, profile, navigation } = siteContent;
@@ -12,7 +12,7 @@ export function SiteFooter({ locale }: { locale: Locale }) {
         <div className="portfolio-footer__grid">
           <div className="portfolio-footer__intro">
             <SiteLogo locale={locale} />
-            <h2>{profile.name}</h2>
+            <h2>{profile.name[locale]}</h2>
             <p>{profile.positioning[locale]}</p>
             <div className="portfolio-footer__socials">
               {chrome.socials.map((social) => (
@@ -35,7 +35,7 @@ export function SiteFooter({ locale }: { locale: Locale }) {
           </div>
         </div>
         <div className="portfolio-footer__bottom">
-          <p>© {new Date().getFullYear()} {profile.name}. {chrome.rights[locale]}</p>
+          <p>© {new Date().getFullYear()} {profile.name[locale]}. {chrome.rights[locale]}</p>
           <span>{chrome.footerBackgroundLabel[locale]}</span>
         </div>
       </div>

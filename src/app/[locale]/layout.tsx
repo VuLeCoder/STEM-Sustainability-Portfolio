@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import { locales, siteContent } from "@/constants/content";
+import { locales, siteContent } from "@/constants/common";
 import { isLocale } from "@/lib/i18n";
 import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";

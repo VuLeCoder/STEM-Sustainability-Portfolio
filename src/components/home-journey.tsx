@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import { siteContent, type Locale } from "@/constants/content";
+import { siteContent, type Locale } from "@/constants/common";
 import { journeyFeatured, journeyPageContent } from "@/constants/journey";
 
 export function HomeJourney({ locale }: { locale: Locale }) {

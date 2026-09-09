@@ -1,7 +1,5 @@
-import {
-  activitiesPageContent,
-  type Locale,
-} from "@/constants/content";
+import { activitiesPageContent } from "@/constants/journey";
+import { type Locale } from "@/constants/common";
 
 type ActivityTimelineProps = {
   locale: Locale;

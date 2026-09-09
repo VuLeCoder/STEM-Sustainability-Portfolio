@@ -3,7 +3,8 @@
 import Image from "next/image";
 import { useState } from "react";
 import { ButtonLink } from "@/components/button-link";
-import type { Locale, Project } from "@/constants/content";
+import type { Locale } from "@/constants/common";
+import type { Project } from "@/constants/project";
 
 type Props = {
   locale: Locale;

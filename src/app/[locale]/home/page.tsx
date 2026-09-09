@@ -6,7 +6,7 @@ import { HomeProjects } from "@/components/home-projects";
 import { HomeSidebar } from "@/components/home-sidebar";
 import { HomeAbout } from "@/components/home-about";
 import { HomeJourney } from "@/components/home-journey";
-import { siteContent } from "@/constants/content";
+import { siteContent } from "@/constants/common";
 import { isLocale } from "@/lib/i18n";
 
 export async function generateMetadata({
@@ -44,7 +44,7 @@ export default async function HomePage({
             <p className="home-hero-slogan">
               {home.eyebrow[lang]}
             </p>
-            <h1 id="home-hero-title">{profile.name}</h1>
+            <h1 id="home-hero-title">{profile.name[locale]}</h1>
             <p className="home-positioning">
               {profile.positioning[lang]}
             </p>
@@ -53,7 +53,7 @@ export default async function HomePage({
             <div className="home-portrait-frame">
               <Image
                 src={profile.portrait}
-                alt={profile.name}
+                alt={profile.name[locale]}
                 fill
                 priority
                 sizes="(max-width: 519px) calc(100vw - 40px), (max-width: 767px) 480px, (max-width: 1199px) 38vw, 480px"

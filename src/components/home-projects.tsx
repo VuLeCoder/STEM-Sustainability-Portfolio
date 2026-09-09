@@ -3,7 +3,8 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useRef, useState } from "react";
-import { siteContent, type Locale, type Project } from "@/constants/content";
+import { siteContent, type Locale } from "@/constants/common";
+import { type Project } from "@/constants/project";
 import "./home-projects.css";
 
 const projects: readonly Project[] = siteContent.projects.slice(0, 5);

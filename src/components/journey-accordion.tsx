@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import type { Locale } from "@/constants/content";
+import type { Locale } from "@/constants/common";
 import { groupJourneyItems, journeyPageContent, type JourneyItem } from "@/constants/journey";
 
 export function JourneyAccordion({ items, locale }: { items: readonly JourneyItem[]; locale: Locale }) {

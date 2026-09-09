@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { contactPageContent, siteContent } from "@/constants/content";
+import { contactPageContent } from "@/constants/profile";
+import { siteContent } from "@/constants/common";
 import { isLocale } from "@/lib/i18n";
 import { createLocalizedMetadata } from "@/lib/site-metadata";
 
