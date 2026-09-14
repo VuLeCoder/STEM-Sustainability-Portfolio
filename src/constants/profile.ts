@@ -12,7 +12,7 @@ export const profile={
     vi: "Tôi là học sinh chuyên Vật lý tại Trường THPT Chuyên Nguyễn Huệ, quan tâm đến nghiên cứu, đổi mới công nghệ và phát triển bền vững. Qua các dự án về AI, bảo vệ môi trường, công nghệ hỗ trợ và nghiên cứu số, tôi phát triển cách tiếp cận kết hợp tư duy khoa học, thiết kế lấy con người làm trung tâm và hành động cộng đồng. Tôi mong muốn dùng công nghệ cùng tinh thần trách nhiệm xã hội để tạo ra những giải pháp thiết thực cho cộng đồng và sự phát triển bền vững dài hạn.",
     en: "I am a Physics-specialized student at Nguyen Hue High School for the Gifted, with interests in research, technological innovation, and sustainable development. Through projects in AI, environmental protection, assistive technology, and digital research, I have developed an approach that combines scientific thinking, human-centered design, and community action. I hope to use technology and social responsibility to create practical solutions for communities and long-term sustainable development.",
   },
-  portrait: "/images/profile/nguyen-cao-xuan-phuc.jpg",
+  portrait: "/images/home/ncxphuc.jpeg",
 } as const;
 
 export const contact={
@@ -72,10 +72,6 @@ export const about={
   values: {
     vi: "Tò mò khoa học, trách nhiệm xã hội và sự kiên trì trong quá trình thử nghiệm.",
     en: "Scientific curiosity, social responsibility, and persistence through experimentation.",
-  },
-  futureGoal: {
-    vi: "[Định hướng học thuật và mục tiêu dài hạn sẽ cập nhật]",
-    en: "[Academic direction and long-term goals to be updated]",
   },
 } as const;
 
