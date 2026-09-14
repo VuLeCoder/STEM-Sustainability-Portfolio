@@ -29,9 +29,9 @@ export function SiteFooter({ locale }: { locale: Locale }) {
           </nav>
           <div className="portfolio-footer__column">
             <h2>{chrome.contact[locale]}</h2>
-            {chrome.contacts.map((contact) => contact.href ? (
-              <a className="portfolio-footer__contact" key={contact.icon} href={contact.href} aria-label={contact.label[locale]}><ContactIcon name={contact.icon} /><span>{contact.label[locale]}</span></a>
-            ) : <p className="portfolio-footer__pending" key={contact.icon}><span className="portfolio-footer__contact-icon" role="img" aria-label={contact.label[locale]} title={contact.label[locale]}><ContactIcon name={contact.icon} /></span><small>{chrome.pending[locale]}</small></p>)}
+            {chrome.contacts.map((contact) => 
+              <p className="portfolio-footer__contact" key={contact.icon} aria-label={contact.label[locale]}><ContactIcon name={contact.icon} /><span>{contact.content}</span></p>
+            )}
           </div>
         </div>
         <div className="portfolio-footer__bottom">

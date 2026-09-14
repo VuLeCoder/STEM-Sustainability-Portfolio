@@ -115,8 +115,8 @@ export const profileChrome={
     { icon: "linkedin",label: "LinkedIn",href: "#" },
   ],
   contacts: [
-    { icon: "gmail",label: { vi: "Gmail",en: "Gmail" },href: null as string|null },
-    { icon: "phone",label: { vi: "Điện thoại",en: "Phone" },href: null as string|null },
+    { icon: "gmail",label: { vi: "Gmail",en: "Gmail" },content: "nguyencxphuc@gmail.com"},
+    { icon: "phone",label: { vi: "Điện thoại",en: "Phone" },content: "+84 349 659 560" },
   ]
 } as const;
 
@@ -183,7 +183,7 @@ export const profileHome={
     credentialsLabel: { vi: "Nền tảng học thuật",en: "Academic foundation" },
     credentials: [
       { label: { vi: "SAT",en: "SAT" },value: "1440" },
-      { label: { vi: "IELTS Academic",en: "IELTS Academic" },value: "7.0" },
+      { label: { vi: "IELTS Academic",en: "IELTS Academic" },value: "7.5" },
       { label: { vi: "AP Physics C",en: "AP Physics C" },value: "5/5" },
     ],
   },
