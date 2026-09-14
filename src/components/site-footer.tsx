@@ -36,7 +36,6 @@ export function SiteFooter({ locale }: { locale: Locale }) {
         </div>
         <div className="portfolio-footer__bottom">
           <p>© {new Date().getFullYear()} {profile.name[locale]}. {chrome.rights[locale]}</p>
-          <span>{chrome.footerBackgroundLabel[locale]}</span>
         </div>
       </div>
     </footer>

@@ -95,7 +95,7 @@
 }
 .portfolio-footer__background {
   position: absolute; z-index: -2; inset: -24px; background-size: cover;
-  background-position: center; filter: blur(18px);
+  background-position: center; filter: blur(0px);
 }
 .portfolio-footer::before { content: ""; position: absolute; z-index: -1; inset: 0; background: rgb(9 26 15 / 78%); }
 .portfolio-footer__shell { width: min(calc(100% - 80px), 1360px); margin-inline: auto; }

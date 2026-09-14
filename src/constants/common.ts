@@ -37,8 +37,7 @@ export const siteContent={
   },
   chrome: {
     ...profileChrome,
-    footerBackground: "/images/placeholders/footer-background.svg",
-    footerBackgroundLabel: { vi: "[Ảnh nền footer]",en: "[Footer Background]" },
+    footerBackground: "/images/home/footer-background.png",
     explore: { vi: "Khám phá",en: "Explore" },
     contact: { vi: "Liên hệ",en: "Contact" },
     pending: { vi: "Chưa cập nhật",en: "Coming soon" },
