@@ -77,8 +77,13 @@ export const projects=[
       vi: "WICO 2026 · Giải Vàng",
       en: "WICO 2026 · Gold Award",
     },
-    externalLinks: [],
-    coverImage: "/images/placeholders/safestride-cover.svg",
+    externalLinks: [
+      {
+        label: { vi: "Bài viết dự án",en: "Project post" },
+        href: "https://www.youtube.com/watch?v=FgFzlal-ikg",
+      },
+    ],
+    coverImage: "/images/project/SafeStride.png",
   },
   {
     slug: "ecome",
@@ -115,7 +120,7 @@ export const projects=[
         href: "https://www.facebook.com/61582875703926/posts/122134261443095856/",
       },
     ],
-    coverImage: "/images/placeholders/ecome-cover.svg",
+    coverImage: "/images/project/ECOMe.png",
   },
   {
     slug: "ecomesort",
@@ -145,7 +150,7 @@ export const projects=[
       en: "Third Prize · 2026",
     },
     externalLinks: [],
-    coverImage: "/images/placeholders/ecomesort-cover.svg",
+    coverImage: "/images/project/ECOMeSort.png",
   },
   {
     slug: "bloomwatch",
@@ -218,7 +223,7 @@ export const projects=[
       en: "VNICT 2025 · Co-author & presenter",
     },
     externalLinks: [],
-    coverImage: "/images/placeholders/data-hiding-cover.svg",
+    coverImage: "/images/project/DualImage.png",
   },
 ] satisfies readonly Project[];
 
