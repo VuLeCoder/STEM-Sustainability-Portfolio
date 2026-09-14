@@ -24,7 +24,6 @@ export const siteContent={
     journey: { vi: "Hành trình",en: "Journey" },
     projects: { vi: "Dự án",en: "Projects" },
     contact: { vi: "Liên hệ",en: "Contact" },
-    activities: { vi: "Hoạt động",en: "Activities" },
   },
   ui: {
     menu: { vi: "Menu điều hướng",en: "Navigation menu" },

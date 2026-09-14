@@ -16,9 +16,8 @@ export const profile={
 } as const;
 
 export const contact={
-  // Chỉ thêm thông tin liên hệ sau khi chủ sở hữu duyệt việc công khai.
-  email: null,
-  phone: null,
+  email: "nguyencxphuc@gmail.com",
+  phone: "+84 349 659 560",
   location: { vi: "Hà Nội, Việt Nam",en: "Hanoi, Vietnam" },
   cvFile: null,
   socialLinks: [],
@@ -115,8 +114,8 @@ export const profileChrome={
     { icon: "linkedin",label: "LinkedIn",href: "#" },
   ],
   contacts: [
-    { icon: "gmail",label: { vi: "Gmail",en: "Gmail" },content: "nguyencxphuc@gmail.com"},
-    { icon: "phone",label: { vi: "Điện thoại",en: "Phone" },content: "+84 349 659 560" },
+    { icon: "gmail",label: { vi: "Email",en: "Email" },content: contact.email },
+    { icon: "phone",label: { vi: "Điện thoại",en: "Phone" },content: contact.phone },
   ]
 } as const;
 
@@ -318,22 +317,4 @@ export const aboutPageContent={
   strengthsLabel: { vi: "Điểm mạnh",en: "Strengths" },
   valuesLabel: { vi: "Giá trị dẫn đường",en: "Guiding values" },
   futureGoalLabel: { vi: "Hướng tới",en: "Looking ahead" },
-} as const;
-
-export const contactPageContent={
-  eyebrow: { vi: "Liên hệ",en: "Contact" },
-  title: { vi: "Hãy cùng kết nối.",en: "Let’s connect." },
-  description: {
-    vi: "Bạn muốn trao đổi về STEM, công nghệ hoặc phát triển bền vững? Thông tin liên hệ công khai sẽ được cập nhật tại đây sau khi được xác nhận.",
-    en: "Want to talk about STEM, technology, or sustainability? Public contact details will appear here once they have been confirmed.",
-  },
-  availabilityLabel: { vi: "Trạng thái",en: "Availability" },
-  availability: {
-    vi: "Thông tin liên hệ đang được xác nhận",
-    en: "Contact details are being confirmed",
-  },
-  locationLabel: { vi: "Địa điểm",en: "Location" },
-  exploreLabel: { vi: "Trong lúc chờ đợi",en: "In the meantime" },
-  projectsCta: { vi: "Khám phá dự án",en: "Explore projects" },
-  journeyCta: { vi: "Xem hành trình",en: "View the journey" },
 } as const;
