@@ -29,6 +29,12 @@ export const journeyItems: readonly JourneyItem[]=[
       vi: "Đạt giải Đồng vòng loại Philippine International Mathematical Olympiad (PIMSO) năm 2022.",
       en: "Received a Bronze Award in the 2022 Philippine International Mathematical Olympiad (PIMSO) Heat Round.",
     },
+    images:[
+      {
+        src: "/images/journey/PIMSO/1.jpg",
+        alt: {vi: "", en: ""}
+      }
+    ]
   },
   {
     id: "panthers-2024",year: 2024,type: "activity",order: 1,featured: true,
@@ -37,6 +43,16 @@ export const journeyItems: readonly JourneyItem[]=[
       vi: "Thành viên truyền thông CLB bóng rổ CNH Basketball Club — Panthers trong năm học 2024–2025, tiếp tục tham gia năm học 2025–2026.",
       en: "Media member of CNH Basketball Club — Panthers in the 2024–2025 school year, continuing in 2025–2026.",
     },
+    images:[
+      {
+        src: "/images/journey/CNH/1.jpg",
+        alt: {vi: "", en: ""}
+      },
+      {
+        src: "/images/journey/CNH/2.jpg",
+        alt: {vi: "", en: ""}
+      }
+    ]
   },
   {
     id: "bloomwatch-2025",year: 2025,type: "award",order: 1,featured: true,
@@ -53,6 +69,24 @@ export const journeyItems: readonly JourneyItem[]=[
       vi: "Sáng kiến do học sinh dẫn dắt về giáo dục môi trường và hành động cộng đồng.",
       en: "A student-led environmental education and community-action initiative.",
     },
+    images:[
+      {
+        src: "/images/journey/ECOMe/1.jpg",
+        alt: {vi: "", en: ""}
+      },
+      {
+        src: "/images/journey/ECOMe/2.jpeg",
+        alt: {vi: "", en: ""}
+      },
+      {
+        src: "/images/journey/ECOMe/3.jpeg",
+        alt: {vi: "", en: ""}
+      },
+      {
+        src: "/images/journey/ECOMe/4.jpeg",
+        alt: {vi: "", en: ""}
+      }
+    ]
   },
   {
     id: "vnict-2025",year: 2025,type: "activity",order: 3,
@@ -61,6 +95,12 @@ export const journeyItems: readonly JourneyItem[]=[
       vi: "Đồng tác giả và trình bày bài báo về phương pháp reversible data hiding hai ảnh được cải tiến.",
       en: "Co-authored and presented a paper on an improved dual-image reversible data-hiding method.",
     },
+    images:[
+      {
+        src: "/images/journey/VNICT/1.jpeg",
+        alt: {vi: "", en: ""}
+      }
+    ]
   },
   {
     id: "safestride-2026",year: 2026,type: "award",order: 1,featured: true,
@@ -69,6 +109,12 @@ export const journeyItems: readonly JourneyItem[]=[
       vi: "Tham gia phát triển ý tưởng ứng dụng điện thoại giúp người khiếm thị nhận biết không gian và nhận cảnh báo ưu tiên. SafeStride đạt giải Vàng tại World Invention Creativity Olympic 2026 ở Seoul, Hàn Quốc.",
       en: "Contributed to a smartphone concept supporting spatial awareness and priority alerts for blind users. SafeStride received a Gold Award at the 2026 World Invention Creativity Olympic in Seoul, Korea.",
     },
+    images:[
+      {
+        src: "/images/journey/SafeStride/1.jpeg",
+        alt: {vi: "", en: ""}
+      }
+    ]
   },
   {
     id: "vast-2026",year: 2026,type: "activity",order: 2,
@@ -85,6 +131,16 @@ export const journeyItems: readonly JourneyItem[]=[
       vi: "ECOMeSort — ý tưởng ứng dụng AI hỗ trợ phân loại rác và kết nối hệ sinh thái tái chế.",
       en: "ECOMeSort — an AI-enabled concept for waste sorting and recycling-ecosystem connections.",
     },
+    images:[
+      {
+        src: "/images/journey/ECOMeSort/1.png",
+        alt: {vi: "", en: ""}
+      },
+      {
+        src: "/images/journey/ECOMeSort/2.png",
+        alt: {vi: "", en: ""}
+      }
+    ]
   },
 ];
 

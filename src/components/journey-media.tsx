@@ -7,7 +7,7 @@ import type { JourneyItem } from "@/constants/journey";
 
 const labels = {
   view: { vi: "Xem hình ảnh", en: "View photos" },
-  evidence: { vi: "Xem minh chứng", en: "View evidence" },
+  evidence: { vi: "Xem hình ảnh", en: "View photos" },
   pdf: { vi: "Mở minh chứng PDF", en: "Open PDF evidence" },
   close: { vi: "Đóng", en: "Close" },
   previous: { vi: "Ảnh trước", en: "Previous image" },
