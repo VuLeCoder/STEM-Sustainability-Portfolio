@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { JourneyMedia } from "@/components/journey-media";
 import type { Locale } from "@/constants/common";
 import { groupJourneyItems, journeyPageContent, type JourneyItem } from "@/constants/journey";
 
@@ -36,10 +37,13 @@ export function JourneyAccordion({ items, locale }: { items: readonly JourneyIte
                 <ol className="journey-chapters__items">
                   {entries.map((item) => (
                     <li key={item.id}>
-                      <article className="journey-chapters__card">
+                      <article className="journey-chapters__card" data-single-image={item.images?.length === 1 || undefined}>
+                        <div>
                         <span className="journey-chapters__tag">{journeyPageContent.types[item.type][locale]}</span>
                         <h3>{item.title[locale]}</h3>
                         <p>{item.shortDescription[locale]}</p>
+                        </div>
+                        <JourneyMedia item={item} locale={locale} />
                       </article>
                     </li>
                   ))}

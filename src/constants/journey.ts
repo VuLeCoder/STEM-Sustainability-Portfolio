@@ -1,7 +1,15 @@
 import type { Localized } from "./common";
 
 export type JourneyType="activity"|"award"|"competition"|"workshop"|"milestone";
+export interface JourneyImage {
+  src: string;
+  alt: Localized<string>;
+  caption?: Localized<string>;
+}
+
 export interface JourneyItem {
+  images?: readonly JourneyImage[];
+  evidencePdf?: string;
   id: string;
   year: number;
   type: JourneyType;
