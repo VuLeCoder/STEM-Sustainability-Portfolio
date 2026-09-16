@@ -4,16 +4,20 @@ import Image from "next/image";
 import Link from "next/link";
 import { useRef, useState } from "react";
 import { siteContent, type Locale } from "@/constants/common";
-import { type Project } from "@/constants/project";
+import { projectsPageContent, type Project } from "@/constants/project";
 import "./home-projects.css";
 
-const projects: readonly Project[] = siteContent.projects.slice(0, 5);
+const projectOrder = ["safestride", "bloomwatch", "ecome", "ecomesort"];
+const projects: readonly Project[] = projectOrder.flatMap((slug) => {
+  const project = siteContent.projects.find((item) => item.slug === slug);
+  return project ? [project] : [];
+});
 
 export function HomeProjects({ locale }: { locale: Locale }) {
   const { home } = siteContent;
   const content = home.featuredProjects;
   const [activeSlug, setActiveSlug] = useState(
-    projects.find((project) => project.featured)?.slug ?? projects[0]?.slug,
+    projects[0]?.slug,
   );
   const previewHeading = useRef<HTMLHeadingElement>(null);
   const active = projects.find((project) => project.slug === activeSlug);
@@ -56,6 +60,20 @@ export function HomeProjects({ locale }: { locale: Locale }) {
                 </div>
                 <h3 ref={previewHeading} tabIndex={-1}>{active.title}</h3>
                 <p>{active.summary[locale]}</p>
+                <dl className="home-projects-details">
+                  <div>
+                    <dt>{projectsPageContent.roleLabel[locale]}</dt>
+                    <dd>{active.role[locale]}</dd>
+                  </div>
+                  <div>
+                    <dt>{projectsPageContent.resultLabel[locale]}</dt>
+                    <dd>{active.slug === "ecome"
+                      ? locale === "vi"
+                        ? "Các chiến dịch thực địa tiếp cận khoảng 1.800 người. Chiến dịch tháng 6/2026 hỗ trợ sáu mái ấm và trung tâm chăm sóc trẻ em, cùng các hoạt động giếng nước sạch, cầu nông thôn, đèn đường, bếp ăn cộng đồng và hỗ trợ sinh kế."
+                        : "Field campaigns reached approximately 1,800 people. The June 2026 campaign supported six orphanages and child-care centers, alongside clean-water wells, rural bridges, street lighting, community kitchens, and livelihood assistance."
+                      : active.result[locale]}</dd>
+                  </div>
+                </dl>
                 <div className="home-projects-card-footer">
                 {externalLink ? (
                   <a className="home-projects-link" href={externalLink.href} target="_blank" rel="noopener noreferrer">

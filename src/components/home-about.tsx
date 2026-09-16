@@ -24,17 +24,7 @@ export function HomeAbout({ locale }: { locale: Locale }) {
             </li>
           ))}
         </ul>
-        <div className="home-about-academics" data-reveal>
-          <h3>{content.credentialsLabel[locale]}</h3>
-          <dl>
-            {content.credentials.map((credential) => (
-              <div key={credential.label.en}>
-                <dt>{credential.label[locale]}</dt>
-                <dd>{credential.value}</dd>
-              </div>
-            ))}
-          </dl>
-        </div>
+
       </div>
     </section>
   );

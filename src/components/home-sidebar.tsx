@@ -3,11 +3,15 @@
 import { useEffect, useId, useRef, useState } from "react";
 import { siteContent, type Locale } from "@/constants/common";
 
+import { homeNarrative } from "@/constants/home";
+
 const items = [
   { key: "home", id: "hero", icon: "m3 10 9-7 9 7v10a1 1 0 0 1-1 1h-5v-8H9v8H4a1 1 0 0 1-1-1Z" },
   { key: "about", id: "about", icon: "M12 5C9 3 5 3 2 4v16c3-1 7-1 10 1 3-2 7-2 10-1V4c-3-1-7-1-10 1Zm0 0v16" },
-  { key: "journey", id: "journey", icon: "M6 3v14a4 4 0 0 0 4 4h8M3 6h6M14 5h7M14 9h4M15 18l3 3-3 3" },
+  { key: "research", id: "research", icon: "M9 3h6M10 3v7l-6 9a1 1 0 0 0 1 2h14a1 1 0 0 0 1-2l-6-9V3M7 16h10" },
+  { key: "certificates", id: "certificates", icon: "M4 3h16v14H4zM8 7h8M8 11h5M9 17v5l3-2 3 2v-5" },
   { key: "projects", id: "projects", icon: "m12 3 10 5-10 5L2 8Zm-10 9 10 5 10-5M2 16l10 5 10-5" },
+  { key: "vision", id: "vision", icon: "M12 3v3M12 18v3M3 12h3M18 12h3M12 7a5 5 0 1 0 0 10 5 5 0 0 0 0-10Z" },
   { key: "contact", id: "footer-contact", icon: "M3 5h18v14H3zM3 6l9 7 9-7" },
 ] as const;
 
@@ -16,7 +20,8 @@ export function HomeSidebar({ locale }: { locale: Locale }) {
   const [activeId, setActiveId] = useState<string | null>(null);
   const scrollingHome = useRef(false);
   const navigationId = useId();
-  const { sidebar, navigation } = siteContent;
+  const { sidebar } = siteContent;
+  const { navigation } = homeNarrative;
   const toggleLabel = collapsed ? sidebar.expand[locale] : sidebar.collapse[locale];
 
   useEffect(() => {

@@ -5,7 +5,11 @@ import { createLocalizedMetadata } from "@/lib/site-metadata";
 import { HomeProjects } from "@/components/home-projects";
 import { HomeSidebar } from "@/components/home-sidebar";
 import { HomeAbout } from "@/components/home-about";
-import { HomeJourney } from "@/components/home-journey";
+import { HomeResearch } from "@/components/home-research";
+import { HomeVision } from "@/components/home-vision";
+import { homeNarrative } from "@/constants/home";
+import "./home.css";
+import { HomeCertificates } from "@/components/home-certificates";
 import { siteContent } from "@/constants/common";
 import { isLocale } from "@/lib/i18n";
 
@@ -46,7 +50,7 @@ export default async function HomePage({
             </p>
             <h1 id="home-hero-title">{profile.name[locale]}</h1>
             <p className="home-positioning">
-              {profile.positioning[lang]}
+              {homeNarrative.positioning[lang]}
             </p>
           </div>
           <div className="home-portrait-wrap motion-fade-in">
@@ -63,8 +67,10 @@ export default async function HomePage({
         </div>
       </section>
       <HomeAbout locale={lang} />
-      <HomeJourney locale={lang} />
+      <HomeResearch locale={lang} />
+      <HomeCertificates locale={lang} />
       <HomeProjects locale={lang} />
+      <HomeVision locale={lang} />
     </main>
   );
 }

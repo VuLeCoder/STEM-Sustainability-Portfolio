@@ -3,6 +3,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import { siteContent, type Locale } from "@/constants/common";
+import { homeNarrative } from "@/constants/home";
 import { journeyFeatured, journeyPageContent } from "@/constants/journey";
 
 export function HomeJourney({ locale }: { locale: Locale }) {
@@ -16,7 +17,7 @@ export function HomeJourney({ locale }: { locale: Locale }) {
       <div className="home-shell">
         <div className="home-journey-heading" data-reveal>
           <div>
-            <p className="home-about-label">{content.label[locale]}</p>
+            <p className="home-about-label">{homeNarrative.navigation.journey[locale]}</p>
             <h2 id="home-journey-title">{content.title[locale]}</h2>
           </div>
           <p>{content.description[locale]}</p>
