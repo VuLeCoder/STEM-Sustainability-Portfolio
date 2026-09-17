@@ -12,20 +12,29 @@ function getColumns() {
   return window.matchMedia("(min-width: 1024px)").matches ? 3 : window.matchMedia("(min-width: 768px)").matches ? 2 : 1;
 }
 
-export function ProjectGalleryList({ children, moreLabel, lessLabel }: {
+export function ProjectGalleryList({ children, moreLabel, lessLabel, filters, categories, filterLabel }: {
   children: ReactNode;
+  filters?: { id: string; label: string }[];
+  categories?: string[];
+  filterLabel?: string;
   moreLabel: string;
   lessLabel: string;
 }) {
   const columns = useSyncExternalStore(subscribe, getColumns, () => 0);
   const [expanded, setExpanded] = useState(false);
   const toggle = useRef<HTMLButtonElement>(null);
-  const cards = Children.toArray(children);
+  const [activeFilter, setActiveFilter] = useState("all");
+  const cards = Children.toArray(children).filter((_, index) => activeFilter === "all" || categories?.[index] === activeFilter);
   const limit = columns === 3 ? 6 : columns === 2 ? 4 : 3;
   const canCollapse = columns > 0 && cards.length > limit;
   const collapsed = canCollapse && !expanded;
 
   return (
+    <>
+      {filters && <div className="work-filters" role="group" aria-label={filterLabel}>
+        {filters.map(filter => <button type="button" key={filter.id} aria-pressed={activeFilter === filter.id} onClick={() => { setActiveFilter(filter.id); setExpanded(false); }}>{filter.label}</button>)}
+      </div>}
+      {filters && <p className="work-count" role="status">{cards.length} {filterLabel}</p>}
     <div className={`project-gallery__list${collapsed ? " project-gallery__list--collapsed" : ""}`}>
       <ul id="project-gallery-items" className="project-gallery__grid">
         {cards.map((card, index) => {
@@ -51,5 +60,6 @@ export function ProjectGalleryList({ children, moreLabel, lessLabel }: {
         </div>
       )}
     </div>
+    </>
   );
 }
