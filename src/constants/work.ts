@@ -13,6 +13,7 @@ export type WorkEntry = Project & {
   kind: WorkCategory;
   displayTitle: Localized<string>;
   images?: readonly JourneyImage[];
+  recognition?: Localized<string>;
   caseStudy?: Partial<Record<"problem" | "role" | "solution" | "result" | "lessons", Localized<string>>>;
 };
 
@@ -24,10 +25,6 @@ export function getWorkSections(entry: WorkEntry, locale: "vi" | "en") {
     {
       id: "problem", title: vi ? "Vấn đề & Bối cảnh" : "Problem",
       paragraphs: [copy?.problem?.[locale] ?? entry.problem?.[locale] ?? entry.details?.objective?.[locale] ?? entry.summary[locale]],
-    },
-    {
-      id: "my-role", title: vi ? "Vai trò của tôi" : "My role",
-      paragraphs: [copy?.role?.[locale] ?? entry.role[locale]],
     },
     {
       id: "solution", title: vi ? "Giải pháp & Cách thực hiện" : "Solution",
@@ -80,6 +77,7 @@ const additions: WorkEntry[] = [
     fields: { vi: ["Robotics", "Kỹ thuật phần cứng"], en: ["Robotics", "Hardware engineering"] },
     result: { vi: "Build Award tại Giải vô địch Quốc gia VEX V5 Robotics 2026.", en: "Build Award at the 2026 National VEX V5 Robotics Championship." },
     achievementShort: { vi: "VEX V5 2026 · Build Award", en: "VEX V5 2026 · Build Award" },
+    recognition: { vi: "VEX V5 2026 · Build Award", en: "VEX V5 2026 · Build Award" },
     externalLinks: [], coverImage: "",
   },
 ];
@@ -261,6 +259,7 @@ const communityActivities: WorkEntry[] = [
 export const workEntries: WorkEntry[] = [
   ...projects.map((project): WorkEntry => ({ ...project,
     displayTitle: { vi: project.title, en: project.title },
+    ...(["safestride", "ecomesort", "bloomwatch"].includes(project.slug) ? { recognition: project.achievementShort } : {}),
     ...(project.slug === "ecome" ? { result: { vi: "Các chiến dịch thực địa tiếp cận khoảng 1.800 người. Chiến dịch tháng 6/2026 kết hợp truyền thông môi trường và phục vụ cộng đồng tại sáu trung tâm bảo trợ trẻ em, hỗ trợ các công trình nước sạch, cầu nông thôn, chiếu sáng, bếp ăn cộng đồng và sinh kế.", en: "Field campaigns reached approximately 1,800 people. The June 2026 campaign combined environmental communication and community service at six orphanages and child-care centers, supporting clean-water wells, rural bridges, lighting, community kitchens, and livelihoods." } } : {}),
     kind: project.slug === "dual-image-reversible-data-hiding" ? "research" : project.slug === "ecome" ? "community" : "technology",
   })), ...additions, ...activities, ...communityActivities,
