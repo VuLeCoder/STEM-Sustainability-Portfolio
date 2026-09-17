@@ -24,7 +24,6 @@ export function SiteFooter({ locale }: { locale: Locale }) {
           </div>
           <nav className="portfolio-footer__column" aria-label={siteContent.ui.footerNavigation[locale]}>
             <h2>{chrome.explore[locale]}</h2>
-            <Link href={`/${locale}/journey`}>{navigation.journey[locale]} <span aria-hidden="true">↗</span></Link>
             <Link href={`/${locale}/projects`}>{navigation.projects[locale]} <span aria-hidden="true">↗</span></Link>
           </nav>
           <div className="portfolio-footer__column">

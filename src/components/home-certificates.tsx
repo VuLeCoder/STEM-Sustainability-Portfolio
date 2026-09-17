@@ -28,9 +28,9 @@ export function HomeCertificates({ locale }: { locale: Locale }) {
   }, [opened]);
 
   return (
-    <section id="certificates" className="home-journey" aria-labelledby="home-certificates-title">
+    <section id="certificates" className="home-content-section" aria-labelledby="home-certificates-title">
       <div className="home-shell">
-        <div className="home-journey-heading" data-reveal>
+        <div className="home-content-section-heading" data-reveal>
           <div>
             <p className="home-about-label">{homeNarrative.navigation.certificates[locale]}</p>
             <h2 id="home-certificates-title">{homeCertificates.title[locale]}</h2>

@@ -1,10 +1,9 @@
 /** Kiểu dữ liệu, điều hướng, giao diện chung và điểm ghép nội dung website.
- * Chỉnh nội dung theo lĩnh vực tại profile.ts, project.ts hoặc journey.ts.
+ * Chỉnh nội dung theo lĩnh vực tại profile.ts, project.ts hoặc experiences.ts.
  * Bản EN phải giữ nguyên ý nghĩa và dữ kiện của bản VI.
  */
 import { profile,contact,seo,about,narrative,profileChrome,profileHome } from "./profile";
 import { projects,projectHome } from "./project";
-import { journeyHome } from "./journey";
 
 export const locales=["vi","en"] as const;
 
@@ -21,7 +20,6 @@ export const siteContent={
   navigation: {
     home: { vi: "Trang chủ",en: "Home" },
     about: { vi: "Về tôi",en: "About" },
-    journey: { vi: "Hành trình",en: "Journey" },
     projects: { vi: "Dấu ấn & Tác động",en: "Work & Impact" },
     contact: { vi: "Liên hệ",en: "Contact" },
   },
@@ -43,7 +41,7 @@ export const siteContent={
     rights: { vi: "Mọi quyền được bảo lưu.",en: "All rights reserved." }
   },
   profile,contact,seo,about,narrative,projects,
-  home: { ...profileHome,...projectHome,...journeyHome },
+  home: { ...profileHome,...projectHome },
 } as const;
 
 export function getLocalized<T>(value: Localized<T>,locale: Locale): T {

@@ -9,7 +9,6 @@ import { getLocalizedPath } from "@/lib/i18n";
 
 const navigationItems = [
   { key: "home", path: "" },
-  { key: "journey", path: "/journey" },
   { key: "projects", path: "/projects" },
 ] as const;
 

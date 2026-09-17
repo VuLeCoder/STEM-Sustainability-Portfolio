@@ -55,3 +55,30 @@
 .home-certificate-image { position: relative; height: min(65dvh, 640px); margin-top: 20px; }
 .home-certificate-image img { object-fit: contain; }
 .home-certificate-placeholder { padding: 64px 12px; margin: 20px 0 0; text-align: center; color: #62695f; background: #f7faf6; border-radius: 16px; }
+
+.home-hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 28px;
+}
+.home-hero-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  min-height: 48px;
+  padding: 12px 20px;
+  border: 1px solid #d5ded2;
+  border-radius: 14px;
+  background: #fff;
+  color: #2f6b3e;
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 1.5;
+  text-decoration: none;
+}
+.home-hero-button:hover { background: #e7efe8; border-color: #2f6b3e; }
+.home-hero-button-primary { background: #2f6b3e; border-color: #2f6b3e; color: #fff; }
+.home-hero-button-primary:hover { background: #255632; border-color: #255632; }
+.home-hero-button:focus-visible { outline: 2px solid #2f6b3e; outline-offset: 4px; }

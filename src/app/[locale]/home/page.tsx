@@ -52,6 +52,18 @@ export default async function HomePage({
             <p className="home-positioning">
               {homeNarrative.positioning[lang]}
             </p>
+            <div className="home-hero-actions">
+              <a className="home-hero-button home-hero-button-primary" href="#about">
+                {homeNarrative.actions.about[lang]}
+                <span aria-hidden="true">↓</span>
+              </a>
+              <a className="home-hero-button" href="/documents/CV.pdf" download="Nguyen-Cao-Xuan-Phuc-CV.pdf">
+                {homeNarrative.actions.cv[lang]}
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                  <path d="M12 3v12m-5-5 5 5 5-5M5 16v5h14v-5" />
+                </svg>
+              </a>
+            </div>
           </div>
           <div className="home-portrait-wrap motion-fade-in">
             <div className="home-portrait-frame">

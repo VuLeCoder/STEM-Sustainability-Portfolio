@@ -1,6 +1,6 @@
 import type { Localized } from "./common";
 import { projects, type Project } from "./project";
-import { journeyItems, type JourneyImage } from "./journey";
+import { experienceItems, type PortfolioImage } from "./experiences";
 
 export const workCategories = {
   all: { vi: "Tất cả", en: "All" },
@@ -12,7 +12,7 @@ export type WorkCategory = Exclude<keyof typeof workCategories, "all">;
 export type WorkEntry = Project & {
   kind: WorkCategory;
   displayTitle: Localized<string>;
-  images?: readonly JourneyImage[];
+  images?: readonly PortfolioImage[];
   recognition?: Localized<string>;
   caseStudy?: Partial<Record<"problem" | "role" | "solution" | "result" | "lessons", Localized<string>>>;
 };
@@ -81,7 +81,7 @@ const additions: WorkEntry[] = [
     externalLinks: [], coverImage: "",
   },
 ];
-const activities: WorkEntry[] = journeyItems.filter(item => item.id === "panthers-2024" || item.id === "pimso-2022").map(item => ({
+const activities: WorkEntry[] = experienceItems.filter(item => item.id === "panthers-2024" || item.id === "pimso-2022").map(item => ({
   slug: item.id, title: item.title.en, displayTitle: item.title, kind: "community", featured: false,
   year: String(item.year), category: item.type === "award" ? { vi: "Cuộc thi học thuật", en: "Academic competition" } : { vi: "Hoạt động ngoại khóa", en: "Extracurricular activity" },
   summary: item.shortDescription, role: item.id === "panthers-2024" ? { vi: "Thành viên truyền thông", en: "Media member" } : { vi: "Thí sinh", en: "Participant" },
@@ -266,14 +266,14 @@ export const workEntries: WorkEntry[] = [
 ];
 export const featuredWork = ["safestride", "dual-image-reversible-data-hiding", "ecome"].map(slug => workEntries.find(entry => entry.slug === slug)!);
 
-// Add images directly to a WorkEntry to override its linked Journey gallery.
-const workJourneyIds: Record<string, string> = {
+// Add images directly to a WorkEntry to override its linked experience gallery.
+const workExperienceIds: Record<string, string> = {
   safestride: "safestride-2026", ecome: "ecome-2025", ecomesort: "ecomesort-2026",
   bloomwatch: "bloomwatch-2025", "dual-image-reversible-data-hiding": "vnict-2025",
   "vast-research-internship": "vast-2026",
 };
-export function getWorkImages(entry: WorkEntry): readonly JourneyImage[] {
-  const linked = journeyItems.find(item => item.id === (workJourneyIds[entry.slug] ?? entry.slug));
+export function getWorkImages(entry: WorkEntry): readonly PortfolioImage[] {
+  const linked = experienceItems.find(item => item.id === (workExperienceIds[entry.slug] ?? entry.slug));
   const images = entry.images ?? linked?.images ??
     (entry.coverImage && !entry.coverImage.includes("/placeholders/")
       ? [{ src: entry.coverImage, alt: entry.displayTitle }] : []);

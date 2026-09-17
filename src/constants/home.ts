@@ -6,9 +6,12 @@ export const homeNarrative = {
     research: { vi: "Hướng nghiên cứu", en: "Research Interests" },
     certificates: { vi: "Học thuật & Chứng chỉ", en: "Academics & Certifications" },
     projects: { vi: "Dự án", en: "Projects" },
-    journey: { vi: "Hành trình học tập", en: "Learning Journey" },
     vision: { vi: "Định hướng tương lai", en: "Future Vision" },
     contact: { vi: "Liên hệ", en: "Contact" },
+  },
+  actions: {
+    about: { vi: "Xem thêm về tôi", en: "More about me" },
+    cv: { vi: "Xem CV", en: "View CV" },
   },
   positioning: {
     vi: "Từ nền tảng chuyên Vật lý, tôi khám phá AI và công nghệ hỗ trợ để xây dựng những giải pháp lấy con người làm trung tâm, hướng tới giá trị cho cộng đồng.",

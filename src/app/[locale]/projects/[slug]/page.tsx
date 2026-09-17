@@ -1,6 +1,6 @@
 import { Fragment } from "react";
 import type { Metadata } from "next";
-import { JourneyMedia } from "@/components/journey-media";
+import { PhotoGallery } from "@/components/photo-gallery";
 import "./detail.css";
 import Link from "next/link";
 import { notFound } from "next/navigation";
@@ -64,7 +64,7 @@ export default async function WorkDetail({ params }: Props) {
     </section>
     {section.id === "result" && <> {images.length > 0 && <section className="project-detail-media" aria-labelledby="project-photos-title">
       <div className="project-detail-media-heading"><h2 id="project-photos-title">{locale === "vi" ? "Hình ảnh" : "Photos"}</h2><span>{images.length} {locale === "vi" ? "ảnh" : images.length === 1 ? "photo" : "photos"}</span></div>
-      <JourneyMedia item={{ title: entry.displayTitle, type: "activity", images }} locale={locale} />
+      <PhotoGallery item={{ title: entry.displayTitle, type: "activity", images }} locale={locale} />
     </section>} </>}
     </Fragment>)}</div>
     <nav className="project-detail-navigation" aria-label={locale === "vi" ? "Điều hướng bài viết" : "Case study navigation"}>

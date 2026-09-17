@@ -2,17 +2,17 @@ import Link from "next/link";
 import type { Locale } from "@/constants/common";
 import { homeNarrative } from "@/constants/home";
 import { projects } from "@/constants/project";
-import { journeyItems } from "@/constants/journey";
+import { experienceItems } from "@/constants/experiences";
 
 export function HomeResearch({ locale }: { locale: Locale }) {
   const content = homeNarrative.research;
   const paper = projects.find((project) => project.slug === "dual-image-reversible-data-hiding");
-  const internship = journeyItems.find((entry) => entry.id === "vast-2026");
+  const internship = experienceItems.find((entry) => entry.id === "vast-2026");
 
   return (
-    <section id="research" className="home-journey" aria-labelledby="home-research-title">
+    <section id="research" className="home-content-section" aria-labelledby="home-research-title">
       <div className="home-shell">
-        <div className="home-journey-heading" data-reveal>
+        <div className="home-content-section-heading" data-reveal>
           <div>
             <p className="home-about-label">{homeNarrative.navigation.research[locale]}</p>
             <h2 id="home-research-title">{content.title[locale]}</h2>
@@ -43,8 +43,8 @@ export function HomeResearch({ locale }: { locale: Locale }) {
             <h3>{locale === "vi" ? "Nghiên cứu tiếp theo" : "Upcoming research"}</h3>
           </article>
         </div>
-        <div className="home-journey-footer">
-          <Link className="home-journey-link" href={`/${locale}/projects`}>
+        <div className="home-content-section-footer">
+          <Link className="home-content-section-link" href={`/${locale}/projects`}>
             {content.cta[locale]} <span aria-hidden="true">→</span>
           </Link>
         </div>
