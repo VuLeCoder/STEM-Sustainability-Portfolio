@@ -38,8 +38,8 @@ export const homeNarrative = {
 export const homeCertificates = {
   title: { vi: "Nền tảng học thuật & Chứng chỉ", en: "Academic Profile & Certifications" },
   description: {
-    vi: "Kết quả học tập và các chứng chỉ Coursera tôi đã hoàn thành, từ nền tảng AI đến phân tích dữ liệu và lập trình với công cụ AI.",
-    en: "My academic results and completed Coursera certifications, from AI foundations to data analysis and programming with AI tools.",
+    vi: "Nền tảng chuyên Vật lý, kết quả học tập và hành trình mở rộng kiến thức về AI, dữ liệu và lập trình.",
+    en: "A foundation in Physics, academic achievements, and continued learning in AI, data analysis, and programming.",
   },
   status: { vi: "Đã hoàn thành · Coursera", en: "Completed · Coursera" },
   // Add images to public/images/certificates and set imageSrc to /images/certificates/filename.
@@ -50,3 +50,21 @@ export const homeCertificates = {
     { title: "Vibe Coding with GitHub Copilot", imageSrc: "" },
   ],
 } as const;
+
+export const homeAcademicAwards = [
+  {
+    id: "timo-bronze",
+    title: { vi: "TIMO · Huy chương Đồng", en: "TIMO · Bronze Award" },
+    description: { vi: "Olympic Toán học quốc tế Thái Lan · Vòng loại 2021–2022", en: "Thailand International Mathematical Olympiad · Heat Round 2021–2022" },
+  },
+  {
+    id: "pimso-bronze",
+    title: { vi: "PIMSO · Huy chương Đồng", en: "PIMSO · Bronze Award" },
+    description: { vi: "Olympic Toán học quốc tế Philippines · Vòng loại 2022", en: "Philippine International Mathematical Olympiad · Heat Round 2022" },
+  },
+  {
+    id: "asmo-merit",
+    title: { vi: "ASMO English · Giải Merit", en: "ASMO English · Merit Award" },
+    description: { vi: "Tiếng Anh · Cấp quốc gia · 2022", en: "English · National Level · 2022" },
+  },
+] as const;

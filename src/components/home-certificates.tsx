@@ -3,16 +3,26 @@
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 import { siteContent, type Locale } from "@/constants/common";
-import { homeCertificates, homeNarrative } from "@/constants/home";
+import { homeAcademicAwards, homeCertificates, homeNarrative } from "@/constants/home";
+
+type Preview = { title: string; imageSrc: string };
 
 export function HomeCertificates({ locale }: { locale: Locale }) {
   const content = siteContent.home.aboutMe;
-  const [selected, setSelected] = useState<number | null>(null);
+  const [selected, setSelected] = useState<Preview | null>(null);
   const [imageFailed, setImageFailed] = useState(false);
   const dialog = useRef<HTMLDialogElement>(null);
   const trigger = useRef<HTMLButtonElement | null>(null);
-  const course = selected === null ? null : homeCertificates.courses[selected];
   const opened = selected !== null;
+  const vi = locale === "vi";
+  const scores = [
+    { label: vi ? "GPA lớp 10" : "Grade 10 GPA", value: "9.1", scale: "/ 10" },
+    { label: vi ? "GPA lớp 11" : "Grade 11 GPA", value: "9.2", scale: "/ 10" },
+    ...content.credentials.map((item) => ({
+      label: item.label[locale], value: item.value,
+      scale: item.label.en === "SAT" ? "/ 1600" : item.label.en === "IELTS Academic" ? "/ 9" : "",
+    })),
+  ];
 
   useEffect(() => {
     if (!opened || !dialog.current) return;
@@ -27,8 +37,14 @@ export function HomeCertificates({ locale }: { locale: Locale }) {
     };
   }, [opened]);
 
+  function openPreview(button: HTMLButtonElement, preview: Preview) {
+    trigger.current = button;
+    setImageFailed(false);
+    setSelected(preview);
+  }
+
   return (
-    <section id="certificates" className="home-content-section" aria-labelledby="home-certificates-title">
+    <section id="certificates" className="home-content-section home-academic" aria-labelledby="home-certificates-title">
       <div className="home-shell">
         <div className="home-content-section-heading" data-reveal>
           <div>
@@ -37,55 +53,88 @@ export function HomeCertificates({ locale }: { locale: Locale }) {
           </div>
           <p>{homeCertificates.description[locale]}</p>
         </div>
-        <div className="home-about-academics" data-reveal>
-          <h3>{content.credentialsLabel[locale]}</h3>
-          <dl>
-            {content.credentials.map((credential) => (
-              <div key={credential.label.en}>
-                <dt>{credential.label[locale]}</dt>
-                <dd>{credential.value}</dd>
+
+        <div className="home-academic-foundation" data-reveal>
+          <div className="home-academic-school">
+            <span className="home-academic-subtitle">{vi ? "Nền tảng giáo dục" : "Education"}</span>
+            <h3>{vi ? "THPT chuyên Nguyễn Huệ" : "Nguyen Hue High School for the Gifted"}</h3>
+            <p>{vi ? "Chuyên Vật lý · Hà Nội, Việt Nam" : "Specialized Physics Program · Hanoi, Vietnam"}</p>
+          </div>
+          <dl className="home-academic-scores">
+            {scores.map((score) => (
+              <div key={score.label}>
+                <dt>{score.label}</dt>
+                <dd>{score.value}<span>{score.scale}</span></dd>
               </div>
             ))}
           </dl>
         </div>
-        <div className="home-certificates-grid" data-reveal>
-          {homeCertificates.courses.map((course, index) => (
-            <button type="button" key={course.title} className="home-certificate-card"
-              aria-haspopup="dialog" aria-controls="home-certificate-dialog"
-              onClick={(event) => {
-                trigger.current = event.currentTarget;
-                setImageFailed(false);
-                setSelected(index);
-              }}>
-              <span className="home-about-label">{homeCertificates.status[locale]}</span>
-              <strong>{course.title}</strong>
-              <span className="home-certificate-link">
-                {locale === "vi" ? "Xem chứng chỉ" : "View certificate"} <span aria-hidden="true">↗</span>
-              </span>
-            </button>
-          ))}
+
+        <div className="home-academic-group" data-reveal>
+          <div className="home-academic-group-heading">
+            <h3>{vi ? "Giải thưởng học thuật" : "Academic recognition"}</h3>
+            <p>{vi ? "Thành tích và chứng nhận từ các kỳ thi quốc tế." : "Achievements and certificates from international competitions."}</p>
+          </div>
+          <div className="home-academic-awards">
+            {homeAcademicAwards.map((award) => (
+              <button type="button" key={award.id} className="home-academic-award"
+                aria-haspopup="dialog" aria-controls="home-certificate-dialog"
+                onClick={(event) => openPreview(event.currentTarget, {
+                  title: award.title[locale], imageSrc: `/images/academic/full/${award.id}.webp`,
+                })}>
+                <span className="home-academic-thumbnail">
+                  <Image src={`/images/academic/thumbs/${award.id}.webp`} alt="" fill
+                    sizes="(max-width: 639px) 90vw, (max-width: 1023px) 45vw, 30vw" />
+                </span>
+                <span className="home-academic-award-copy">
+                  <strong>{award.title[locale]}</strong>
+                  <span>{award.description[locale]}</span>
+                  <span className="home-certificate-link">{vi ? "Xem chứng nhận" : "View certificate"} <span aria-hidden="true">↗</span></span>
+                </span>
+              </button>
+            ))}
+          </div>
         </div>
+
+        <div className="home-academic-group" data-reveal>
+          <div className="home-academic-group-heading">
+            <h3>{vi ? "Học tập mở rộng" : "Continued learning"}</h3>
+            <p>{vi ? "Các khóa học Coursera đã hoàn thành về AI, dữ liệu và lập trình." : "Completed Coursera courses in AI, data analysis, and programming."}</p>
+          </div>
+          <div className="home-certificates-grid">
+            {homeCertificates.courses.map((course, index) => {
+              const copy = <><span className="home-academic-course-number" aria-hidden="true">0{index + 1}</span>
+                <span className="home-about-label">{homeCertificates.status[locale]}</span>
+                <strong>{course.title}</strong></>;
+              return course.imageSrc ? (
+                <button type="button" key={course.title} className="home-certificate-card"
+                  aria-haspopup="dialog" aria-controls="home-certificate-dialog"
+                  onClick={(event) => openPreview(event.currentTarget, course)}>
+                  {copy}<span className="home-certificate-link">{vi ? "Xem chứng chỉ" : "View certificate"} ↗</span>
+                </button>
+              ) : <article key={course.title} className="home-certificate-card">{copy}</article>;
+            })}
+          </div>
+        </div>
+
         <dialog ref={dialog} id="home-certificate-dialog" className="home-certificate-dialog"
           aria-labelledby="home-certificate-dialog-title"
           onCancel={(event) => { event.preventDefault(); setSelected(null); }}
           onClick={(event) => { if (event.target === event.currentTarget) setSelected(null); }}>
-          {course && <div className="home-certificate-preview">
+          {selected && <div className="home-certificate-preview">
             <header>
-              <h3 id="home-certificate-dialog-title">{course.title}</h3>
-              <button type="button" autoFocus onClick={() => setSelected(null)}>
-                {locale === "vi" ? "Đóng" : "Close"} ×
-              </button>
+              <h3 id="home-certificate-dialog-title">{selected.title}</h3>
+              <button type="button" autoFocus onClick={() => setSelected(null)}>{vi ? "Đóng" : "Close"} ×</button>
             </header>
-            {course.imageSrc && !imageFailed ? (
+            {!imageFailed ? (
               <div className="home-certificate-image">
-                <Image src={course.imageSrc} alt={`${locale === "vi" ? "Chứng chỉ" : "Certificate"}: ${course.title}`}
+                <Image src={selected.imageSrc} alt={`${vi ? "Chứng nhận" : "Certificate"}: ${selected.title}`}
                   fill sizes="(max-width: 900px) 90vw, 900px" onError={() => setImageFailed(true)} />
               </div>
-            ) : (
-              <p className="home-certificate-placeholder">
-                {locale === "vi" ? "Ảnh chứng chỉ sẽ được cập nhật sớm." : "Certificate image coming soon."}
-              </p>
-            )}
+            ) : <p className="home-certificate-placeholder">{vi ? "Không tải được ảnh. Bạn có thể mở bản gốc bên dưới." : "The image could not load. Open the original below."}</p>}
+            <a className="home-academic-original" href={selected.imageSrc} target="_blank" rel="noopener noreferrer">
+              {vi ? "Mở ảnh gốc" : "Open original image"} ↗
+            </a>
           </div>}
         </dialog>
       </div>

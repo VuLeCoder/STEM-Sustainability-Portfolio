@@ -79,8 +79,8 @@ export default async function HomePage({
         </div>
       </section>
       <HomeAbout locale={lang} />
-      <HomeResearch locale={lang} />
       <HomeCertificates locale={lang} />
+      <HomeResearch locale={lang} />
       <HomeProjects locale={lang} />
       <HomeVision locale={lang} />
     </main>
