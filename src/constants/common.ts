@@ -22,7 +22,7 @@ export const siteContent={
     home: { vi: "Trang chủ",en: "Home" },
     about: { vi: "Về tôi",en: "About" },
     journey: { vi: "Hành trình",en: "Journey" },
-    projects: { vi: "Dự án",en: "Projects" },
+    projects: { vi: "Dấu ấn & Tác động",en: "Work & Impact" },
     contact: { vi: "Liên hệ",en: "Contact" },
   },
   ui: {
