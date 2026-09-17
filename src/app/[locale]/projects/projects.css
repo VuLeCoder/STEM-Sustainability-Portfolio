@@ -185,3 +185,8 @@
 .work-count { color: #62695f; font-size: 14px; margin: 16px 0 24px; }
 .work-result { display: block; color: #2f6b3e; font-size: 14px; line-height: 1.6; margin-bottom: 20px; }
 @media (max-width: 767px) { .work-featured ul { grid-template-columns: 1fr; } }
+
+/* Make the existing detail link cover its card while retaining native link behavior. */
+.project-gallery__card { position: relative; }
+.project-gallery__footer a::after { content: ""; position: absolute; inset: 0; z-index: 1; border-radius: inherit; }
+.project-gallery__card:focus-within { outline: 2px solid currentColor; outline-offset: 4px; }

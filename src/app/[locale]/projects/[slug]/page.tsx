@@ -1,9 +1,10 @@
 import type { Metadata } from "next";
-import Image from "next/image";
+import { JourneyMedia } from "@/components/journey-media";
+import "./detail.css";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { locales } from "@/constants/common";
-import { workEntries, workContent } from "@/constants/work";
+import { workEntries, workContent, getWorkSections, getWorkImages } from "@/constants/work";
 import { projectDetailContent as labels } from "@/constants/project";
 import { isLocale } from "@/lib/i18n";
 import { createLocalizedMetadata } from "@/lib/site-metadata";
@@ -23,26 +24,32 @@ export default async function WorkDetail({ params }: Props) {
   const { locale, slug } = await params;
   const entry = workEntries.find(item => item.slug === slug);
   if (!isLocale(locale) || !entry) notFound();
-  const sections = [
-    { title: entry.kind === "research" ? (locale === "vi" ? "Tổng quan nghiên cứu" : "Research overview") : entry.kind === "community" ? (locale === "vi" ? "Hoạt động & đóng góp" : "Activity & contribution") : labels.objectiveLabel[locale], text: entry.summary[locale] },
-    { title: labels.problemLabel[locale], text: entry.problem?.[locale] },
-    { title: labels.solutionLabel[locale], text: entry.details?.solution?.[locale] },
-    { title: labels.processLabel[locale], text: entry.details?.process?.[locale] },
-    { title: entry.slug === "vast-research-internship" ? (locale === "vi" ? "Thời gian & định hướng" : "Timeline & focus") : labels.resultLabel[locale], text: entry.result[locale] },
-  ].filter(section => section.text);
+  const images = getWorkImages(entry);
+  const sections = getWorkSections(entry, locale);
+  const index = workEntries.findIndex(item => item.slug === slug);
+  const previous = workEntries[index - 1];
+  const next = workEntries[index + 1];
   return <main className="project-detail-page"><div className="project-detail-shell">
     <header className="project-detail-hero">
       <Link className="project-detail-back" href={`/${locale}/projects`}>← {workContent.back[locale]}</Link>
-      <p>{entry.category[locale]}</p><h1>{entry.displayTitle[locale]}</h1>
+      <p className="project-detail-category">{entry.category[locale]}</p><h1>{entry.displayTitle[locale]}</h1>
+      <p className="project-detail-summary">{entry.summary[locale]}</p>
       <dl className="project-detail-meta"><div><dt>{labels.roleLabel[locale]}</dt><dd>{entry.role[locale]}</dd></div>
         {entry.year && <div><dt>{labels.yearLabel[locale]}</dt><dd>{entry.year}</dd></div>}
         {entry.fields[locale].length > 0 && <div><dt>{labels.fieldsLabel[locale]}</dt><dd>{entry.fields[locale].join(" · ")}</dd></div>}
       </dl>
     </header>
-    {entry.coverImage && !entry.coverImage.includes("/placeholders/") && <div className="project-detail-cover"><Image src={entry.coverImage} alt={entry.displayTitle[locale]} fill sizes="(min-width: 1200px) 1100px, 100vw" priority /></div>}
-    <div className="project-detail-body">{sections.map((section, index) => <section className="project-detail-section" key={section.title}>
-      <p className="project-detail-section-index">{String(index + 1).padStart(2, "0")}</p><div><h2>{section.title}</h2><p>{section.text}</p></div>
+    {images.length > 0 && <section className="project-detail-media" aria-labelledby="project-photos-title">
+      <div className="project-detail-media-heading"><h2 id="project-photos-title">{locale === "vi" ? "Hình ảnh & Tư liệu" : "Photos & Evidence"}</h2><span>{images.length} {locale === "vi" ? "ảnh" : "photos"}</span></div>
+      <JourneyMedia item={{ title: entry.displayTitle, type: "activity", images }} locale={locale} />
+    </section>}
+    <div className="project-detail-body">{sections.map((section, index) => <section className="project-detail-section" key={section.id} id={section.id} aria-labelledby={`${section.id}-title`}>
+      <p className="project-detail-section-index">{String(index + 1).padStart(2, "0")}</p><div><h2 id={`${section.id}-title`}>{section.title}</h2>{section.paragraphs.map((text, paragraphIndex) => <p key={paragraphIndex}>{text}</p>)}</div>
     </section>)}</div>
     {entry.externalLinks.length > 0 && <section className="project-detail-links"><h2>{locale === "vi" ? "Nguồn & Tư liệu" : "Sources & Resources"}</h2><div>{entry.externalLinks.map(link => <a key={link.href} href={link.href} target="_blank" rel="noopener noreferrer">{link.label[locale]} ↗</a>)}</div></section>}
+    <nav className="project-detail-navigation" aria-label={locale === "vi" ? "Điều hướng bài viết" : "Case study navigation"}>
+      {previous && <Link className="project-detail-navigation-link" href={`/${locale}/projects/${previous.slug}`}><span className="project-detail-navigation-label">← {locale === "vi" ? "Bài trước" : "Previous"}</span><span className="project-detail-navigation-title">{previous.displayTitle[locale]}</span></Link>}
+      {next && <Link className="project-detail-navigation-link project-detail-navigation-link--next" href={`/${locale}/projects/${next.slug}`}><span className="project-detail-navigation-label">{locale === "vi" ? "Bài tiếp theo" : "Next"} →</span><span className="project-detail-navigation-title">{next.displayTitle[locale]}</span></Link>}
+    </nav>
   </div></main>;
 }

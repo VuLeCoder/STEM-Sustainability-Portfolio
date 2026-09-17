@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import "./journey-media.css";
 import { useEffect, useRef, useState } from "react";
 import type { Locale } from "@/constants/common";
 import type { JourneyItem } from "@/constants/journey";
@@ -17,7 +18,7 @@ const labels = {
   photos: { vi: "ảnh", en: "photos" },
 };
 
-export function JourneyMedia({ item, locale }: { item: JourneyItem; locale: Locale }) {
+export function JourneyMedia({ item, locale }: { item: Pick<JourneyItem, "images" | "evidencePdf" | "type" | "title">; locale: Locale }) {
   const images = item.images ?? [];
   const dialog = useRef<HTMLDialogElement>(null);
   const trigger = useRef<HTMLButtonElement | null>(null);

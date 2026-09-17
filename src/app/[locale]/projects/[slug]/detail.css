@@ -1,0 +1,44 @@
+/* Match Home's restrained sans-serif typography and soft green cards. */
+.project-detail-page { font-family: var(--font-sans); color: #171a17; padding-bottom: 40px; }
+.project-detail-shell { width: min(calc(100% - 80px), 1040px); }
+.project-detail-hero { padding: clamp(32px, 5vw, 56px) 0 32px; }
+.project-detail-back { margin-bottom: 28px; min-height: 44px; align-items: center; color: #2f6b3e; font-size: 14px; }
+.project-detail-category { width: fit-content; padding: 7px 14px; border-radius: 999px; background: #e7efe8; color: #2f6b3e; font-size: 13px; font-weight: 600; }
+.project-detail-hero h1 { max-width: 900px; margin: 18px 0 0; font-family: var(--font-sans); font-size: clamp(30px, 4vw, 48px); font-weight: 600; letter-spacing: -0.04em; line-height: 1.25; text-wrap: balance; }
+.project-detail-summary { max-width: 780px; margin-top: 18px; color: #62695f; font-size: 17px; line-height: 1.8; }
+.project-detail-meta { margin-top: 28px; padding: 22px 24px; gap: 24px; border: 1px solid #e2e6e1; border-radius: 18px; background: #fff; }
+.project-detail-meta dt, .project-detail-links h2 { font-family: var(--font-sans); font-size: 13px; font-weight: 600; text-transform: none; letter-spacing: 0; color: #2f6b3e; }
+.project-detail-meta dd { margin: 8px 0 0; font-size: 14px; line-height: 1.7; color: #62695f; }
+.project-detail-media { padding: 20px 24px; border: 1px solid #e2e6e1; border-radius: 18px; background: #fff; }
+.project-detail-media-heading { display: flex; align-items: baseline; justify-content: space-between; gap: 16px; }
+.project-detail-media-heading h2 { font: 600 16px/1.5 var(--font-sans); margin: 0; }
+.project-detail-media-heading > span { flex-shrink: 0; font-size: 13px; color: #62695f; }
+.project-detail-media .journey-media { margin-top: 16px; }
+.project-detail-media .journey-media__previews { max-width: 760px; }
+.project-detail-media .journey-media__previews[data-count="1"] { max-width: 240px; }
+.project-detail-media .journey-media__previews[data-count="2"] { max-width: 500px; }
+.project-detail-media .journey-media__thumbnail { aspect-ratio: 4/3; }
+.project-detail-media .journey-media__thumbnail img { object-fit: contain; }
+.project-detail-body { max-width: 860px; padding: 32px 0 8px; }
+.project-detail-section { grid-template-columns: 40px minmax(0, 1fr); gap: 20px; padding: 28px 0; border-color: #e2e6e1; scroll-margin-top: 100px; }
+.project-detail-section-index { display: grid; place-items: center; align-self: start; width: 36px; height: 36px; margin: 0; background: #e7efe8; color: #2f6b3e; border-radius: 50%; font: 600 12px/1 var(--font-sans); letter-spacing: 0; }
+.project-detail-section h2 { margin: 2px 0 0; font: 600 clamp(20px, 2.4vw, 26px)/1.4 var(--font-sans); letter-spacing: -0.025em; }
+.project-detail-section div > p { max-width: 70ch; margin-top: 14px; color: #62695f; font-size: 16px; line-height: 1.85; }
+.project-detail-links { display: block; padding: 24px 0; border-color: #e2e6e1; }
+.project-detail-links > div { margin-top: 16px; }
+.project-detail-links a { font-size: 14px; }
+.project-detail-navigation { margin-top: 24px; border-color: #e2e6e1; }
+.project-detail-navigation-link { padding: 24px; gap: 10px; }
+.project-detail-navigation-label { font: 500 13px/1.5 var(--font-sans); letter-spacing: 0; text-transform: none; color: #62695f; }
+.project-detail-navigation-title { font: 600 clamp(18px, 2vw, 22px)/1.5 var(--font-sans); letter-spacing: -0.025em; color: #2f6b3e; }
+.project-detail-page a:focus-visible { outline: 2px solid #2f6b3e; outline-offset: 4px; border-radius: 4px; }
+@media (min-width: 768px) { .project-detail-navigation-link--next { grid-column: 2; } }
+@media (max-width: 767px) {
+  .project-detail-shell { width: calc(100% - 40px); }
+  .project-detail-hero { padding-bottom: 24px; }
+  .project-detail-meta { gap: 18px; padding: 20px; }
+  .project-detail-media { padding: 16px; }
+  .project-detail-section { grid-template-columns: 30px minmax(0, 1fr); gap: 12px; padding: 24px 0; }
+  .project-detail-section-index { width: 28px; height: 28px; margin-top: 3px; }
+  .project-detail-navigation-link { padding: 20px 0; }
+}

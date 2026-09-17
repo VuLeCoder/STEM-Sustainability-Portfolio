@@ -1,6 +1,6 @@
 import type { Localized } from "./common";
 import { projects, type Project } from "./project";
-import { journeyItems } from "./journey";
+import { journeyItems, type JourneyImage } from "./journey";
 
 export const workCategories = {
   all: { vi: "Tất cả", en: "All" },
@@ -9,7 +9,47 @@ export const workCategories = {
   community: { vi: "Cộng đồng & Hoạt động", en: "Community & Activities" },
 } as const;
 export type WorkCategory = Exclude<keyof typeof workCategories, "all">;
-export type WorkEntry = Project & { kind: WorkCategory; displayTitle: Localized<string> };
+export type WorkEntry = Project & {
+  kind: WorkCategory;
+  displayTitle: Localized<string>;
+  images?: readonly JourneyImage[];
+  caseStudy?: Partial<Record<"problem" | "role" | "solution" | "result" | "lessons", Localized<string>>>;
+};
+
+// Optional caseStudy fields hold verified long-form copy without changing Home content.
+export function getWorkSections(entry: WorkEntry, locale: "vi" | "en") {
+  const vi = locale === "vi";
+  const copy = entry.caseStudy;
+  return [
+    {
+      id: "problem", title: vi ? "Vấn đề & Bối cảnh" : "Problem",
+      paragraphs: [copy?.problem?.[locale] ?? entry.problem?.[locale] ?? entry.details?.objective?.[locale] ?? entry.summary[locale]],
+    },
+    {
+      id: "my-role", title: vi ? "Vai trò của tôi" : "My role",
+      paragraphs: [copy?.role?.[locale] ?? entry.role[locale]],
+    },
+    {
+      id: "solution", title: vi ? "Giải pháp & Cách thực hiện" : "Solution",
+      paragraphs: [
+        copy?.solution?.[locale] ?? entry.details?.solution?.[locale] ??
+          (entry.problem ? entry.summary[locale] : (vi ? "Nội dung chi tiết về cách thực hiện sẽ được cập nhật." : "Details of the approach will be added soon.")),
+        entry.details?.process?.[locale],
+      ].filter((text): text is string => Boolean(text)),
+    },
+    {
+      id: "result", title: vi ? "Kết quả" : "Result",
+      paragraphs: [copy?.result?.[locale] ?? (entry.slug === "vast-research-internship"
+        ? (vi ? "Kết quả nghiên cứu sẽ được cập nhật. " : "Research outcomes will be added soon. ") + entry.result[locale]
+        : entry.result[locale]), entry.details?.evidence?.[locale]].filter((text): text is string => Boolean(text)),
+    },
+    {
+      id: "what-i-learned", title: vi ? "Điều tôi học được" : "What I learned",
+      paragraphs: [copy?.lessons?.[locale] ?? entry.details?.lessons?.[locale] ??
+        (vi ? "Chia sẻ về những bài học từ trải nghiệm này sẽ được cập nhật." : "Personal reflections on this experience will be added soon.")],
+    },
+  ];
+}
 export const workContent = {
   title: { vi: "Dấu ấn & Tác động", en: "Work & Impact" },
   description: { vi: "Những nghiên cứu, dự án công nghệ và hoạt động cộng đồng — từ sự tò mò khoa học đến đóng góp trong thực tế.", en: "Research, technology projects, and community activities — from scientific curiosity to practical contributions." },
@@ -226,3 +266,20 @@ export const workEntries: WorkEntry[] = [
   })), ...additions, ...activities, ...communityActivities,
 ];
 export const featuredWork = ["safestride", "dual-image-reversible-data-hiding", "ecome"].map(slug => workEntries.find(entry => entry.slug === slug)!);
+
+// Add images directly to a WorkEntry to override its linked Journey gallery.
+const workJourneyIds: Record<string, string> = {
+  safestride: "safestride-2026", ecome: "ecome-2025", ecomesort: "ecomesort-2026",
+  bloomwatch: "bloomwatch-2025", "dual-image-reversible-data-hiding": "vnict-2025",
+  "vast-research-internship": "vast-2026",
+};
+export function getWorkImages(entry: WorkEntry): readonly JourneyImage[] {
+  const linked = journeyItems.find(item => item.id === (workJourneyIds[entry.slug] ?? entry.slug));
+  const images = entry.images ?? linked?.images ??
+    (entry.coverImage && !entry.coverImage.includes("/placeholders/")
+      ? [{ src: entry.coverImage, alt: entry.displayTitle }] : []);
+  return images.map((image, index) => ({ ...image, alt: {
+    vi: image.alt.vi || `${entry.displayTitle.vi} — Ảnh ${index + 1}`,
+    en: image.alt.en || `${entry.displayTitle.en} — Photo ${index + 1}`,
+  } }));
+}

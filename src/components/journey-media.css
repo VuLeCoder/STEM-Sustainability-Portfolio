@@ -1,0 +1,39 @@
+.journey-media { min-width: 0; margin-top: 20px; }
+.journey-media__previews { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; }
+.journey-media__previews[data-count="1"] { grid-template-columns: minmax(0, 1fr); max-width: 340px; }
+.journey-media__previews[data-count="2"] { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.journey-media__thumbnail { position: relative; display: block; width: 100%; aspect-ratio: 4 / 3; overflow: hidden; padding: 0; border: 1px solid #e2e6e1; border-radius: 12px; background: #f3f5f0; cursor: pointer; }
+.journey-media__thumbnail img { object-fit: cover; transition: transform 220ms ease; }
+.journey-media[data-award="true"] .journey-media__thumbnail img { object-fit: contain; padding: 8px; }
+.journey-media__more { position: absolute; inset: 0; display: grid; place-items: center; background: #172b1b99; color: white; font-size: 16px; font-weight: 600; }
+.journey-media__link { display: inline-flex; align-items: center; gap: 8px; margin: 12px 16px 0 0; padding: 4px 0; border: 0; background: transparent; color: #2f6b3e; font: inherit; font-size: 14px; font-weight: 600; text-decoration: none; cursor: pointer; }
+.journey-media button:focus-visible, .journey-media a:focus-visible { outline: 2px solid #2f6b3e; outline-offset: 4px; }
+.journey-lightbox { position: fixed; inset: 0; width: min(1120px, calc(100vw - 32px)); max-width: none; max-height: calc(100dvh - 32px); margin: auto; padding: 0; border: 1px solid #dce6dc; border-radius: 18px; background: #fff; color: #171a17; box-shadow: 0 24px 80px #0004; }
+.journey-lightbox::backdrop { background: #101b16cc; backdrop-filter: blur(5px); }
+.journey-lightbox__content { display: flex; flex-direction: column; max-height: calc(100dvh - 34px); }
+.journey-lightbox__toolbar { display: flex; align-items: center; gap: 12px; padding: 16px 20px; border-bottom: 1px solid #e2e6e1; }
+.journey-lightbox__toolbar strong { flex: 1; min-width: 0; font-size: 16px; line-height: 1.5; }
+.journey-lightbox button { flex-shrink: 0; min-width: 44px; min-height: 44px; padding: 8px 12px; border: 1px solid #dce6dc; border-radius: 10px; background: #edf2eb; color: #2f6b3e; font: inherit; font-size: 14px; cursor: pointer; }
+.journey-lightbox__viewport { min-height: 0; overflow: auto; background: #f3f5f0; overscroll-behavior: contain; }
+.journey-lightbox__image { position: relative; width: 100%; height: min(65dvh, 720px); }
+.journey-lightbox__image img { object-fit: contain; }
+.journey-lightbox__viewport[data-zoom="true"] .journey-lightbox__image { width: 200%; height: min(130dvh, 1440px); }
+.journey-lightbox__footer { display: flex; align-items: center; justify-content: center; gap: 16px; padding: 12px 20px; }
+.journey-lightbox__footer > div { flex: 1; min-width: 0; text-align: center; }
+.journey-lightbox__footer span { color: #2f6b3e; font-size: 13px; }
+.journey-lightbox .journey-lightbox__footer p { margin: 4px 0 0; font-size: 14px; line-height: 1.5; }
+@media (max-width: 767px) {
+  .journey-media__previews { gap: 6px; }
+  .journey-media__thumbnail { border-radius: 8px; }
+  .journey-media__more { font-size: 13px; }
+  .journey-lightbox__toolbar { flex-wrap: wrap; gap: 8px; padding: 12px; }
+  .journey-lightbox__toolbar strong { flex-basis: 100%; }
+  .journey-lightbox__footer { gap: 8px; padding: 12px; }
+}
+@media (hover: hover) {
+  .journey-media__thumbnail:hover img { transform: scale(1.03); }
+  .journey-media__link:hover { text-decoration: underline; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .journey-media__thumbnail img { transition: none; }
+}
