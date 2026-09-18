@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import { notFound } from "next/navigation";
 import { createLocalizedMetadata } from "@/lib/site-metadata";
+import { HomeCommunityImpact } from "@/components/home-community-impact";
 import { HomeProjects } from "@/components/home-projects";
 import { HomeSidebar } from "@/components/home-sidebar";
 import { HomeAbout } from "@/components/home-about";
@@ -82,6 +83,7 @@ export default async function HomePage({
       <HomeCertificates locale={lang} />
       <HomeResearch locale={lang} />
       <HomeProjects locale={lang} />
+      <HomeCommunityImpact locale={lang} />
       <HomeVision locale={lang} />
     </main>
   );
