@@ -6,6 +6,7 @@ export const homeNarrative = {
     research: { vi: "Hướng nghiên cứu", en: "Research Interests" },
     certificates: { vi: "Học thuật & Chứng chỉ", en: "Academics & Certifications" },
     projects: { vi: "Dự án", en: "Projects" },
+    impact: { vi: "Tác động cộng đồng", en: "Community Impact" },
     vision: { vi: "Định hướng tương lai", en: "Future Vision" },
     contact: { vi: "Liên hệ", en: "Contact" },
   },

@@ -11,6 +11,7 @@ const items = [
   { key: "certificates", id: "certificates", icon: "M4 3h16v14H4zM8 7h8M8 11h5M9 17v5l3-2 3 2v-5" },
   { key: "research", id: "research", icon: "M9 3h6M10 3v7l-6 9a1 1 0 0 0 1 2h14a1 1 0 0 0 1-2l-6-9V3M7 16h10" },
   { key: "projects", id: "projects", icon: "m12 3 10 5-10 5L2 8Zm-10 9 10 5 10-5M2 16l10 5 10-5" },
+  { key: "impact", id: "community-impact", icon: "M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1.1-1.1a5.5 5.5 0 0 0-7.8 7.8L12 21l8.8-8.6a5.5 5.5 0 0 0 0-7.8Z" },
   { key: "vision", id: "vision", icon: "M12 3v3M12 18v3M3 12h3M18 12h3M12 7a5 5 0 1 0 0 10 5 5 0 0 0 0-10Z" },
   { key: "contact", id: "footer-contact", icon: "M3 5h18v14H3zM3 6l9 7 9-7" },
 ] as const;

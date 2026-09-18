@@ -22,9 +22,10 @@
 .home-projects-all { padding: 8px 24px; border: 1px solid #b9c9b5; border-radius: 999px; }
 .home-projects a:hover { text-decoration: underline; text-underline-offset: 4px; }
 .home-projects a:focus-visible, .home-impact a:focus-visible { outline: 2px solid currentColor; outline-offset: 5px; border-radius: 4px; }
-.home-impact { padding: clamp(48px, 6vw, 88px) 0; background: #244b35; color: #fff; }
+.home-impact { margin-top: clamp(24px, 4vw, 48px); padding: max(var(--section-nav-clearance), clamp(64px, 7vw, 96px)) 0; background: #244b35; color: #fff; }
 .home-impact-heading { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; align-items: end; }
-.home-impact-heading .home-about-label { color: #c8ddbc; }
+.home-impact-heading .home-about-label { margin: 0; border-color: #deedca; background: #deedca; color: #244b35; font-weight: 600; }
+.home-impact-heading h2 { text-wrap: balance; }
 .home-impact-heading > p { color: #e0e9dd; font-size: 17px; line-height: 1.8; }
 .home-impact-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; margin-top: 40px; }
 .home-impact-card { display: flex; flex-direction: column; padding: 28px 24px; border: 1px solid #ffffff30; border-radius: 18px; background: #ffffff08; }
