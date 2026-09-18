@@ -1,6 +1,5 @@
 import Link from "next/link";
 import type { Locale } from "@/constants/common";
-import "./home-projects.css";
 
 const metrics = [
   {

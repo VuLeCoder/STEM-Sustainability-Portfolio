@@ -15,8 +15,8 @@ export const homeNarrative = {
     cv: { vi: "Xem CV", en: "View CV" },
   },
   positioning: {
-    vi: "Từ nền tảng chuyên Vật lý, tôi khám phá AI và công nghệ hỗ trợ để xây dựng những giải pháp lấy con người làm trung tâm, hướng tới giá trị cho cộng đồng.",
-    en: "With a foundation in Physics, I explore AI and assistive technology to build human-centered solutions that serve communities.",
+    vi: "Học sinh chuyên Vật lý, đang tìm hiểu cách kết hợp kỹ thuật phần cứng, AI và thiết kế hướng tới con người để giải quyết những vấn đề thực tế về hỗ trợ tiếp cận và môi trường — qua từng dự án một.",
+    en: "A Physics-specialized student exploring how hardware, AI, and human-centered design can address real accessibility and environmental problems — one project at a time.",
   },
   research: {
     title: { vi: "Từ câu hỏi khoa học đến nghiên cứu ứng dụng.", en: "From scientific questions to applied research." },

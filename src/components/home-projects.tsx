@@ -1,6 +1,5 @@
 import Link from "next/link";
 import { siteContent, type Locale } from "@/constants/common";
-import "./home-projects.css";
 
 export function HomeProjects({ locale }: { locale: Locale }) {
   const { home } = siteContent;

@@ -11,8 +11,8 @@ export const metadata: Metadata = {
 
 const localeScript = `
   try {
-    const locale = window.location.pathname.match(/^\/(vi|en)(?=\/|(?!.))/)?.[1];
-    if (locale) document.documentElement.lang = locale;
+    const locale = window.location.pathname.split("/")[1];
+    if (locale === "vi" || locale === "en") document.documentElement.lang = locale;
   } catch {}
 `;
 

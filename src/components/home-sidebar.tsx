@@ -19,11 +19,50 @@ const items = [
 export function HomeSidebar({ locale }: { locale: Locale }) {
   const [collapsed, setCollapsed] = useState(false);
   const [activeId, setActiveId] = useState<string | null>(null);
+  const [quickOpen, setQuickOpen] = useState(false);
+  const quickRef = useRef<HTMLDivElement>(null);
+  const quickButtonRef = useRef<HTMLButtonElement>(null);
+  const quickNavigationId = useId();
   const scrollingHome = useRef(false);
   const navigationId = useId();
   const { sidebar } = siteContent;
   const { navigation } = homeNarrative;
   const toggleLabel = collapsed ? sidebar.expand[locale] : sidebar.collapse[locale];
+
+  const activeItem = items.find((item) => item.id === activeId) ?? items[0];
+  const contentsLabel = locale === "vi" ? "Mục lục nhanh" : "Quick navigation";
+
+  useEffect(() => {
+    const desktop = window.matchMedia("(min-width: 768px) and (min-height: 480px)");
+    const closeOnDesktop = () => { if (desktop.matches) setQuickOpen(false); };
+    desktop.addEventListener("change", closeOnDesktop);
+    return () => desktop.removeEventListener("change", closeOnDesktop);
+  }, []);
+
+  useEffect(() => {
+    if (!quickOpen) return;
+    const closeOutside = (event: PointerEvent) => {
+      if (!quickRef.current?.contains(event.target as Node)) setQuickOpen(false);
+    };
+    const closeOnEscape = (event: KeyboardEvent) => {
+      if (event.key === "Escape") {
+        setQuickOpen(false);
+        quickButtonRef.current?.focus();
+      }
+    };
+    const closeOnBlur = (event: FocusEvent) => {
+      if (!quickRef.current?.contains(event.target as Node)) setQuickOpen(false);
+    };
+    quickRef.current?.querySelector<HTMLAnchorElement>('a[aria-current="location"]')?.focus({ preventScroll: true });
+    document.addEventListener("pointerdown", closeOutside);
+    document.addEventListener("keydown", closeOnEscape);
+    document.addEventListener("focusin", closeOnBlur);
+    return () => {
+      document.removeEventListener("pointerdown", closeOutside);
+      document.removeEventListener("keydown", closeOnEscape);
+      document.removeEventListener("focusin", closeOnBlur);
+    };
+  }, [quickOpen]);
 
   useEffect(() => {
     let frame = 0;
@@ -74,6 +113,7 @@ export function HomeSidebar({ locale }: { locale: Locale }) {
   }, []);
 
   return (
+    <>
     <aside className="home-sidebar" aria-label={sidebar.label[locale]}>
       <nav id={navigationId} hidden={collapsed} aria-label={sidebar.label[locale]}>
         {items.map((item) => (
@@ -113,5 +153,49 @@ export function HomeSidebar({ locale }: { locale: Locale }) {
         <span className="home-sidebar__tooltip" aria-hidden="true">{toggleLabel}</span>
       </button>
     </aside>
+    <div className="home-quick-nav" ref={quickRef}>
+      <nav id={quickNavigationId} className="home-quick-nav__panel" hidden={!quickOpen} aria-label={contentsLabel}>
+        <p className="home-quick-nav__title">{contentsLabel}</p>
+        {items.map((item) => (
+          <a
+            key={item.key}
+            href={`#${item.id}`}
+            aria-current={activeItem.id === item.id ? "location" : undefined}
+            onClick={(event) => {
+              if (event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
+              event.preventDefault();
+              setQuickOpen(false);
+              quickButtonRef.current?.focus({ preventScroll: true });
+              scrollingHome.current = item.id === "hero";
+              const behavior = window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "instant" : "smooth";
+              window.history.replaceState(null, "", `#${item.id}`);
+              if (item.id === "hero") {
+                setActiveId("hero");
+                window.scrollTo({ top: 0, behavior });
+              } else {
+                document.getElementById(item.id)?.scrollIntoView({ behavior, block: "start" });
+              }
+            }}
+          >
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d={item.icon} /></svg>
+            <span>{navigation[item.key][locale]}</span>
+          </a>
+        ))}
+      </nav>
+      <button
+        ref={quickButtonRef}
+        type="button"
+        className="home-quick-nav__trigger"
+        aria-expanded={quickOpen}
+        aria-controls={quickNavigationId}
+        aria-label={`${contentsLabel}: ${navigation[activeItem.key][locale]}`}
+        onClick={() => setQuickOpen((open) => !open)}
+      >
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d={activeItem.icon} /></svg>
+        <span>{navigation[activeItem.key][locale]}</span>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" aria-hidden="true"><path d={quickOpen ? "m6 9 6 6 6-6" : "m6 15 6-6 6 6"} /></svg>
+      </button>
+    </div>
+    </>
   );
 }

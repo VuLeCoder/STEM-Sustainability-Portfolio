@@ -1,0 +1,33 @@
+/* Route-scoped tokens also reach the shared header/footer while Home is mounted. */
+body:has(.home-page) {
+  --home-paper: #f4f2eb;
+  --home-paper-alt: #efece3;
+  --home-ink: #16283c;
+  --home-muted: #465364;
+  --home-accent: #6f9e8e;
+  --home-accent-deep: #4c7566;
+  --home-tint: #e5ebe3;
+  --home-line: #dbd6cb;
+  --home-green: #304f43;
+  --home-on-dark: #eae8de;
+  --home-on-dark-soft: #cad5ce;
+  --home-dark-line: rgb(234 232 222 / 22%);
+  --font-sans: "IBM Plex Sans", "Segoe UI", sans-serif;
+  --font-display: "Newsreader", Georgia, serif;
+  --focus: var(--home-accent-deep);
+  --section-nav-clearance: 64px;
+  background: var(--home-paper);
+  color: var(--home-ink);
+  font-family: var(--font-sans);
+}
+.home-page {
+  --home-gutter: clamp(22px, 4vw, 64px);
+  --home-section-space: clamp(60px, 7vw, 88px);
+  --home-section-start: clamp(32px, 4vw, 48px);
+  --home-radius: 3px;
+  background: var(--home-paper);
+  color: var(--home-ink);
+  font-size: 17px;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+}
