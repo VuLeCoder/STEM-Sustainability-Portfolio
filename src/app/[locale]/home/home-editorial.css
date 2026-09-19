@@ -202,9 +202,10 @@
 .home-page .home-activity-group--learning li { font-size: 14px; }
 @media (max-width: 767px) {
   .home-page .home-projects-card--extra { display: none; }
-  .home-page .home-impact-metrics { gap: 18px; padding-block: 20px; }
-  .home-page .home-impact-metrics div { flex-direction: row; align-items: baseline; gap: 16px; }
-  .home-page .home-impact-metrics strong { min-width: 110px; font-size: 36px; }
+  .home-page .home-impact-metrics { gap: 28px; padding-block: 12px; }
+  .home-page .home-impact-metrics div { flex-direction: column; align-items: flex-start; gap: 6px; }
+  .home-page .home-impact-metrics strong { font-size: 40px; line-height: 1.1; }
+  .home-page .home-impact-metrics span { line-height: 1.5; }
 }
 
 /* Borderless evidence links keep the activity lists open and quiet. */
