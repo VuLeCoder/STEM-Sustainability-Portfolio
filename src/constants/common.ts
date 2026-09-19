@@ -20,7 +20,7 @@ export const siteContent={
   navigation: {
     home: { vi: "Trang chủ",en: "Home" },
     about: { vi: "Về tôi",en: "About" },
-    projects: { vi: "Dấu ấn & Tác động",en: "Work & Impact" },
+    projects: { vi: "Công việc",en: "Work" },
     contact: { vi: "Liên hệ",en: "Contact" },
   },
   ui: {
