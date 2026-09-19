@@ -110,11 +110,11 @@ export function SiteHeader({ locale }: { locale: Locale }) {
             className="locale-switch"
             href={localizedPath}
             hrefLang={otherLocale}
-            aria-label={locale === "en" ? "EN — Switch to Vietnamese" : "VI — Chuyển sang tiếng Anh"}
+            aria-label={locale === "en" ? "VI — Switch to Vietnamese" : "EN — Chuyển sang tiếng Anh"}
             title={locale === "en" ? "Switch to Vietnamese" : "Chuyển sang tiếng Anh"}
             onClick={() => setIsOpen(false)}
           >
-            {locale.toUpperCase()}
+            {otherLocale.toUpperCase()}
           </Link>
           <button
             ref={menuToggleRef}
