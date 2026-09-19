@@ -1,0 +1,40 @@
+.home-page .home-journey { background: var(--home-paper); }
+.home-page .home-journey-timeline { list-style: none; padding: 0; margin: 36px 0 0; }
+.home-page .home-journey-milestone {
+  display: grid;
+  grid-template-columns: 190px minmax(0, 1fr);
+  column-gap: 32px;
+}
+.home-page .home-journey-period {
+  margin: 0;
+  padding: 3px 0 28px;
+  color: var(--home-accent-deep);
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.7;
+}
+.home-page .home-journey-story {
+  position: relative;
+  padding: 0 0 28px 32px;
+  border-left: 1px solid var(--home-line);
+}
+.home-page .home-journey-story::before {
+  content: "";
+  position: absolute;
+  top: 9px;
+  left: -5px;
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: var(--home-accent-deep);
+  box-shadow: 0 0 0 4px var(--home-paper);
+}
+.home-page .home-journey-story h3 { margin: 0 0 10px; font-size: clamp(24px, 2.5vw, 30px); }
+.home-page .home-journey-story p { margin: 0; max-width: 72ch; color: var(--home-muted); font-size: 16px; line-height: 1.75; }
+.home-page .home-journey-milestone:last-child .home-journey-story { padding-bottom: 0; border-color: transparent; }
+@media (max-width: 767px) {
+  .home-page .home-journey-milestone { grid-template-columns: minmax(0, 1fr); position: relative; padding-left: 24px; border-left: 1px solid var(--home-line); }
+  .home-page .home-journey-period { padding: 0 0 8px; font-size: 13px; }
+  .home-page .home-journey-story { position: static; padding: 0 0 28px; border: 0; }
+  .home-page .home-journey-milestone:last-child { border-color: transparent; }
+}

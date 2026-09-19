@@ -103,7 +103,7 @@
 .home-page .home-research-upcoming { grid-column: 1 / -1; display: flex; flex-wrap: wrap; align-items: baseline; gap: 12px 28px; border-top-style: dashed; }
 .home-page .home-research-upcoming h3 { margin: 0; font-family: var(--font-sans); font-size: 17px; }
 
-/* Selected projects: retain four text-only cards and the existing destinations. */
+/* Selected projects: four compact image cards, with three previews on mobile. */
 .home-page .home-projects { background: var(--home-paper); }
 .home-page .home-projects-grid { gap: 0; border-top: 1px solid var(--home-line); border-left: 1px solid var(--home-line); }
 .home-page .home-projects-card { border: 0; border-right: 1px solid var(--home-line); border-bottom: 1px solid var(--home-line); border-radius: 0; background: transparent; }
@@ -141,4 +141,68 @@
 /* Reserve a rail gutter on desktops so fixed controls cannot cover copy. */
 @media (min-width: 768px) and (min-height: 480px) {
   .home-page { --home-gutter: 88px; }
+}
+
+/* Revised home narrative: compact evidence blocks using the existing editorial tokens. */
+.home-page .home-about-snapshot {
+  display: grid;
+  grid-template-columns: minmax(220px, .8fr) minmax(0, 1.2fr);
+  gap: 32px 56px;
+  margin-top: 48px;
+  padding-top: 28px;
+  border-top: 1px solid var(--home-line);
+}
+.home-page .home-about-snapshot h3 { margin-top: 16px; font-size: clamp(24px, 2.6vw, 32px); }
+.home-page .home-about-snapshot dl { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; margin: 0; }
+.home-page .home-about-snapshot dl div { padding-left: 16px; border-left: 1px solid var(--home-line); }
+.home-page .home-about-snapshot dt { color: var(--home-muted); font-size: 12px; line-height: 1.4; }
+.home-page .home-about-snapshot dd { margin: 8px 0 0; font-family: var(--font-display); font-size: clamp(24px, 3vw, 36px); font-variant-numeric: tabular-nums; }
+
+.home-page .home-projects-image { position: relative; display: block; aspect-ratio: 16 / 9; overflow: hidden; border-bottom: 1px solid var(--home-line); background: var(--home-paper-alt); }
+.home-page .home-projects-image img { object-fit: cover; transition: transform 300ms ease; }
+.home-page .home-projects-card:hover .home-projects-image img { transform: scale(1.025); }
+
+.home-page .home-research-link { display: inline-flex; gap: 12px; margin-top: 22px; color: var(--home-accent-deep); font-size: 14px; font-weight: 600; }
+.home-page .home-research-evidence .home-about-card { display: flex; flex-direction: column; }
+.home-page .home-research-evidence .home-research-link { margin-top: auto; padding-top: 22px; }
+
+.home-page .home-impact { margin-top: 0; }
+.home-page .home-impact-metrics { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; margin-top: 28px; padding-block: 20px; border-block: 1px solid var(--home-dark-line); }
+.home-page .home-impact-metrics div { display: flex; flex-direction: column; gap: 6px; }
+.home-page .home-impact-metrics strong { font-family: var(--font-display); font-size: clamp(36px, 4vw, 48px); font-weight: 500; }
+.home-page .home-impact-metrics span { color: var(--home-on-dark-soft); font-size: 14px; }
+.home-page .home-activities-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 28px 40px; margin-top: 32px; }
+.home-page .home-activity-group { padding-top: 22px; border-top: 1px solid var(--home-dark-line); }
+.home-page .home-activity-group h3 { font-size: 27px; }
+.home-page .home-activity-group ul { display: grid; gap: 14px; margin: 22px 0 0; padding: 0; list-style: none; }
+.home-page .home-activity-group li { position: relative; padding-left: 18px; color: var(--home-on-dark-soft); font-size: 15px; line-height: 1.7; }
+.home-page .home-activity-group li::before { content: ""; position: absolute; top: .75em; left: 0; width: 6px; height: 6px; background: var(--home-accent); }
+.home-page .home-activity-group li strong, .home-page .home-activity-group li span { display: block; }
+.home-page .home-activity-group li strong { color: var(--home-on-dark); font-weight: 500; }
+.home-page .home-activity-group li span { font-size: 13px; }
+
+@media (max-width: 767px) {
+  .home-page .home-about-snapshot { grid-template-columns: 1fr; }
+  .home-page .home-about-snapshot dl { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .home-page .home-impact-metrics, .home-page .home-activities-grid { grid-template-columns: 1fr; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .home-page .home-projects-image img { transition: none; }
+  .home-page .home-projects-card:hover .home-projects-image img { transform: none; }
+}
+
+/* Keep the supporting evidence quieter than the project and research sections. */
+.home-page .home-projects-image-pending { display: flex; height: 100%; flex-direction: column; justify-content: center; align-items: center; gap: 12px; padding: 24px; color: var(--home-muted); text-align: center; }
+.home-page .home-projects-image-pending > span { font-family: var(--font-display); font-size: 32px; color: var(--home-ink); }
+.home-page .home-projects-image-pending small { font-size: 13px; }
+.home-page .home-impact-heading h2 { font-size: clamp(28px, 3vw, 36px); }
+.home-page .home-activity-group--learning h3 { font-size: 23px; }
+.home-page .home-learning-note { margin-top: 16px; color: var(--home-on-dark-soft); font-size: 14px; line-height: 1.6; }
+.home-page .home-activity-group--learning ul { gap: 8px; margin-top: 16px; }
+.home-page .home-activity-group--learning li { font-size: 14px; }
+@media (max-width: 767px) {
+  .home-page .home-projects-card--extra { display: none; }
+  .home-page .home-impact-metrics { gap: 18px; padding-block: 20px; }
+  .home-page .home-impact-metrics div { flex-direction: row; align-items: baseline; gap: 16px; }
+  .home-page .home-impact-metrics strong { min-width: 110px; font-size: 36px; }
 }

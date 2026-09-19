@@ -60,3 +60,17 @@ body:has(.home-page) .portfolio-footer { scroll-margin-top: var(--section-nav-cl
 @media (min-width: 768px) and (min-height: 480px) {
   .home-quick-nav { display: none; }
 }
+
+body:has(.home-page) .portfolio-footer__shell { width: min(calc(100% - clamp(22px, 4vw, 64px) * 2), 1160px); }
+body:has(.home-page) .portfolio-footer__grid { gap: 32px; grid-template-columns: minmax(0, 1.25fr) minmax(0, .65fr) minmax(0, 1fr); }
+body:has(.home-page) .portfolio-footer__contact a { overflow-wrap: anywhere; }
+@media (min-width: 768px) and (min-height: 480px) {
+  body:has(.home-page) .portfolio-footer__shell { width: min(calc(100% - 176px), 1160px); }
+}
+@media (max-width: 900px) {
+  body:has(.home-page) .portfolio-footer__grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 767px) {
+  body:has(.home-page) .portfolio-footer__grid { grid-template-columns: minmax(0, 1fr); }
+  body:has(.home-page) .portfolio-footer__bottom { padding-bottom: 88px; }
+}

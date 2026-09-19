@@ -7,9 +7,8 @@ import { HomeProjects } from "@/components/home-projects";
 import { HomeSidebar } from "@/components/home-sidebar";
 import { HomeAbout } from "@/components/home-about";
 import { HomeResearch } from "@/components/home-research";
-import { HomeVision } from "@/components/home-vision";
+import { HomeJourney } from "@/components/home-journey";
 import "./home.css";
-import { HomeCertificates } from "@/components/home-certificates";
 import { siteContent } from "@/constants/common";
 import { isLocale } from "@/lib/i18n";
 
@@ -43,11 +42,10 @@ export default async function HomePage({
       <HomeSidebar locale={lang} />
       <HomeHero locale={lang} />
       <HomeAbout locale={lang} />
-      <HomeCertificates locale={lang} />
-      <HomeResearch locale={lang} />
       <HomeProjects locale={lang} />
+      <HomeResearch locale={lang} />
+      <HomeJourney locale={lang} />
       <HomeCommunityImpact locale={lang} />
-      <HomeVision locale={lang} />
     </main>
   );
 }

@@ -138,8 +138,8 @@ export const profileHome={
       en: "Exploring science. Working toward community impact.",
     },
     introduction: {
-      vi: "Tôi là học sinh chuyên Vật lý tại Trường THPT Chuyên Nguyễn Huệ, Hà Nội. Qua nghiên cứu và các dự án liên ngành, tôi mong muốn kết hợp công nghệ, tư duy kinh doanh và trách nhiệm xã hội để tạo ra những giải pháp thiết thực cho sự phát triển bền vững.",
-      en: "I am a Physics-specialized student at Nguyen Hue High School for the Gifted in Hanoi. Through research and interdisciplinary projects, I hope to combine technology, business thinking, and social responsibility to create practical solutions for sustainable development.",
+      vi: "Tôi là học sinh chuyên Vật lý tại Trường THPT Chuyên Nguyễn Huệ, Hà Nội, quan tâm đến AI, phần cứng, công nghệ hỗ trợ và phát triển bền vững. Từ SafeStride đến BloomWatch và ECOMe, tôi tìm hiểu cách công nghệ đáp ứng nhu cầu của con người. Tôi bắt đầu từ một vấn đề cụ thể, kết hợp tư duy khoa học với thiết kế hướng tới người dùng, rồi học qua thử nghiệm và làm việc cùng nhóm. Nghiên cứu giúp tôi kiểm chứng ý tưởng; hoạt động cộng đồng giúp tôi hiểu bối cảnh mà giải pháp cần phục vụ.",
+      en: "I am a Physics-specialized student at Nguyen Hue High School for the Gifted in Hanoi, interested in AI, hardware, accessibility, and sustainability. Through SafeStride, BloomWatch, and ECOMe, I explore how technology can respond to real human needs. My approach begins with a specific problem, combines scientific thinking with human-centered design, and develops through experiments and teamwork. Research teaches me to test ideas and explain results clearly; community work helps me understand the settings those ideas need to serve. I want to keep connecting these experiences as I learn to build practical, responsible solutions with others.",
     },
     pillars: [
       {

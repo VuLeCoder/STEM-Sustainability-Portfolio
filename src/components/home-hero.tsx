@@ -17,7 +17,7 @@ export function HomeHero({ locale }: { locale: Locale }) {
             {homeNarrative.positioning[lang]}
           </p>
           <div className="home-hero-actions">
-            <a className="home-hero-button home-hero-button-primary" href="#about">
+            <a className="home-hero-button home-hero-button-primary" href="#projects">
               {homeNarrative.actions.about[lang]}
               <span aria-hidden="true">↓</span>
             </a>
