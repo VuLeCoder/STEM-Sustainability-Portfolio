@@ -1,3 +1,4 @@
+import { HomeEvidenceButton } from "./home-evidence-button";
 import type { Locale } from "@/constants/common";
 import { homeAcademicAwards, homeCertificates } from "@/constants/home";
 
@@ -40,17 +41,17 @@ export function HomeCommunityImpact({ locale }: { locale: Locale }) {
         </div>
 
         <div className="home-activities-grid">
-          {groups.map((group) => <article key={group.title} className="home-activity-group" data-reveal><h3>{group.title}</h3><ul>{group.items.map((item) => <li key={item}>{item}</li>)}</ul></article>)}
+          {groups.map((group) => <article key={group.title} className="home-activity-group" data-reveal><h3>{group.title}</h3><ul>{group.items.map((item, index) => <li key={item}><HomeEvidenceButton locale={locale} title={item} imageSrc={group === groups[0] && index === 0 ? "/images/journey/ECOMe/1.jpg" : undefined}>{item}</HomeEvidenceButton></li>)}</ul></article>)}
           <article className="home-activity-group" data-reveal>
             <h3>{vi ? "Ghi nhận tiêu biểu" : "Selected recognition"}</h3>
-            <ul>{homeAcademicAwards.map((award) => <li key={award.id}><strong>{award.title[locale]}</strong><span>{award.description[locale]}</span></li>)}
-              <li><strong>{vi ? "Hai giấy khen tình nguyện · 2026" : "Two volunteering Certificates of Merit · 2026"}</strong><span>{vi ? "ĐH Giao thông Vận tải · Hoạt động cộng đồng, Tiếp sức mùa thi & Mùa hè xanh" : "University of Transport and Communications · Community work, Exam Support & Green Summer"}</span></li>
+            <ul>{homeAcademicAwards.map((award) => <li key={award.id}><HomeEvidenceButton locale={locale} title={award.title[locale]} imageSrc={`/images/academic/full/${award.id}.webp`}><strong>{award.title[locale]}</strong><span>{award.description[locale]}</span></HomeEvidenceButton></li>)}
+              <li><HomeEvidenceButton locale={locale} title={vi ? "Hai giấy khen tình nguyện · 2026" : "Two volunteering Certificates of Merit · 2026"}><strong>{vi ? "Hai giấy khen tình nguyện · 2026" : "Two volunteering Certificates of Merit · 2026"}</strong><span>{vi ? "ĐH Giao thông Vận tải · Hoạt động cộng đồng, Tiếp sức mùa thi & Mùa hè xanh" : "University of Transport and Communications · Community work, Exam Support & Green Summer"}</span></HomeEvidenceButton></li>
             </ul>
           </article>
           <article className="home-activity-group home-activity-group--learning" data-reveal>
             <h3>{vi ? "Tự học" : "Independent learning"}</h3>
             <p className="home-learning-note">{vi ? "Các khóa Coursera bổ trợ kiến thức về AI, dữ liệu và công cụ lập trình." : "Coursera courses supporting my foundations in AI, data, and development tools."}</p>
-            <ul>{homeCertificates.courses.map((course) => <li key={course.title}><strong>{course.title}</strong></li>)}</ul>
+            <ul>{homeCertificates.courses.map((course) => <li key={course.title}><HomeEvidenceButton locale={locale} title={course.title} imageSrc={course.imageSrc}><strong>{course.title}</strong></HomeEvidenceButton></li>)}</ul>
           </article>
         </div>
       </div>
