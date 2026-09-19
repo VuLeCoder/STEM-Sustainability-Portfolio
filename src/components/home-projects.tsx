@@ -29,7 +29,7 @@ export function HomeProjects({ locale }: { locale: Locale }) {
             const external = project.externalLinks.find(link => /^https?:\/\//.test(link.href));
             return (
               <article className={`home-projects-card${featured.slug === "ecomesort" ? " home-projects-card--extra" : ""}`} key={project.slug} data-reveal>
-                <Link className="home-projects-image" href={`/${locale}/projects/${project.slug}`} aria-hidden="true" tabIndex={-1}>
+                <Link className="home-projects-image" href={`/${locale}/works#${project.slug}`} aria-hidden="true" tabIndex={-1}>
                   {project.slug === "bloomwatch" ? (
                     <span className="home-projects-image-pending">
                       <span>BloomWatch</span>
@@ -39,12 +39,12 @@ export function HomeProjects({ locale }: { locale: Locale }) {
                 </Link>
                 <div className="home-projects-copy">
                   <div className="home-projects-meta"><span>{project.category[locale]}</span>{project.year && <time>{project.year}</time>}</div>
-                  <h3><Link href={`/${locale}/projects/${project.slug}`}>{project.title}</Link></h3>
+                  <h3><Link href={`/${locale}/works#${project.slug}`}>{project.title}</Link></h3>
                   <p>{project.summary[locale]}</p>
                   <p className="home-projects-role"><span>{vi ? "Vai trò" : "Role"}</span>{featured.role[locale]}</p>
                   <div className="home-projects-result"><span>{vi ? "Dấu mốc nổi bật" : "Selected achievement"}</span><strong>{project.slug === "bloomwatch" ? project.result[locale] : project.achievementShort?.[locale] ?? project.result[locale]}</strong></div>
                   <div className="home-projects-card-footer">
-                    <Link className="home-projects-link" href={`/${locale}/projects/${project.slug}`} aria-label={`${vi ? "Xem chi tiết" : "View details"}: ${project.title}`}>{vi ? "Xem chi tiết" : "View details"} <span aria-hidden="true">→</span></Link>
+                    <Link className="home-projects-link" href={`/${locale}/works#${project.slug}`} aria-label={`${vi ? "Xem chi tiết" : "View details"}: ${project.title}`}>{vi ? "Xem chi tiết" : "View details"} <span aria-hidden="true">→</span></Link>
                     {external && <a className="home-projects-external" href={external.href} target="_blank" rel="noopener noreferrer" aria-label={`${external.label[locale]}: ${project.title}`}>{external.label[locale]} <span aria-hidden="true">↗</span></a>}
                   </div>
                 </div>
@@ -52,7 +52,7 @@ export function HomeProjects({ locale }: { locale: Locale }) {
             );
           })}
         </div>
-        <div className="home-projects-bottom"><Link className="home-projects-link home-projects-all" href={`/${locale}/projects`}>{home.allProjectsCta[locale]} <span aria-hidden="true">→</span></Link></div>
+        <div className="home-projects-bottom"><Link className="home-projects-link home-projects-all" href={`/${locale}/works`}>{home.allProjectsCta[locale]} <span aria-hidden="true">→</span></Link></div>
       </div>
     </section>
   );

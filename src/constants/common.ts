@@ -1,5 +1,5 @@
 /** Kiểu dữ liệu, điều hướng, giao diện chung và điểm ghép nội dung website.
- * Chỉnh nội dung theo lĩnh vực tại profile.ts, project.ts hoặc experiences.ts.
+ * Chỉnh nội dung theo lĩnh vực tại profile.ts, project.ts, works.ts hoặc home-journey.ts.
  * Bản EN phải giữ nguyên ý nghĩa và dữ kiện của bản VI.
  */
 import { profile,contact,seo,about,narrative,profileChrome,profileHome } from "./profile";

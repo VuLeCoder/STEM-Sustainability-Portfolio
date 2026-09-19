@@ -25,7 +25,7 @@ body:has(.works-page) {
 .works-section-heading > p { color: var(--muted); font-size: 17px; line-height: 1.7; }
 .works-featured__grid, .works-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 48px 32px; }
 .works-featured__grid { grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr); }
-.works-card { min-width: 0; display: flex; flex-direction: column; border: 1px solid var(--border); border-radius: 0; background: transparent; overflow: hidden; transition: border-color 180ms ease; overflow-wrap: anywhere; }
+.works-card { scroll-margin-top: 100px; min-width: 0; display: flex; flex-direction: column; border: 1px solid var(--border); border-radius: 0; background: transparent; overflow: hidden; transition: border-color 180ms ease; overflow-wrap: anywhere; }
 .works-card:hover { border-color: var(--primary); }
 .works-card__body { display: flex; flex: 1; flex-direction: column; padding: clamp(22px, 3vw, 36px); }
 .works-meta { display: flex; align-items: center; flex-wrap: wrap; gap: 9px; }

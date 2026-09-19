@@ -1,6 +1,5 @@
 import type { MetadataRoute } from "next";
 import { locales } from "@/constants/common";
-import { workEntries } from "@/constants/work";
 import { siteUrl } from "@/lib/site-metadata";
 
 export const dynamic = "force-static";
@@ -8,9 +7,7 @@ export const dynamic = "force-static";
 export default function sitemap(): MetadataRoute.Sitemap {
   const paths = [
     "/home",
-    "/projects",
     "/works",
-    ...workEntries.map(entry => `/projects/${entry.slug}`),
   ];
 
   return paths.flatMap((path) =>

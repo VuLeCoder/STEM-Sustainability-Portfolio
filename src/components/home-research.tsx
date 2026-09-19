@@ -40,7 +40,7 @@ export function HomeResearch({ locale }: { locale: Locale }) {
           ))}
         </div>
         <div className="home-content-section-footer">
-          <Link className="home-content-section-link" href={`/${locale}/projects/dual-image-reversible-data-hiding`}>{vi ? "Xem nghiên cứu tiêu biểu" : "View featured research"} <span aria-hidden="true">→</span></Link>
+          <Link className="home-content-section-link" href={`/${locale}/works#dual-image-reversible-data-hiding`}>{vi ? "Xem nghiên cứu tiêu biểu" : "View featured research"} <span aria-hidden="true">→</span></Link>
         </div>
       </div>
     </section>
