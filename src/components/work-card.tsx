@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { WorkProjectActions } from "./work-project-actions";
 import Link from "next/link";
 import type { Locale } from "@/constants/common";
 import type { WorkItem } from "@/constants/works";
@@ -14,7 +15,7 @@ export function WorkCard({ item, locale, featured = false }: { item: WorkItem; l
       <h3>{item.title[locale]}</h3>
       <p className="works-card__description">{item.description[locale]}</p>
       <dl><div><dt>{research ? (vi ? "Đóng góp" : "Contribution") : (vi ? "Vai trò" : "Role")}</dt><dd>{item.role[locale]}</dd></div><div><dt>{research ? (vi ? "Nơi công bố" : "Publication") : (vi ? "Kết quả" : "Outcome")}</dt><dd>{item.result[locale]}</dd></div></dl>
-      <Link className="works-card__link" href={href} target={item.external ? "_blank" : undefined} rel={item.external ? "noopener noreferrer" : undefined} aria-label={`${item.cta[locale]}: ${item.title[locale]}`}>{item.cta[locale]} <span aria-hidden="true">{item.external ? "↗" : "→"}</span></Link>
+      {!research ? <WorkProjectActions item={item} locale={locale} /> : <Link className="works-card__link" href={href} target={item.external ? "_blank" : undefined} rel={item.external ? "noopener noreferrer" : undefined} aria-label={`${item.cta[locale]}: ${item.title[locale]}`}>{item.cta[locale]} <span aria-hidden="true">{item.external ? "↗" : "→"}</span></Link>}
     </div>
   </article>;
 }
