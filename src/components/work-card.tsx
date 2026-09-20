@@ -1,15 +1,13 @@
-import Image from "next/image";
 import { WorkProjectActions } from "./work-project-actions";
 import Link from "next/link";
 import type { Locale } from "@/constants/common";
 import type { WorkItem } from "@/constants/works";
 
-export function WorkCard({ item, locale, featured = false }: { item: WorkItem; locale: Locale; featured?: boolean }) {
+export function WorkCard({ item, locale }: { item: WorkItem; locale: Locale }) {
   const vi = locale === "vi";
   const research = item.type === "research";
   const href = item.href.startsWith("/") ? `/${locale}${item.href}` : item.href;
-  return <article id={featured ? undefined : item.slug} className={`works-card${featured ? " works-card--featured" : ""}${featured && item.featuredOrder === 1 ? " works-card--lead" : ""}`}>
-    {featured && item.image && <div className="works-card__image"><Image src={item.image.src} alt={item.image.alt[locale]} fill sizes="(min-width: 1024px) 600px, (min-width: 768px) 700px, 100vw" priority={item.featuredOrder === 1} /></div>}
+  return <article id={item.slug} className="works-card">
     <div className="works-card__body">
       <p className="works-meta"><span>{research ? (vi ? "Nghiên cứu" : "Research") : (vi ? "Dự án" : "Project")}</span>{item.year && <><span aria-hidden="true">·</span><span>{item.year}</span></>}</p>
       <h3>{item.title[locale]}</h3>
