@@ -22,6 +22,14 @@ export function HomeAbout({ locale }: { locale: Locale }) {
           </div>
           <p className="home-about-intro">{content.introduction[locale]}</p>
         </div>
+        <div className="home-about-focus-grid">
+          {content.pillars.map((pillar) => (
+            <article className="home-about-focus-card" key={pillar.id} aria-labelledby={`about-${pillar.id}-title`} data-reveal>
+              <h3 id={`about-${pillar.id}-title`}>{pillar.title[locale]}</h3>
+              <p>{pillar.description[locale]}</p>
+            </article>
+          ))}
+        </div>
         <div className="home-about-snapshot" data-reveal>
           <div>
             <p className="home-about-label">{vi ? "Nền tảng học thuật" : "Academic snapshot"}</p>
