@@ -4,7 +4,7 @@ import { SiteLogo } from "@/components/site-logo";
 import { siteContent, type Locale } from "@/constants/common";
 
 export function SiteFooter({ locale }: { locale: Locale }) {
-  const { chrome, profile, navigation } = siteContent;
+  const { chrome, profile, contact, navigation } = siteContent;
   return (
     <footer id="footer-contact" className="portfolio-footer">
       <div className="portfolio-footer__background" style={{ backgroundImage: `url("${chrome.footerBackground}")` }} aria-hidden="true" />
@@ -32,7 +32,7 @@ export function SiteFooter({ locale }: { locale: Locale }) {
             {chrome.contacts.map((contact) => 
               <p className="portfolio-footer__contact" key={contact.icon} aria-label={contact.label[locale]}><ContactIcon name={contact.icon} /><a href={contact.icon === "gmail" ? `mailto:${contact.content}` : `tel:${contact.content.replace(/\s/g, "")}`}>{contact.content}</a></p>
             )}
-            <p className="portfolio-footer__contact">{profile.location[locale]}</p>
+            <p className="portfolio-footer__contact"><ContactIcon name="location" />{contact.location[locale]}</p>
           </div>
         </div>
         <div className="portfolio-footer__bottom">

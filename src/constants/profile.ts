@@ -3,7 +3,6 @@
 export const profile={
   name: { vi: "Nguyễn Cao Xuân Phúc",en: "Nguyen Cao Xuan Phuc" },
   initials: "NCP",
-  location: { vi: "Hà Nội, Việt Nam",en: "Hanoi, Vietnam" },
   positioning: {
     vi: "Tôi là học sinh nghiên cứu quan tâm đến công nghệ, đổi mới và tác động xã hội.",
     en: "I am a student researcher interested in technology, innovation, and social impact.",
