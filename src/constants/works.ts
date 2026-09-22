@@ -1,4 +1,5 @@
 import type { Localized } from "./common";
+import { projectRoles } from "./project";
 
 export type WorkItem = {
   slug: string;
@@ -28,10 +29,7 @@ export const works: WorkItem[] = [
       "vi": "Giải pháp hỗ trợ trên smartphone giúp người khiếm thị nhận biết vật cản và nhận cảnh báo an toàn ưu tiên. Hệ thống tập trung vào xử lý cảm biến, lập bản đồ không gian và quản lý điện năng để phản hồi nhanh, ổn định trên điện thoại thông thường.",
       "en": "A smartphone-based assistive system that helps blind users detect obstacles and receive priority safety alerts. It combines efficient sensor processing, spatial mapping, and power management for fast, reliable use on an ordinary phone."
     },
-    "role": {
-      "vi": "Xử lý dữ liệu cảm biến & tối ưu điện năng",
-      "en": "Sensor-data processing & power optimization"
-    },
+    "role": projectRoles.safestride,
     "result": {
       "vi": "Giải Vàng WICO 2026 · Seoul, Hàn Quốc",
       "en": "WICO 2026 Gold Award · Seoul, Korea"
@@ -63,10 +61,7 @@ export const works: WorkItem[] = [
       "vi": "Nền tảng học tập tương tác biến dữ liệu quan sát Trái Đất của NASA về hiện tượng ra hoa toàn cầu thành trải nghiệm đa phương tiện. Sản phẩm kết hợp khám phá dữ liệu trực quan với nhân vật kể chuyện tạo bởi AI và được hoàn thành trong 48 giờ.",
       "en": "An interactive learning platform that turns NASA Earth-observation data on global flowering into a multimedia experience. Built in 48 hours, it combines visual data exploration with AI-generated character storytelling."
     },
-    "role": {
-      "vi": "Trực quan hóa dữ liệu & xây dựng mạch kể chuyện",
-      "en": "Data visualization & narrative design"
-    },
+    "role": projectRoles.bloomwatch,
     "result": {
       "vi": "Giải Nhất · Arts & Technology Award · Global Nominee, NASA Space Apps 2025",
       "en": "First Prize · Arts & Technology Award · Global Nominee, NASA Space Apps 2025"
@@ -89,10 +84,7 @@ export const works: WorkItem[] = [
       "vi": "Sáng kiến do học sinh dẫn dắt, kết hợp giáo dục môi trường với hoạt động thực địa như giếng nước sạch, cầu nông thôn, đèn đường, bếp ăn cộng đồng và hỗ trợ sinh kế.",
       "en": "A student-led initiative combining environmental education with field projects such as clean-water wells, rural bridges, street lighting, community kitchens, and livelihood support."
     },
-    "role": {
-      "vi": "Nhà sáng lập & Trưởng dự án",
-      "en": "Founder & Project Chair"
-    },
+    "role": projectRoles.ecome,
     "result": {
       "vi": "≈1.800 người tiếp cận · 6 cơ sở trẻ em được hỗ trợ · ≈115 triệu VNĐ viện trợ · 225 hộ được cứu trợ",
       "en": "≈1,800 people reached · 6 childcare centers supported · ≈VND 115M in aid · 225 households received relief"
@@ -124,10 +116,7 @@ export const works: WorkItem[] = [
       "vi": "Ứng dụng di động dùng AI để nhận diện loại rác, hướng dẫn phân loại đúng và kết nối người dùng với mạng lưới tái chế địa phương; các tính năng cộng đồng xanh hỗ trợ hình thành thói quen bền vững.",
       "en": "An AI-enabled mobile app that identifies waste, guides correct sorting, and connects users with local recycling networks, supported by green-community features that encourage sustainable habits."
     },
-    "role": {
-      "vi": "Thiết kế quy trình nhận diện & tính năng cộng đồng",
-      "en": "Recognition workflow & community-feature design"
-    },
+    "role": projectRoles.ecomesort,
     "result": {
       "vi": "Giải Ba cuộc thi Ý tưởng BVMT ngành GTVT 2026 · AI for Good Vietnam 2026",
       "en": "Third Prize, 2026 Transport Environmental Ideas Competition · AI for Good Vietnam 2026"

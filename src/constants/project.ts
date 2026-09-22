@@ -35,6 +35,26 @@ export type Project={
   details?: ProjectDetails;
 };
 
+// Shared role labels for Home and Works, in Vietnamese and English.
+export const projectRoles = {
+  "safestride": {
+    "vi": "Xử lý dữ liệu cảm biến & tối ưu điện năng",
+    "en": "Sensor-data processing & power optimization"
+  },
+  "bloomwatch": {
+    "vi": "Trực quan hóa dữ liệu & xây dựng mạch kể chuyện",
+    "en": "Data visualization & narrative design"
+  },
+  "ecome": {
+    "vi": "Nhà sáng lập & Trưởng dự án",
+    "en": "Founder & Project Chair"
+  },
+  "ecomesort": {
+    "vi": "Thiết kế quy trình nhận diện & tính năng cộng đồng",
+    "en": "Recognition workflow & community-feature design"
+  }
+} as const satisfies Record<string, Localized<string>>;
+
 export const projects=[
   {
     slug: "safestride",
@@ -53,10 +73,7 @@ export const projects=[
       vi: "Người khiếm thị cần nhận biết chướng ngại và các tình huống ưu tiên xung quanh một cách kịp thời khi di chuyển.",
       en: "Blind users need timely awareness of nearby obstacles and priority situations while navigating.",
     },
-    role: {
-      vi: "Thành viên phát triển dự án",
-      en: "Project development team member",
-    },
+    role: projectRoles.safestride,
     fields: {
       vi: [
         "Công nghệ hỗ trợ",
@@ -94,10 +111,7 @@ export const projects=[
       vi: "Sáng kiến do học sinh dẫn dắt về giáo dục môi trường và hành động cộng đồng.",
       en: "A student-led initiative for environmental education and community action.",
     },
-    role: {
-      vi: "Nhà sáng lập & Trưởng dự án",
-      en: "Founder & Project Chair",
-    },
+    role: projectRoles.ecome,
     fields: {
       vi: ["Giáo dục môi trường","Hành động cộng đồng","Quản lý dự án"],
       en: [
@@ -136,7 +150,7 @@ export const projects=[
       vi: "Việc phân loại rác và tham gia hệ sinh thái tái chế còn khó tiếp cận trong đời sống hằng ngày.",
       en: "Waste sorting and participation in the recycling ecosystem remain difficult to access in everyday life.",
     },
-    role: { vi: "Thành viên Team ECOMeSort",en: "Team ECOMeSort member" },
+    role: projectRoles.ecomesort,
     fields: {
       vi: ["AI ứng dụng","Phân loại rác","Cộng đồng xanh"],
       en: ["Applied AI","Waste sorting","Green community"],
@@ -165,7 +179,7 @@ export const projects=[
       vi: "Nền tảng học tập biến dữ liệu vệ tinh NASA về hiện tượng ra hoa toàn cầu thành trải nghiệm đa phương tiện dễ tiếp cận.",
       en: "An educational platform that turns NASA satellite data on global flowering phenomena into an accessible multimedia experience.",
     },
-    role: { vi: "Thành viên nhóm",en: "Team member" },
+    role: projectRoles.bloomwatch,
     fields: {
       vi: [
         "Quan sát Trái Đất",

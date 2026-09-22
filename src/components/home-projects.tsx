@@ -3,12 +3,7 @@ import Image from "next/image";
 import { siteContent, type Locale } from "@/constants/common";
 
 // Curated independently of the order on the full projects page.
-const featuredProjects = [
-  { slug: "safestride", role: { vi: "Xử lý cảm biến & tối ưu điện năng", en: "Sensor processing & power optimization" } },
-  { slug: "bloomwatch", role: { vi: "Kể chuyện trực quan từ dữ liệu vệ tinh", en: "Visual storytelling with satellite data" } },
-  { slug: "ecome", role: { vi: "Nhà sáng lập & Trưởng dự án", en: "Founder & Project Chair" } },
-  { slug: "ecomesort", role: { vi: "Thiết kế quy trình nhận diện & tính năng cộng đồng", en: "Recognition workflow & community feature design" } },
-] as const;
+const featuredProjects = ["safestride", "bloomwatch", "ecome", "ecomesort"] as const;
 
 export function HomeProjects({ locale }: { locale: Locale }) {
   const { home } = siteContent;
@@ -23,12 +18,12 @@ export function HomeProjects({ locale }: { locale: Locale }) {
           <p>{content.description[locale]}</p>
         </header>
         <div className="home-projects-grid">
-          {featuredProjects.map((featured) => {
-            const project = siteContent.projects.find((item) => item.slug === featured.slug);
+          {featuredProjects.map((slug) => {
+            const project = siteContent.projects.find((item) => item.slug === slug);
             if (!project) return null;
             const external = project.externalLinks.find(link => /^https?:\/\//.test(link.href));
             return (
-              <article className={`home-projects-card${featured.slug === "ecomesort" ? " home-projects-card--extra" : ""}`} key={project.slug} data-reveal>
+              <article className={`home-projects-card${project.slug === "ecomesort" ? " home-projects-card--extra" : ""}`} key={project.slug} data-reveal>
                 <Link className="home-projects-image" href={`/${locale}/works#${project.slug}`} aria-hidden="true" tabIndex={-1}>
                   {project.slug === "bloomwatch" ? (
                     <span className="home-projects-image-pending">
@@ -41,7 +36,7 @@ export function HomeProjects({ locale }: { locale: Locale }) {
                   <div className="home-projects-meta"><span>{project.category[locale]}</span>{project.year && <time>{project.year}</time>}</div>
                   <h3><Link href={`/${locale}/works#${project.slug}`}>{project.title}</Link></h3>
                   <p>{project.summary[locale]}</p>
-                  <p className="home-projects-role"><span>{vi ? "Vai trò" : "Role"}</span>{featured.role[locale]}</p>
+                  <p className="home-projects-role"><span>{vi ? "Vai trò" : "Role"}</span>{project.role[locale]}</p>
                   <div className="home-projects-result"><span>{vi ? "Dấu mốc nổi bật" : "Selected achievement"}</span><strong>{project.slug === "bloomwatch" ? project.result[locale] : project.achievementShort?.[locale] ?? project.result[locale]}</strong></div>
                   <div className="home-projects-card-footer">
                     <Link className="home-projects-link" href={`/${locale}/works#${project.slug}`} aria-label={`${vi ? "Xem chi tiết" : "View details"}: ${project.title}`}>{vi ? "Xem chi tiết" : "View details"} <span aria-hidden="true">→</span></Link>
