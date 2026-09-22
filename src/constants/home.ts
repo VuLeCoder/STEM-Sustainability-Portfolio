@@ -60,11 +60,6 @@ export const homeVolunteerEvidence = [
     imageSrc: "/images/community/recognition/colors-of-wisdom-participation-2025.jpg",
   },
   {
-    title: { vi: "Tập huấn GenAI cho cán bộ Đoàn–Hội · 2026", en: "GenAI training for student-union officers · 2026" },
-    description: { vi: "Chứng nhận đóng góp tổ chức chương trình.", en: "Certificate for helping organize the training." },
-    imageSrc: "/images/community/recognition/genai-training-volunteer-2026.jpg",
-  },
-  {
     title: { vi: "Tình nguyện vì cộng đồng · 2026", en: "Community volunteering · 2026" },
     description: { vi: "Giấy khen thành tích xuất sắc của Đoàn trường ĐH Giao thông Vận tải.", en: "Certificate of Merit from the University of Transport and Communications Youth Union." },
     imageSrc: "/images/community/recognition/community-volunteer-merit-2026.jpg",
