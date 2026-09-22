@@ -21,7 +21,7 @@ export function HomeHero({ locale }: { locale: Locale }) {
               {homeNarrative.actions.about[lang]}
               <span aria-hidden="true">↓</span>
             </a>
-            <a className="home-hero-button" href="/documents/CV.pdf" download="Nguyen-Cao-Xuan-Phuc-CV.pdf">
+            <a className="home-hero-button" href="/documents/CV_Nguyen_Cao_Xuan_Phuc.pdf" download="Nguyen-Cao-Xuan-Phuc-CV.pdf">
               {homeNarrative.actions.cv[lang]}
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
                 <path d="M12 3v12m-5-5 5 5 5-5M5 16v5h14v-5" />
