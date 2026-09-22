@@ -101,6 +101,15 @@ export const narrative=[
   },
 ] as const;
 
+export const academicScores = [
+  { id: "gpa-grade-10", label: { vi: "GPA lớp 10", en: "Grade 10 GPA" }, value: "9.1/10" },
+  { id: "gpa-grade-11", label: { vi: "GPA lớp 11", en: "Grade 11 GPA" }, value: "9.2/10" },
+  { id: "sat", label: { vi: "SAT", en: "SAT" }, value: "1440" },
+  { id: "sat-math", label: { vi: "SAT Math", en: "SAT Math" }, value: "800" },
+  { id: "ielts", label: { vi: "IELTS Academic", en: "IELTS Academic" }, value: "7.5" },
+  { id: "ap-physics-c", label: { vi: "AP Physics C", en: "AP Physics C" }, value: "5/5" },
+] as const;
+
 export const profileChrome={
   logoImage: "/images/brand/ncp-logo.png",
   socials: [
@@ -175,11 +184,7 @@ export const profileHome={
       },
     ],
     credentialsLabel: { vi: "Nền tảng học thuật",en: "Academic foundation" },
-    credentials: [
-      { label: { vi: "SAT",en: "SAT" },value: "1440" },
-      { label: { vi: "IELTS Academic",en: "IELTS Academic" },value: "7.5" },
-      { label: { vi: "AP Physics C",en: "AP Physics C" },value: "5/5" },
-    ],
+    credentials: [academicScores[2], academicScores[4], academicScores[5]],
   },
   contactCta: {
     eyebrow: { vi: "Kết nối",en: "Let's connect" },
