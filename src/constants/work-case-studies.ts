@@ -1,6 +1,110 @@
 import type { Localized } from "./common";
 
 export const workCaseStudies: Record<string, { title: Localized<string>; body: Localized<string> }[]> = {
+  "dual-image-reversible-data-hiding": [
+    {
+      "title": {
+        "vi": "Bối cảnh & vấn đề",
+        "en": "Problem"
+      },
+      "body": {
+        "vi": "Nghiên cứu hướng tới tăng dung lượng nhúng dữ liệu trong ảnh để phục vụ xác thực nội dung số, đồng thời duy trì khả năng khôi phục ảnh gốc.",
+        "en": "The research addresses increasing embedding capacity for digital-content authentication while preserving recovery of the original image."
+      }
+    },
+    {
+      "title": {
+        "vi": "Vai trò của tôi",
+        "en": "My role"
+      },
+      "body": {
+        "vi": "Là đồng tác giả, em tham gia đánh giá thực nghiệm, phân tích dữ liệu, đóng góp vào bài viết và trình bày nghiên cứu tại hội nghị.",
+        "en": "As a co-author, I contributed to experimental evaluation, data analysis, and the paper, and presented the research at the conference."
+      }
+    },
+    {
+      "title": {
+        "vi": "Phương pháp & hướng tiếp cận",
+        "en": "Method & approach"
+      },
+      "body": {
+        "vi": "Bài báo đề xuất phương pháp giấu tin thuận nghịch trên ảnh kép cải tiến, nhằm tăng dung lượng nhúng trong khi vẫn bảo đảm khôi phục hoàn hảo ảnh gốc.",
+        "en": "The paper proposes an improved dual-image reversible data-hiding method that increases embedding capacity while preserving perfect recovery of the original image."
+      }
+    },
+    {
+      "title": {
+        "vi": "Kết quả",
+        "en": "Result"
+      },
+      "body": {
+        "vi": "Nghiên cứu được công bố và trình bày tại VNICT 2025 — Hội nghị Quốc gia lần thứ 28 về Một số vấn đề chọn lọc của Công nghệ Thông tin và Truyền thông, tháng 11/2025 tại Ninh Bình.",
+        "en": "The research was published and presented at VNICT 2025, the 28th National Conference on Selected ICT Problems, in November 2025 in Ninh Binh."
+      }
+    },
+    {
+      "title": {
+        "vi": "Kinh nghiệm nghiên cứu",
+        "en": "Research experience"
+      },
+      "body": {
+        "vi": "Quá trình nghiên cứu giúp em tích lũy kinh nghiệm viết kỹ thuật, lập luận thực nghiệm, trình bày học thuật và trao đổi khoa học với những người cùng lĩnh vực.",
+        "en": "The research gave me early experience in technical writing, experimental reasoning, academic presentation, and scientific communication with peers."
+      }
+    }
+  ],
+  "uav-gcs-framework": [
+    {
+      "title": {
+        "vi": "Bối cảnh & vấn đề",
+        "en": "Problem"
+      },
+      "body": {
+        "vi": "Nghiên cứu hướng tới việc kết hợp UAV, trạm điều khiển mặt đất và AI để nâng cao nhận thức tình huống và hỗ trợ tìm kiếm cứu nạn trong không phận tầm thấp.",
+        "en": "The research explores combining UAVs, ground control stations, and AI to improve situational awareness and support search-and-rescue in low-altitude airspace."
+      }
+    },
+    {
+      "title": {
+        "vi": "Vai trò của tôi",
+        "en": "My role"
+      },
+      "body": {
+        "vi": "Em tham gia với vai trò đồng tác giả, cùng viết bài, tham gia thực nghiệm và trình bày nghiên cứu tại hội thảo.",
+        "en": "As a co-author, I helped write the paper, took part in experiments, and presented the research at the conference."
+      }
+    },
+    {
+      "title": {
+        "vi": "Phương pháp & hướng tiếp cận",
+        "en": "Method & approach"
+      },
+      "body": {
+        "vi": "Bài báo đề xuất khung tích hợp UAV và trạm điều khiển mặt đất sử dụng AI cho nhận thức tình huống và tìm kiếm cứu nạn, hướng tới triển khai UTM trong không phận tầm thấp.",
+        "en": "The paper proposes an AI-integrated UAV and ground-control-station framework for situational awareness and search-and-rescue, toward UTM deployment in low-altitude airspace."
+      }
+    },
+    {
+      "title": {
+        "vi": "Kết quả",
+        "en": "Result"
+      },
+      "body": {
+        "vi": "Nghiên cứu được trình bày tại Hội thảo Quốc gia về Hành lang bay và Quản lý không gian tầm thấp tại Hà Nội.",
+        "en": "The research was presented at the National Conference on Flight Corridors and Low-Altitude Airspace Management in Hanoi."
+      }
+    },
+    {
+      "title": {
+        "vi": "Kinh nghiệm nghiên cứu",
+        "en": "Research experience"
+      },
+      "body": {
+        "vi": "Các công việc em tham gia trải từ cùng xây dựng bài viết, thực nghiệm đến trình bày một hướng ứng dụng AI trong hệ thống UAV và hỗ trợ tìm kiếm cứu nạn.",
+        "en": "My involvement spanned co-writing, experiments, and presenting an application of AI to UAV systems and search-and-rescue support."
+      }
+    }
+  ],
   "safestride": [
     {
       "title": {
@@ -264,6 +368,9 @@ export const workCaseStudies: Record<string, { title: Localized<string>; body: L
 };
 
 export const workPhotos: Record<string, string[]> = {
+  "dual-image-reversible-data-hiding": [
+    "/images/work/dual-image/vnict-presentation.jpeg"
+  ],
   "safestride": [
     "/images/work/safestride/wico-gold-award.jpeg"
   ],

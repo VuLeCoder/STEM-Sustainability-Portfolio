@@ -39,6 +39,12 @@ export function HomeResearch({ locale }: { locale: Locale }) {
             </article>
           ))}
         </div>
+        <article className="home-about-card home-research-internship" data-reveal aria-labelledby="home-internship-title">
+          <p className="home-about-label">{vi ? "Thực tập nghiên cứu · 18/05–24/09/2026" : "Research internship · 18 May–24 Sep 2026"}</p>
+          <h3 id="home-internship-title">{vi ? "Viện Công nghệ Thông tin, VAST" : "Institute of Information Technology, VAST"}</h3>
+          <p>{vi ? "Phòng các Hệ thống AI · Viện Hàn lâm Khoa học và Công nghệ Việt Nam · Hà Nội" : "AI Systems Department · Vietnam Academy of Science and Technology · Hanoi"}</p>
+          <p>{vi ? "Tham gia chương trình thực tập nghiên cứu về hệ thống AI ứng dụng, tích lũy kinh nghiệm về quy trình nghiên cứu khoa học, tài liệu kỹ thuật và phối hợp liên ngành." : "A structured research internship focused on applied AI systems, building experience with scientific workflows, technical documentation, and interdisciplinary collaboration."}</p>
+        </article>
         <div className="home-content-section-footer">
           <Link className="home-content-section-link" href={`/${locale}/works#dual-image-reversible-data-hiding`}>{vi ? "Xem nghiên cứu tiêu biểu" : "View featured research"} <span aria-hidden="true">→</span></Link>
         </div>

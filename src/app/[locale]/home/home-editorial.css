@@ -257,3 +257,5 @@
 .home-page .home-evidence-image img { object-fit: contain; }
 .home-page .home-evidence-pending { padding: 64px 16px; text-align: center; color: var(--home-muted); }
 @media (prefers-reduced-motion: reduce) { .home-page .home-evidence-button { transition: none; } }
+
+.home-page .home-research-internship { margin-top: 40px; }
