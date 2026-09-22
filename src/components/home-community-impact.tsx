@@ -41,7 +41,7 @@ export function HomeCommunityImpact({ locale }: { locale: Locale }) {
         </div>
 
         <div className="home-activities-grid">
-          {groups.map((group, groupIndex) => <article key={group.title} className="home-activity-group" data-reveal><h3>{group.title}</h3><ul>{group.items.map((item, index) => <li key={item}><HomeEvidenceButton locale={locale} title={item} imageSrc={groupIndex === 0 && index === 0 ? "/images/work/ecome/community-certificate.jpg" : groupIndex === 1 && index === 2 ? "/images/community/education/genai-training-volunteer-2026.jpg" : undefined}>{item}</HomeEvidenceButton></li>)}</ul></article>)}
+          {groups.map((group, groupIndex) => <article key={group.title} className="home-activity-group" data-reveal><h3>{group.title}</h3><ul>{group.items.map((item, index) => <li key={item}><HomeEvidenceButton locale={locale} title={item} imageSrc={groupIndex === 0 && index === 0 ? "/images/work/ecome/community-certificate.jpg" : groupIndex === 1 && index === 1 ? "/images/community/education/open-data-exploration-certificate.jpg" : groupIndex === 1 && index === 2 ? "/images/community/education/genai-training-volunteer-2026.jpg" : undefined}>{item}</HomeEvidenceButton></li>)}</ul></article>)}
           <article className="home-activity-group" data-reveal>
             <h3>{vi ? "Ghi nhận tiêu biểu" : "Selected recognition"}</h3>
             <ul>{homeAcademicAwards.map((award) => <li key={award.id}><HomeEvidenceButton locale={locale} title={award.title[locale]} imageSrc={`/images/academic/full/${award.id}.webp`}><strong>{award.title[locale]}</strong><span>{award.description[locale]}</span></HomeEvidenceButton></li>)}
