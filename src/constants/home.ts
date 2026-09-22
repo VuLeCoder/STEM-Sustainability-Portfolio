@@ -44,14 +44,32 @@ export const homeCertificates = {
     en: "A foundation in Physics, academic achievements, and continued learning in AI, data analysis, and programming.",
   },
   status: { vi: "Đã hoàn thành · Coursera", en: "Completed · Coursera" },
-  // Add images to public/images/certificates and set imageSrc to /images/certificates/filename.
   courses: [
-    { title: "AI Fundamentals", imageSrc: "" },
-    { title: "Vibe Coding with Claude Code", imageSrc: "" },
-    { title: "AI for Data Analysis", imageSrc: "" },
-    { title: "Vibe Coding with GitHub Copilot", imageSrc: "" },
+    { title: "AI Fundamentals", imageSrc: "/images/certificates/ai-fundamentals.png" },
+    { title: "Vibe Coding with Claude Code", imageSrc: "/images/certificates/vibe-coding-claude-code.png" },
+    { title: "AI for Data Analysis", imageSrc: "/images/certificates/ai-for-data-analysis.png" },
+    { title: "Vibe Coding with GitHub Copilot", imageSrc: "/images/certificates/vibe-coding-github-copilot.png" },
+    { title: "Vibe Coding with Cursor AI", imageSrc: "/images/certificates/vibe-coding-cursor-ai.png" },
   ],
 } as const;
+
+export const homeVolunteerEvidence = [
+  {
+    title: { vi: "Hành trình kết nối sắc màu trí tuệ · 2025", en: "Journey of Connecting Colors of Wisdom · 2025" },
+    description: { vi: "Chứng nhận tham gia trao quà tại các trung tâm bảo trợ.", en: "Participation certificate for gift delivery at social care centres." },
+    imageSrc: "/images/community/recognition/colors-of-wisdom-participation-2025.jpg",
+  },
+  {
+    title: { vi: "Tập huấn GenAI cho cán bộ Đoàn–Hội · 2026", en: "GenAI training for student-union officers · 2026" },
+    description: { vi: "Chứng nhận đóng góp tổ chức chương trình.", en: "Certificate for helping organize the training." },
+    imageSrc: "/images/community/recognition/genai-training-volunteer-2026.jpg",
+  },
+  {
+    title: { vi: "Tình nguyện vì cộng đồng · 2026", en: "Community volunteering · 2026" },
+    description: { vi: "Giấy khen thành tích xuất sắc của Đoàn trường ĐH Giao thông Vận tải.", en: "Certificate of Merit from the University of Transport and Communications Youth Union." },
+    imageSrc: "/images/community/recognition/community-volunteer-merit-2026.jpg",
+  },
+] as const;
 
 export const homeAcademicAwards = [
   {

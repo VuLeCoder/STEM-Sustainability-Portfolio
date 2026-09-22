@@ -83,7 +83,7 @@ export const projects=[
         href: "https://www.youtube.com/watch?v=FgFzlal-ikg",
       },
     ],
-    coverImage: "/images/project/SafeStride.png",
+    coverImage: "/images/work/safestride/cover.png",
   },
   {
     slug: "ecome",
@@ -120,7 +120,7 @@ export const projects=[
         href: "https://www.facebook.com/61582875703926/posts/122134261443095856/",
       },
     ],
-    coverImage: "/images/project/ECOMe.png",
+    coverImage: "/images/work/ecome/cover.png",
   },
   {
     slug: "ecomesort",
@@ -150,7 +150,7 @@ export const projects=[
       en: "Third Prize · 2026",
     },
     externalLinks: [],
-    coverImage: "/images/project/ECOMeSort.png",
+    coverImage: "/images/work/ecomesort/cover.png",
   },
   {
     slug: "bloomwatch",
@@ -183,7 +183,7 @@ export const projects=[
       en: "NASA Space Apps 2025 · Global Nominee",
     },
     externalLinks: [],
-    coverImage: "/images/placeholders/bloomwatch-cover.svg",
+    coverImage: "/images/work/bloomwatch/space-apps-team.jpeg",
   },
   {
     slug: "dual-image-reversible-data-hiding",
@@ -223,7 +223,7 @@ export const projects=[
       en: "VNICT 2025 · Co-author & presenter",
     },
     externalLinks: [],
-    coverImage: "/images/project/DualImage.png",
+    coverImage: "/images/work/dual-image/cover.png",
   },
 ] satisfies readonly Project[];
 

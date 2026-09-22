@@ -1,6 +1,6 @@
 import { HomeEvidenceButton } from "./home-evidence-button";
 import type { Locale } from "@/constants/common";
-import { homeAcademicAwards, homeCertificates } from "@/constants/home";
+import { homeAcademicAwards, homeCertificates, homeVolunteerEvidence } from "@/constants/home";
 
 const metrics = [
   { value: { vi: "≈1.800", en: "≈1,800" }, label: { vi: "người được tiếp cận · ECOMe", en: "people reached · ECOMe" } },
@@ -41,11 +41,11 @@ export function HomeCommunityImpact({ locale }: { locale: Locale }) {
         </div>
 
         <div className="home-activities-grid">
-          {groups.map((group) => <article key={group.title} className="home-activity-group" data-reveal><h3>{group.title}</h3><ul>{group.items.map((item, index) => <li key={item}><HomeEvidenceButton locale={locale} title={item} imageSrc={group === groups[0] && index === 0 ? "/images/journey/ECOMe/1.jpg" : undefined}>{item}</HomeEvidenceButton></li>)}</ul></article>)}
+          {groups.map((group) => <article key={group.title} className="home-activity-group" data-reveal><h3>{group.title}</h3><ul>{group.items.map((item, index) => <li key={item}><HomeEvidenceButton locale={locale} title={item} imageSrc={group === groups[0] && index === 0 ? "/images/work/ecome/community-certificate.jpg" : undefined}>{item}</HomeEvidenceButton></li>)}</ul></article>)}
           <article className="home-activity-group" data-reveal>
             <h3>{vi ? "Ghi nhận tiêu biểu" : "Selected recognition"}</h3>
             <ul>{homeAcademicAwards.map((award) => <li key={award.id}><HomeEvidenceButton locale={locale} title={award.title[locale]} imageSrc={`/images/academic/full/${award.id}.webp`}><strong>{award.title[locale]}</strong><span>{award.description[locale]}</span></HomeEvidenceButton></li>)}
-              <li><HomeEvidenceButton locale={locale} title={vi ? "Hai giấy khen tình nguyện · 2026" : "Two volunteering Certificates of Merit · 2026"}><strong>{vi ? "Hai giấy khen tình nguyện · 2026" : "Two volunteering Certificates of Merit · 2026"}</strong><span>{vi ? "ĐH Giao thông Vận tải · Hoạt động cộng đồng, Tiếp sức mùa thi & Mùa hè xanh" : "University of Transport and Communications · Community work, Exam Support & Green Summer"}</span></HomeEvidenceButton></li>
+              {homeVolunteerEvidence.map((evidence) => <li key={evidence.imageSrc}><HomeEvidenceButton locale={locale} title={evidence.title[locale]} imageSrc={evidence.imageSrc}><strong>{evidence.title[locale]}</strong><span>{evidence.description[locale]}</span></HomeEvidenceButton></li>)}
             </ul>
           </article>
           <article className="home-activity-group home-activity-group--learning" data-reveal>

@@ -38,7 +38,7 @@ export const works: WorkItem[] = [
     },
     "featuredOrder": 1,
     "image": {
-      "src": "/images/journey/SafeStride/1.jpeg",
+      "src": "/images/work/safestride/wico-gold-award.jpeg",
       "alt": {
         "vi": "Hình ảnh tham dự WICO 2026 của đội SafeStride",
         "en": "The SafeStride team at WICO 2026"
@@ -99,7 +99,7 @@ export const works: WorkItem[] = [
     },
     "featuredOrder": 3,
     "image": {
-      "src": "/images/journey/ECOMe/1.jpg",
+      "src": "/images/work/ecome/community-certificate.jpg",
       "alt": {
         "vi": "Hoạt động cộng đồng trong chiến dịch ECOMe",
         "en": "Community activities during an ECOMe campaign"
@@ -186,7 +186,7 @@ export const works: WorkItem[] = [
     },
     "featuredOrder": 2,
     "image": {
-      "src": "/images/journey/VNICT/1.jpeg",
+      "src": "/images/work/dual-image/vnict-presentation.jpeg",
       "alt": {
         "vi": "Hoạt động trình bày nghiên cứu tại VNICT 2025",
         "en": "Research presentation at VNICT 2025"

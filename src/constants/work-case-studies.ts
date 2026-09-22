@@ -265,16 +265,16 @@ export const workCaseStudies: Record<string, { title: Localized<string>; body: L
 
 export const workPhotos: Record<string, string[]> = {
   "safestride": [
-    "/images/journey/SafeStride/1.jpeg"
+    "/images/work/safestride/wico-gold-award.jpeg"
   ],
   "ecome": [
-    "/images/journey/ECOMe/1.jpg",
-    "/images/journey/ECOMe/2.jpeg",
-    "/images/journey/ECOMe/3.jpeg",
-    "/images/journey/ECOMe/4.jpeg"
+    "/images/work/ecome/community-certificate.jpg",
+    "/images/work/ecome/community-event.jpeg",
+    "/images/work/ecome/volunteer-program.jpeg",
+    "/images/work/ecome/community-outreach.jpeg"
   ],
   "ecomesort": [
-    "/images/journey/ECOMeSort/1.png",
-    "/images/journey/ECOMeSort/2.png"
+    "/images/work/ecomesort/recognition.png",
+    "/images/work/ecomesort/certificates.png"
   ]
 };
