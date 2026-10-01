@@ -14,7 +14,7 @@ export function HomeHero({ locale }: { locale: Locale }) {
           </p>
           <h1 id="home-hero-title">{profile.name[locale]}</h1>
           <p className="home-positioning">
-            {homeNarrative.positioning[lang]}
+            {home.aboutMe.introduction[lang]}
           </p>
           <div className="home-hero-actions">
             <a className="home-hero-button home-hero-button-primary" href="#projects">

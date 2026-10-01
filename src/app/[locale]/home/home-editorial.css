@@ -63,7 +63,7 @@
 /* Hero: compact portrait, clear identity and readable supporting copy. */
 .home-page .home-hero-grid { grid-template-columns: minmax(0, 1fr) 300px; gap: 64px; }
 .home-page .home-hero-copy h1 { max-width: 16ch; margin-top: 24px; font-size: clamp(40px, 5.2vw, 68px); }
-.home-page .home-positioning { max-width: 48ch; font-size: 19px; line-height: 1.65; }
+.home-page .home-positioning { max-width: 65ch; font-size: 17px; line-height: 1.75; }
 .home-page .home-portrait-wrap { width: 100%; max-width: 300px; justify-self: end; }
 .home-page .home-portrait-wrap::before {
   content: ""; position: absolute; inset: 14px -14px -14px 14px;
@@ -79,7 +79,16 @@
 .home-page .home-about-card h3 { min-height: 0; font-size: 27px; margin-top: 16px; }
 .home-page .home-about-card p { font-size: 16px; line-height: 1.7; }
 
-/* About pillars: quiet, numbered cards between the introduction and academics. */
+/* About: academic scores, four focus cards, then certificate lists. */
+.home-page .home-about-heading {
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  align-items: center;
+  gap: 40px 56px;
+}
+.home-page .home-about-heading h2 { margin: 18px 0 0; }
+.home-page .home-about-school { margin: 24px 0 0; line-height: 1.5; }
+.home-page .home-about-school strong { display: block; color: var(--home-ink); font-size: clamp(19px, 2vw, 23px); font-weight: 600; text-wrap: balance; }
+.home-page .home-about-school span { display: block; margin-top: 6px; color: var(--home-accent-deep); font-size: 15px; font-weight: 500; }
 .home-page .home-about-focus-grid {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
@@ -179,17 +188,10 @@
 }
 
 /* Revised home narrative: compact evidence blocks using the existing editorial tokens. */
-.home-page .home-about-snapshot {
-  display: grid;
-  grid-template-columns: minmax(220px, .8fr) minmax(0, 1.2fr);
-  gap: 32px 56px;
-  padding-top: 28px;
-}
-.home-page .home-about-snapshot h3 { margin-top: 16px; font-size: clamp(24px, 2.6vw, 32px); }
-.home-page .home-about-snapshot dl { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; margin: 0; }
-.home-page .home-about-snapshot dl div { padding-left: 16px; border-left: 1px solid var(--home-line); }
-.home-page .home-about-snapshot dt { color: var(--home-muted); font-size: 12px; line-height: 1.4; }
-.home-page .home-about-snapshot dd { margin: 8px 0 0; font-family: var(--font-display); font-size: clamp(24px, 3vw, 36px); font-variant-numeric: tabular-nums; }
+.home-page .home-about-scores { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 28px 20px; margin: 0; }
+.home-page .home-about-scores > div { min-width: 0; padding-left: 16px; border-left: 1px solid var(--home-line); }
+.home-page .home-about-scores dt { color: var(--home-muted); font-size: 12px; line-height: 1.4; }
+.home-page .home-about-scores dd { margin: 8px 0 0; font-family: var(--font-display); font-size: clamp(24px, 3vw, 36px); font-variant-numeric: tabular-nums; }
 
 .home-page .home-projects-image { position: relative; display: block; aspect-ratio: 16 / 9; overflow: hidden; border-bottom: 1px solid var(--home-line); background: var(--home-paper-alt); }
 .home-page .home-projects-image img { object-fit: cover; transition: transform 300ms ease; }
@@ -215,8 +217,8 @@
 .home-page .home-activity-group li span { font-size: 13px; }
 
 @media (max-width: 767px) {
-  .home-page .home-about-snapshot { grid-template-columns: 1fr; }
-  .home-page .home-about-snapshot dl { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .home-page .home-about-heading { gap: 32px; }
+  .home-page .home-about-scores { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .home-page .home-impact-metrics, .home-page .home-activities-grid { grid-template-columns: 1fr; }
 }
 @media (prefers-reduced-motion: reduce) {
@@ -243,7 +245,10 @@
 
 /* Borderless evidence links keep the activity lists open and quiet. */
 .home-page .home-evidence-button { display: flex; align-items: baseline; gap: 16px; width: 100%; min-height: 44px; padding: 12px 14px; border: 0; border-radius: var(--home-radius); background: transparent; color: inherit; font: inherit; line-height: inherit; text-align: left; cursor: pointer; transition: background 180ms ease, color 180ms ease; }
-.home-page .home-evidence-button:hover, .home-page .home-evidence-button:focus-visible { background: color-mix(in srgb, var(--home-on-dark) 8%, transparent); color: var(--home-on-dark); }
+.home-page .home-evidence-button:focus-visible { background: color-mix(in srgb, var(--home-on-dark) 8%, transparent); color: var(--home-on-dark); }
+@media (hover: hover) and (pointer: fine) {
+  .home-page .home-evidence-button:hover { background: color-mix(in srgb, var(--home-on-dark) 8%, transparent); color: var(--home-on-dark); }
+}
 .home-page .home-activity-group .home-evidence-copy { flex: 1; min-width: 0; font-size: inherit; }
 .home-page .home-activity-group .home-evidence-arrow { flex-shrink: 0; font-size: 18px; color: var(--home-on-dark-soft); }
 .home-page .home-activity-group ul { margin-inline: -14px; gap: 4px; }
@@ -259,3 +264,31 @@
 @media (prefers-reduced-motion: reduce) { .home-page .home-evidence-button { transition: none; } }
 
 .home-page .home-research-internship { margin-top: 40px; }
+
+.home-page .home-about-credentials { display: grid; grid-template-columns: minmax(0, .8fr) minmax(0, 1.2fr); gap: 40px; margin-top: 48px; }
+.home-page .home-credential-group { min-width: 0; padding-top: 24px; border-top: 1px solid var(--home-line); }
+.home-page .home-credential-group h3 { margin: 0; font-size: 27px; }
+.home-page .home-credential-group > p { margin: 16px 0 0; color: var(--home-muted); font-size: 14px; line-height: 1.6; }
+.home-page .home-credential-group ul { display: grid; gap: 4px; margin: 20px 0 0; padding: 0; list-style: none; }
+.home-page .home-credential-group li { font-size: 15px; line-height: 1.7; }
+.home-page .home-credential-group li + li { border-top: 1px solid var(--home-line); }
+.home-page .home-credential-group .home-evidence-copy { flex: 1; min-width: 0; overflow-wrap: anywhere; }
+.home-page .home-credential-group .home-evidence-copy strong { display: block; font-weight: 500; }
+.home-page .home-credential-group .home-evidence-copy > span { display: block; color: var(--home-muted); font-size: 13px; }
+.home-page .home-credential-group .home-evidence-arrow { flex-shrink: 0; color: var(--home-accent-deep); }
+.home-page .home-credential-group .home-evidence-button:focus-visible { background: var(--home-tint); color: var(--home-ink); }
+@media (hover: hover) and (pointer: fine) {
+  .home-page .home-credential-group .home-evidence-button:hover { background: var(--home-tint); color: var(--home-ink); }
+}
+.home-page .home-credential-group--learning ul { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 4px 20px; }
+.home-page .home-credential-group--learning li { min-width: 0; }
+.home-page .home-credential-group--learning li:nth-child(2) { border-top: 0; }
+.home-page .home-credential-group--learning .home-evidence-button { height: 100%; align-items: center; }
+@media (max-width: 1000px) {
+  .home-page .home-about-credentials { grid-template-columns: 1fr; gap: 20px; }
+  .home-page .home-credential-group { padding-top: 20px; }
+}
+@media (max-width: 599px) {
+  .home-page .home-credential-group--learning ul { grid-template-columns: 1fr; }
+  .home-page .home-credential-group--learning li:nth-child(2) { border-top: 1px solid var(--home-line); }
+}

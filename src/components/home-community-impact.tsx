@@ -1,6 +1,6 @@
 import { HomeEvidenceButton } from "./home-evidence-button";
 import type { Locale } from "@/constants/common";
-import { homeAcademicAwards, homeCertificates, homeVolunteerEvidence } from "@/constants/home";
+import { homeVolunteerEvidence } from "@/constants/home";
 
 const metrics = [
   { value: { vi: "≈1.800", en: "≈1,800" }, label: { vi: "người được tiếp cận · ECOMe", en: "people reached · ECOMe" } },
@@ -44,14 +44,9 @@ export function HomeCommunityImpact({ locale }: { locale: Locale }) {
           {groups.map((group, groupIndex) => <article key={group.title} className="home-activity-group" data-reveal><h3>{group.title}</h3><ul>{group.items.map((item, index) => <li key={item}><HomeEvidenceButton locale={locale} title={item} imageSrc={groupIndex === 0 && index === 0 ? "/images/work/ecome/community-certificate.jpg" : groupIndex === 1 && index === 0 ? "/images/community/education/robotics-summer-camp-certificate-2026.jpg" : groupIndex === 1 && index === 1 ? "/images/community/education/open-data-exploration-certificate.jpg" : groupIndex === 1 && index === 2 ? "/images/community/education/genai-training-volunteer-2026.jpg" : undefined}>{item}</HomeEvidenceButton></li>)}</ul></article>)}
           <article className="home-activity-group" data-reveal>
             <h3>{vi ? "Ghi nhận tiêu biểu" : "Selected recognition"}</h3>
-            <ul>{homeAcademicAwards.map((award) => <li key={award.id}><HomeEvidenceButton locale={locale} title={award.title[locale]} imageSrc={`/images/academic/${award.id}.webp`}><strong>{award.title[locale]}</strong><span>{award.description[locale]}</span></HomeEvidenceButton></li>)}
+            <ul>
               {homeVolunteerEvidence.map((evidence) => <li key={evidence.imageSrc}><HomeEvidenceButton locale={locale} title={evidence.title[locale]} imageSrc={evidence.imageSrc}><strong>{evidence.title[locale]}</strong><span>{evidence.description[locale]}</span></HomeEvidenceButton></li>)}
             </ul>
-          </article>
-          <article className="home-activity-group home-activity-group--learning" data-reveal>
-            <h3>{vi ? "Tự học" : "Independent learning"}</h3>
-            <p className="home-learning-note">{vi ? "Các khóa Coursera bổ trợ kiến thức về AI, dữ liệu và công cụ lập trình." : "Coursera courses supporting my foundations in AI, data, and development tools."}</p>
-            <ul>{homeCertificates.courses.map((course) => <li key={course.title}><HomeEvidenceButton locale={locale} title={course.title} imageSrc={course.imageSrc}><strong>{course.title}</strong></HomeEvidenceButton></li>)}</ul>
           </article>
         </div>
       </div>
