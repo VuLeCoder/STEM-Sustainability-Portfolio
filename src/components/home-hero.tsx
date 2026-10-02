@@ -36,7 +36,7 @@ export function HomeHero({ locale }: { locale: Locale }) {
               alt={profile.name[locale]}
               fill
               priority
-              sizes="(max-width: 767px) 248px, (max-width: 900px) 240px, 300px"
+              sizes="(max-width: 767px) 300px, (max-width: 900px) 240px, (max-width: 933px) 280px, (max-width: 1333px) 30vw, 400px"
             />
           </div>
         </div>
