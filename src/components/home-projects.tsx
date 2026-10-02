@@ -50,7 +50,13 @@ export function HomeProjects({ locale }: { locale: Locale }) {
             );
           })}
         </div>
-        <div className="home-projects-bottom"><Link className="home-projects-link home-projects-all" href={`/${locale}/works`}>{home.allProjectsCta[locale]} <span aria-hidden="true">→</span></Link></div>
+        <div className="home-projects-bottom">
+          <div className="home-projects-invitation">
+            <h3>{vi ? "Còn nhiều điều để khám phá." : "There’s more to explore."}</h3>
+            <p>{vi ? "Khám phá thêm những dự án và ý tưởng khác." : "Discover more projects and ideas."}</p>
+          </div>
+          <Link className="home-projects-link home-projects-all" href={`/${locale}/works`}>{home.allProjectsCta[locale]} <span aria-hidden="true">↗</span></Link>
+        </div>
       </div>
     </section>
   );
