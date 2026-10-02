@@ -146,15 +146,18 @@
 .home-page .home-research-upcoming { grid-column: 1 / -1; display: flex; flex-wrap: wrap; align-items: baseline; gap: 12px 28px; border-top-style: dashed; }
 .home-page .home-research-upcoming h3 { margin: 0; font-family: var(--font-sans); font-size: 17px; }
 
-/* Selected projects: four compact image cards, with three previews on mobile. */
+/* Selected projects: four compact previews across desktop and mobile. */
 .home-page .home-projects { background: var(--home-paper); }
 .home-page .home-about + .home-projects { border-top: 1px solid var(--home-line); }
-.home-page .home-projects-grid { gap: 48px 32px; border: 0; }
+.home-page .home-projects-grid { gap: 32px; border: 0; }
 .home-page .home-projects-card { border: 1px solid var(--home-line); border-radius: 0; background: transparent; }
-.home-page .home-projects-copy { padding: clamp(22px, 3vw, 36px); }
-.home-page .home-projects-copy h3 { font-family: var(--font-display); font-size: 32px; font-weight: 500; }
+.home-page .home-projects-copy { padding: clamp(20px, 2.5vw, 28px); }
+.home-page .home-projects-copy h3 { margin: 0; font-family: var(--font-display); font-size: clamp(26px, 3vw, 32px); font-weight: 500; }
+.home-page .home-projects-copy > p { margin: 10px 0 0; font-size: 15px; line-height: 1.6; }
 .home-page .home-projects-meta > span { padding: 0; border-radius: 0; background: transparent; }
-.home-page .home-projects-result { border-radius: 0; border-left-width: 2px; }
+.home-page .home-projects-result { margin: 18px 0; padding: 0 0 0 12px; border-radius: 0; border-left-width: 2px; background: transparent; }
+.home-page .home-projects-result strong { display: block; font-size: 13px; line-height: 1.5; }
+.home-page .home-projects-card-footer { padding-top: 8px; }
 .home-page .home-projects-bottom { justify-content: flex-end; }
 
 /* Impact keeps its intrinsic height, balanced padding, and distinct green field. */
@@ -236,7 +239,6 @@
 .home-page .home-activity-group--learning ul { gap: 8px; margin-top: 16px; }
 .home-page .home-activity-group--learning li { font-size: 14px; }
 @media (max-width: 767px) {
-  .home-page .home-projects-card--extra { display: none; }
   .home-page .home-impact-metrics { gap: 28px; padding-block: 12px; }
   .home-page .home-impact-metrics div { flex-direction: column; align-items: flex-start; gap: 6px; }
   .home-page .home-impact-metrics strong { font-size: 40px; line-height: 1.1; }
