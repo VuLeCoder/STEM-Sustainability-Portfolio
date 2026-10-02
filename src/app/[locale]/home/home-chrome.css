@@ -21,6 +21,32 @@ body:has(.home-page) .mobile-menu { background: var(--home-paper); border-color:
 .home-page .home-sidebar__toggle { background: var(--home-tint) !important; color: var(--home-accent-deep) !important; }
 .home-page .home-sidebar__control:focus-visible { outline-color: var(--home-accent-deep); }
 .home-page .home-sidebar__tooltip { background: var(--home-paper); color: var(--home-ink); border-color: var(--home-line); border-radius: 2px; }
+@media (min-width: 768px) and (min-height: 480px) {
+  .home-page .home-sidebar,
+  .home-page .home-sidebar:hover,
+  .home-page .home-sidebar:focus-within {
+    background: #fffefa;
+    border-color: color-mix(in srgb, var(--home-accent-deep) 45%, var(--home-paper));
+    border-radius: 12px;
+    box-shadow: 0 6px 22px rgb(24 44 39 / 16%);
+  }
+  .home-page .home-sidebar__control { border-radius: 8px; color: var(--home-ink); }
+  .home-page .home-sidebar__control:hover { background: var(--home-tint); color: var(--home-accent-deep); }
+  .home-page .home-sidebar__control[aria-current="location"] {
+    background: var(--home-green);
+    color: #fffefa;
+    box-shadow: 0 3px 8px rgb(24 44 39 / 18%);
+  }
+  .home-page .home-sidebar__tooltip {
+    background: var(--home-ink);
+    color: #fffefa;
+    border-color: var(--home-ink);
+    border-radius: 6px;
+    box-shadow: 0 4px 14px rgb(24 44 39 / 16%);
+    font-size: 14px;
+    font-weight: 500;
+  }
+}
 body:has(.home-page) .portfolio-footer { margin-top: 0; background: var(--home-ink); color: var(--home-on-dark); }
 body:has(.home-page) .portfolio-footer__background, body:has(.home-page) .portfolio-footer::before { display: none; }
 body:has(.home-page) .portfolio-footer__shell { width: min(calc(100% - 44px), 1160px); }
@@ -83,4 +109,11 @@ body:has(.home-page) .portfolio-footer__contact a { overflow-wrap: anywhere; }
 @media (max-width: 767px) {
   body:has(.home-page) .portfolio-footer__grid { grid-template-columns: minmax(0, 1fr); }
   body:has(.home-page) .portfolio-footer__bottom { padding-bottom: 88px; }
+}
+
+@media (min-width: 1400px) and (min-height: 480px) {
+  .home-page .home-shell,
+  body:has(.home-page) .portfolio-footer__shell {
+    width: min(calc(100% - 208px), 1280px);
+  }
 }
