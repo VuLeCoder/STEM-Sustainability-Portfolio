@@ -11,14 +11,14 @@ export function HomeResearch({ locale }: { locale: Locale }) {
       role: vi ? "Đồng tác giả & trình bày · An ninh thông tin" : "Co-author & presenter · Information Security",
       title: vi ? "Phương pháp giấu tin thuận nghịch trên ảnh kép cải tiến" : "An Improved Dual-Image Reversible Data Hiding Method",
       description: vi ? "Tăng dung lượng nhúng phục vụ xác thực nội dung số, đồng thời bảo đảm khôi phục hoàn hảo ảnh gốc." : "Improves embedding capacity for digital-content authentication while guaranteeing perfect recovery of the original image.",
-      href: "mailto:nguyencxphuc@gmail.com?subject=VNICT%202025%20paper%20request",
+      slug: "dual-image-reversible-data-hiding",
     },
     {
       venue: vi ? "Hội thảo Quốc gia UTM · Hà Nội" : "UTM National Conference · Hanoi",
       role: vi ? "Đồng tác giả & trình bày · UAV / AI" : "Co-author & presenter · UAV / AI",
       title: vi ? "Khung UAV–Trạm điều khiển mặt đất tích hợp AI cho nhận thức tình huống và tìm kiếm cứu nạn" : "An AI-Integrated UAV–Ground Control Station Framework for Situational Awareness and Search-and-Rescue",
       description: vi ? "Đề xuất khung tích hợp UAV và trạm điều khiển mặt đất nhằm nâng cao nhận thức tình huống và hỗ trợ tìm kiếm cứu nạn trong không phận tầm thấp." : "Proposes an integrated UAV and ground-control-station framework for situational awareness and search-and-rescue in low-altitude airspace.",
-      href: "mailto:nguyencxphuc@gmail.com?subject=UTM%20paper%20request",
+      slug: "uav-gcs-framework",
     },
   ];
 
@@ -31,23 +31,30 @@ export function HomeResearch({ locale }: { locale: Locale }) {
         </div>
         <div className="home-research-evidence" data-reveal>
           {publications.map((publication) => (
-            <article className="home-about-card" key={publication.title}>
-              <span className="home-about-label">{publication.venue}</span>
-              <h3>{publication.title}</h3>
-              <p>{publication.role}</p><p>{publication.description}</p>
-              <a className="home-research-link" href={publication.href}>{vi ? "Yêu cầu bài báo & slide" : "Request the paper & slides"} <span aria-hidden="true">→</span></a>
+            <article className="home-research-row" key={publication.slug} aria-labelledby={`home-${publication.slug}`}>
+              <span className="home-about-label home-research-venue">{publication.venue}</span>
+              <div className="home-research-placeholder" aria-hidden="true" />
+              <div className="home-research-copy">
+              <h3 id={`home-${publication.slug}`}>{publication.title}</h3>
+              <p className="home-research-role">{publication.role}</p>
+              <p className="home-research-description">{publication.description}</p>
+              <Link className="home-research-link" href={`/${locale}/works#${publication.slug}`} aria-label={`${vi ? "Khám phá nghiên cứu" : "Explore research"}: ${publication.title}`}>
+                {vi ? "Khám phá nghiên cứu" : "Explore research"} <span aria-hidden="true">↗</span>
+              </Link>
+              </div>
             </article>
           ))}
         </div>
-        <article className="home-about-card home-research-internship" data-reveal aria-labelledby="home-internship-title">
-          <p className="home-about-label">{vi ? "Thực tập nghiên cứu · 18/05–24/09/2026" : "Research internship · 18 May–24 Sep 2026"}</p>
-          <h3 id="home-internship-title">{vi ? "Viện Công nghệ Thông tin, VAST" : "Institute of Information Technology, VAST"}</h3>
+        <article className="home-research-internship" data-reveal aria-labelledby="home-internship-title">
+          <div className="home-research-placeholder" aria-hidden="true" />
+          <div className="home-research-copy">
+          <p className="home-about-label home-internship-label">{vi ? "Thực tập nghiên cứu" : "Research internship"}</p>
+          <h3 id="home-internship-title" className="home-research-institution"><strong>VAST</strong><span>{vi ? "Viện Công nghệ Thông tin" : "Institute of Information Technology"}</span></h3>
+          <p className="home-research-dates">{vi ? "18/05–24/09/2026" : "18 May–24 Sep 2026"}</p>
           <p>{vi ? "Phòng các Hệ thống AI · Viện Hàn lâm Khoa học và Công nghệ Việt Nam · Hà Nội" : "AI Systems Department · Vietnam Academy of Science and Technology · Hanoi"}</p>
           <p>{vi ? "Tham gia chương trình thực tập nghiên cứu về hệ thống AI ứng dụng, tích lũy kinh nghiệm về quy trình nghiên cứu khoa học, tài liệu kỹ thuật và phối hợp liên ngành." : "A structured research internship focused on applied AI systems, building experience with scientific workflows, technical documentation, and interdisciplinary collaboration."}</p>
+          </div>
         </article>
-        <div className="home-content-section-footer">
-          <Link className="home-content-section-link" href={`/${locale}/works#dual-image-reversible-data-hiding`}>{vi ? "Xem nghiên cứu tiêu biểu" : "View featured research"} <span aria-hidden="true">→</span></Link>
-        </div>
       </div>
     </section>
   );
