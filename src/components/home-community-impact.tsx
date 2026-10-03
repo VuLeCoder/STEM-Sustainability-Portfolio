@@ -1,6 +1,5 @@
 import { HomeEvidenceButton } from "./home-evidence-button";
 import type { Locale } from "@/constants/common";
-import { homeVolunteerEvidence } from "@/constants/home";
 
 const metrics = [
   { value: { vi: "≈1.800", en: "≈1,800" }, label: { vi: "người được tiếp cận · ECOMe", en: "people reached · ECOMe" } },
@@ -14,16 +13,16 @@ export function HomeCommunityImpact({ locale }: { locale: Locale }) {
     {
       title: vi ? "Cộng đồng & lãnh đạo" : "Community & leadership",
       items: [
-        vi ? "Sáng lập và điều phối ECOMe: giáo dục môi trường, hoạt động thực địa, nước sạch và cứu trợ thiên tai." : "Founded and lead ECOMe: environmental education, field campaigns, clean-water projects, and disaster relief.",
-        vi ? "Thành viên CypherCharm Club, thực hành an ninh mạng và mật mã." : "Member of CypherCharm Club, extending cybersecurity and cryptography interests through practice.",
+        { title: "ECOMe", description: vi ? "Sáng lập & điều phối · Môi trường, nước sạch và cứu trợ thiên tai" : "Founder & coordinator · Environment, clean water, and disaster relief", photos: [{ src: "/images/work/ecome/community-certificate.jpg", caption: vi ? "Chứng nhận hoạt động cộng đồng ECOMe" : "ECOMe community activity certificate" }] },
+        { title: "CypherCharm Club", description: vi ? "Thành viên · An ninh mạng & mật mã" : "Member · Cybersecurity & cryptography", photos: [] },
       ],
     },
     {
       title: vi ? "Giáo dục & hướng dẫn" : "Education & mentoring",
       items: [
-        vi ? "Ban tổ chức Robotics Summer Camp 2026 tại American Center, Hà Nội." : "Organizing committee member for Robotics Summer Camp 2026 at the American Center, Hanoi.",
-        vi ? "Tham gia tổ chức NASA Open Data Exploration với các bộ dữ liệu mở." : "Helped organize NASA Open Data Exploration using open datasets.",
-        vi ? "Đồng tổ chức tập huấn Generative AI cho cán bộ Đoàn–Hội, tháng 3/2026." : "Co-organized Generative AI training for student-union officers in March 2026.",
+        { title: "Robotics Summer Camp", description: vi ? "Ban tổ chức · American Center, Hà Nội · 2026" : "Organizing committee · American Center, Hanoi · 2026", photos: [{ src: "/images/community/education/robotics-summer-camp-certificate-2026.jpg", caption: vi ? "Chứng nhận Robotics Summer Camp 2026" : "Robotics Summer Camp 2026 certificate" }] },
+        { title: "NASA Open Data Exploration", description: vi ? "Tham gia tổ chức · Khám phá dữ liệu mở" : "Event organizer · Open data exploration", photos: [{ src: "/images/community/education/open-data-exploration-certificate.jpg", caption: vi ? "Chứng nhận NASA Open Data Exploration" : "NASA Open Data Exploration certificate" }] },
+        { title: "Generative AI Training", description: vi ? "Đồng tổ chức · Tập huấn cán bộ Đoàn–Hội · 03/2026" : "Co-organizer · Training for student-union officers · Mar 2026", photos: [{ src: "/images/community/education/genai-training-volunteer-2026.jpg", caption: vi ? "Ghi nhận hoạt động tập huấn Generative AI 2026" : "Generative AI training volunteer recognition, 2026" }] },
       ],
     },
   ];
@@ -33,7 +32,7 @@ export function HomeCommunityImpact({ locale }: { locale: Locale }) {
       <div className="home-shell">
         <header className="home-impact-heading" data-reveal>
           <div><p className="home-about-label">{vi ? "Ngoài lớp học" : "Beyond the classroom"}</p><h2 id="home-impact-title">{vi ? "Học cùng người khác, đóng góp cho cộng đồng." : "Learning with others, contributing to community."}</h2></div>
-          <p>{vi ? "Các hoạt động lãnh đạo, giáo dục, ghi nhận học thuật và tự học bổ sung cho hành trình nghiên cứu và xây dựng dự án." : "Leadership, education, academic recognition, and independent learning that complement my research and project work."}</p>
+          <p>{vi ? "Các hoạt động cộng đồng, lãnh đạo và giáo dục bổ sung cho hành trình nghiên cứu và xây dựng dự án." : "Community involvement, leadership, and education that complement my research and project work."}</p>
         </header>
 
         <div className="home-impact-metrics" data-reveal>
@@ -41,13 +40,14 @@ export function HomeCommunityImpact({ locale }: { locale: Locale }) {
         </div>
 
         <div className="home-activities-grid">
-          {groups.map((group, groupIndex) => <article key={group.title} className="home-activity-group" data-reveal><h3>{group.title}</h3><ul>{group.items.map((item, index) => <li key={item}><HomeEvidenceButton locale={locale} title={item} imageSrc={groupIndex === 0 && index === 0 ? "/images/work/ecome/community-certificate.jpg" : groupIndex === 1 && index === 0 ? "/images/community/education/robotics-summer-camp-certificate-2026.jpg" : groupIndex === 1 && index === 1 ? "/images/community/education/open-data-exploration-certificate.jpg" : groupIndex === 1 && index === 2 ? "/images/community/education/genai-training-volunteer-2026.jpg" : undefined}>{item}</HomeEvidenceButton></li>)}</ul></article>)}
-          <article className="home-activity-group" data-reveal>
-            <h3>{vi ? "Ghi nhận tiêu biểu" : "Selected recognition"}</h3>
-            <ul>
-              {homeVolunteerEvidence.map((evidence) => <li key={evidence.imageSrc}><HomeEvidenceButton locale={locale} title={evidence.title[locale]} imageSrc={evidence.imageSrc}><strong>{evidence.title[locale]}</strong><span>{evidence.description[locale]}</span></HomeEvidenceButton></li>)}
-            </ul>
-          </article>
+          {groups.map(group => <article key={group.title} className="home-activity-group" data-reveal>
+            <h3>{group.title}</h3>
+            <ul>{group.items.map(item => <li key={item.title}>
+              <HomeEvidenceButton locale={locale} title={item.title} photos={item.photos}>
+                <strong>{item.title}</strong><span>{item.description}</span>
+              </HomeEvidenceButton>
+            </li>)}</ul>
+          </article>)}
         </div>
       </div>
     </section>

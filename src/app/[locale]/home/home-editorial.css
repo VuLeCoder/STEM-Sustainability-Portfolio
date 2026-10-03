@@ -340,6 +340,25 @@
 .home-page .home-evidence-image { position: relative; height: min(65dvh, 720px); }
 .home-page .home-evidence-image img { object-fit: contain; }
 .home-page .home-evidence-pending { padding: 64px 16px; text-align: center; color: var(--home-muted); }
+.home-page .home-activity-group .home-evidence-button { align-items: center; }
+.home-page .home-activity-group .home-evidence-copy strong { font-size: 17px; margin-bottom: 5px; }
+.home-page .home-activity-group .home-album-count { display: flex; align-items: center; gap: 7px; flex-shrink: 0; color: var(--home-on-dark-soft); font-size: 12px; }
+.home-page .home-album-count svg { flex-shrink: 0; }
+.home-page .home-album-dialog .home-evidence-image { height: min(52dvh, 560px); touch-action: pan-y; }
+.home-page .home-album-navigation { display: flex; justify-content: center; align-items: center; gap: 20px; margin-top: 12px; font-size: 14px; }
+.home-page .home-album-navigation button { min-width: 44px; border: 1px solid var(--home-ink); }
+.home-page .home-album-navigation button:disabled { opacity: .3; cursor: default; background: transparent; }
+.home-page .home-album-caption { margin: 12px 0; text-align: center; font-size: 14px; line-height: 1.5; }
+.home-page .home-album-thumbnails { display: flex; gap: 10px; overflow-x: auto; padding: 4px; }
+.home-page .home-album-thumbnails button { padding: 3px; border: 2px solid transparent; }
+.home-page .home-album-thumbnails button[aria-pressed="true"] { border-color: var(--home-ink); }
+.home-page .home-album-thumbnails img { display: block; width: 80px; height: 56px; object-fit: cover; }
+@media (max-width: 767px) {
+  .home-page .home-album-thumbnails { display: none; }
+  .home-page .home-album-dialog { padding: 18px; }
+  .home-page .home-activity-group .home-evidence-button { flex-wrap: wrap; gap: 8px 16px; }
+  .home-page .home-activity-group .home-evidence-copy { flex-basis: 65%; }
+}
 @media (prefers-reduced-motion: reduce) { .home-page .home-evidence-button { transition: none; } }
 
 .home-page .home-research-internship {
