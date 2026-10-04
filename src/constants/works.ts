@@ -215,6 +215,6 @@ export const works: WorkItem[] = [
 ];
 
 export const worksCopy = {
-  title: { vi: "Dự án & Nghiên cứu", en: "Selected Work" },
+  title: { vi: "Dự án & Nghiên cứu", en: "Projects & Research" },
   description: { vi: "Các dự án và nghiên cứu về công nghệ hỗ trợ, AI ứng dụng, phần cứng và phát triển bền vững.", en: "Projects and research across assistive technology, applied AI, hardware and sustainability." },
 };
