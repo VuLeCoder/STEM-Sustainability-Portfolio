@@ -15,13 +15,13 @@ body:has(.works-page) {
   --font-sans: "IBM Plex Sans", "Segoe UI", sans-serif;
   --font-display: "Newsreader", Georgia, serif;
   --focus: var(--home-accent-deep);
-  --section-nav-clearance: 64px;
+  --section-nav-clearance: 72px;
   background: var(--home-paper);
   color: var(--home-ink);
   font-family: var(--font-sans);
 }
 body:has(.works-page) .site-header {
-  top: 0; margin: 0; width: 100%; height: 64px;
+  top: 0; margin: 0; width: 100%; height: 72px;
   border: 0; border-bottom: 1px solid var(--home-line); border-radius: 0;
   background: rgb(244 242 235 / 96%); backdrop-filter: blur(8px); box-shadow: none;
 }
