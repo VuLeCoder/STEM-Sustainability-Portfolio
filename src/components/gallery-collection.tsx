@@ -72,26 +72,40 @@ export function GalleryCollection({ locale }: { locale: Locale }) {
   };
   const filters: Filter[] = ["all", "award", "recognition", "activity"];
 
-  return <section className="activities-section" aria-label={vi ? "Bộ sưu tập hình ảnh" : "Image gallery"}>
-    <div className="gallery-toolbar">
-      <div className="gallery-filters" role="group" aria-label={vi ? "Lọc bộ sưu tập" : "Filter gallery"}>
-        {filters.map(value => <button key={value} type="button" aria-pressed={filter === value}
-          onClick={() => setFilter(value)}>
-          {labels[value]} <span>{value === "all" ? entries.length : entries.filter(item => item.category === value).length}</span>
-        </button>)}
+  return <>
+    <header className="activities-hero gallery-hero">
+      <div className="gallery-hero__intro">
+        <p className="activities-kicker">{vi ? "Những dấu mốc" : "Milestones"}</p>
+        <h1>{vi ? "Bộ sưu tập" : "Gallery"}</h1>
+        <p className="gallery-hero__description">{vi
+          ? "Giải thưởng, ghi nhận và những hoạt động tôi đã tham gia, kể lại qua hình ảnh."
+          : "Awards, recognition, and the activities I have taken part in, told through images."}</p>
       </div>
-      <p className="gallery-count" aria-live="polite">{vi ? `${visible.length} mục` : `${visible.length} items`}</p>
-    </div>
-    <div className="activities-grid">
-      {visible.map(item => <article className={`activities-card gallery-card${item.featured ? " gallery-card--featured" : ""}`} key={item.id}>
-        <GalleryImage src={item.images[0].src} alt={item.images[0].alt} title={item.title} locale={locale} images={item.images} />
-        <div className="activities-card__copy">
-          <p className="gallery-card__meta"><span>{labels[item.category]}</span><span aria-hidden="true">·</span>{item.detail}</p>
-          <h2>{item.title}</h2>
-          <p>{item.description}</p>
-          {item.relatedWork && <Link href={`/${locale}/works#${item.relatedWork}`}>{vi ? "Xem dự án" : "View project"} <span aria-hidden="true">↗</span></Link>}
+      <div className="gallery-hero__browse">
+        <p className="gallery-hero__browse-label">{vi ? "Khám phá theo chủ đề" : "Browse by theme"}</p>
+        <div className="gallery-filters" role="group" aria-label={vi ? "Lọc bộ sưu tập" : "Filter gallery"}>
+          {filters.map(value => <button key={value} type="button" aria-pressed={filter === value}
+            onClick={() => setFilter(value)}>
+            <span>{labels[value]}</span>
+            <span className="gallery-filters__count">{value === "all" ? entries.length : entries.filter(item => item.category === value).length}</span>
+            <span className="gallery-filters__arrow" aria-hidden="true">↗</span>
+          </button>)}
         </div>
-      </article>)}
-    </div>
-  </section>;
+      </div>
+    </header>
+    <section className="activities-section" aria-label={vi ? "Bộ sưu tập hình ảnh" : "Image gallery"}>
+      <p className="gallery-results" aria-live="polite"><strong>{labels[filter]}</strong><span>{vi ? `${visible.length} dấu mốc` : `${visible.length} stories`}</span></p>
+      <div className="activities-grid">
+        {visible.map(item => <article className={`activities-card gallery-card${item.featured ? " gallery-card--featured" : ""}`} key={item.id}>
+          <GalleryImage src={item.images[0].src} alt={item.images[0].alt} title={item.title} locale={locale} images={item.images} />
+          <div className="activities-card__copy">
+            <p className="gallery-card__meta"><span>{labels[item.category]}</span><span aria-hidden="true">·</span>{item.detail}</p>
+            <h2>{item.title}</h2>
+            <p>{item.description}</p>
+            {item.relatedWork && <Link href={`/${locale}/works#${item.relatedWork}`}>{vi ? "Xem dự án" : "View project"} <span aria-hidden="true">↗</span></Link>}
+          </div>
+        </article>)}
+      </div>
+    </section>
+  </>;
 }

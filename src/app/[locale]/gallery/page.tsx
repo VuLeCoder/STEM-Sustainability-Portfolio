@@ -23,17 +23,9 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 export default async function GalleryPage({ params }: Props) {
   const { locale } = await params;
   if (!isLocale(locale)) notFound();
-  const vi = locale === "vi";
 
   return <main className="activities-page">
     <div className="activities-shell">
-      <header className="activities-hero">
-        <p className="activities-kicker">{vi ? "Những dấu mốc" : "Milestones"}</p>
-        <h1>{vi ? "Bộ sưu tập" : "Gallery"}</h1>
-        <p>{vi
-          ? "Giải thưởng, ghi nhận và những hoạt động tôi đã tham gia, kể lại qua hình ảnh."
-          : "Awards, recognition, and the activities I have taken part in, told through images."}</p>
-      </header>
       <GalleryCollection locale={locale} />
     </div>
   </main>;
