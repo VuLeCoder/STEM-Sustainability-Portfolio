@@ -246,8 +246,8 @@ export const workCaseStudies: Record<string, { title: Localized<string>; body: L
         "en": "Result"
       },
       "body": {
-        "vi": "Các chiến dịch thực địa đã tiếp cận khoảng 1.800 người tại Đồng bằng sông Cửu Long, Hải Dương và Quảng Ninh; hỗ trợ 6 trại trẻ và trung tâm bảo trợ; trao khoảng 115 triệu VNĐ quà tặng và cứu trợ, trong đó có hỗ trợ 225 hộ dân sau thiên tai tại Đắk Lắk.",
-        "en": "Field campaigns have reached about 1,800 people across the Mekong Delta, Hai Duong, and Quang Ninh; supported 6 orphanages and childcare centers; and delivered around VND 115 million in gifts and aid, including relief for 225 households after disasters in Dak Lak."
+        "vi": "Các chiến dịch nâng cao nhận thức đã tiếp cận khoảng 1.800 người tại Đồng bằng sông Cửu Long và nhiều tỉnh thành. Chiến dịch tháng 6/2026 kết hợp truyền thông môi trường với hoạt động tại 6 trại trẻ và trung tâm chăm sóc trẻ em. Hai chiến dịch năm 2025 trao tổng cộng 115 triệu VNĐ quà tặng và hỗ trợ; các hoạt động cứu trợ thiên tai riêng đã phục vụ 225 hộ dân tại Đắk Lắk.",
+        "en": "Awareness campaigns have reached about 1,800 people in the Mekong Delta and other provinces. A June 2026 campaign combined environmental outreach with service at six orphanages and childcare centers. Two 2025 campaigns delivered VND 115 million in gifts and aid; separate disaster-relief efforts served 225 households in Dak Lak."
       }
     },
     {

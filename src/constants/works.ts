@@ -86,8 +86,8 @@ export const works: WorkItem[] = [
     },
     "role": projectRoles.ecome,
     "result": {
-      "vi": "≈1.800 người tiếp cận · 6 cơ sở trẻ em được hỗ trợ · ≈115 triệu VNĐ viện trợ · 225 hộ được cứu trợ",
-      "en": "≈1,800 people reached · 6 childcare centers supported · ≈VND 115M in aid · 225 households received relief"
+      "vi": "≈1.800 người tiếp cận · 6 cơ sở trẻ em được hỗ trợ · 115 triệu VNĐ từ hai chiến dịch năm 2025 · cứu trợ 225 hộ tại Đắk Lắk",
+      "en": "≈1,800 people reached · 6 childcare centers supported · VND 115M delivered through two 2025 campaigns · relief work serving 225 households in Dak Lak"
     },
     "featuredOrder": 3,
     "image": {

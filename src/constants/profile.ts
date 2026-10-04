@@ -103,7 +103,7 @@ export const narrative=[
 
 export const academicScores = [
   { id: "gpa-grade-10", label: { vi: "GPA lớp 10", en: "Grade 10 GPA" }, value: "9.1/10" },
-  { id: "gpa-grade-11", label: { vi: "GPA lớp 11", en: "Grade 11 GPA" }, value: "9.2/10" },
+  { id: "gpa-grade-11", label: { vi: "GPA lớp 11", en: "Grade 11 GPA" }, value: "9.3/10" },
   { id: "sat", label: { vi: "SAT", en: "SAT" }, value: "1440" },
   { id: "sat-math", label: { vi: "SAT Math", en: "SAT Math" }, value: "800" },
   { id: "ielts", label: { vi: "IELTS Academic", en: "IELTS Academic" }, value: "7.5" },
@@ -178,8 +178,8 @@ export const profileHome={
         id: "collaboration",
         title: { vi: "Hợp tác & chia sẻ",en: "Collaboration & learning" },
         description: {
-          vi: "Tham gia tổ chức Open Data Exploration và hỗ trợ Robotics Summer Camp 2026 tại American Center, Hà Nội; kết hợp truyền thông, thiết kế, nghiên cứu dữ liệu và làm việc nhóm kỹ thuật.",
-          en: "Helped organize Open Data Exploration and supported Robotics Summer Camp 2026 at the American Center in Hanoi, combining communication, design, data research, and technical teamwork.",
+          vi: "Tham gia nhóm tổ chức Open Data Exploration 2026 với vai trò truyền thông, thiết kế, đào tạo và nghiên cứu dữ liệu; là thành viên nhóm Kỹ thuật Cơ khí tại Robotics Summer Camp 2026 ở American Center, Hà Nội.",
+          en: "Joined the Open Data Exploration 2026 organizing team in communication, design, training, and data research; served as a Mechanical Engineering Team Member at the 2026 Robotics Summer Camp at the American Center in Hanoi.",
         },
       },
     ],

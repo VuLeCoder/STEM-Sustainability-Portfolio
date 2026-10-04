@@ -21,8 +21,8 @@ export function HomeCommunityImpact({ locale }: { locale: Locale }) {
     {
       title: vi ? "Giáo dục & hướng dẫn" : "Education & mentoring",
       items: [
-        { title: "Robotics Summer Camp", description: vi ? "Ban tổ chức · American Center, Hà Nội · 2026" : "Organizing committee · American Center, Hanoi · 2026", photos: [{ src: "/images/community/education/robotics-summer-camp-certificate-2026.jpg", caption: vi ? "Chứng nhận Robotics Summer Camp 2026" : "Robotics Summer Camp 2026 certificate" }] },
-        { title: "NASA Open Data Exploration", description: vi ? "Tham gia tổ chức · Khám phá dữ liệu mở" : "Event organizer · Open data exploration", photos: [{ src: "/images/community/education/open-data-exploration-certificate.jpg", caption: vi ? "Chứng nhận NASA Open Data Exploration" : "NASA Open Data Exploration certificate" }] },
+        { title: "Robotics Summer Camp 2026", description: vi ? "Thành viên nhóm Kỹ thuật Cơ khí · American Center, Hà Nội" : "Mechanical Engineering Team Member · American Center, Hanoi", photos: [{ src: "/images/community/education/robotics-summer-camp-certificate-2026.jpg", caption: vi ? "Chứng nhận Robotics Summer Camp 2026" : "Robotics Summer Camp 2026 certificate" }] },
+        { title: "Open Data Exploration 2026 Summer Camp", description: vi ? "Nhóm tổ chức · Truyền thông & thiết kế · Đào tạo & nghiên cứu dữ liệu" : "Organizing Team · Communication & Design · Training & Data Research", photos: [{ src: "/images/community/education/open-data-exploration-certificate.jpg", caption: vi ? "Chứng nhận Open Data Exploration 2026" : "Open Data Exploration 2026 certificate" }] },
         { title: "Generative AI Training", description: vi ? "Đồng tổ chức · Tập huấn cán bộ Đoàn–Hội · 03/2026" : "Co-organizer · Training for student-union officers · Mar 2026", photos: [{ src: "/images/community/education/genai-training-volunteer-2026.jpg", caption: vi ? "Ghi nhận hoạt động tập huấn Generative AI 2026" : "Generative AI training volunteer recognition, 2026" }] },
       ],
     },

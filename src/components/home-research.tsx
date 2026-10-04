@@ -52,7 +52,7 @@ export function HomeResearch({ locale }: { locale: Locale }) {
           <h3 id="home-internship-title" className="home-research-institution"><strong>VAST</strong><span>{vi ? "Viện Công nghệ Thông tin" : "Institute of Information Technology"}</span></h3>
           <p className="home-research-dates">{vi ? "18/05–24/09/2026" : "18 May–24 Sep 2026"}</p>
           <p>{vi ? "Phòng các Hệ thống AI · Viện Hàn lâm Khoa học và Công nghệ Việt Nam · Hà Nội" : "AI Systems Department · Vietnam Academy of Science and Technology · Hanoi"}</p>
-          <p>{vi ? "Tham gia chương trình thực tập nghiên cứu về hệ thống AI ứng dụng, tích lũy kinh nghiệm về quy trình nghiên cứu khoa học, tài liệu kỹ thuật và phối hợp liên ngành." : "A structured research internship focused on applied AI systems, building experience with scientific workflows, technical documentation, and interdisciplinary collaboration."}</p>
+          <p>{vi ? "Tham gia kỳ thực tập nghiên cứu tại Phòng các Hệ thống AI, tập trung vào hệ thống AI ứng dụng, quy trình nghiên cứu khoa học, tài liệu kỹ thuật và phối hợp liên ngành." : "Participated in a research internship at the AI Systems Department, focused on applied AI systems, scientific workflows, technical documentation, and interdisciplinary collaboration."}</p>
           </div>
         </article>
       </div>
