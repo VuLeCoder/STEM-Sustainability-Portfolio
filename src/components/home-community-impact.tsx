@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { HomeEvidenceButton } from "./home-evidence-button";
 import type { Locale } from "@/constants/common";
 
@@ -49,6 +50,7 @@ export function HomeCommunityImpact({ locale }: { locale: Locale }) {
             </li>)}</ul>
           </article>)}
         </div>
+        <Link className="home-impact-more" href={`/${locale}/gallery`}>{vi ? "Xem bộ sưu tập" : "Explore the gallery"} <span aria-hidden="true">↗</span></Link>
       </div>
     </section>
   );

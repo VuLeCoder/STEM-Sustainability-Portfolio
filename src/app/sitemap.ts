@@ -8,6 +8,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const paths = [
     "/home",
     "/works",
+    "/gallery",
   ];
 
   return paths.flatMap((path) =>

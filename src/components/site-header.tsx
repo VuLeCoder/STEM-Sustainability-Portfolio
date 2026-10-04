@@ -10,6 +10,7 @@ import { getLocalizedPath } from "@/lib/i18n";
 const navigationItems = [
   { key: "home", path: "" },
   { key: "projects", path: "/works" },
+  { key: "activities", path: "/gallery" },
 ] as const;
 
 export function SiteHeader({ locale }: { locale: Locale }) {

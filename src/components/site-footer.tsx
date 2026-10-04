@@ -25,6 +25,7 @@ export function SiteFooter({ locale }: { locale: Locale }) {
           <nav className="portfolio-footer__column" aria-label={siteContent.ui.footerNavigation[locale]}>
             <h2>{chrome.explore[locale]}</h2>
             <Link href={`/${locale}/works`}>{navigation.projects[locale]} <span aria-hidden="true">↗</span></Link>
+            <Link href={`/${locale}/gallery`}>{navigation.activities[locale]} <span aria-hidden="true">↗</span></Link>
             <a href="/documents/CV_Nguyen_Cao_Xuan_Phuc.pdf" download="Nguyen-Cao-Xuan-Phuc-CV.pdf">{locale === "vi" ? "Tải CV" : "Download CV"} <span aria-hidden="true">↓</span></a>
           </nav>
           <div className="portfolio-footer__column">

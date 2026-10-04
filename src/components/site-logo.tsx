@@ -10,7 +10,7 @@ export function SiteLogo({ locale }: { locale: Locale }) {
       className="site-logo"
       aria-label={`${siteContent.profile.name[locale]} — ${siteContent.navigation.home[locale]}`}
     >
-      <Image src={siteContent.chrome.logoImage} alt={`${siteContent.profile.initials} logo`} width={64} height={64} />
+      <Image src={siteContent.chrome.logoImage} alt="" width={64} height={64} />
     </Link>
   );
 }

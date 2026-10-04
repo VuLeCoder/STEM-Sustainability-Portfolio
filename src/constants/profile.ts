@@ -111,7 +111,7 @@ export const academicScores = [
 ] as const;
 
 export const profileChrome={
-  logoImage: "/images/brand/ncp-logo.png",
+  logoImage: "/images/brand/xuan-phuc-mark.svg",
   socials: [
     { icon: "facebook",label: "Facebook",href: "#" },
     { icon: "github",label: "GitHub",href: "#" },

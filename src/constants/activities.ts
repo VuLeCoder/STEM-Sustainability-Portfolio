@@ -1,0 +1,150 @@
+import type { Localized } from "./common";
+import { homeAcademicAwards } from "./home";
+
+export type GalleryItem = {
+  title: Localized<string>;
+  description: Localized<string>;
+  image: string;
+  imageAlt: Localized<string>;
+  relatedWork?: string;
+};
+
+export type ActivityImage = {
+  src: string;
+  alt: Localized<string>;
+  caption: Localized<string>;
+  kind: "photo" | "certificate";
+};
+
+export type ActivityItem = GalleryItem & {
+  imageCaption: Localized<string>;
+  additionalImages?: ActivityImage[];
+};
+
+export const activityGallery: ActivityItem[] = [
+  {
+    title: { vi: "ECOMe", en: "ECOMe" },
+    description: { vi: "Sáng lập và điều phối sáng kiến giáo dục môi trường, nước sạch và hoạt động cộng đồng.", en: "Founded and coordinated an initiative focused on environmental education, clean water, and community work." },
+    image: "/images/work/ecome/community-certificate.jpg",
+    imageAlt: { vi: "Chứng nhận đóng góp cho hoạt động cộng đồng ECOMe", en: "Certificate recognizing ECOMe community contributions" },
+    imageCaption: { vi: "Ghi nhận đóng góp · 2026", en: "Contribution recognition · 2026" },
+    relatedWork: "ecome",
+  },
+  {
+    title: { vi: "Robotics Summer Camp", en: "Robotics Summer Camp" },
+    description: { vi: "Tham gia ban tổ chức chương trình Robotics Summer Camp 2026 tại American Center, Hà Nội.", en: "Served on the organizing committee of the 2026 Robotics Summer Camp at the American Center in Hanoi." },
+    image: "/images/community/education/robotics-summer-camp-certificate-2026.jpg",
+    imageAlt: { vi: "Chứng nhận Robotics Summer Camp 2026", en: "Robotics Summer Camp 2026 certificate" },
+    imageCaption: { vi: "Chứng nhận · 2026", en: "Certificate · 2026" },
+  },
+  {
+    title: { vi: "Open Data Exploration", en: "Open Data Exploration" },
+    description: { vi: "Tham gia tổ chức hoạt động khám phá dữ liệu mở và làm việc cùng nhóm.", en: "Helped organize an open data exploration activity and collaborated with the team." },
+    image: "/images/community/education/open-data-exploration-certificate.jpg",
+    imageAlt: { vi: "Chứng nhận Open Data Exploration", en: "Open Data Exploration certificate" },
+    imageCaption: { vi: "Chứng nhận tham gia", en: "Participation certificate" },
+  },
+  {
+    title: { vi: "ECOMeSort · AI for Good Vietnam 2026", en: "ECOMeSort · AI for Good Vietnam 2026" },
+    description: { vi: "Tham gia chương trình giáo dục và cuộc thi AI for Good Vietnam 2026 cùng dự án ECOMeSort.", en: "Joined the AI for Good Vietnam 2026 education program and competition with ECOMeSort." },
+    image: "/images/work/ecomesort/recognition.png",
+    imageAlt: { vi: "Giấy chứng nhận tham gia AI for Good Vietnam 2026 của ECOMeSort", en: "ECOMeSort AI for Good Vietnam 2026 participation certificate" },
+    imageCaption: { vi: "Chứng nhận tham gia · 2026", en: "Participation certificate · 2026" },
+    relatedWork: "ecomesort",
+  },
+  {
+    title: { vi: "NASA Space Apps Challenge 2025", en: "NASA Space Apps Challenge 2025" },
+    description: { vi: "Cùng nhóm Bluemarble phát triển BloomWatch trong khuôn khổ NASA Space Apps Challenge 2025.", en: "Developed BloomWatch with team Bluemarble during the 2025 NASA Space Apps Challenge." },
+    image: "/images/work/bloomwatch/galactic-problem-solver.png",
+    imageAlt: { vi: "Chứng nhận Galactic Problem Solver tại NASA Space Apps 2025", en: "Galactic Problem Solver certificate at NASA Space Apps 2025" },
+    imageCaption: { vi: "Chứng nhận tham gia · 2025", en: "Participation certificate · 2025" },
+    relatedWork: "bloomwatch",
+  },
+  {
+    title: { vi: "Tập huấn Generative AI", en: "Generative AI training" },
+    description: { vi: "Đồng tổ chức buổi tập huấn AI tạo sinh cho cán bộ Đoàn–Hội tháng 3/2026.", en: "Co-organized generative AI training for student-union officers in March 2026." },
+    image: "/images/community/education/genai-training-volunteer-2026.jpg",
+    imageAlt: { vi: "Ghi nhận hoạt động tập huấn Generative AI", en: "Generative AI training recognition" },
+    imageCaption: { vi: "Ghi nhận hoạt động · 2026", en: "Activity recognition · 2026" },
+  },
+  {
+    title: { vi: "Hành trình kết nối sắc màu trí tuệ", en: "Journey of Connecting Colors of Wisdom" },
+    description: { vi: "Tham gia trao quà tại các trung tâm bảo trợ năm 2025 và tổ chức hoạt động tình nguyện năm 2026.", en: "Helped deliver gifts at social care centres in 2025 and organize volunteer work in 2026." },
+    image: "/images/community/recognition/colors-of-wisdom-participation-2025.jpg",
+    imageAlt: { vi: "Chứng nhận tham gia Hành trình kết nối sắc màu trí tuệ năm 2025", en: "Colors of Wisdom participation certificate, 2025" },
+    imageCaption: { vi: "Chứng nhận tham gia · 2025", en: "Participation certificate · 2025" },
+    additionalImages: [{
+      src: "/images/community/recognition/colors-of-wisdom-volunteer.jpg",
+      alt: { vi: "Chứng nhận tổ chức tình nguyện Hành trình kết nối sắc màu trí tuệ năm 2026", en: "Colors of Wisdom volunteer organizing certificate, 2026" },
+      caption: { vi: "Chứng nhận tổ chức · 2026", en: "Organizing certificate · 2026" },
+      kind: "certificate",
+    }],
+  },
+  {
+    title: { vi: "CNH Basketball Club · 2024–2026", en: "CNH Basketball Club · 2024–2026" },
+    description: { vi: "Tham gia ban truyền thông của CNH Basketball Club trong hai mùa 2024–2025 và 2025–2026.", en: "Served on the CNH Basketball Club media team during the 2024–2025 and 2025–2026 seasons." },
+    image: "/images/community/cnh-basketball/partners-2024-2025.jpg",
+    imageAlt: { vi: "Chứng nhận thành viên ban truyền thông CNH Basketball Club mùa 2024–2025", en: "CNH Basketball Club media team certificate, 2024–2025" },
+    imageCaption: { vi: "Chứng nhận · 2024–2025", en: "Certificate · 2024–2025" },
+    additionalImages: [{
+      src: "/images/community/cnh-basketball/partners-2025-2026.jpg",
+      alt: { vi: "Chứng nhận thành viên ban truyền thông CNH Basketball Club mùa 2025–2026", en: "CNH Basketball Club media team certificate, 2025–2026" },
+      caption: { vi: "Chứng nhận · 2025–2026", en: "Certificate · 2025–2026" },
+      kind: "certificate",
+    }],
+  },
+];
+
+export type AwardItem = GalleryItem & {
+  category: "project" | "academic" | "community";
+  year: number;
+  scope: Localized<string>;
+  featuredOrder?: number;
+};
+
+export const awardGallery: AwardItem[] = [
+  {
+    category: "project", year: 2026, featuredOrder: 1,
+    scope: { vi: "Quốc tế · WICO, Seoul", en: "International · WICO, Seoul" },
+    title: { vi: "SafeStride · Giải Vàng WICO 2026", en: "SafeStride · WICO 2026 Gold Award" },
+    description: { vi: "Minh chứng giải thưởng của dự án SafeStride tại WICO 2026.", en: "Award evidence for the SafeStride project at WICO 2026." },
+    image: "/images/work/safestride/wico-gold-award.jpeg",
+    imageAlt: { vi: "Minh chứng Giải Vàng WICO 2026 của SafeStride", en: "SafeStride WICO 2026 Gold Award evidence" },
+    relatedWork: "safestride",
+  },
+  {
+    category: "project", year: 2025, featuredOrder: 2,
+    scope: { vi: "NASA Space Apps · Ninh Bình", en: "NASA Space Apps · Ninh Binh" },
+    title: { vi: "BloomWatch · Arts & Technology Award", en: "BloomWatch · Arts & Technology Award" },
+    description: { vi: "Chứng nhận hạng mục Nghệ thuật & Công nghệ của nhóm Bluemarble tại NASA Space Apps Ninh Bình 2025.", en: "Arts & Technology certificate for the Bluemarble team at NASA Space Apps Ninh Binh 2025." },
+    image: "/images/work/bloomwatch/arts-technology-award.png",
+    imageAlt: { vi: "Ghi nhận Arts & Technology Award của BloomWatch", en: "BloomWatch Arts & Technology Award recognition" },
+    relatedWork: "bloomwatch",
+  },
+  {
+    category: "project", year: 2026, featuredOrder: 3,
+    scope: { vi: "Cuộc thi · Đại học Giao thông Vận tải", en: "Competition · University of Transport and Communications" },
+    title: { vi: "ECOMeSort · Giải Ba", en: "ECOMeSort · Third Prize" },
+    description: { vi: "Giải Ba cuộc thi ý tưởng bảo vệ môi trường trong lĩnh vực giao thông vận tải năm 2026.", en: "Third Prize in the 2026 Environmental Protection Ideas in the Transport Sector competition." },
+    image: "/images/work/ecomesort/certificates.png",
+    imageAlt: { vi: "Giấy chứng nhận Giải Ba của ECOMeSort", en: "ECOMeSort Third Prize certificate" },
+    relatedWork: "ecomesort",
+  },
+  ...homeAcademicAwards.map((award) => ({
+    category: "academic" as const,
+    year: 2022,
+    scope: award.description,
+    title: award.title,
+    description: award.description,
+    image: `/images/academic/${award.id}.webp`,
+    imageAlt: { vi: `Chứng nhận ${award.title.vi}`, en: `${award.title.en} certificate` },
+  })),
+  {
+    category: "community", year: 2026,
+    scope: { vi: "Đoàn trường Đại học Giao thông Vận tải", en: "University of Transport and Communications Youth Union" },
+    title: { vi: "Tình nguyện vì cộng đồng · 2026", en: "Community volunteering · 2026" },
+    description: { vi: "Giấy khen hoạt động tình nguyện từ Đoàn trường Đại học Giao thông Vận tải.", en: "Volunteer recognition from the University of Transport and Communications Youth Union." },
+    image: "/images/community/recognition/community-volunteer-merit-2026.jpg",
+    imageAlt: { vi: "Giấy khen hoạt động tình nguyện vì cộng đồng năm 2026", en: "Community volunteer certificate of merit, 2026" },
+  },
+];

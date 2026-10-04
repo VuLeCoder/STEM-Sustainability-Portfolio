@@ -21,6 +21,7 @@ export const siteContent={
     home: { vi: "Trang chủ",en: "Home" },
     about: { vi: "Về tôi",en: "About" },
     projects: { vi: "Công việc",en: "Work" },
+    activities: { vi: "Bộ sưu tập",en: "Gallery" },
     contact: { vi: "Liên hệ",en: "Contact" },
   },
   ui: {
