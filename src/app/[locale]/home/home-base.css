@@ -34,7 +34,6 @@
 }
 .home-hero-copy h1 {
   margin-top: 24px;
-  max-width: 13ch;
   font-family: var(--font-sans);
   font-size: clamp(40px, 5.5vw, 80px);
   font-weight: 600;
