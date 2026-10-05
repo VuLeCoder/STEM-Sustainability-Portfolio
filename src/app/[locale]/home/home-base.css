@@ -28,7 +28,7 @@
   border-radius: 24px;
   background: var(--home-tint);
   color: var(--home-accent-deep);
-  font-size: 13px;
+  font-size: 15px;
   font-weight: 500;
   line-height: 1.6;
 }
@@ -111,7 +111,7 @@
   border-radius: 999px;
   background: var(--home-tint);
   color: var(--home-accent-deep);
-  font-size: 14px;
+  font-size: 15px;
   font-weight: 500;
 }
 .home-about h2 {
