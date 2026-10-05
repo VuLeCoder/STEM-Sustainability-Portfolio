@@ -62,7 +62,7 @@
 
 /* Hero: prominent portrait balanced with readable supporting copy. */
 .home-page .home-hero-grid { grid-template-columns: minmax(0, 1fr) clamp(280px, 30vw, 400px); gap: clamp(36px, 4vw, 56px); }
-.home-page .home-hero-copy h1 { margin-top: 24px; font-size: clamp(40px, 5.2vw, 68px); }
+.home-page .home-hero-copy h1 { margin-top: 24px; font-size: clamp(24px, 4.5vw, 62px); white-space: nowrap; }
 .home-page .home-positioning { max-width: 65ch; font-size: 17px; line-height: 1.75; }
 .home-page .home-portrait-wrap { width: 100%; max-width: 400px; justify-self: end; }
 .home-page .home-portrait-wrap::before {
@@ -253,6 +253,7 @@
 }
 @media (max-width: 767px) {
   .home-page .home-hero-grid { grid-template-columns: 1fr; gap: 40px; }
+  .home-page .home-hero-copy h1 { font-size: clamp(20px, 6.5vw, 40px); }
   .home-page .home-portrait-wrap { max-width: 300px; justify-self: center; }
   .home-page :is(.home-about-pillars, .home-research-evidence, .home-projects-grid, .home-impact-grid) { grid-template-columns: 1fr; }
   .home-page .home-projects-grid { gap: 32px; }
