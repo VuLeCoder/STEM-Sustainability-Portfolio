@@ -372,7 +372,10 @@ export const workPhotos: Record<string, string[]> = {
     "/images/work/dual-image/vnict-presentation.jpeg"
   ],
   "safestride": [
-    "/images/work/safestride/wico-gold-award.jpeg"
+    "/images/work/safestride/wico-gold-award.jpeg",
+    "/images/work/safestride/team-at-hanoi-blind-association.jpg",
+    "/images/work/safestride/team-working-session.jpg",
+    "/images/work/safestride/team-with-project-presentation.jpg"
   ],
   "ecome": [
     "/images/work/ecome/community-certificate.jpg",
