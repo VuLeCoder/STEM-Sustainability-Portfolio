@@ -14,7 +14,12 @@ export function HomeCommunityImpact({ locale }: { locale: Locale }) {
     {
       title: vi ? "Cộng đồng & lãnh đạo" : "Community & leadership",
       items: [
-        { title: "ECOMe", description: vi ? "Sáng lập & điều phối · Môi trường, nước sạch và cứu trợ thiên tai" : "Founder & coordinator · Environment, clean water, and disaster relief", photos: [{ src: "/images/work/ecome/community-certificate.jpg", caption: vi ? "Chứng nhận hoạt động cộng đồng ECOMe" : "ECOMe community activity certificate" }] },
+        { title: "ECOMe", description: vi ? "Sáng lập & điều phối · Môi trường, nước sạch và cứu trợ thiên tai" : "Founder & coordinator · Environment, clean water, and disaster relief", photos: [
+          { src: "/images/work/ecome/community-certificate.jpg", caption: vi ? "Chứng nhận hoạt động cộng đồng ECOMe" : "ECOMe community activity certificate" },
+          { src: "/images/work/ecome/ecome-community-event-group.jpg", caption: vi ? "Nhóm ECOMe tại sự kiện cộng đồng" : "ECOMe group at a community event" },
+          { src: "/images/work/ecome/cam-la-pagoda-community-visit.jpg", caption: vi ? "Hoạt động cộng đồng tại chùa Cẩm La, Quảng Ninh" : "Community visit to Cam La Pagoda, Quang Ninh" },
+          { src: "/images/work/ecome/colors-of-intelligence-quang-ninh-poster.jpg", caption: vi ? "Poster Hành trình kết nối sắc màu trí tuệ tại Quảng Ninh" : "Colors of Intelligence journey poster, Quang Ninh" },
+        ] },
         { title: "CypherCharm Club", description: vi ? "Thành viên · An ninh mạng & mật mã" : "Member · Cybersecurity & cryptography", photos: [] },
       ],
     },

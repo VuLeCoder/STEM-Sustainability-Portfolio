@@ -91,10 +91,10 @@ export const works: WorkItem[] = [
     },
     "featuredOrder": 3,
     "image": {
-      "src": "/images/work/ecome/community-certificate.jpg",
+      "src": "/images/work/ecome/ecome-community-event-group.jpg",
       "alt": {
-        "vi": "Hoạt động cộng đồng trong chiến dịch ECOMe",
-        "en": "Community activities during an ECOMe campaign"
+        "vi": "Nhóm ECOMe tại một sự kiện cộng đồng",
+        "en": "ECOMe group at a community event"
       }
     },
     "href": "https://www.facebook.com/61582875703926/posts/122134261443095856/",

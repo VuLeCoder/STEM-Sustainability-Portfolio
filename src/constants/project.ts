@@ -134,7 +134,7 @@ export const projects=[
         href: "https://www.facebook.com/61582875703926/posts/122134261443095856/",
       },
     ],
-    coverImage: "/images/work/ecome/cover.png",
+    coverImage: "/images/work/ecome/ecome-community-event-group.jpg",
   },
   {
     slug: "ecomesort",

@@ -379,9 +379,9 @@ export const workPhotos: Record<string, string[]> = {
   ],
   "ecome": [
     "/images/work/ecome/community-certificate.jpg",
-    "/images/work/ecome/community-event.jpeg",
-    "/images/work/ecome/volunteer-program.jpeg",
-    "/images/work/ecome/community-outreach.jpeg"
+    "/images/work/ecome/ecome-community-event-group.jpg",
+    "/images/work/ecome/cam-la-pagoda-community-visit.jpg",
+    "/images/work/ecome/colors-of-intelligence-quang-ninh-poster.jpg",
   ],
   "ecomesort": [
     "/images/work/ecomesort/recognition.png",
