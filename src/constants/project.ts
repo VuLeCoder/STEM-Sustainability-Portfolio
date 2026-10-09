@@ -163,7 +163,12 @@ export const projects=[
       vi: "Giải Ba · 2026",
       en: "Third Prize · 2026",
     },
-    externalLinks: [],
+    externalLinks: [
+      {
+        label: { vi: "Bài viết dự án",en: "Project post" },
+        href: "https://www.youtube.com/watch?v=hEAMiLnTbEI",
+      },
+    ],
     coverImage: "/images/work/ecomesort/cover.png",
   },
   {
@@ -196,7 +201,12 @@ export const projects=[
       vi: "NASA Space Apps 2025 · Global Nominee",
       en: "NASA Space Apps 2025 · Global Nominee",
     },
-    externalLinks: [],
+    externalLinks: [
+      {
+        label: { vi: "Bài viết dự án",en: "Project post" },
+        href: "https://vietnamnet.vn/90-doi-tranh-tai-tai-nasa-space-apps-challenge-2025-thap-lua-dam-me-stem-2450162.html",
+      },
+    ],
     coverImage: "/images/work/bloomwatch/space-apps-team.jpeg",
   },
   {
