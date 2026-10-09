@@ -270,11 +270,8 @@
 .home-page .home-about-scores dt { color: var(--home-muted); font-size: 15px; line-height: 1.4; }
 .home-page .home-about-scores dd { margin: 8px 0 0; font-family: var(--font-display); font-size: clamp(24px, 3vw, 36px); font-variant-numeric: tabular-nums; }
 
-.home-page .home-projects-image { position: relative; display: block; aspect-ratio: 16 / 9; overflow: hidden; border-bottom: 1px solid var(--home-line); background: var(--home-paper-alt); }
-.home-page .home-projects-image img { object-fit: cover; transition: transform 300ms ease; }
-@media (hover: hover) and (pointer: fine) {
-  .home-page .home-projects-card:hover .home-projects-image img { transform: scale(1.025); }
-}
+.home-page .home-projects-image { position: relative; display: block; flex: none; width: 100%; aspect-ratio: 16 / 9; overflow: hidden; border-bottom: 1px solid var(--home-line); background: var(--home-paper-alt); }
+.home-page .home-projects-image img { object-fit: contain; object-position: center; }
 
 .home-page .home-research-link { display: inline-flex; align-items: center; gap: 16px; min-height: 44px; margin-top: 16px; color: var(--home-accent-deep); font-size: 15px; font-weight: 600; text-decoration: underline; text-decoration-color: transparent; }
 .home-page .home-research-link:hover { color: var(--home-on-dark); text-decoration-color: currentColor; }
@@ -304,8 +301,6 @@
   .home-page .home-projects-card-footer .home-projects-link > span { transition: none; }
   .home-page .home-projects-card:hover { translate: none; }
   .home-page .home-projects-card:hover .home-projects-card-footer .home-projects-link > span { transform: none; }
-  .home-page .home-projects-image img { transition: none; }
-  .home-page .home-projects-card:hover .home-projects-image img { transform: none; }
 }
 
 /* Keep the supporting evidence quieter than the project and research sections. */

@@ -36,7 +36,7 @@ export function HomeProjects({ locale }: { locale: Locale }) {
                       <span>{project.title[locale]}</span>
                       <small>{vi ? "Ảnh dự án đang cập nhật" : "Project image coming soon"}</small>
                     </span>
-                  ) : <Image src={coverImage} alt="" fill sizes="(max-width: 767px) 100vw, 50vw" style={project.slug === "vex-v5-robotics" ? { objectFit: "contain" } : undefined} />}
+                  ) : <Image src={coverImage} alt="" fill sizes="(max-width: 767px) 100vw, 50vw" />}
                 </Link>
                 <div className="home-projects-copy">
                   <h3><Link href={`/${locale}/works#${project.slug}`}>{project.title[locale]}</Link></h3>
