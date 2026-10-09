@@ -74,11 +74,12 @@ export const works: WorkItem[] = [
         "en": "Team Bluemarble at Space Apps Ninh Binh 2025"
       }
     },
-    "href": "mailto:nguyencxphuc@gmail.com?subject=Request%20information%3A%20BloomWatch",
+    "href": "https://vietnamnet.vn/90-doi-tranh-tai-tai-nasa-space-apps-challenge-2025-thap-lua-dam-me-stem-2450162.html",
     "cta": {
-      "vi": "Yêu cầu thông tin",
-      "en": "Request information"
-    }
+      "vi": "Bài viết dự án",
+      "en": "Project post"
+    },
+    "external": true
   },
   {
     "slug": "ecome",
@@ -129,11 +130,12 @@ export const works: WorkItem[] = [
       "vi": "Giải Ba cuộc thi Ý tưởng BVMT ngành GTVT 2026 · AI for Good Vietnam 2026",
       "en": "Third Prize, 2026 Transport Environmental Ideas Competition · AI for Good Vietnam 2026"
     },
-    "href": "mailto:nguyencxphuc@gmail.com?subject=Request%20information%3A%20ECOMeSort",
+    "href": "https://www.youtube.com/watch?v=hEAMiLnTbEI",
     "cta": {
-      "vi": "Yêu cầu thông tin",
-      "en": "Request information"
-    }
+      "vi": "Video dự án",
+      "en": "Project video"
+    },
+    "external": true
   },
   {
     "slug": "vex-v5-robotics",
