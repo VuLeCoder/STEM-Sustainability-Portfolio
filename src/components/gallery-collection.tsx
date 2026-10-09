@@ -23,11 +23,18 @@ function getEntries(locale: Locale): Entry[] {
     .sort((a, b) => (a.featuredOrder ?? Infinity) - (b.featuredOrder ?? Infinity) || b.year - a.year)
     .map((item): Entry => ({
       id: item.image,
-      category: item.category === "community" ? "recognition" : "award",
+      category: item.category === "community" || item.category === "recognition" ? "recognition" : "award",
       title: item.title[locale],
       description: item.description[locale],
       detail: `${item.year} · ${item.scope[locale]}`,
-      images: [{ src: item.image, alt: item.imageAlt[locale] }],
+      images: [
+        { src: item.image, alt: item.imageAlt[locale] },
+        ...(item.additionalImages ?? []).map(image => ({
+          src: image.src,
+          alt: image.alt[locale],
+          caption: image.caption[locale],
+        })),
+      ],
       relatedWork: item.relatedWork,
       featured: Boolean(item.featuredOrder),
     }));

@@ -61,6 +61,14 @@ export const activityGallery: ActivityItem[] = [
     relatedWork: "bloomwatch",
   },
   {
+    title: { vi: "VEX V5 · New Year's Mayhem 2026", en: "VEX V5 · New Year's Mayhem 2026" },
+    description: { vi: "Tham gia sự kiện VEX V5 New Year's Mayhem tại TP. Hồ Chí Minh.", en: "Participated in the VEX V5 New Year's Mayhem event in Ho Chi Minh City." },
+    image: "/images/work/vex/vex-new-years-mayhem-participation-2026.png",
+    imageAlt: { vi: "Chứng nhận tham gia VEX V5 New Year's Mayhem 2026 của Nguyễn Cao Xuân Phúc", en: "Nguyen Cao Xuan Phuc's VEX V5 New Year's Mayhem 2026 participation certificate" },
+    imageCaption: { vi: "Chứng nhận tham gia · 2026", en: "Participation certificate · 2026" },
+    relatedWork: "vex-v5-robotics",
+  },
+  {
     title: { vi: "Tập huấn Generative AI", en: "Generative AI training" },
     description: { vi: "Đồng tổ chức buổi tập huấn AI tạo sinh cho cán bộ Đoàn–Hội tháng 3/2026.", en: "Co-organized generative AI training for student-union officers in March 2026." },
     image: "/images/community/education/genai-training-volunteer-2026.jpg",
@@ -96,10 +104,11 @@ export const activityGallery: ActivityItem[] = [
 ];
 
 export type AwardItem = GalleryItem & {
-  category: "project" | "academic" | "community";
+  category: "project" | "academic" | "community" | "recognition";
   year: number;
   scope: Localized<string>;
   featuredOrder?: number;
+  additionalImages?: ActivityImage[];
 };
 
 export const awardGallery: AwardItem[] = [
@@ -119,6 +128,12 @@ export const awardGallery: AwardItem[] = [
     description: { vi: "Chứng nhận Giải Nhất của nhóm Bluemarble tại NASA Space Apps Ninh Bình 2025.", en: "First Prize certificate for team Bluemarble at NASA Space Apps Ninh Binh 2025." },
     image: "/images/work/bloomwatch/bluemarble-first-prize-certificate.png",
     imageAlt: { vi: "Giấy chứng nhận Giải Nhất của nhóm Bluemarble tại NASA Space Apps Ninh Bình 2025", en: "Team Bluemarble's First Prize certificate at NASA Space Apps Ninh Binh 2025" },
+    additionalImages: [{
+      src: "/images/work/bloomwatch/bluemarble-first-prize-ceremony.jpeg",
+      alt: { vi: "Nhóm Bluemarble nhận Giải Nhất tại NASA Space Apps Ninh Bình 2025", en: "Team Bluemarble receiving First Prize at NASA Space Apps Ninh Binh 2025" },
+      caption: { vi: "Trao Giải Nhất · 2025", en: "First Prize ceremony · 2025" },
+      kind: "photo",
+    }],
     relatedWork: "bloomwatch",
   },
   {
@@ -129,6 +144,42 @@ export const awardGallery: AwardItem[] = [
     image: "/images/work/ecomesort/certificates.png",
     imageAlt: { vi: "Giấy chứng nhận Giải Ba của ECOMeSort", en: "ECOMeSort Third Prize certificate" },
     relatedWork: "ecomesort",
+  },
+  {
+    category: "project", year: 2026,
+    scope: { vi: "Giải Vô địch Quốc gia VEX V5 Robotics", en: "Vietnam VEX V5 Robotics National Championship" },
+    title: { vi: "VEX V5 Robotics · Build Award", en: "VEX V5 Robotics · Build Award" },
+    description: { vi: "Chứng nhận Build Award của Nguyễn Cao Xuân Phúc cùng đội NGS Hogrider tại vòng chung kết quốc gia năm 2026.", en: "Build Award certificate for Nguyen Cao Xuan Phuc and team NGS Hogrider at the 2026 national finals." },
+    image: "/images/work/vex/vex-build-award-certificate-2026.png",
+    imageAlt: { vi: "Chứng nhận Build Award tại Giải Vô địch Quốc gia VEX V5 Robotics 2026", en: "Build Award certificate at the Vietnam VEX V5 Robotics National Championship 2026" },
+    relatedWork: "vex-v5-robotics",
+  },
+  {
+    category: "project", year: 2026,
+    scope: { vi: "VEX V5 Push Back · vòng loại miền Nam", en: "VEX V5 Push Back · Southern qualifier" },
+    title: { vi: "VEX V5 Robotics · Innovate Award", en: "VEX V5 Robotics · Innovate Award" },
+    description: { vi: "Hình ảnh cúp Innovate Award tại giải VEX V5 Push Back mùa 2025–2026.", en: "Innovate Award trophy from the 2025–2026 VEX V5 Push Back competition." },
+    image: "/images/work/vex/vex-push-back-innovate-award-trophy.jpeg",
+    imageAlt: { vi: "Cúp Innovate Award tại vòng loại miền Nam VEX V5 Push Back", en: "Innovate Award trophy at the VEX V5 Push Back Southern qualifier" },
+    relatedWork: "vex-v5-robotics",
+  },
+  {
+    category: "recognition", year: 2025,
+    scope: { vi: "NASA Space Apps · Ninh Bình", en: "NASA Space Apps · Ninh Binh" },
+    title: { vi: "BloomWatch · Global Nominee", en: "BloomWatch · Global Nominee" },
+    description: { vi: "Bảng ghi nhận nhóm Bluemarble được đề cử toàn cầu tại NASA Space Apps Challenge Ninh Bình 2025.", en: "Recognition of team Bluemarble's Global Nominee status at NASA Space Apps Challenge Ninh Binh 2025." },
+    image: "/images/work/bloomwatch/bluemarble-global-nominee-recognition.jpeg",
+    imageAlt: { vi: "Bảng ghi nhận nhóm Bluemarble được đề cử toàn cầu tại NASA Space Apps Ninh Bình 2025", en: "Plaque recognizing team Bluemarble as a Global Nominee at NASA Space Apps Ninh Binh 2025" },
+    relatedWork: "bloomwatch",
+  },
+  {
+    category: "recognition", year: 2026,
+    scope: { vi: "Viện Công nghệ Thông tin · VAST", en: "Institute of Information Technology · VAST" },
+    title: { vi: "Xác nhận thực tập tại VAST", en: "VAST internship confirmation" },
+    description: { vi: "Giấy xác nhận kỳ thực tập từ tháng 3 đến tháng 9/2026 tại Viện Công nghệ Thông tin, VAST.", en: "Confirmation of the March–September 2026 internship at the Institute of Information Technology, VAST." },
+    image: "/images/work/vast/vast-iit-internship-confirmation-2026.png",
+    imageAlt: { vi: "Giấy xác nhận thực tập tại Viện Công nghệ Thông tin, VAST năm 2026", en: "2026 internship confirmation from the Institute of Information Technology, VAST" },
+    relatedWork: "vast-internship",
   },
   ...homeAcademicAwards.map((award) => ({
     category: "academic" as const,
