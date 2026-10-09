@@ -1,6 +1,8 @@
 import Link from "next/link";
+import Image from "next/image";
 import type { Locale } from "@/constants/common";
 import { homeNarrative } from "@/constants/home";
+import { works } from "@/constants/works";
 
 export function HomeResearch({ locale }: { locale: Locale }) {
   const content = homeNarrative.research;
@@ -30,20 +32,30 @@ export function HomeResearch({ locale }: { locale: Locale }) {
           <p>{content.description[locale]}</p>
         </div>
         <div className="home-research-evidence" data-reveal>
-          {publications.map((publication) => (
-            <article className="home-research-row" key={publication.slug} aria-labelledby={`home-${publication.slug}`}>
-              <span className="home-about-label home-research-venue">{publication.venue}</span>
-              <div className="home-research-placeholder" aria-hidden="true" />
-              <div className="home-research-copy">
-              <h3 id={`home-${publication.slug}`}>{publication.title}</h3>
-              <p className="home-research-role">{publication.role}</p>
-              <p className="home-research-description">{publication.description}</p>
-              <Link className="home-research-link" href={`/${locale}/works#${publication.slug}`} aria-label={`${vi ? "Khám phá nghiên cứu" : "Explore research"}: ${publication.title}`}>
-                {vi ? "Khám phá nghiên cứu" : "Explore research"} <span aria-hidden="true">↗</span>
-              </Link>
-              </div>
-            </article>
-          ))}
+          {publications.map((publication) => {
+            const image = works.find(item => item.slug === publication.slug)?.image;
+            return (
+              <article className="home-research-row" key={publication.slug} aria-labelledby={`home-${publication.slug}`}>
+                <span className="home-about-label home-research-venue">{publication.venue}</span>
+                <div className="home-research-placeholder">
+                  {image && <Image
+                    src={image.src}
+                    alt={image.alt[locale]}
+                    fill
+                    sizes="(max-width: 767px) 100vw, 40vw"
+                  />}
+                </div>
+                <div className="home-research-copy">
+                  <h3 id={`home-${publication.slug}`}>{publication.title}</h3>
+                  <p className="home-research-role">{publication.role}</p>
+                  <p className="home-research-description">{publication.description}</p>
+                  <Link className="home-research-link" href={`/${locale}/works#${publication.slug}`} aria-label={`${vi ? "Khám phá nghiên cứu" : "Explore research"}: ${publication.title}`}>
+                    {vi ? "Khám phá nghiên cứu" : "Explore research"} <span aria-hidden="true">↗</span>
+                  </Link>
+                </div>
+              </article>
+            );
+          })}
         </div>
         <article className="home-research-internship" data-reveal aria-labelledby="home-internship-title">
           <div className="home-research-placeholder" aria-hidden="true" />

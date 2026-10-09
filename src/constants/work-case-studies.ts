@@ -371,6 +371,11 @@ export const workPhotos: Record<string, string[]> = {
   "dual-image-reversible-data-hiding": [
     "/images/work/dual-image/vnict-presentation.jpeg"
   ],
+  "uav-gcs-framework": [
+    "/images/work/uav/uav-ground-control-station-test.jpeg",
+    "/images/work/uav/uav-team-drone-discussion.jpeg",
+    "/images/work/uav/uav-drone-equipment-inspection.jpeg"
+  ],
   "safestride": [
     "/images/work/safestride/wico-gold-award.jpeg",
     "/images/work/safestride/team-at-hanoi-blind-association.jpg",
@@ -386,5 +391,37 @@ export const workPhotos: Record<string, string[]> = {
   "ecomesort": [
     "/images/work/ecomesort/recognition.png",
     "/images/work/ecomesort/certificates.png"
+  ],
+  "vex-v5-robotics": [
+    "/images/work/vex/vex-build-award-certificate-2026.png",
+    "/images/work/vex/vex-push-back-innovate-award-trophy.jpeg",
+    "/images/work/vex/vex-new-years-mayhem-participation-2026.png"
   ]
+};
+
+export const workPhotoCaptions: Record<string, Localized<string>> = {
+  "/images/work/uav/uav-ground-control-station-test.jpeg": {
+    vi: "Thử nghiệm trạm điều khiển mặt đất cùng UAV",
+    en: "Testing the ground control station with a UAV"
+  },
+  "/images/work/uav/uav-team-drone-discussion.jpeg": {
+    vi: "Nhóm trao đổi về cấu hình UAV",
+    en: "Team discussion around the UAV setup"
+  },
+  "/images/work/uav/uav-drone-equipment-inspection.jpeg": {
+    vi: "Kiểm tra thiết bị UAV và bộ điều khiển",
+    en: "Inspecting the UAV and its controller"
+  },
+  "/images/work/vex/vex-build-award-certificate-2026.png": {
+    vi: "Chứng nhận Build Award tại Giải Vô địch Quốc gia VEX V5 Robotics 2026",
+    en: "Build Award certificate from the Vietnam VEX V5 Robotics National Championship 2026"
+  },
+  "/images/work/vex/vex-push-back-innovate-award-trophy.jpeg": {
+    vi: "Cúp Innovate Award của giải VEX V5 Push Back",
+    en: "Innovate Award trophy from a VEX V5 Push Back event"
+  },
+  "/images/work/vex/vex-new-years-mayhem-participation-2026.png": {
+    vi: "Chứng nhận tham gia sự kiện VEX V5 New Year's Mayhem 2026",
+    en: "Participation certificate for the VEX V5 New Year's Mayhem 2026 event"
+  }
 };

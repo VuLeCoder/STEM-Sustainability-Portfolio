@@ -27,7 +27,7 @@ export function HomeProjects({ locale }: { locale: Locale }) {
           {featuredProjects.map((preview) => {
             const project = works.find((item) => item.slug === preview.slug);
             if (!project) return null;
-            const coverImage = siteContent.projects.find(item => item.slug === project.slug)?.coverImage;
+            const coverImage = siteContent.projects.find(item => item.slug === project.slug)?.coverImage ?? project.image?.src;
             return (
               <article className="home-projects-card" key={project.slug} data-reveal>
                 <Link className="home-projects-image" href={`/${locale}/works#${project.slug}`} aria-hidden="true" tabIndex={-1}>
@@ -36,7 +36,7 @@ export function HomeProjects({ locale }: { locale: Locale }) {
                       <span>{project.title[locale]}</span>
                       <small>{vi ? "Ảnh dự án đang cập nhật" : "Project image coming soon"}</small>
                     </span>
-                  ) : <Image src={coverImage} alt="" fill sizes="(max-width: 767px) 100vw, 50vw" />}
+                  ) : <Image src={coverImage} alt="" fill sizes="(max-width: 767px) 100vw, 50vw" style={project.slug === "vex-v5-robotics" ? { objectFit: "contain" } : undefined} />}
                 </Link>
                 <div className="home-projects-copy">
                   <h3><Link href={`/${locale}/works#${project.slug}`}>{project.title[locale]}</Link></h3>

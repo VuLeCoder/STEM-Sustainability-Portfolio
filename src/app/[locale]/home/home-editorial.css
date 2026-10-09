@@ -162,7 +162,8 @@
 .home-page .home-research-row > .home-research-venue { grid-area: venue; line-height: 1.6; }
 .home-page .home-research-row > .home-research-copy { grid-area: copy; align-self: start; }
 .home-page .home-research-row .home-research-copy h3 { margin-top: 0; }
-.home-page .home-research-placeholder { width: 100%; aspect-ratio: 4 / 3; background: #fff; }
+.home-page .home-research-placeholder { position: relative; width: 100%; aspect-ratio: 4 / 3; overflow: hidden; background: #fff; }
+.home-page .home-research-placeholder img { object-fit: cover; }
 .home-page .home-research-copy { min-width: 0; }
 .home-page .home-research-copy h3 { margin: 16px 0; font-size: clamp(24px, 2.5vw, 32px); line-height: 1.3; }
 .home-page .home-research-copy p { color: var(--home-muted); font-size: 16px; line-height: 1.7; }

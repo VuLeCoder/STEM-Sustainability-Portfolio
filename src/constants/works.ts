@@ -147,6 +147,13 @@ export const works: WorkItem[] = [
       "vi": "Build Award · Giải Vô địch Quốc gia VEX V5 Robotics 2026",
       "en": "Build Award · Vietnam VEX V5 Robotics National Championship 2026"
     },
+    "image": {
+      "src": "/images/work/vex/vex-build-award-certificate-2026.png",
+      "alt": {
+        "vi": "Chứng nhận Build Award tại Giải Vô địch Quốc gia VEX V5 Robotics 2026",
+        "en": "Build Award certificate from the Vietnam VEX V5 Robotics National Championship 2026"
+      }
+    },
     "href": "mailto:nguyencxphuc@gmail.com?subject=Request%20information%3A%20VEX%20V5%20Robotics",
     "cta": {
       "vi": "Yêu cầu thông tin",
@@ -205,6 +212,13 @@ export const works: WorkItem[] = [
     "result": {
       "vi": "Trình bày tại Hội thảo Quốc gia về Hành lang bay & Quản lý không gian tầm thấp · Hà Nội",
       "en": "Presented at the National Conference on Flight Corridors & Low-Altitude Airspace Management · Hanoi"
+    },
+    "image": {
+      "src": "/images/work/uav/uav-ground-control-station-test.jpeg",
+      "alt": {
+        "vi": "Thử nghiệm trạm điều khiển mặt đất cùng UAV",
+        "en": "Testing the ground control station with a UAV"
+      }
     },
     "href": "mailto:nguyencxphuc@gmail.com?subject=UTM%20paper%20request",
     "cta": {

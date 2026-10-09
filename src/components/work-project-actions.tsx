@@ -5,7 +5,7 @@ import Link from "next/link";
 import { useEffect, useId, useRef, useState } from "react";
 import type { Locale } from "@/constants/common";
 import type { WorkItem } from "@/constants/works";
-import { workCaseStudies, workPhotos } from "@/constants/work-case-studies";
+import { workCaseStudies, workPhotoCaptions, workPhotos } from "@/constants/work-case-studies";
 
 export function WorkProjectActions({ item, locale }: { item: WorkItem; locale: Locale }) {
   const vi = locale === "vi";
@@ -17,6 +17,7 @@ export function WorkProjectActions({ item, locale }: { item: WorkItem; locale: L
   const [photo, setPhoto] = useState(0);
   const sections = workCaseStudies[item.slug] ?? [];
   const photos = workPhotos[item.slug] ?? [];
+  const photoCaption = workPhotoCaptions[photos[photo]]?.[locale];
   const externalHref = /^https?:\/\//.test(item.href) ? item.href : null;
 
   useEffect(() => {
@@ -45,7 +46,7 @@ export function WorkProjectActions({ item, locale }: { item: WorkItem; locale: L
           <h3>{section.title[locale]}</h3>
           <p>{section.body[locale]}</p>
         </section>)}</div>}
-        {mode === "photos" && photos.length > 0 && <div className="works-gallery"><div className="works-gallery__image"><Image src={photos[photo]} alt={`${item.title[locale]} — ${vi ? "ảnh" : "photo"} ${photo + 1}`} fill sizes="(max-width: 767px) 90vw, 800px" style={{ objectFit: "contain" }} /></div><div className="works-gallery__controls"><button type="button" disabled={photo === 0} onClick={() => setPhoto(value => value - 1)} aria-label={vi ? "Ảnh trước" : "Previous photo"}>←</button><p role="status" aria-live="polite">{photo + 1} / {photos.length}</p><button type="button" disabled={photo === photos.length - 1} onClick={() => setPhoto(value => value + 1)} aria-label={vi ? "Ảnh tiếp theo" : "Next photo"}>→</button></div></div>}
+        {mode === "photos" && photos.length > 0 && <div className="works-gallery"><div className="works-gallery__image"><Image src={photos[photo]} alt={photoCaption ?? `${item.title[locale]} — ${vi ? "ảnh" : "photo"} ${photo + 1}`} fill sizes="(max-width: 767px) 90vw, 800px" style={{ objectFit: "contain" }} /></div>{photoCaption && <p className="works-gallery__caption">{photoCaption}</p>}<div className="works-gallery__controls"><button type="button" disabled={photo === 0} onClick={() => setPhoto(value => value - 1)} aria-label={vi ? "Ảnh trước" : "Previous photo"}>←</button><p role="status" aria-live="polite">{photo + 1} / {photos.length}</p><button type="button" disabled={photo === photos.length - 1} onClick={() => setPhoto(value => value + 1)} aria-label={vi ? "Ảnh tiếp theo" : "Next photo"}>→</button></div></div>}
       </div>
     </dialog>
   </>;
