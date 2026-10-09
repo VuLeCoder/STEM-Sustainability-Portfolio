@@ -102,9 +102,9 @@ export const narrative=[
 ] as const;
 
 export const academicScores = [
-  { id: "gpa-grade-10", label: { vi: "GPA lớp 10", en: "Grade 10 GPA" }, value: "9.1/10" },
+  { id: "gpa-grade-10", label: { vi: "GPA lớp 10", en: "Grade 10 GPA" }, value: "9.2/10" },
   { id: "gpa-grade-11", label: { vi: "GPA lớp 11", en: "Grade 11 GPA" }, value: "9.3/10" },
-  { id: "sat", label: { vi: "SAT", en: "SAT" }, value: "1440" },
+  { id: "sat", label: { vi: "SAT", en: "SAT" }, value: "1430" },
   { id: "sat-math", label: { vi: "SAT Math", en: "SAT Math" }, value: "800" },
   { id: "ielts", label: { vi: "IELTS Academic", en: "IELTS Academic" }, value: "7.5" },
   { id: "ap-physics-c", label: { vi: "AP Physics C", en: "AP Physics C" }, value: "5/5" },
