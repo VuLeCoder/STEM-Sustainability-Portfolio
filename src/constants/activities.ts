@@ -115,10 +115,10 @@ export const awardGallery: AwardItem[] = [
   {
     category: "project", year: 2025, featuredOrder: 2,
     scope: { vi: "NASA Space Apps · Ninh Bình", en: "NASA Space Apps · Ninh Binh" },
-    title: { vi: "BloomWatch · Arts & Technology Award", en: "BloomWatch · Arts & Technology Award" },
-    description: { vi: "Chứng nhận hạng mục Nghệ thuật & Công nghệ của nhóm Bluemarble tại NASA Space Apps Ninh Bình 2025.", en: "Arts & Technology certificate for the Bluemarble team at NASA Space Apps Ninh Binh 2025." },
-    image: "/images/work/bloomwatch/arts-technology-award.png",
-    imageAlt: { vi: "Ghi nhận Arts & Technology Award của BloomWatch", en: "BloomWatch Arts & Technology Award recognition" },
+    title: { vi: "BloomWatch · Giải Nhất", en: "BloomWatch · First Prize" },
+    description: { vi: "Chứng nhận Giải Nhất của nhóm Bluemarble tại NASA Space Apps Ninh Bình 2025.", en: "First Prize certificate for team Bluemarble at NASA Space Apps Ninh Binh 2025." },
+    image: "/images/work/bloomwatch/bluemarble-first-prize-certificate.png",
+    imageAlt: { vi: "Giấy chứng nhận Giải Nhất của nhóm Bluemarble tại NASA Space Apps Ninh Bình 2025", en: "Team Bluemarble's First Prize certificate at NASA Space Apps Ninh Binh 2025" },
     relatedWork: "bloomwatch",
   },
   {

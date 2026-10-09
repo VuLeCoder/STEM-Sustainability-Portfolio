@@ -207,7 +207,7 @@ export const projects=[
         href: "https://vietnamnet.vn/90-doi-tranh-tai-tai-nasa-space-apps-challenge-2025-thap-lua-dam-me-stem-2450162.html",
       },
     ],
-    coverImage: "/images/work/bloomwatch/space-apps-team.jpeg",
+    coverImage: "/images/work/bloomwatch/bluemarble-team-at-space-apps.jpeg",
   },
   {
     slug: "dual-image-reversible-data-hiding",

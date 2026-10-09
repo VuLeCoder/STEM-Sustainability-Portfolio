@@ -67,6 +67,13 @@ export const works: WorkItem[] = [
       "vi": "Giải Nhất · Arts & Technology Award · Global Nominee, NASA Space Apps 2025",
       "en": "First Prize · Arts & Technology Award · Global Nominee, NASA Space Apps 2025"
     },
+    "image": {
+      "src": "/images/work/bloomwatch/bluemarble-team-at-space-apps.jpeg",
+      "alt": {
+        "vi": "Nhóm Bluemarble tại Space Apps Ninh Bình 2025",
+        "en": "Team Bluemarble at Space Apps Ninh Binh 2025"
+      }
+    },
     "href": "mailto:nguyencxphuc@gmail.com?subject=Request%20information%3A%20BloomWatch",
     "cta": {
       "vi": "Yêu cầu thông tin",

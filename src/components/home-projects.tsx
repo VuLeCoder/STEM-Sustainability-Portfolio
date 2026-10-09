@@ -31,7 +31,7 @@ export function HomeProjects({ locale }: { locale: Locale }) {
             return (
               <article className="home-projects-card" key={project.slug} data-reveal>
                 <Link className="home-projects-image" href={`/${locale}/works#${project.slug}`} aria-hidden="true" tabIndex={-1}>
-                  {project.slug === "bloomwatch" || !coverImage ? (
+                  {!coverImage ? (
                     <span className="home-projects-image-pending">
                       <span>{project.title[locale]}</span>
                       <small>{vi ? "Ảnh dự án đang cập nhật" : "Project image coming soon"}</small>

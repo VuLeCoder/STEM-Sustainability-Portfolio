@@ -398,6 +398,13 @@ export const workCaseStudies: Record<string, { title: Localized<string>; body: L
 };
 
 export const workPhotos: Record<string, string[]> = {
+  "bloomwatch": [
+    "/images/work/bloomwatch/bluemarble-team-at-space-apps.jpeg",
+    "/images/work/bloomwatch/bluemarble-hackathon-work-session.jpeg",
+    "/images/work/bloomwatch/bluemarble-first-prize-ceremony.jpeg",
+    "/images/work/bloomwatch/bluemarble-first-prize-certificate.png",
+    "/images/work/bloomwatch/bluemarble-global-nominee-recognition.jpeg"
+  ],
   "dual-image-reversible-data-hiding": [
     "/images/work/dual-image/vnict-presentation.jpeg"
   ],
@@ -430,6 +437,26 @@ export const workPhotos: Record<string, string[]> = {
 };
 
 export const workPhotoCaptions: Record<string, Localized<string>> = {
+  "/images/work/bloomwatch/bluemarble-team-at-space-apps.jpeg": {
+    vi: "Nhóm Bluemarble tại Space Apps Ninh Bình 2025",
+    en: "Team Bluemarble at Space Apps Ninh Binh 2025"
+  },
+  "/images/work/bloomwatch/bluemarble-hackathon-work-session.jpeg": {
+    vi: "Nhóm Bluemarble làm việc trong cuộc thi hackathon",
+    en: "Team Bluemarble working during the hackathon"
+  },
+  "/images/work/bloomwatch/bluemarble-first-prize-ceremony.jpeg": {
+    vi: "Nhóm Bluemarble nhận Giải Nhất tại NASA Space Apps Ninh Bình 2025",
+    en: "Team Bluemarble receiving First Prize at NASA Space Apps Ninh Binh 2025"
+  },
+  "/images/work/bloomwatch/bluemarble-first-prize-certificate.png": {
+    vi: "Giấy chứng nhận Giải Nhất của nhóm Bluemarble",
+    en: "Team Bluemarble's First Prize certificate"
+  },
+  "/images/work/bloomwatch/bluemarble-global-nominee-recognition.jpeg": {
+    vi: "Bảng ghi nhận nhóm Bluemarble được đề cử toàn cầu",
+    en: "Recognition of team Bluemarble as a Global Nominee"
+  },
   "/images/work/uav/uav-ground-control-station-test.jpeg": {
     vi: "Thử nghiệm trạm điều khiển mặt đất cùng UAV",
     en: "Testing the ground control station with a UAV"
