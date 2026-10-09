@@ -240,6 +240,7 @@
   background: var(--home-green);
   color: var(--home-on-dark);
 }
+.home-page > section.home-impact[id] { padding-block: var(--home-section-start); }
 .home-page .home-impact .home-about-label { color: var(--home-on-dark); }
 .home-page .home-impact-grid { gap: 32px; }
 .home-page .home-impact-card { padding: 28px 0 0; border: 0; border-top: 1px solid var(--home-dark-line); border-radius: 0; background: transparent; }

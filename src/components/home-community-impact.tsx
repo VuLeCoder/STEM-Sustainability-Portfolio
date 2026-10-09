@@ -55,7 +55,16 @@ export function HomeCommunityImpact({ locale }: { locale: Locale }) {
             </li>)}</ul>
           </article>)}
         </div>
-        <Link className="home-impact-more" href={`/${locale}/gallery`}>{vi ? "Xem bộ sưu tập" : "Explore the gallery"} <span aria-hidden="true">↗</span></Link>
+        <div className="home-impact-gallery" data-reveal>
+          <div className="home-impact-gallery-copy">
+            <p>{vi ? "Nhìn lại hành trình" : "A closer look"}</p>
+            <h3>{vi ? "Những khoảnh khắc phía sau các hoạt động." : "The moments behind these activities."}</h3>
+          </div>
+          <Link className="home-impact-more" href={`/${locale}/gallery`}>
+            {vi ? "Khám phá bộ sưu tập" : "Explore the gallery"}
+            <span aria-hidden="true">↗</span>
+          </Link>
+        </div>
       </div>
     </section>
   );
