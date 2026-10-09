@@ -154,8 +154,8 @@ export const profileHome={
         id: "research",
         title: { vi: "Nghiên cứu khoa học",en: "Scientific research" },
         description: {
-          vi: "Đồng tác giả và trình bày báo cáo về giấu tin thuận nghịch tại VNICT 2025; tìm hiểu quy trình nghiên cứu và hệ thống AI ứng dụng qua kỳ thực tập tại Viện Công nghệ thông tin, VAST.",
-          en: "Co-authored and presented a paper on reversible data hiding at VNICT 2025; exploring research workflows and applied AI systems through an internship at the Institute of Information Technology, VAST.",
+          vi: "Đồng tác giả và trình bày báo cáo về giấu tin thuận nghịch tại VNICT 2025; thiết kế cơ khí và phát triển phần cứng cho dự án kính thông minh hỗ trợ người khiếm thị trong kỳ thực tập tại Viện Công nghệ Thông tin, VAST.",
+          en: "Co-authored and presented a paper on reversible data hiding at VNICT 2025; worked on mechanical design and hardware development for assistive smart glasses during an internship at the Institute of Information Technology, VAST.",
         },
       },
       {

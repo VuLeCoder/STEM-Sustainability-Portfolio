@@ -28,7 +28,7 @@ export const homeJourney = {
     },
     {
       id: "fieldwork",
-      period: { vi: "2026 · Nửa đầu năm", en: "2026 · First half" },
+      period: { vi: "2026", en: "2026" },
       title: { vi: "Học từ phần cứng và thực địa", en: "Learning through hardware and fieldwork" },
       description: {
         vi: "VEX V5, kỳ thực tập tại VAST và hoạt động ECOMe đưa tôi từ thử nghiệm kỹ thuật đến vận hành hệ thống và làm việc thực địa.",

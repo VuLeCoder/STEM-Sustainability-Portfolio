@@ -10,6 +10,7 @@ import { workCaseStudies, workPhotoCaptions, workPhotos } from "@/constants/work
 export function WorkProjectActions({ item, locale }: { item: WorkItem; locale: Locale }) {
   const vi = locale === "vi";
   const research = item.type === "research";
+  const experience = item.type === "experience";
   const requestHref = item.href.startsWith("/") ? `/${locale}${item.href}` : item.href;
   const dialog = useRef<HTMLDialogElement>(null);
   const titleId = useId();
@@ -36,12 +37,12 @@ export function WorkProjectActions({ item, locale }: { item: WorkItem; locale: L
     <div className="works-project-actions">
       {sections.length > 0 && <button type="button" className="works-action works-action--primary" onClick={() => setMode("study")} aria-haspopup="dialog">Case study <span aria-hidden="true">↗</span></button>}
       {photos.length > 0 && <button type="button" className="works-action" onClick={() => { setPhoto(0); setMode("photos"); }} aria-haspopup="dialog">{vi ? "Ảnh" : "Photos"} <span>{photos.length}</span></button>}
-      {research ? <Link className="works-action" href={requestHref} target={item.external ? "_blank" : undefined} rel={item.external ? "noopener noreferrer" : undefined} aria-label={`${item.cta[locale]}: ${item.title[locale]}`}>{item.cta[locale]} <span aria-hidden="true">{item.external ? "↗" : "→"}</span></Link> : externalHref && <a className="works-action" href={externalHref} target="_blank" rel="noopener noreferrer">{vi ? "Link ngoài" : "External link"} <span aria-hidden="true">↗</span></a>}
+      {item.download ? <a className="works-action" href={item.href} download={item.download} aria-label={`${item.cta[locale]}: ${item.title[locale]}`}>{item.cta[locale]} <span aria-hidden="true">↓</span></a> : research ? <Link className="works-action" href={requestHref} target={item.external ? "_blank" : undefined} rel={item.external ? "noopener noreferrer" : undefined} aria-label={`${item.cta[locale]}: ${item.title[locale]}`}>{item.cta[locale]} <span aria-hidden="true">{item.external ? "↗" : "→"}</span></Link> : externalHref && <a className="works-action" href={externalHref} target="_blank" rel="noopener noreferrer">{vi ? "Link ngoài" : "External link"} <span aria-hidden="true">↗</span></a>}
     </div>
     <dialog ref={dialog} className={`works-dialog${mode === "photos" ? " works-dialog--photos" : " works-dialog--study"}`} aria-labelledby={titleId} onCancel={() => setMode(null)} onClose={() => setMode(null)} onClick={event => { if (event.target === event.currentTarget) { const rect = event.currentTarget.getBoundingClientRect(); if (event.clientX < rect.left || event.clientX > rect.right || event.clientY < rect.top || event.clientY > rect.bottom) setMode(null); } }}>
       <div className="works-dialog__bar"><>{mode === "photos" ? <h2 id={titleId} className="works-dialog__photo-title"><strong>{item.title[locale]}</strong><span> - Photo gallery</span></h2> : <span>Case study</span>}</><button type="button" onClick={() => setMode(null)} aria-label={vi ? "Đóng popup" : "Close dialog"}>{mode === "photos" && (vi ? "Đóng" : "Close")} <span aria-hidden="true">×</span></button></div>
       <div className="works-dialog__content">
-        {mode === "study" && <header className="works-dialog__header"><p className="works-kicker">{item.type === "research" ? (vi ? "Nghiên cứu" : "Research") : (vi ? "Dự án" : "Project")}{item.year ? ` · ${item.year}` : ""}</p><h2 id={titleId}>{item.title[locale]}</h2><p>{item.description[locale]}</p></header>}
+        {mode === "study" && <header className="works-dialog__header"><p className="works-kicker">{experience ? (vi ? "Thực tập" : "Internship") : research ? (vi ? "Nghiên cứu" : "Research") : (vi ? "Dự án" : "Project")}{item.year ? ` · ${item.year}` : ""}</p><h2 id={titleId}>{item.title[locale]}</h2><p>{item.description[locale]}</p></header>}
         {mode === "study" && <div className="works-study">{sections.map((section, index) => <section key={index} className={`works-study__section${section.title.en === "Result" ? " works-study__section--result" : ""}${["What I learned", "Research experience"].includes(section.title.en) ? " works-study__section--reflection" : ""}`}>
           <h3>{section.title[locale]}</h3>
           <p>{section.body[locale]}</p>

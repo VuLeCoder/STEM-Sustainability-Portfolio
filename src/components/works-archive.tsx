@@ -7,7 +7,7 @@ import { works } from "@/constants/works";
 import { WorkCard } from "./work-card";
 
 export function WorksArchive({ locale, intro }: { locale: Locale; intro: ReactNode }) {
-  const [filter, setFilter] = useState<"all" | "project" | "research">("all");
+  const [filter, setFilter] = useState<"all" | "project" | "research" | "experience">("all");
   useEffect(() => {
     const revealWork = (hash: string) => {
       const item = works.find(work => hash === `#${work.slug}`);
@@ -25,7 +25,7 @@ export function WorksArchive({ locale, intro }: { locale: Locale; intro: ReactNo
   }, []);
   const vi = locale === "vi";
   const visible = works.filter(item => filter === "all" || item.type === filter);
-  const filters = [{ id: "all", label: vi ? "Tất cả" : "All" }, { id: "project", label: vi ? "Dự án" : "Projects" }, { id: "research", label: vi ? "Nghiên cứu" : "Research" }] as const;
+  const filters = [{ id: "all", label: vi ? "Tất cả" : "All" }, { id: "project", label: vi ? "Dự án" : "Projects" }, { id: "research", label: vi ? "Nghiên cứu" : "Research" }, { id: "experience", label: vi ? "Thực tập" : "Internship" }] as const;
   return <>
     <header className="works-hero">
       {intro}

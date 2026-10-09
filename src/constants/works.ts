@@ -3,7 +3,7 @@ import { projectRoles } from "./project";
 
 export type WorkItem = {
   slug: string;
-  type: "project" | "research";
+  type: "project" | "research" | "experience";
   year?: string;
   title: Localized<string>;
   description: Localized<string>;
@@ -12,6 +12,7 @@ export type WorkItem = {
   featuredOrder?: number;
   image?: { src: string; alt: Localized<string> };
   href: string;
+  download?: string;
   external?: boolean;
   cta: Localized<string>;
 };
@@ -161,6 +162,33 @@ export const works: WorkItem[] = [
     }
   },
   {
+    "slug": "vast-internship",
+    "type": "experience",
+    "year": "2026",
+    "title": {
+      "vi": "Thực tập tại VAST · Kính thông minh hỗ trợ người khiếm thị",
+      "en": "VAST Internship · Assistive Smart Glasses"
+    },
+    "description": {
+      "vi": "Thực tập tại Viện Công nghệ Thông tin, VAST từ tháng 3 đến tháng 9/2026. Thiết kế khung kính để bố trí camera, Raspberry Pi và âm thanh; cải thiện tản nhiệt và cân bằng trọng lượng cho thiết bị đeo.",
+      "en": "Interned at the Institute of Information Technology, VAST, from March to September 2026. Designed a glasses frame for the camera, Raspberry Pi and audio hardware, improving cooling and weight balance for wearable use."
+    },
+    "role": {
+      "vi": "Thiết kế cơ khí chính & phát triển phần cứng",
+      "en": "Main mechanical designer & hardware developer"
+    },
+    "result": {
+      "vi": "Theo đánh giá của người hướng dẫn, thiết kế tản nhiệt giúp giảm nhiệt độ vận hành hơn 15°C.",
+      "en": "According to the supervisor's evaluation, the cooling design lowered operating temperatures by more than 15°C."
+    },
+    "href": "/documents/vast-iit-internship-confirmation-evaluation-2026.pdf",
+    "download": "vast-iit-internship-confirmation-evaluation-2026.pdf",
+    "cta": {
+      "vi": "Tải giấy xác nhận & đánh giá (PDF)",
+      "en": "Download confirmation & evaluation (PDF)"
+    }
+  },
+  {
     "slug": "dual-image-reversible-data-hiding",
     "type": "research",
     "year": "2025",
@@ -229,6 +257,6 @@ export const works: WorkItem[] = [
 ];
 
 export const worksCopy = {
-  title: { vi: "Dự án & Nghiên cứu", en: "Projects & Research" },
-  description: { vi: "Các dự án và nghiên cứu về công nghệ hỗ trợ, AI ứng dụng, phần cứng và phát triển bền vững.", en: "Projects and research across assistive technology, applied AI, hardware and sustainability." },
+  title: { vi: "Dự án, nghiên cứu & thực tập", en: "Projects, research & internship" },
+  description: { vi: "Các dự án, nghiên cứu và kỳ thực tập về công nghệ hỗ trợ, AI ứng dụng, phần cứng và phát triển bền vững.", en: "Projects, research and an internship across assistive technology, applied AI, hardware and sustainability." },
 };

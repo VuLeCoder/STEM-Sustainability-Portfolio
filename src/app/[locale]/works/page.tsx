@@ -22,7 +22,7 @@ export default async function WorksPage({ params }: Props) {
         <p className="works-kicker">{vi ? "Hồ sơ công việc" : "Work"}</p>
         <h1>{worksCopy.title[locale]}</h1>
         <p className="works-hero__description">{worksCopy.description[locale]}</p>
-        <p className="works-hero__count">{works.filter(item => item.type === "project").length} {vi ? "dự án" : "projects"} <span aria-hidden="true">·</span> {works.filter(item => item.type === "research").length} {vi ? "công bố" : "publications"}</p>
+        <p className="works-hero__count">{works.filter(item => item.type === "project").length} {vi ? "dự án" : "projects"} <span aria-hidden="true">·</span> {works.filter(item => item.type === "research").length} {vi ? "nghiên cứu" : "research works"} <span aria-hidden="true">·</span> {works.filter(item => item.type === "experience").length} {vi ? "kỳ thực tập" : "internship"}</p>
       </div>
     } />
   </div></main>;

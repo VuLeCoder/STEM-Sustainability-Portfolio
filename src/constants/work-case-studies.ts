@@ -1,6 +1,36 @@
 import type { Localized } from "./common";
 
 export const workCaseStudies: Record<string, { title: Localized<string>; body: Localized<string> }[]> = {
+  "vast-internship": [
+    {
+      title: { vi: "Bối cảnh & mục tiêu", en: "Context & goal" },
+      body: {
+        vi: "Tại Viện Công nghệ Thông tin, VAST, em tham gia dự án kính thông minh hỗ trợ người khiếm thị, hướng tới hệ thống chuyển ngôn ngữ ký hiệu thành lời nói. Phần việc của em tập trung vào thiết kế cơ khí và tích hợp phần cứng cho thiết bị đeo.",
+        en: "At the Institute of Information Technology, VAST, I joined an assistive smart-glasses project for visually impaired people, aimed at sign-language-to-speech translation. My work focused on mechanical design and hardware integration for the wearable device."
+      }
+    },
+    {
+      title: { vi: "Vai trò & thiết kế", en: "Role & design" },
+      body: {
+        vi: "Với vai trò thiết kế cơ khí chính và phát triển phần cứng, em thiết kế khung kính từ đầu để bố trí camera, bộ xử lý Raspberry Pi và đầu ra âm thanh. Thiết kế cũng phải cân bằng độ bền, trọng lượng và sự thoải mái khi đeo lâu.",
+        en: "As the main mechanical designer and hardware developer, I designed the frame from the ground up to accommodate a camera, Raspberry Pi processing unit and audio output. The design also had to balance structural stability, weight and long-wear comfort."
+      }
+    },
+    {
+      title: { vi: "Thử nghiệm & cải tiến", en: "Testing & iteration" },
+      body: {
+        vi: "Các mẫu đầu gặp vấn đề quá nhiệt và lệch trọng tâm. Em thử nghiệm vật lý, sửa mô hình CAD, bố trí lại dây bên trong và phân bố trọng lượng qua gọng kính cùng đệm mũi. Em cũng thiết kế kênh làm mát thụ động và bộ phận tản nhiệt.",
+        en: "Early prototypes suffered from overheating and an imbalanced center of gravity. I ran physical tests, revised the CAD design, rearranged internal wiring and redistributed weight across the temples and nose pads. I also designed passive cooling channels and a heat sink."
+      }
+    },
+    {
+      title: { vi: "Kết quả được ghi nhận", en: "Documented outcome" },
+      body: {
+        vi: "Theo nhận xét của người hướng dẫn trong giấy đánh giá thực tập, thiết kế tản nhiệt giúp giảm nhiệt độ vận hành hơn 15°C, hỗ trợ thiết bị chạy liên tục mà không tăng đáng kể trọng lượng. Giấy đánh giá ghi nhận mức Outstanding ở hầu hết tiêu chí; riêng mục tài liệu kỹ thuật và tổ chức CAD được đánh giá Good.",
+        en: "According to the supervisor's internship evaluation, the cooling design lowered operating temperatures by more than 15°C, supporting continuous operation without adding excess weight. The evaluation rated most criteria Outstanding; technical documentation and CAD organization was rated Good."
+      }
+    }
+  ],
   "dual-image-reversible-data-hiding": [
     {
       "title": {

@@ -58,13 +58,27 @@ export function HomeResearch({ locale }: { locale: Locale }) {
           })}
         </div>
         <article className="home-research-internship" data-reveal aria-labelledby="home-internship-title">
-          <div className="home-research-placeholder" aria-hidden="true" />
+          <a
+            className="home-research-placeholder home-internship-image"
+            href="/images/work/vast/vast-iit-internship-confirmation-2026.png"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label={vi ? "Xem giấy xác nhận thực tập tại VAST" : "View VAST internship confirmation"}
+          >
+            <Image
+              src="/images/work/vast/vast-iit-internship-confirmation-2026.png"
+              alt={vi ? "Giấy xác nhận thực tập năm 2026 tại Viện Công nghệ Thông tin, VAST" : "2026 internship confirmation from the Institute of Information Technology, VAST"}
+              fill
+              sizes="(max-width: 767px) 100vw, 25vw"
+            />
+          </a>
           <div className="home-research-copy">
           <p className="home-about-label home-internship-label">{vi ? "Thực tập nghiên cứu" : "Research internship"}</p>
           <h3 id="home-internship-title" className="home-research-institution"><strong>VAST</strong><span>{vi ? "Viện Công nghệ Thông tin" : "Institute of Information Technology"}</span></h3>
-          <p className="home-research-dates">{vi ? "18/05–24/09/2026" : "18 May–24 Sep 2026"}</p>
-          <p>{vi ? "Phòng các Hệ thống AI · Viện Hàn lâm Khoa học và Công nghệ Việt Nam · Hà Nội" : "AI Systems Department · Vietnam Academy of Science and Technology · Hanoi"}</p>
-          <p>{vi ? "Tham gia kỳ thực tập nghiên cứu tại Phòng các Hệ thống AI, tập trung vào hệ thống AI ứng dụng, quy trình nghiên cứu khoa học, tài liệu kỹ thuật và phối hợp liên ngành." : "Participated in a research internship at the AI Systems Department, focused on applied AI systems, scientific workflows, technical documentation, and interdisciplinary collaboration."}</p>
+          <p className="home-research-dates">{vi ? "01/03–15/09/2026" : "1 Mar–15 Sep 2026"}</p>
+          <p>{vi ? "Phòng Hệ thống thông minh và Tính toán tiên tiến · Viện Hàn lâm Khoa học và Công nghệ Việt Nam · Hà Nội" : "Department of Intelligent Systems and Advanced Computing · Vietnam Academy of Science and Technology · Hanoi"}</p>
+          <p>{vi ? "Thiết kế cơ khí chính và phát triển phần cứng cho dự án kính thông minh hỗ trợ người khiếm thị, hướng tới chuyển ngôn ngữ ký hiệu thành lời nói. Tôi thiết kế khung kính cho camera, Raspberry Pi và âm thanh; cải thiện tản nhiệt và cân bằng trọng lượng khi đeo." : "Main mechanical designer and hardware developer for an assistive smart-glasses project aimed at sign-language-to-speech translation. I designed the frame for the camera, Raspberry Pi and audio hardware, improving cooling and wearable weight balance."}</p>
+          <Link className="home-research-link" href={`/${locale}/works#vast-internship`}>{vi ? "Xem case study thực tập" : "Explore internship case study"} <span aria-hidden="true">↗</span></Link>
           </div>
         </article>
       </div>

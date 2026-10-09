@@ -367,12 +367,15 @@
   padding-top: clamp(32px, 4vw, 48px);
   border-top: 1px solid var(--home-line);
 }
+.home-page .home-research-internship .home-internship-image { display: block; aspect-ratio: 1494 / 1340; }
+.home-page .home-research-internship .home-internship-image img { object-fit: contain; }
+.home-page .home-research-internship .home-internship-image:focus-visible { outline: 2px solid var(--home-accent-deep); outline-offset: 4px; }
 .home-page .home-research-internship .home-internship-label { text-transform: uppercase; letter-spacing: .09em; }
 .home-page .home-research-internship h3 { margin: 20px 0 0; }
 .home-page .home-research-internship .home-research-dates { margin: 12px 0 24px; font-size: 14px; }
 .home-page .home-research-institution strong { display: block; color: var(--home-on-dark); font-size: clamp(44px, 5vw, 64px); font-weight: 500; line-height: 1.1; }
 .home-page .home-research-institution span { display: block; margin-top: 10px; color: var(--home-on-dark); font-family: var(--font-sans); font-size: clamp(18px, 2vw, 22px); font-weight: 500; line-height: 1.5; letter-spacing: 0; }
-.home-page .home-research-internship .home-research-copy > p:last-child { margin-bottom: 0; }
+.home-page .home-research-internship .home-research-copy > p:last-of-type { margin-bottom: 0; }
 @media (max-width: 767px) {
   .home-page .home-research-row,
   .home-page .home-research-row:nth-child(even),
