@@ -402,8 +402,7 @@ export const workPhotos: Record<string, string[]> = {
     "/images/work/bloomwatch/bluemarble-team-at-space-apps.jpeg",
     "/images/work/bloomwatch/bluemarble-hackathon-work-session.jpeg",
     "/images/work/bloomwatch/bluemarble-first-prize-ceremony.jpeg",
-    "/images/work/bloomwatch/bluemarble-first-prize-certificate.png",
-    "/images/work/bloomwatch/bluemarble-global-nominee-recognition.jpeg"
+    "/images/work/bloomwatch/bluemarble-first-prize-certificate.png"
   ],
   "dual-image-reversible-data-hiding": [
     "/images/work/dual-image/vnict-presentation.jpeg"
@@ -423,7 +422,7 @@ export const workPhotos: Record<string, string[]> = {
     "/images/work/ecome/community-certificate.jpg",
     "/images/work/ecome/ecome-community-event-group.jpg",
     "/images/work/ecome/cam-la-pagoda-community-visit.jpg",
-    "/images/work/ecome/colors-of-intelligence-quang-ninh-poster.jpg",
+    "/images/work/ecome/tuy-an-tay-disaster-relief-thank-you-letter.jpg",
   ],
   "ecomesort": [
     "/images/work/ecomesort/recognition.png",
@@ -432,11 +431,20 @@ export const workPhotos: Record<string, string[]> = {
   "vex-v5-robotics": [
     "/images/work/vex/vex-build-award-certificate-2026.png",
     "/images/work/vex/vex-push-back-innovate-award-trophy.jpeg",
-    "/images/work/vex/vex-new-years-mayhem-participation-2026.png"
+    "/images/work/vex/vex-new-years-mayhem-participation-2026.png",
+    "/images/work/vex/hogrider-training-recognition.jpg"
   ]
 };
 
 export const workPhotoCaptions: Record<string, Localized<string>> = {
+  "/images/work/ecome/tuy-an-tay-disaster-relief-thank-you-letter.jpg": {
+    vi: "Thư cảm ơn hỗ trợ 225 hộ dân tại xã Tuy An Tây, Đắk Lắk",
+    en: "Letter of thanks for relief support to 225 households in Tuy An Tay, Dak Lak"
+  },
+  "/images/work/vex/hogrider-training-recognition.jpg": {
+    vi: "Chứng nhận nỗ lực luyện tập của thành viên đội Hogrider",
+    en: "Recognition of a Hogrider team member's training efforts"
+  },
   "/images/work/bloomwatch/bluemarble-team-at-space-apps.jpeg": {
     vi: "Nhóm Bluemarble tại Space Apps Ninh Bình 2025",
     en: "Team Bluemarble at Space Apps Ninh Binh 2025"

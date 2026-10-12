@@ -18,7 +18,7 @@ export function HomeCommunityImpact({ locale }: { locale: Locale }) {
           { src: "/images/work/ecome/community-certificate.jpg", caption: vi ? "Chứng nhận hoạt động cộng đồng ECOMe" : "ECOMe community activity certificate" },
           { src: "/images/work/ecome/ecome-community-event-group.jpg", caption: vi ? "Nhóm ECOMe tại sự kiện cộng đồng" : "ECOMe group at a community event" },
           { src: "/images/work/ecome/cam-la-pagoda-community-visit.jpg", caption: vi ? "Hoạt động cộng đồng tại chùa Cẩm La, Quảng Ninh" : "Community visit to Cam La Pagoda, Quang Ninh" },
-          { src: "/images/work/ecome/colors-of-intelligence-quang-ninh-poster.jpg", caption: vi ? "Poster Hành trình kết nối sắc màu trí tuệ tại Quảng Ninh" : "Colors of Intelligence journey poster, Quang Ninh" },
+          { src: "/images/work/ecome/tuy-an-tay-disaster-relief-thank-you-letter.jpg", caption: vi ? "Thư cảm ơn hỗ trợ 225 hộ dân tại Tuy An Tây, Đắk Lắk" : "Letter of thanks for relief support to 225 households in Tuy An Tay, Dak Lak" },
         ] },
         { title: "CypherCharm Club", description: vi ? "Thành viên · An ninh mạng & mật mã" : "Member · Cybersecurity & cryptography", photos: [] },
       ],

@@ -23,11 +23,46 @@ export type ActivityItem = GalleryItem & {
 
 export const activityGallery: ActivityItem[] = [
   {
+    title: { vi: "Nét đẹp khối chuyên 2025", en: "Net dep khoi chuyen 2025" },
+    description: { vi: "Đóng góp với vai trò cộng tác viên ban truyền thông của chương trình Nét đẹp khối chuyên 2025.", en: "Contributed as a media department collaborator for Net dep khoi chuyen 2025." },
+    image: "/images/community/recognition/net-dep-khoi-chuyen-media-certificate-2025.jpg",
+    imageAlt: { vi: "Chứng nhận đóng góp truyền thông Nét đẹp khối chuyên 2025", en: "Certificate recognizing media contributions to Net dep khoi chuyen 2025" },
+    imageCaption: { vi: "Cộng tác viên truyền thông · 2025", en: "Media collaborator · 2025" },
+  },
+  {
+    title: { vi: "Tham quan & học tập tại Đại học Tsukuba", en: "University of Tsukuba campus visit" },
+    description: { vi: "Tham gia chuyến tham quan và các hoạt động học tập tại Đại học Tsukuba, Nhật Bản ngày 14/7/2025.", en: "Participated in a campus tour and learning activities at the University of Tsukuba, Japan, on July 14, 2025." },
+    image: "/images/community/education/tsukuba-campus-visit-certificate-2025.jpg",
+    imageAlt: { vi: "Chứng nhận tham gia hoạt động tại Đại học Tsukuba năm 2025", en: "University of Tsukuba campus visit participation certificate, 2025" },
+    imageCaption: { vi: "Tham quan & học tập · 14/07/2025", en: "Campus tour & learning · July 14, 2025" },
+  },
+  {
+    title: { vi: "Lễ hội Nhật Bản tại Hà Nội 2025", en: "Japan Festival in Hanoi 2025" },
+    description: { vi: "Tham gia tình nguyện tại Lễ hội Nhật Bản tại Hà Nội 2025, được Hiệp hội Doanh nghiệp Nhật Bản tại Việt Nam ghi nhận.", en: "Volunteered at the Japan Festival in Hanoi 2025, recognized by the Japanese Chamber of Commerce and Industry in Vietnam." },
+    image: "/images/community/recognition/japan-festival-hanoi-volunteer-2025.jpg",
+    imageAlt: { vi: "Chứng nhận tình nguyện viên Lễ hội Nhật Bản tại Hà Nội 2025", en: "Volunteer certificate for the Japan Festival in Hanoi 2025" },
+    imageCaption: { vi: "Tình nguyện viên · 02/11/2025", en: "Volunteer · November 2, 2025" },
+  },
+  {
+    title: { vi: "VEX V5 · Luyện tập cùng Hogrider", en: "VEX V5 · Training with Hogrider" },
+    description: { vi: "Ghi nhận nỗ lực, kỷ luật và tinh thần bền bỉ trong quá trình luyện tập cùng đội RoboticsNewton – VEX V5 để chuẩn bị thi đấu cấp quốc gia.", en: "Recognition of effort, discipline, and perseverance while training with RoboticsNewton – VEX V5 for national competition." },
+    image: "/images/work/vex/hogrider-training-recognition.jpg",
+    imageAlt: { vi: "Chứng nhận Chiến binh Hogrider vượt trở ngại của Nguyễn Cao Xuân Phúc", en: "Nguyen Cao Xuan Phuc's Hogrider training recognition certificate" },
+    imageCaption: { vi: "Ghi nhận luyện tập · Hogrider", en: "Training recognition · Hogrider" },
+    relatedWork: "vex-v5-robotics",
+  },
+  {
     title: { vi: "ECOMe", en: "ECOMe" },
     description: { vi: "Sáng lập và điều phối sáng kiến giáo dục môi trường, nước sạch và hoạt động cộng đồng.", en: "Founded and coordinated an initiative focused on environmental education, clean water, and community work." },
     image: "/images/work/ecome/community-certificate.jpg",
     imageAlt: { vi: "Chứng nhận đóng góp cho hoạt động cộng đồng ECOMe", en: "Certificate recognizing ECOMe community contributions" },
     imageCaption: { vi: "Ghi nhận đóng góp · 2026", en: "Contribution recognition · 2026" },
+    additionalImages: [{
+      src: "/images/work/ecome/tuy-an-tay-disaster-relief-thank-you-letter.jpg",
+      alt: { vi: "Thư cảm ơn Nguyễn Cao Xuân Phúc và các thành viên hỗ trợ cứu trợ tại Tuy An Tây, Đắk Lắk", en: "Letter thanking Nguyen Cao Xuan Phuc and fellow volunteers for disaster relief in Tuy An Tay, Dak Lak" },
+      caption: { vi: "Thư cảm ơn · Hỗ trợ 225 hộ dân", en: "Letter of thanks · Support for 225 households" },
+      kind: "certificate",
+    }],
     relatedWork: "ecome",
   },
   {
@@ -82,6 +117,11 @@ export const activityGallery: ActivityItem[] = [
     imageAlt: { vi: "Chứng nhận tham gia Hành trình kết nối sắc màu trí tuệ năm 2025", en: "Colors of Wisdom participation certificate, 2025" },
     imageCaption: { vi: "Chứng nhận tham gia · 2025", en: "Participation certificate · 2025" },
     additionalImages: [{
+      src: "/images/community/recognition/colors-of-wisdom-organizing-september-2025.jpg",
+      alt: { vi: "Chứng nhận tổ chức Hành trình kết nối sắc màu trí tuệ ngày 1/9/2025", en: "Certificate for organizing Journey of Connecting Colors of Wisdom on September 1, 2025" },
+      caption: { vi: "Chứng nhận tổ chức · 01/09/2025", en: "Organizing certificate · September 1, 2025" },
+      kind: "certificate",
+    }, {
       src: "/images/community/recognition/colors-of-wisdom-volunteer.jpg",
       alt: { vi: "Chứng nhận tổ chức tình nguyện Hành trình kết nối sắc màu trí tuệ năm 2026", en: "Colors of Wisdom volunteer organizing certificate, 2026" },
       caption: { vi: "Chứng nhận tổ chức · 2026", en: "Organizing certificate · 2026" },
@@ -119,6 +159,12 @@ export const awardGallery: AwardItem[] = [
     description: { vi: "Minh chứng giải thưởng của dự án SafeStride tại WICO 2026.", en: "Award evidence for the SafeStride project at WICO 2026." },
     image: "/images/work/safestride/wico-gold-award.jpeg",
     imageAlt: { vi: "Minh chứng Giải Vàng WICO 2026 của SafeStride", en: "SafeStride WICO 2026 Gold Award evidence" },
+    additionalImages: [{
+      src: "/images/work/safestride/wico-gold-medal.jpg",
+      alt: { vi: "Huy chương Vàng WICO tại Hàn Quốc", en: "WICO gold medal from Korea" },
+      caption: { vi: "Huy chương Vàng WICO", en: "WICO gold medal" },
+      kind: "photo",
+    }],
     relatedWork: "safestride",
   },
   {
