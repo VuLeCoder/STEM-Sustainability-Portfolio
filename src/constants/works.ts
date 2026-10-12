@@ -202,7 +202,7 @@ export const works: WorkItem[] = [
     "download": "vast-iit-internship-confirmation-evaluation-2026.pdf",
     "cta": {
       "vi": "Tải giấy xác nhận & đánh giá (PDF)",
-      "en": "Download confirmation & evaluation (PDF)"
+      "en": "Download PDF"
     }
   },
   {
