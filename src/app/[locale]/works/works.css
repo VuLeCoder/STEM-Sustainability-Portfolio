@@ -82,6 +82,10 @@ body:has(.works-page) {
 .works-dialog__header h2 { margin-block: 12px 16px; font: 500 clamp(28px, 4vw, 36px)/1.2 var(--font-display); letter-spacing: -.015em; text-wrap: balance; }
 .works-dialog__header > p:last-child { margin: 0; color: var(--muted); font-size: 15px; line-height: 1.7; }
 .works-study { display: grid; gap: 26px; margin-top: 30px; }
+.works-video { margin-top: 24px; }
+.works-video h3 { margin: 0 0 16px; color: var(--primary); font: 600 16px/1.5 var(--font-sans); }
+.works-video video { display: block; width: 100%; max-height: 60dvh; margin-inline: auto; background: #000; object-fit: contain; border-radius: 3px; }
+.works-video > a { display: inline-flex; align-items: center; gap: 8px; min-height: 44px; margin-top: 8px; color: var(--primary); font-size: 14px; }
 .works-study__section h3 { margin: 0 0 8px; color: var(--primary); font: 600 13px/1.5 var(--font-sans); letter-spacing: .035em; }
 .works-study__section p { margin: 0; color: var(--muted); font-size: 16px; line-height: 1.75; }
 .works-study__section--result p { color: var(--foreground); }

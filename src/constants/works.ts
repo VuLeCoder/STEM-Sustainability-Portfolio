@@ -11,6 +11,7 @@ export type WorkItem = {
   result: Localized<string>;
   featuredOrder?: number;
   image?: { src: string; alt: Localized<string> };
+  video?: { src: string; title: Localized<string> };
   href: string;
   download?: string;
   external?: boolean;
@@ -172,6 +173,13 @@ export const works: WorkItem[] = [
   },
   {
     "slug": "vast-internship",
+    "video": {
+      "src": "/videos/VAST.mp4",
+      "title": {
+        "vi": "Giới thiệu dự án kính thông minh tại VAST",
+        "en": "Introducing the smart-glasses project at VAST"
+      }
+    },
     "type": "experience",
     "year": "2026",
     "title": {

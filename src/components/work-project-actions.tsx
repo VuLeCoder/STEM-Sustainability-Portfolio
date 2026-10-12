@@ -14,7 +14,7 @@ export function WorkProjectActions({ item, locale }: { item: WorkItem; locale: L
   const requestHref = item.href.startsWith("/") ? `/${locale}${item.href}` : item.href;
   const dialog = useRef<HTMLDialogElement>(null);
   const titleId = useId();
-  const [mode, setMode] = useState<"study" | "photos" | null>(null);
+  const [mode, setMode] = useState<"study" | "photos" | "video" | null>(null);
   const [photo, setPhoto] = useState(0);
   const sections = workCaseStudies[item.slug] ?? [];
   const photos = workPhotos[item.slug] ?? [];
@@ -36,13 +36,22 @@ export function WorkProjectActions({ item, locale }: { item: WorkItem; locale: L
   return <>
     <div className="works-project-actions">
       {sections.length > 0 && <button type="button" className="works-action works-action--primary" onClick={() => setMode("study")} aria-haspopup="dialog">Case study <span aria-hidden="true">↗</span></button>}
+      {item.video && <button type="button" className="works-action" onClick={() => setMode("video")} aria-haspopup="dialog">{vi ? "Xem video" : "Watch video"} <span aria-hidden="true">▷</span></button>}
       {photos.length > 0 && <button type="button" className="works-action" onClick={() => { setPhoto(0); setMode("photos"); }} aria-haspopup="dialog">{vi ? "Ảnh" : "Photos"} <span>{photos.length}</span></button>}
       {item.download ? <a className="works-action" href={item.href} download={item.download} aria-label={`${item.cta[locale]}: ${item.title[locale]}`}>{item.cta[locale]} <span aria-hidden="true">↓</span></a> : research ? <Link className="works-action" href={requestHref} target={item.external ? "_blank" : undefined} rel={item.external ? "noopener noreferrer" : undefined} aria-label={`${item.cta[locale]}: ${item.title[locale]}`}>{item.cta[locale]} <span aria-hidden="true">{item.external ? "↗" : "→"}</span></Link> : externalHref && <a className="works-action" href={externalHref} target="_blank" rel="noopener noreferrer" aria-label={`${item.cta[locale]}: ${item.title[locale]}`}>{item.cta[locale]} <span aria-hidden="true">↗</span></a>}
     </div>
-    <dialog ref={dialog} className={`works-dialog${mode === "photos" ? " works-dialog--photos" : " works-dialog--study"}`} aria-labelledby={titleId} onCancel={() => setMode(null)} onClose={() => setMode(null)} onClick={event => { if (event.target === event.currentTarget) { const rect = event.currentTarget.getBoundingClientRect(); if (event.clientX < rect.left || event.clientX > rect.right || event.clientY < rect.top || event.clientY > rect.bottom) setMode(null); } }}>
-      <div className="works-dialog__bar"><>{mode === "photos" ? <h2 id={titleId} className="works-dialog__photo-title"><strong>{item.title[locale]}</strong><span> - Photo gallery</span></h2> : <span>Case study</span>}</><button type="button" onClick={() => setMode(null)} aria-label={vi ? "Đóng popup" : "Close dialog"}>{mode === "photos" && (vi ? "Đóng" : "Close")} <span aria-hidden="true">×</span></button></div>
+    <dialog ref={dialog} className={`works-dialog${mode === "photos" ? " works-dialog--photos" : " works-dialog--study"}`} aria-labelledby={mode === "video" ? `${titleId}-video` : titleId} onCancel={() => setMode(null)} onClose={() => setMode(null)} onClick={event => { if (event.target === event.currentTarget) { const rect = event.currentTarget.getBoundingClientRect(); if (event.clientX < rect.left || event.clientX > rect.right || event.clientY < rect.top || event.clientY > rect.bottom) setMode(null); } }}>
+      <div className="works-dialog__bar"><>{mode === "photos" ? <h2 id={titleId} className="works-dialog__photo-title"><strong>{item.title[locale]}</strong><span> - Photo gallery</span></h2> : <span>{mode === "video" ? "Video" : "Case study"}</span>}</><button type="button" onClick={() => setMode(null)} aria-label={vi ? "Đóng popup" : "Close dialog"}>{mode === "photos" && (vi ? "Đóng" : "Close")} <span aria-hidden="true">×</span></button></div>
       <div className="works-dialog__content">
         {mode === "study" && <header className="works-dialog__header"><p className="works-kicker">{experience ? (vi ? "Thực tập" : "Internship") : research ? (vi ? "Nghiên cứu" : "Research") : (vi ? "Dự án" : "Project")}{item.year ? ` · ${item.year}` : ""}</p><h2 id={titleId}>{item.title[locale]}</h2><p>{item.description[locale]}</p></header>}
+        {(mode === "study" || mode === "video") && item.video && <section className="works-video" aria-labelledby={`${titleId}-video`}>
+          <h3 id={`${titleId}-video`}>{item.video.title[locale]}</h3>
+          <video controls playsInline preload="metadata" aria-label={item.video.title[locale]}>
+            <source src={item.video.src} type="video/mp4" />
+            {vi ? "Trình duyệt của bạn không hỗ trợ phát video." : "Your browser does not support video playback."}
+          </video>
+          <a href={item.video.src} target="_blank" rel="noopener noreferrer">{vi ? "Mở video trong tab mới" : "Open video in a new tab"} <span aria-hidden="true">↗</span></a>
+        </section>}
         {mode === "study" && <div className="works-study">{sections.map((section, index) => <section key={index} className={`works-study__section${section.title.en === "Result" ? " works-study__section--result" : ""}${["What I learned", "Research experience"].includes(section.title.en) ? " works-study__section--reflection" : ""}`}>
           <h3>{section.title[locale]}</h3>
           <p>{section.body[locale]}</p>
