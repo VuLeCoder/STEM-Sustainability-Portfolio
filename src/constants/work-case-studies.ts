@@ -83,58 +83,6 @@ export const workCaseStudies: Record<string, { title: Localized<string>; body: L
       }
     }
   ],
-  "uav-gcs-framework": [
-    {
-      "title": {
-        "vi": "Bối cảnh & vấn đề",
-        "en": "Problem"
-      },
-      "body": {
-        "vi": "Nghiên cứu hướng tới việc kết hợp UAV, trạm điều khiển mặt đất và AI để nâng cao nhận thức tình huống và hỗ trợ tìm kiếm cứu nạn trong không phận tầm thấp.",
-        "en": "The research explores combining UAVs, ground control stations, and AI to improve situational awareness and support search-and-rescue in low-altitude airspace."
-      }
-    },
-    {
-      "title": {
-        "vi": "Vai trò của tôi",
-        "en": "My role"
-      },
-      "body": {
-        "vi": "Em tham gia với vai trò đồng tác giả, cùng viết bài, tham gia thực nghiệm và trình bày nghiên cứu tại hội thảo.",
-        "en": "As a co-author, I helped write the paper, took part in experiments, and presented the research at the conference."
-      }
-    },
-    {
-      "title": {
-        "vi": "Phương pháp & hướng tiếp cận",
-        "en": "Method & approach"
-      },
-      "body": {
-        "vi": "Bài báo đề xuất khung tích hợp UAV và trạm điều khiển mặt đất sử dụng AI cho nhận thức tình huống và tìm kiếm cứu nạn, hướng tới triển khai UTM trong không phận tầm thấp.",
-        "en": "The paper proposes an AI-integrated UAV and ground-control-station framework for situational awareness and search-and-rescue, toward UTM deployment in low-altitude airspace."
-      }
-    },
-    {
-      "title": {
-        "vi": "Kết quả",
-        "en": "Result"
-      },
-      "body": {
-        "vi": "Nghiên cứu được trình bày tại Hội thảo Quốc gia về Hành lang bay và Quản lý không gian tầm thấp tại Hà Nội.",
-        "en": "The research was presented at the National Conference on Flight Corridors and Low-Altitude Airspace Management in Hanoi."
-      }
-    },
-    {
-      "title": {
-        "vi": "Kinh nghiệm nghiên cứu",
-        "en": "Research experience"
-      },
-      "body": {
-        "vi": "Các công việc em tham gia trải từ cùng xây dựng bài viết, thực nghiệm đến trình bày một hướng ứng dụng AI trong hệ thống UAV và hỗ trợ tìm kiếm cứu nạn.",
-        "en": "My involvement spanned co-writing, experiments, and presenting an application of AI to UAV systems and search-and-rescue support."
-      }
-    }
-  ],
   "safestride": [
     {
       "title": {
@@ -407,11 +355,6 @@ export const workPhotos: Record<string, string[]> = {
   "dual-image-reversible-data-hiding": [
     "/images/work/dual-image/vnict-presentation.jpeg"
   ],
-  "uav-gcs-framework": [
-    "/images/work/uav/uav-ground-control-station-test.jpeg",
-    "/images/work/uav/uav-team-drone-discussion.jpeg",
-    "/images/work/uav/uav-drone-equipment-inspection.jpeg"
-  ],
   "safestride": [
     "/images/work/safestride/wico-gold-award.jpeg",
     "/images/work/safestride/team-at-hanoi-blind-association.jpg",
@@ -464,18 +407,6 @@ export const workPhotoCaptions: Record<string, Localized<string>> = {
   "/images/work/bloomwatch/bluemarble-global-nominee-recognition.jpeg": {
     vi: "Bảng ghi nhận nhóm Bluemarble được đề cử toàn cầu",
     en: "Recognition of team Bluemarble as a Global Nominee"
-  },
-  "/images/work/uav/uav-ground-control-station-test.jpeg": {
-    vi: "Thử nghiệm trạm điều khiển mặt đất cùng UAV",
-    en: "Testing the ground control station with a UAV"
-  },
-  "/images/work/uav/uav-team-drone-discussion.jpeg": {
-    vi: "Nhóm trao đổi về cấu hình UAV",
-    en: "Team discussion around the UAV setup"
-  },
-  "/images/work/uav/uav-drone-equipment-inspection.jpeg": {
-    vi: "Kiểm tra thiết bị UAV và bộ điều khiển",
-    en: "Inspecting the UAV and its controller"
   },
   "/images/work/vex/vex-build-award-certificate-2026.png": {
     vi: "Chứng nhận Build Award tại Giải Vô địch Quốc gia VEX V5 Robotics 2026",

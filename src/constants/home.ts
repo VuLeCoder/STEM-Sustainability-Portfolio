@@ -20,10 +20,10 @@ export const homeNarrative = {
     en: "A Physics-specialized student exploring how hardware, AI, and human-centered design can address real accessibility and environmental problems — one project at a time.",
   },
   research: {
-    title: { vi: "Hai công bố, hai hướng nghiên cứu ứng dụng.", en: "Two publications, two fields of applied research." },
+    title: { vi: "Nghiên cứu & trải nghiệm thực tiễn.", en: "Research & hands-on experience." },
     description: {
-      vi: "Hai bài báo hội nghị quốc gia giúp tôi học cách kiểm chứng ý tưởng, tham gia thử nghiệm và trình bày kết quả rõ ràng trong bảo mật nội dung số và hệ thống UAV tích hợp AI.",
-      en: "Two national conference papers taught me to test ideas, contribute to experiments, and communicate results clearly across digital-content security and AI-integrated UAV systems.",
+      vi: "Từ đánh giá thực nghiệm trong bảo mật ảnh đến thiết kế phần cứng hỗ trợ tiếp cận, tôi học cách kiểm chứng ý tưởng và trình bày kết quả qua nghiên cứu và thực tập.",
+      en: "From experimental evaluation in image security to assistive hardware design, research and an internship taught me to test ideas and communicate results clearly.",
     },
     cta: { vi: "Khám phá trải nghiệm nghiên cứu", en: "Explore my research experience" },
   },

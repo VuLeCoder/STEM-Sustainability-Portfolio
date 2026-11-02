@@ -10,18 +10,12 @@ export function HomeResearch({ locale }: { locale: Locale }) {
   const publications = [
     {
       venue: vi ? "VNICT 2025 · Hội nghị Quốc gia CNTT-TT" : "VNICT 2025 · National ICT Conference",
-      role: vi ? "Đồng tác giả & trình bày · An ninh thông tin" : "Co-author & presenter · Information Security",
+      role: vi ? "Đồng tác giả · Đánh giá thực nghiệm, phân tích dữ liệu & trình bày" : "Co-author · Experimental evaluation, data analysis & presentation",
       title: vi ? "Phương pháp giấu tin thuận nghịch trên ảnh kép cải tiến" : "An Improved Dual-Image Reversible Data Hiding Method",
       description: vi ? "Tăng dung lượng nhúng phục vụ xác thực nội dung số, đồng thời bảo đảm khôi phục hoàn hảo ảnh gốc." : "Improves embedding capacity for digital-content authentication while guaranteeing perfect recovery of the original image.",
       slug: "dual-image-reversible-data-hiding",
     },
-    {
-      venue: vi ? "Hội thảo Quốc gia UTM · Hà Nội" : "UTM National Conference · Hanoi",
-      role: vi ? "Đồng tác giả & trình bày · UAV / AI" : "Co-author & presenter · UAV / AI",
-      title: vi ? "Khung UAV–Trạm điều khiển mặt đất tích hợp AI cho nhận thức tình huống và tìm kiếm cứu nạn" : "An AI-Integrated UAV–Ground Control Station Framework for Situational Awareness and Search-and-Rescue",
-      description: vi ? "Đề xuất khung tích hợp UAV và trạm điều khiển mặt đất nhằm nâng cao nhận thức tình huống và hỗ trợ tìm kiếm cứu nạn trong không phận tầm thấp." : "Proposes an integrated UAV and ground-control-station framework for situational awareness and search-and-rescue in low-altitude airspace.",
-      slug: "uav-gcs-framework",
-    },
+
   ];
 
   return (

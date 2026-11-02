@@ -239,38 +239,7 @@ export const works: WorkItem[] = [
       "en": "Request the paper & slides"
     }
   },
-  {
-    "slug": "uav-gcs-framework",
-    "type": "research",
-    "title": {
-      "vi": "Khung UAV–Trạm điều khiển mặt đất tích hợp AI cho nhận thức tình huống và tìm kiếm cứu nạn",
-      "en": "An AI-Integrated UAV–Ground Control Station Framework for Situational Awareness and Search-and-Rescue"
-    },
-    "description": {
-      "vi": "Bài báo đề xuất khung tích hợp UAV và trạm điều khiển mặt đất dùng AI để nâng cao nhận thức tình huống và hỗ trợ tìm kiếm cứu nạn, hướng tới triển khai UTM trong không phận tầm thấp.",
-      "en": "The paper proposes an AI-integrated UAV and ground-control-station framework for situational awareness and search-and-rescue, toward UTM deployment in low-altitude airspace."
-    },
-    "role": {
-      "vi": "Đồng tác giả · tham gia thực nghiệm & trình bày",
-      "en": "Co-author · experiments & presentation"
-    },
-    "result": {
-      "vi": "Trình bày tại Hội thảo Quốc gia về Hành lang bay & Quản lý không gian tầm thấp · Hà Nội",
-      "en": "Presented at the National Conference on Flight Corridors & Low-Altitude Airspace Management · Hanoi"
-    },
-    "image": {
-      "src": "/images/work/uav/uav-ground-control-station-test.jpeg",
-      "alt": {
-        "vi": "Thử nghiệm trạm điều khiển mặt đất cùng UAV",
-        "en": "Testing the ground control station with a UAV"
-      }
-    },
-    "href": "mailto:nguyencxphuc@gmail.com?subject=UTM%20paper%20request",
-    "cta": {
-      "vi": "Yêu cầu bài báo & slide",
-      "en": "Request the paper & slides"
-    }
-  }
+
 ];
 
 export const worksCopy = {
