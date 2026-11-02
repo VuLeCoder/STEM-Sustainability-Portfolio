@@ -23,6 +23,13 @@ export type ActivityItem = GalleryItem & {
 
 export const activityGallery: ActivityItem[] = [
   {
+    title: { vi: "Đền Hùng Marathon 2026 · Về Nguồn", en: "Den Hung Marathon 2026 · Ve Nguon" },
+    description: { vi: "Tham gia Ban tổ chức Đền Hùng Marathon 2026 – Về Nguồn, được ghi nhận những đóng góp cho chương trình qua chứng nhận ngày 05/04/2026.", en: "Served on the Organizing Committee of Den Hung Marathon 2026 – Ve Nguon, with contributions recognized in a certificate dated April 5, 2026." },
+    image: "/images/community/recognition/den-hung-marathon-organizing-certificate-2026.jpeg",
+    imageAlt: { vi: "Chứng nhận đóng góp của Nguyễn Cao Xuân Phúc với vai trò thành viên Ban tổ chức Đền Hùng Marathon 2026 – Về Nguồn", en: "Certificate recognizing Nguyen Cao Xuan Phuc's contributions as an Organizing Committee member of Den Hung Marathon 2026 – Ve Nguon" },
+    imageCaption: { vi: "Thành viên Ban tổ chức · 05/04/2026", en: "Organizing Committee member · April 5, 2026" },
+  },
+  {
     title: { vi: "Nét đẹp khối chuyên 2025", en: "Net dep khoi chuyen 2025" },
     description: { vi: "Đóng góp với vai trò cộng tác viên ban truyền thông của chương trình Nét đẹp khối chuyên 2025.", en: "Contributed as a media department collaborator for Net dep khoi chuyen 2025." },
     image: "/images/community/recognition/net-dep-khoi-chuyen-media-certificate-2025.jpg",
