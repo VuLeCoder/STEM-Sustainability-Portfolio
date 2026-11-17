@@ -20,6 +20,27 @@ export type WorkItem = {
 
 export const works: WorkItem[] = [
   {
+    slug: "lang",
+    type: "project",
+    year: "2026",
+    title: { vi: "Lắng — Earth Jukebox", en: "Lắng — Earth Jukebox" },
+    description: {
+      vi: "Nền tảng học tập điều khiển bằng giọng nói, chuyển dữ liệu quan sát Trái Đất của NASA thành âm thanh. Lắng kết hợp nhạc cụ truyền thống Việt Nam, phản hồi xúc giác và tương tác hỗ trợ bởi AI để mở rộng khả năng tiếp cận kiến thức khí hậu và vũ trụ.",
+      en: "An accessible, voice-controlled learning platform that transforms NASA Earth-observation data into sound. Lắng combines Vietnamese traditional instruments, tactile feedback and AI-assisted interaction to make climate and space exploration accessible beyond visual screens.",
+    },
+    role: { vi: "Thành viên phát triển dự án", en: "Project development team member" },
+    result: {
+      vi: "Giải Nhì bảng Mở rộng · Art & Technology Award · NASA Space Apps Challenge Hà Nội 2026",
+      en: "Second Prize — Open · Art & Technology Award · NASA Space Apps Challenge Hanoi 2026",
+    },
+    image: {
+      src: "/images/work/lang/lang-nasa-space-apps-second-prize-open-2026.png",
+      alt: { vi: "Chứng nhận Giải Nhì bảng Mở rộng của đội Lắng tại NASA Space Apps Challenge Hà Nội 2026", en: "Team Lắng's Second Prize — Open certificate at NASA Space Apps Challenge Hanoi 2026" },
+    },
+    href: "mailto:nguyencxphuc@gmail.com?subject=Lang%20Earth%20Jukebox",
+    cta: { vi: "Yêu cầu thông tin", en: "Request information" },
+  },
+  {
     "slug": "safestride",
     "type": "project",
     "year": "2026",

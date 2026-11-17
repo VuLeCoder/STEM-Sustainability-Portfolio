@@ -160,6 +160,24 @@ export type AwardItem = GalleryItem & {
 
 export const awardGallery: AwardItem[] = [
   {
+    category: "project", year: 2026,
+    scope: { vi: "NASA Space Apps · Hà Nội", en: "NASA Space Apps · Hanoi" },
+    title: { vi: "Lắng · Giải Nhì bảng Mở rộng", en: "Lắng · Second Prize — Open" },
+    description: { vi: "Đội Lắng đạt Giải Nhì bảng Mở rộng tại NASA Space Apps Challenge Hà Nội, ngày 14–15/11/2026.", en: "Team Lắng received Second Prize — Open at NASA Space Apps Challenge Hanoi on November 14–15, 2026." },
+    image: "/images/work/lang/lang-nasa-space-apps-second-prize-open-2026.png",
+    imageAlt: { vi: "Chứng nhận Giải Nhì bảng Mở rộng của Nguyễn Cao Xuân Phúc cùng đội Lắng năm 2026", en: "2026 Second Prize — Open certificate for Nguyen Cao Xuan Phuc and team Lắng" },
+    relatedWork: "lang",
+  },
+  {
+    category: "project", year: 2026,
+    scope: { vi: "NASA Space Apps · Hà Nội", en: "NASA Space Apps · Hanoi" },
+    title: { vi: "Lắng · Art & Technology Award", en: "Lắng · Art & Technology Award" },
+    description: { vi: "Đội Lắng đạt giải chuyên ngành Art & Technology Award tại NASA Space Apps Challenge Hà Nội, ngày 14–15/11/2026.", en: "Team Lắng received the Art & Technology Award at NASA Space Apps Challenge Hanoi on November 14–15, 2026." },
+    image: "/images/work/lang/lang-nasa-space-apps-art-technology-award-2026.png",
+    imageAlt: { vi: "Chứng nhận Art & Technology Award của Nguyễn Cao Xuân Phúc cùng đội Lắng năm 2026", en: "2026 Art & Technology Award certificate for Nguyen Cao Xuan Phuc and team Lắng" },
+    relatedWork: "lang",
+  },
+  {
     category: "project", year: 2026, featuredOrder: 1,
     scope: { vi: "Quốc tế · WICO, Seoul", en: "International · WICO, Seoul" },
     title: { vi: "SafeStride · Giải Vàng WICO 2026", en: "SafeStride · WICO 2026 Gold Award" },

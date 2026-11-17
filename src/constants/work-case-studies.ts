@@ -1,6 +1,43 @@
 import type { Localized } from "./common";
 
 export const workCaseStudies: Record<string, { title: Localized<string>; body: Localized<string> }[]> = {
+  "lang": [
+    {
+      title: { vi: "Vai trò của tôi", en: "My role" },
+      body: {
+        vi: "Em tham gia với vai trò thành viên phát triển dự án Lắng, cùng đội xây dựng trải nghiệm học tập tiếp cận dữ liệu NASA qua âm thanh và tương tác đa giác quan trong khoảng 36 giờ hackathon.",
+        en: "As a member of the Lắng project development team, I worked with teammates on a learning experience that makes NASA data accessible through sound and multisensory interaction during an approximately 36-hour hackathon.",
+      },
+    },
+    {
+      title: { vi: "Bối cảnh & vấn đề", en: "Problem" },
+      body: {
+        vi: "Các hình ảnh trực quan từ dữ liệu quan sát Trái Đất của NASA cung cấp hiểu biết giá trị về hành tinh, nhưng có thể tạo rào cản cho người khiếm thị, người cao tuổi và trẻ chưa biết đọc. Lắng hướng tới việc tiếp cận dữ liệu khoa học qua nhiều giác quan, thay vì chỉ dựa vào thị giác.",
+        en: "NASA's Earth-observation visualizations reveal valuable insights into our changing planet, but their visual nature creates barriers for blind and low-vision individuals, older adults and children who cannot yet read. Scientific data should be accessible through more than sight alone.",
+      },
+    },
+    {
+      title: { vi: "Giải pháp & công nghệ", en: "Solution & technology" },
+      body: {
+        vi: "Đội Lắng phát triển ứng dụng đa nền tảng chuyển dữ liệu vệ tinh NASA thành âm thanh bằng nhạc cụ truyền thống Việt Nam, kết hợp phản hồi xúc giác. Hệ thống sử dụng Flutter, các luồng xử lý dữ liệu Python, nhận dạng giọng nói ngoại tuyến và tương tác hỗ trợ bởi AI, cho phép khám phá khí hậu, địa hình và không gian qua giọng nói, chạm và âm thanh.",
+        en: "Team Lắng developed a cross-platform application that translates NASA satellite data into sound using Vietnamese traditional instruments, with tactile feedback. Built with Flutter, Python data pipelines, offline speech recognition and AI-assisted interaction, it allows users to explore climate patterns, terrain and space through voice commands, touch and sound.",
+      },
+    },
+    {
+      title: { vi: "Kết quả", en: "Result" },
+      body: {
+        vi: "Lắng tích hợp năm nội dung trực quan hóa Trái Đất của NASA, khám phá khí hậu và địa hình tương tác cùng trải nghiệm học về Hệ Mặt Trời. Theo case study của nhóm, khảo sát 171 người ghi nhận điểm 4,50/5 cho độ rõ của giọng nói và 4,61/5 cho mức sẵn lòng giới thiệu; khoảng 3.900 bài kiểm thử tự động hỗ trợ kiểm tra độ tin cậy. Đội đạt Giải Nhì bảng Mở rộng và Art & Technology Award tại NASA Space Apps Challenge Hà Nội, ngày 14–15/11/2026.",
+        en: "Lắng integrates five NASA Earth visualizations, interactive climate and terrain exploration, and Solar System learning experiences. According to the team's case study, a survey of 171 participants recorded 4.50/5 for voice clarity and 4.61/5 for willingness to recommend; approximately 3,900 automated tests support reliability checks. The team received Second Prize — Open and the Art & Technology Award at NASA Space Apps Challenge Hanoi on November 14–15, 2026.",
+      },
+    },
+    {
+      title: { vi: "Điều tôi học được", en: "What I learned" },
+      body: {
+        vi: "Khoảng 36 giờ hackathon dạy em cách ưu tiên những tính năng cốt lõi, giới hạn phạm vi phù hợp và tin tưởng đồng đội ở phần họ mạnh nhất. Với Lắng, em học cách truyền đạt dữ liệu khoa học rõ ràng qua âm thanh và tương tác đa giác quan, đồng thời đặt khả năng tiếp cận của người dùng vào từng quyết định phát triển.",
+        en: "An approximately 36-hour hackathon taught me to prioritize core features, keep the scope manageable and trust teammates with their strengths. Through Lắng, I learned to communicate scientific data clearly through sound and multisensory interaction, while considering accessibility in each development decision.",
+      },
+    },
+  ],
   "vast-internship": [
     {
       title: { vi: "Bối cảnh & mục tiêu", en: "Context & goal" },
@@ -346,6 +383,10 @@ export const workCaseStudies: Record<string, { title: Localized<string>; body: L
 };
 
 export const workPhotos: Record<string, string[]> = {
+  "lang": [
+    "/images/work/lang/lang-nasa-space-apps-second-prize-open-2026.png",
+    "/images/work/lang/lang-nasa-space-apps-art-technology-award-2026.png",
+  ],
   "bloomwatch": [
     "/images/work/bloomwatch/bluemarble-team-at-space-apps.jpeg",
     "/images/work/bloomwatch/bluemarble-hackathon-work-session.jpeg",
@@ -380,6 +421,14 @@ export const workPhotos: Record<string, string[]> = {
 };
 
 export const workPhotoCaptions: Record<string, Localized<string>> = {
+  "/images/work/lang/lang-nasa-space-apps-second-prize-open-2026.png": {
+    vi: "Đội Lắng · Giải Nhì bảng Mở rộng · NASA Space Apps Challenge Hà Nội 2026",
+    en: "Team Lắng · Second Prize — Open · NASA Space Apps Challenge Hanoi 2026",
+  },
+  "/images/work/lang/lang-nasa-space-apps-art-technology-award-2026.png": {
+    vi: "Đội Lắng · Art & Technology Award · NASA Space Apps Challenge Hà Nội 2026",
+    en: "Team Lắng · Art & Technology Award · NASA Space Apps Challenge Hanoi 2026",
+  },
   "/images/work/ecome/tuy-an-tay-disaster-relief-thank-you-letter.jpg": {
     vi: "Thư cảm ơn hỗ trợ 225 hộ dân tại xã Tuy An Tây, Đắk Lắk",
     en: "Letter of thanks for relief support to 225 households in Tuy An Tay, Dak Lak"
